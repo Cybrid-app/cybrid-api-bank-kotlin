@@ -1,0 +1,116 @@
+# VerificationKeysApi
+
+All URIs are relative to *https://bank.demo.cybrid.app*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createVerificationKey**](VerificationKeysApi.md#createVerificationKey) | **POST** /api/banks/{bank_guid}/verification_keys | Create VerificationKey
+[**getVerificationKey**](VerificationKeysApi.md#getVerificationKey) | **GET** /api/banks/{bank_guid}/verification_keys/{verification_key_guid} | Get VerificationKey
+
+
+<a name="createVerificationKey"></a>
+# **createVerificationKey**
+> VerificationKeyBankModel createVerificationKey(bankGuid, postVerificationKeyBankModel)
+
+Create VerificationKey
+
+Creates a verification key.   Example code (python) for generating a Verification Key  &#x60;&#x60;&#x60;python import base64  from cryptography.hazmat.primitives import hashes from cryptography.hazmat.primitives import serialization from cryptography.hazmat.primitives.asymmetric import padding from cryptography.hazmat.primitives.asymmetric import rsa  nonce &#x3D; \&quot;wen moon\&quot; private_key &#x3D; rsa.generate_private_key(public_exponent&#x3D;65537, key_size&#x3D;2048) signature &#x3D; base64.b64encode(private_key.sign(     data&#x3D;nonce.encode(&#39;ascii&#39;), padding&#x3D;padding.PKCS1v15(), algorithm&#x3D;hashes.SHA512())).decode(&#39;ascii&#39;) public_key &#x3D; base64.b64encode(private_key.public_key().public_bytes(     encoding&#x3D;serialization.Encoding.DER, format&#x3D;serialization.PublicFormat.SubjectPublicKeyInfo)).decode(&#39;ascii&#39;) &#x60;&#x60;&#x60;&#x60;  ## State  | State | Description | |-------|-------------| | storing | The Platform is storing the verification in our private key store | | pending | The Platform is verifying the verification key&#39;s signature | | verified | The Platform has verified the verification key&#39;s signature and the key can be used | | failed | The Platform was not able to verify the verification key&#39;s signature and the key cannot be used |    Required scope: **banks:write**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_bank.client.infrastructure.*
+//import app.cybrid.cybrid_api_bank.client.models.*
+
+val apiInstance = VerificationKeysApi()
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Identifier for the bank.
+val postVerificationKeyBankModel : PostVerificationKeyBankModel =  // PostVerificationKeyBankModel | 
+try {
+    val result : VerificationKeyBankModel = apiInstance.createVerificationKey(bankGuid, postVerificationKeyBankModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling VerificationKeysApi#createVerificationKey")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling VerificationKeysApi#createVerificationKey")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankGuid** | **kotlin.String**| Identifier for the bank. |
+ **postVerificationKeyBankModel** | [**PostVerificationKeyBankModel**](PostVerificationKeyBankModel.md)|  |
+
+### Return type
+
+[**VerificationKeyBankModel**](VerificationKeyBankModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient.accessToken = ""
+Configure oauth2:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getVerificationKey"></a>
+# **getVerificationKey**
+> VerificationKeyBankModel getVerificationKey(bankGuid, verificationKeyGuid)
+
+Get VerificationKey
+
+Retrieves a verification key.  Required scope: **banks:read**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_bank.client.infrastructure.*
+//import app.cybrid.cybrid_api_bank.client.models.*
+
+val apiInstance = VerificationKeysApi()
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Identifier for the bank.
+val verificationKeyGuid : kotlin.String = verificationKeyGuid_example // kotlin.String | Identifier for the verification key.
+try {
+    val result : VerificationKeyBankModel = apiInstance.getVerificationKey(bankGuid, verificationKeyGuid)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling VerificationKeysApi#getVerificationKey")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling VerificationKeysApi#getVerificationKey")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankGuid** | **kotlin.String**| Identifier for the bank. |
+ **verificationKeyGuid** | **kotlin.String**| Identifier for the verification key. |
+
+### Return type
+
+[**VerificationKeyBankModel**](VerificationKeyBankModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient.accessToken = ""
+Configure oauth2:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
