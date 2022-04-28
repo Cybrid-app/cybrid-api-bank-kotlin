@@ -1,0 +1,21 @@
+package app.cybrid.cybrid_api_bank.client.apis
+
+import app.cybrid.cybrid_api_bank.client.infrastructure.CollectionFormats.*
+import retrofit2.http.*
+import retrofit2.Response
+import okhttp3.RequestBody
+
+
+interface SymbolsApi {
+    /**
+     * Get Symbols list
+     * Retrieves a listing of symbols.  Required scope: **prices:read**
+     * Responses:
+     *  - 200: get list of symbols
+     *
+     * @return [kotlin.collections.List<kotlin.String>]
+     */
+    @GET("api/symbols")
+    suspend fun listSymbols(): Response<kotlin.collections.List<kotlin.String>>
+
+}
