@@ -1,0 +1,51 @@
+package app.cybrid.cybrid_api_bank.client.apis
+
+import app.cybrid.cybrid_api_bank.client.infrastructure.CollectionFormats.*
+import retrofit2.http.*
+import retrofit2.Response
+import okhttp3.RequestBody
+
+import app.cybrid.cybrid_api_bank.client.models.AccountBankModel
+import app.cybrid.cybrid_api_bank.client.models.AccountListBankModel
+import app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel
+
+interface AccountsApi {
+    /**
+     * Create Account
+     * Creates an account.  ## Account Type  An Account is tied to a specific cryptocurrency and is comprised of transactions and a current balance.  An account is required to allow a Customer to hold cryptocurrency on the Cybrid Platform.  At present, account&#39;s can be created as &#x60;trading&#x60; accounts and are required before a Customer can generate a quote and execute a trade.  ## Asset  The asset is the specific cryptocurrency that the account holds, e.g., &#39;BTC&#39; for Bitcoin. See the Symbols API for a complete list of cryptocurrencies supported.     Required scope: **accounts:execute**
+     * Responses:
+     *  - 201: account created
+     *
+     * @param postAccountBankModel  
+     * @return [AccountBankModel]
+     */
+    @POST("api/accounts")
+    suspend fun createAccount(@Body postAccountBankModel: PostAccountBankModel): Response<AccountBankModel>
+
+    /**
+     * Get Account
+     * Retrieves an account.  Required scope: **accounts:read**
+     * Responses:
+     *  - 200: account found
+     *
+     * @param accountGuid Identifier for the account. 
+     * @return [AccountBankModel]
+     */
+    @GET("api/accounts/{account_guid}")
+    suspend fun getAccount(@Path("account_guid") accountGuid: kotlin.String): Response<AccountBankModel>
+
+    /**
+     * List Accounts
+     * Retrieves a list of accounts.  Required scope: **accounts:read**
+     * Responses:
+     *  - 200: get list of accounts
+     *
+     * @param page The page index to retrieve. (optional, default to 0)
+     * @param perPage The number of entities per page to return. (optional, default to 10)
+     * @param guid Comma separated account_guids to list accounts for. (optional)
+     * @return [AccountListBankModel]
+     */
+    @GET("api/accounts")
+    suspend fun listAccounts(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null): Response<AccountListBankModel>
+
+}
