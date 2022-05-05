@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **name** | **kotlin.String** | The name of the account. |  [optional]
 **bankGuid** | **kotlin.String** | The bank identifier associated with the account. |  [optional]
 **customerGuid** | **kotlin.String** | The customer identifier associated with the account. |  [optional]
+**platformBalance** | **kotlin.Int** | The amount of funds that are in the account, in base units of the asset. |  [optional]
+**platformAvailable** | **kotlin.Int** | The amount of funds that are in the account, in base units of the asset, that are available for use on the platform. |  [optional]
 
 
 <a name="Type"></a>
