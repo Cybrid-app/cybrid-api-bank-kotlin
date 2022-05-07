@@ -55,6 +55,9 @@ Class | Method | HTTP request | Description
 *TradesApi* | [**createTrade**](docs/TradesApi.md#createtrade) | **POST** api/trades | Create Trade
 *TradesApi* | [**getTrade**](docs/TradesApi.md#gettrade) | **GET** api/trades/{trade_guid} | Get Trade
 *TradesApi* | [**listTrades**](docs/TradesApi.md#listtrades) | **GET** api/trades | Get trades list
+*TradingConfigurationsApi* | [**createTradingConfiguration**](docs/TradingConfigurationsApi.md#createtradingconfiguration) | **POST** api/trading_configurations | Create TradingConfiguration
+*TradingConfigurationsApi* | [**getTradingConfiguration**](docs/TradingConfigurationsApi.md#gettradingconfiguration) | **GET** api/trading_configurations/{trading_configuration_guid} | Get TradingConfiguration
+*TradingConfigurationsApi* | [**listTradingConfigurations**](docs/TradingConfigurationsApi.md#listtradingconfigurations) | **GET** api/trading_configurations | List trading configurations
 *VerificationKeysApi* | [**createVerificationKey**](docs/VerificationKeysApi.md#createverificationkey) | **POST** api/banks/{bank_guid}/verification_keys | Create VerificationKey
 *VerificationKeysApi* | [**getVerificationKey**](docs/VerificationKeysApi.md#getverificationkey) | **GET** api/banks/{bank_guid}/verification_keys/{verification_key_guid} | Get VerificationKey
 *VerificationKeysApi* | [**listVerificationKeys**](docs/VerificationKeysApi.md#listverificationkeys) | **GET** api/banks/{bank_guid}/verification_keys | Get Verification Keys list
@@ -74,14 +77,17 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.CustomerListBankModel](docs/CustomerListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExchangeAccountBankModel](docs/ExchangeAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExchangeBankModel](docs/ExchangeBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.FeeBankModel](docs/FeeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordBankModel](docs/IdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel](docs/PostAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostBankBankModel](docs/PostBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel](docs/PostCustomerBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostFeeBankModel](docs/PostFeeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordAttestationDetailsBankModel](docs/PostIdentityRecordAttestationDetailsBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordBankModel](docs/PostIdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostQuoteBankModel](docs/PostQuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostTradeBankModel](docs/PostTradeBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostTradingConfigurationBankModel](docs/PostTradingConfigurationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostVerificationKeyBankModel](docs/PostVerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteBankModel](docs/QuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteListBankModel](docs/QuoteListBankModel.md)
@@ -89,6 +95,8 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.SystemAccountBankModel](docs/SystemAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeBankModel](docs/TradeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeListBankModel](docs/TradeListBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.TradingConfigurationBankModel](docs/TradingConfigurationBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.TradingConfigurationListBankModel](docs/TradingConfigurationListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel](docs/VerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyListBankModel](docs/VerificationKeyListBankModel.md)
 

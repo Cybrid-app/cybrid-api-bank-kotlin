@@ -26,82 +26,35 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the trade.
- * @param customerGuid The associated customer's identifier.
- * @param quoteGuid The associated quote's identifier.
- * @param symbol The trade symbol the pricing is related to. Format is asset-counter_asset, e.g., BTC-USD.
- * @param side The direction of the quote: either 'buy' or 'sell'.
- * @param state The trade's state
- * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell.
- * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell.
- * @param fee The fee associated with the trade. Denominated in \"counter_asset\" base units
- * @param createdAt ISO8601 datetime the bank was created at.
+ * @param type The fee's type
+ * @param spreadFee The percentage amount, in basis points, to apply when charging a fee.
+ * @param fixedFee The fixed amount, in the currency of the parent trading configuration, to apply when charging a fee.
  */
 
-data class TradeBankModel (
+data class PostFeeBankModel (
 
-    /* Auto-generated unique identifier for the trade. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The fee's type */
+    @SerializedName("type")
+    val type: PostFeeBankModel.Type,
 
-    /* The associated customer's identifier. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The percentage amount, in basis points, to apply when charging a fee. */
+    @SerializedName("spread_fee")
+    val spreadFee: kotlin.Int? = null,
 
-    /* The associated quote's identifier. */
-    @SerializedName("quote_guid")
-    val quoteGuid: kotlin.String? = null,
-
-    /* The trade symbol the pricing is related to. Format is asset-counter_asset, e.g., BTC-USD. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String? = null,
-
-    /* The direction of the quote: either 'buy' or 'sell'. */
-    @SerializedName("side")
-    val side: TradeBankModel.Side? = null,
-
-    /* The trade's state */
-    @SerializedName("state")
-    val state: TradeBankModel.State? = null,
-
-    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell. */
-    @SerializedName("receive_amount")
-    val receiveAmount: kotlin.Int? = null,
-
-    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell. */
-    @SerializedName("deliver_amount")
-    val deliverAmount: kotlin.Int? = null,
-
-    /* The fee associated with the trade. Denominated in \"counter_asset\" base units */
-    @SerializedName("fee")
-    val fee: kotlin.Int? = null,
-
-    /* ISO8601 datetime the bank was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null
+    /* The fixed amount, in the currency of the parent trading configuration, to apply when charging a fee. */
+    @SerializedName("fixed_fee")
+    val fixedFee: kotlin.Int? = null
 
 ) {
 
     /**
-     * The direction of the quote: either 'buy' or 'sell'.
+     * The fee's type
      *
-     * Values: buy,sell
+     * Values: spread,fixed
      */
-    enum class Side(val value: kotlin.String) {
-        @SerializedName(value = "buy") buy("buy"),
-        @SerializedName(value = "sell") sell("sell");
-    }
-    /**
-     * The trade's state
-     *
-     * Values: storing,initiating,pending,completed,failed
-     */
-    enum class State(val value: kotlin.String) {
-        @SerializedName(value = "storing") storing("storing"),
-        @SerializedName(value = "initiating") initiating("initiating"),
-        @SerializedName(value = "pending") pending("pending"),
-        @SerializedName(value = "completed") completed("completed"),
-        @SerializedName(value = "failed") failed("failed");
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "spread") spread("spread"),
+        @SerializedName(value = "fixed") fixed("fixed");
     }
 }
 
