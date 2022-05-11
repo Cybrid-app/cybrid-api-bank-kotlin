@@ -58,9 +58,9 @@ Class | Method | HTTP request | Description
 *TradingConfigurationsApi* | [**createTradingConfiguration**](docs/TradingConfigurationsApi.md#createtradingconfiguration) | **POST** api/trading_configurations | Create TradingConfiguration
 *TradingConfigurationsApi* | [**getTradingConfiguration**](docs/TradingConfigurationsApi.md#gettradingconfiguration) | **GET** api/trading_configurations/{trading_configuration_guid} | Get TradingConfiguration
 *TradingConfigurationsApi* | [**listTradingConfigurations**](docs/TradingConfigurationsApi.md#listtradingconfigurations) | **GET** api/trading_configurations | List trading configurations
-*VerificationKeysApi* | [**createVerificationKey**](docs/VerificationKeysApi.md#createverificationkey) | **POST** api/banks/{bank_guid}/verification_keys | Create VerificationKey
-*VerificationKeysApi* | [**getVerificationKey**](docs/VerificationKeysApi.md#getverificationkey) | **GET** api/banks/{bank_guid}/verification_keys/{verification_key_guid} | Get VerificationKey
-*VerificationKeysApi* | [**listVerificationKeys**](docs/VerificationKeysApi.md#listverificationkeys) | **GET** api/banks/{bank_guid}/verification_keys | Get Verification Keys list
+*VerificationKeysApi* | [**createVerificationKey**](docs/VerificationKeysApi.md#createverificationkey) | **POST** api/bank_verification_keys | Create VerificationKey
+*VerificationKeysApi* | [**getVerificationKey**](docs/VerificationKeysApi.md#getverificationkey) | **GET** api/bank_verification_keys/{verification_key_guid} | Get VerificationKey
+*VerificationKeysApi* | [**listVerificationKeys**](docs/VerificationKeysApi.md#listverificationkeys) | **GET** api/bank_verification_keys | Get Verification Keys list
 
 
 <a name="documentation-for-models"></a>

@@ -16,12 +16,11 @@ interface VerificationKeysApi {
      * Responses:
      *  - 201: verification key created
      *
-     * @param bankGuid Identifier for the bank. 
      * @param postVerificationKeyBankModel  
      * @return [VerificationKeyBankModel]
      */
-    @POST("api/banks/{bank_guid}/verification_keys")
-    suspend fun createVerificationKey(@Path("bank_guid") bankGuid: kotlin.String, @Body postVerificationKeyBankModel: PostVerificationKeyBankModel): Response<VerificationKeyBankModel>
+    @POST("api/bank_verification_keys")
+    suspend fun createVerificationKey(@Body postVerificationKeyBankModel: PostVerificationKeyBankModel): Response<VerificationKeyBankModel>
 
     /**
      * Get VerificationKey
@@ -29,12 +28,11 @@ interface VerificationKeysApi {
      * Responses:
      *  - 200: Verification Key found
      *
-     * @param bankGuid Identifier for the bank. 
      * @param verificationKeyGuid Identifier for the verification key. 
      * @return [VerificationKeyBankModel]
      */
-    @GET("api/banks/{bank_guid}/verification_keys/{verification_key_guid}")
-    suspend fun getVerificationKey(@Path("bank_guid") bankGuid: kotlin.String, @Path("verification_key_guid") verificationKeyGuid: kotlin.String): Response<VerificationKeyBankModel>
+    @GET("api/bank_verification_keys/{verification_key_guid}")
+    suspend fun getVerificationKey(@Path("verification_key_guid") verificationKeyGuid: kotlin.String): Response<VerificationKeyBankModel>
 
     /**
      * Get Verification Keys list
@@ -42,12 +40,11 @@ interface VerificationKeysApi {
      * Responses:
      *  - 200: get list of verification keys
      *
-     * @param bankGuid Identifier for the bank. 
      * @param page  (optional, default to 0)
      * @param perPage  (optional, default to 10)
      * @return [VerificationKeyListBankModel]
      */
-    @GET("api/banks/{bank_guid}/verification_keys")
-    suspend fun listVerificationKeys(@Path("bank_guid") bankGuid: kotlin.String, @Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<VerificationKeyListBankModel>
+    @GET("api/bank_verification_keys")
+    suspend fun listVerificationKeys(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<VerificationKeyListBankModel>
 
 }

@@ -4,9 +4,9 @@ All URIs are relative to *https://bank.demo.cybrid.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createVerificationKey**](VerificationKeysApi.md#createVerificationKey) | **POST** api/banks/{bank_guid}/verification_keys | Create VerificationKey
-[**getVerificationKey**](VerificationKeysApi.md#getVerificationKey) | **GET** api/banks/{bank_guid}/verification_keys/{verification_key_guid} | Get VerificationKey
-[**listVerificationKeys**](VerificationKeysApi.md#listVerificationKeys) | **GET** api/banks/{bank_guid}/verification_keys | Get Verification Keys list
+[**createVerificationKey**](VerificationKeysApi.md#createVerificationKey) | **POST** api/bank_verification_keys | Create VerificationKey
+[**getVerificationKey**](VerificationKeysApi.md#getVerificationKey) | **GET** api/bank_verification_keys/{verification_key_guid} | Get VerificationKey
+[**listVerificationKeys**](VerificationKeysApi.md#listVerificationKeys) | **GET** api/bank_verification_keys | Get Verification Keys list
 
 
 
@@ -24,11 +24,10 @@ Creates a verification key.   Example code (python) for generating a Verificatio
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(VerificationKeysApi::class.java)
-val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Identifier for the bank.
 val postVerificationKeyBankModel : PostVerificationKeyBankModel =  // PostVerificationKeyBankModel | 
 
 launch(Dispatchers.IO) {
-    val result : VerificationKeyBankModel = webService.createVerificationKey(bankGuid, postVerificationKeyBankModel)
+    val result : VerificationKeyBankModel = webService.createVerificationKey(postVerificationKeyBankModel)
 }
 ```
 
@@ -36,7 +35,6 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankGuid** | **kotlin.String**| Identifier for the bank. |
  **postVerificationKeyBankModel** | [**PostVerificationKeyBankModel**](PostVerificationKeyBankModel.md)|  |
 
 ### Return type
@@ -69,11 +67,10 @@ Retrieves a verification key.  Required scope: **banks:read**
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(VerificationKeysApi::class.java)
-val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Identifier for the bank.
 val verificationKeyGuid : kotlin.String = verificationKeyGuid_example // kotlin.String | Identifier for the verification key.
 
 launch(Dispatchers.IO) {
-    val result : VerificationKeyBankModel = webService.getVerificationKey(bankGuid, verificationKeyGuid)
+    val result : VerificationKeyBankModel = webService.getVerificationKey(verificationKeyGuid)
 }
 ```
 
@@ -81,7 +78,6 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankGuid** | **kotlin.String**| Identifier for the bank. |
  **verificationKeyGuid** | **kotlin.String**| Identifier for the verification key. |
 
 ### Return type
@@ -114,12 +110,11 @@ Retrieves a listing of verification keys of a bank.  Required scope: **banks:rea
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(VerificationKeysApi::class.java)
-val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Identifier for the bank.
 val page : kotlin.Int = 56 // kotlin.Int | 
 val perPage : kotlin.Int = 56 // kotlin.Int | 
 
 launch(Dispatchers.IO) {
-    val result : VerificationKeyListBankModel = webService.listVerificationKeys(bankGuid, page, perPage)
+    val result : VerificationKeyListBankModel = webService.listVerificationKeys(page, perPage)
 }
 ```
 
@@ -127,7 +122,6 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankGuid** | **kotlin.String**| Identifier for the bank. |
  **page** | **kotlin.Int**|  | [optional] [default to 0]
  **perPage** | **kotlin.Int**|  | [optional] [default to 10]
 
