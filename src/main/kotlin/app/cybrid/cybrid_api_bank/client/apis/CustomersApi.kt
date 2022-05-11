@@ -29,10 +29,11 @@ interface CustomersApi {
      *  - 200: customer found
      *
      * @param customerGuid Identifier for the customer. 
+     * @param bankGuid Identifier for the bank. (optional)
      * @return [CustomerBankModel]
      */
     @GET("api/customers/{customer_guid}")
-    suspend fun getCustomer(@Path("customer_guid") customerGuid: kotlin.String): Response<CustomerBankModel>
+    suspend fun getCustomer(@Path("customer_guid") customerGuid: kotlin.String, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<CustomerBankModel>
 
     /**
      * Get customers list
@@ -42,9 +43,11 @@ interface CustomersApi {
      *
      * @param page  (optional, default to 0)
      * @param perPage  (optional, default to 10)
+     * @param bankGuid Identifier for the bank. (optional)
+     * @param guid Comma separated customer_guid to list customers for. (optional)
      * @return [CustomerListBankModel]
      */
     @GET("api/customers")
-    suspend fun listCustomers(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<CustomerListBankModel>
+    suspend fun listCustomers(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null): Response<CustomerListBankModel>
 
 }

@@ -68,9 +68,10 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(CustomersApi::class.java)
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Identifier for the customer.
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Identifier for the bank.
 
 launch(Dispatchers.IO) {
-    val result : CustomerBankModel = webService.getCustomer(customerGuid)
+    val result : CustomerBankModel = webService.getCustomer(customerGuid, bankGuid)
 }
 ```
 
@@ -79,6 +80,7 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerGuid** | **kotlin.String**| Identifier for the customer. |
+ **bankGuid** | **kotlin.String**| Identifier for the bank. | [optional]
 
 ### Return type
 
@@ -112,9 +114,11 @@ apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(CustomersApi::class.java)
 val page : kotlin.Int = 56 // kotlin.Int | 
 val perPage : kotlin.Int = 56 // kotlin.Int | 
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Identifier for the bank.
+val guid : kotlin.String = guid_example // kotlin.String | Comma separated customer_guid to list customers for.
 
 launch(Dispatchers.IO) {
-    val result : CustomerListBankModel = webService.listCustomers(page, perPage)
+    val result : CustomerListBankModel = webService.listCustomers(page, perPage, bankGuid, guid)
 }
 ```
 
@@ -124,6 +128,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **kotlin.Int**|  | [optional] [default to 0]
  **perPage** | **kotlin.Int**|  | [optional] [default to 10]
+ **bankGuid** | **kotlin.String**| Identifier for the bank. | [optional]
+ **guid** | **kotlin.String**| Comma separated customer_guid to list customers for. | [optional]
 
 ### Return type
 
