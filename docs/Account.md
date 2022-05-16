@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | backstopped, trading
+type | backstopped, trading, fee
 
 
 

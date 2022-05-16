@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **type** | [**inline**](#Type) | The bank&#39;s type. | 
 **features** | [**inline**](#kotlin.collections.List&lt;Features&gt;) | The bank&#39;s enabled features. | 
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the bank was created at. | 
+**supportedFiatAssets** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported fiat assets. |  [optional]
 
 
 <a name="Type"></a>
