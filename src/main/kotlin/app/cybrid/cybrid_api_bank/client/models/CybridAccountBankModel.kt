@@ -26,48 +26,52 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the exchange.
- * @param name The name of the exchange.
- * @param provider The provider for the exchange.
- * @param environment The environment that the exchange is operating in.
- * @param createdAt ISO8601 datetime the exchange was created at.
+ * @param type The account type.
+ * @param guid Auto-generated unique identifier for the account.
+ * @param createdAt ISO8601 datetime the account was created at.
+ * @param assetCode The asset code.
+ * @param name The name of the account.
+ * @param environment The environment the account is configured for.
  */
 
-data class ExchangeBankModel (
+data class CybridAccountBankModel (
 
-    /* Auto-generated unique identifier for the exchange. */
+    /* The account type. */
+    @SerializedName("type")
+    val type: CybridAccountBankModel.Type? = null,
+
+    /* Auto-generated unique identifier for the account. */
     @SerializedName("guid")
     val guid: kotlin.String? = null,
 
-    /* The name of the exchange. */
+    /* ISO8601 datetime the account was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null,
+
+    /* The asset code. */
+    @SerializedName("asset_code")
+    val assetCode: kotlin.String? = null,
+
+    /* The name of the account. */
     @SerializedName("name")
     val name: kotlin.String? = null,
 
-    /* The provider for the exchange. */
-    @SerializedName("provider")
-    val provider: ExchangeBankModel.Provider? = null,
-
-    /* The environment that the exchange is operating in. */
+    /* The environment the account is configured for. */
     @SerializedName("environment")
-    val environment: ExchangeBankModel.Environment? = null,
-
-    /* ISO8601 datetime the exchange was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null
+    val environment: CybridAccountBankModel.Environment? = null
 
 ) {
 
     /**
-     * The provider for the exchange.
+     * The account type.
      *
-     * Values: aquanow,dvChain
+     * Values: fee
      */
-    enum class Provider(val value: kotlin.String) {
-        @SerializedName(value = "aquanow") aquanow("aquanow"),
-        @SerializedName(value = "dv_chain") dvChain("dv_chain");
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "fee") fee("fee");
     }
     /**
-     * The environment that the exchange is operating in.
+     * The environment the account is configured for.
      *
      * Values: sandbox,production
      */
