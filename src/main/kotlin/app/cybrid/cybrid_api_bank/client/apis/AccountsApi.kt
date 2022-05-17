@@ -43,9 +43,10 @@ interface AccountsApi {
      * @param page The page index to retrieve. (optional, default to 0)
      * @param perPage The number of entities per page to return. (optional, default to 10)
      * @param guid Comma separated account_guids to list accounts for. (optional)
+     * @param customerGuid Comma separated customer_guids to list accounts for. (optional)
      * @return [AccountListBankModel]
      */
     @GET("api/accounts")
-    suspend fun listAccounts(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null): Response<AccountListBankModel>
+    suspend fun listAccounts(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<AccountListBankModel>
 
 }
