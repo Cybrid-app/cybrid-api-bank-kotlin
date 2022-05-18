@@ -113,10 +113,11 @@ val webService = apiClient.createWebservice(AccountsApi::class.java)
 val page : kotlin.Int = 56 // kotlin.Int | The page index to retrieve.
 val perPage : kotlin.Int = 56 // kotlin.Int | The number of entities per page to return.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated account_guids to list accounts for.
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list accounts for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list accounts for.
 
 launch(Dispatchers.IO) {
-    val result : AccountListBankModel = webService.listAccounts(page, perPage, guid, customerGuid)
+    val result : AccountListBankModel = webService.listAccounts(page, perPage, guid, bankGuid, customerGuid)
 }
 ```
 
@@ -127,6 +128,7 @@ Name | Type | Description  | Notes
  **page** | **kotlin.Int**| The page index to retrieve. | [optional] [default to 0]
  **perPage** | **kotlin.Int**| The number of entities per page to return. | [optional] [default to 10]
  **guid** | **kotlin.String**| Comma separated account_guids to list accounts for. | [optional]
+ **bankGuid** | **kotlin.String**| Comma separated bank_guids to list accounts for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list accounts for. | [optional]
 
 ### Return type
