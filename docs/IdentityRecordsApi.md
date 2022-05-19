@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createIdentityRecord**](IdentityRecordsApi.md#createIdentityRecord) | **POST** api/identity_records | Create Identity Record
 [**getIdentityRecord**](IdentityRecordsApi.md#getIdentityRecord) | **GET** api/identity_records/{identity_record_guid} | Get Identity Record
+[**listIdentityRecords**](IdentityRecordsApi.md#listIdentityRecords) | **GET** api/identity_records | List Identity Records
 
 
 
@@ -82,6 +83,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**IdentityRecordBankModel**](IdentityRecordBankModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient().setBearerToken("TOKEN")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+List Identity Records
+
+Retrieves a listing of identity records for a bank.  Required scope: **customers:read**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_bank.client.*
+//import app.cybrid.cybrid_api_bank.client.infrastructure.*
+//import app.cybrid.cybrid_api_bank.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(IdentityRecordsApi::class.java)
+val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer identifier to list identity records for.
+val page : kotlin.Int = 56 // kotlin.Int | 
+val perPage : kotlin.Int = 56 // kotlin.Int | 
+
+launch(Dispatchers.IO) {
+    val result : IdentityRecordListBankModel = webService.listIdentityRecords(customerGuid, page, perPage)
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerGuid** | **kotlin.String**| Comma separated customer identifier to list identity records for. | [optional]
+ **page** | **kotlin.Int**|  | [optional] [default to 0]
+ **perPage** | **kotlin.Int**|  | [optional] [default to 10]
+
+### Return type
+
+[**IdentityRecordListBankModel**](IdentityRecordListBankModel.md)
 
 ### Authorization
 

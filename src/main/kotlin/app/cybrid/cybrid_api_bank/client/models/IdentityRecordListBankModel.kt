@@ -20,51 +20,35 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.IdentityRecordBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param type The exchange account type.
- * @param guid Auto-generated unique identifier for exchange account.
- * @param createdAt ISO8601 datetime the exchange account was created at.
- * @param exchangeGuid The identifier of the exchange that owns this exchange account.
- * @param assetCode The asset code of the exchange account.
+ * @param total The total number of records available.
+ * @param page The page index to retrieve.
+ * @param perPage The number of entities per page to return.
+ * @param objects 
  */
 
-data class ExchangeAccountBankModel (
+data class IdentityRecordListBankModel (
 
-    /* The exchange account type. */
-    @SerializedName("type")
-    val type: ExchangeAccountBankModel.Type? = null,
+    /* The total number of records available. */
+    @SerializedName("total")
+    val total: kotlin.Int,
 
-    /* Auto-generated unique identifier for exchange account. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The page index to retrieve. */
+    @SerializedName("page")
+    val page: kotlin.Int,
 
-    /* ISO8601 datetime the exchange account was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null,
+    /* The number of entities per page to return. */
+    @SerializedName("per_page")
+    val perPage: kotlin.Int,
 
-    /* The identifier of the exchange that owns this exchange account. */
-    @SerializedName("exchange_guid")
-    val exchangeGuid: kotlin.String? = null,
+    @SerializedName("objects")
+    val objects: kotlin.collections.List<IdentityRecordBankModel>
 
-    /* The asset code of the exchange account. */
-    @SerializedName("asset_code")
-    val assetCode: kotlin.String? = null
-
-) {
-
-    /**
-     * The exchange account type.
-     *
-     * Values: fiat,crypto
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "fiat") fiat("fiat"),
-        @SerializedName(value = "crypto") crypto("crypto");
-    }
-}
+)
 

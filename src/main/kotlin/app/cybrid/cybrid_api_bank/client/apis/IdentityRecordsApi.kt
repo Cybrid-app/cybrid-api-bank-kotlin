@@ -6,6 +6,7 @@ import retrofit2.Response
 import okhttp3.RequestBody
 
 import app.cybrid.cybrid_api_bank.client.models.IdentityRecordBankModel
+import app.cybrid.cybrid_api_bank.client.models.IdentityRecordListBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordBankModel
 
 interface IdentityRecordsApi {
@@ -32,5 +33,19 @@ interface IdentityRecordsApi {
      */
     @GET("api/identity_records/{identity_record_guid}")
     suspend fun getIdentityRecord(@Path("identity_record_guid") identityRecordGuid: kotlin.String): Response<IdentityRecordBankModel>
+
+    /**
+     * List Identity Records
+     * Retrieves a listing of identity records for a bank.  Required scope: **customers:read**
+     * Responses:
+     *  - 200: list of identity records
+     *
+     * @param customerGuid Comma separated customer identifier to list identity records for. (optional)
+     * @param page  (optional, default to 0)
+     * @param perPage  (optional, default to 10)
+     * @return [IdentityRecordListBankModel]
+     */
+    @GET("api/identity_records")
+    suspend fun listIdentityRecords(@Query("customer_guid") customerGuid: kotlin.String? = null, @Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<IdentityRecordListBankModel>
 
 }
