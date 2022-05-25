@@ -26,63 +26,24 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the bank.
- * @param organizationGuid The organization's identifier.
- * @param name The bank's name.
- * @param type The bank's type.
- * @param features The bank's enabled features.
- * @param createdAt ISO8601 datetime the bank was created at.
- * @param supportedFiatAssets The bank's list of supported fiat assets.
+ * @param status Status code for Http Request
+ * @param errorMessage Error message
+ * @param messageCode Message code for Error
  */
 
-data class BankBankModel (
+data class ErrorResponseBankModel (
 
-    /* Auto-generated unique identifier for the bank. */
-    @SerializedName("guid")
-    val guid: kotlin.String,
+    /* Status code for Http Request */
+    @SerializedName("status")
+    val status: kotlin.Int,
 
-    /* The organization's identifier. */
-    @SerializedName("organization_guid")
-    val organizationGuid: kotlin.String,
+    /* Error message */
+    @SerializedName("error_message")
+    val errorMessage: kotlin.String,
 
-    /* The bank's name. */
-    @SerializedName("name")
-    val name: kotlin.String,
+    /* Message code for Error */
+    @SerializedName("message_code")
+    val messageCode: kotlin.String
 
-    /* The bank's type. */
-    @SerializedName("type")
-    val type: BankBankModel.Type,
-
-    /* The bank's enabled features. */
-    @SerializedName("features")
-    val features: kotlin.collections.List<BankBankModel.Features>,
-
-    /* ISO8601 datetime the bank was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime,
-
-    /* The bank's list of supported fiat assets. */
-    @SerializedName("supported_fiat_assets")
-    val supportedFiatAssets: kotlin.collections.List<kotlin.String>? = null
-
-) {
-
-    /**
-     * The bank's type.
-     *
-     * Values: sandbox
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "sandbox") sandbox("sandbox");
-    }
-    /**
-     * The bank's enabled features.
-     *
-     * Values: attestationIdentityRecords,backstoppedFundingSource
-     */
-    enum class Features(val value: kotlin.String) {
-        @SerializedName(value = "attestation_identity_records") attestationIdentityRecords("attestation_identity_records"),
-        @SerializedName(value = "backstopped_funding_source") backstoppedFundingSource("backstopped_funding_source");
-    }
-}
+)
 

@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.CustomerBankModel](docs/CustomerBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.CustomerListBankModel](docs/CustomerListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.CybridAccountBankModel](docs/CybridAccountBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel](docs/ErrorResponseBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExchangeAccountBankModel](docs/ExchangeAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExchangeBankModel](docs/ExchangeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.FeeBankModel](docs/FeeBankModel.md)
