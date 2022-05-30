@@ -14,8 +14,8 @@ interface AssetsApi {
      * Retrieves a listing of assets.  Required scope: **prices:read**
      * Responses:
      *  - 200: get list of assets
-     *  - 400: Malformed Authentication Header
-     *  - 401: Invalid responses - Authentication failed, invalid subject
+     *  - 400: Invalid requests - Malformed Authentication Header
+     *  - 401: Unauthorized - Authentication failed, invalid subject
      *  - 403: Invalid scope
      *
      * @param page The page index to retrieve. (optional, default to 0)
