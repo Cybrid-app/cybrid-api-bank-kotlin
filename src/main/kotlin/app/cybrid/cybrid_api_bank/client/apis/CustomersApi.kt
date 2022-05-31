@@ -7,6 +7,7 @@ import okhttp3.RequestBody
 
 import app.cybrid.cybrid_api_bank.client.models.CustomerBankModel
 import app.cybrid.cybrid_api_bank.client.models.CustomerListBankModel
+import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel
 
 interface CustomersApi {
@@ -15,6 +16,9 @@ interface CustomersApi {
      * Creates a customer.  ## Customer Type  Customer resources are an abstraction for real world individuals and businesses on the Cybrid Platform and are used throughout the platform to perform high level operations, e.g., create a quote, execute a trade, etc..  Customers can have additional resources attached to them, e.g., identity records, accounts, etc.  At present, Customer&#39;s can be created with type &#x60;individual&#x60;.    Required scope: **customers:execute**
      * Responses:
      *  - 201: customer created
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, invalid subject
+     *  - 403: Invalid scope
      *
      * @param postCustomerBankModel  
      * @return [CustomerBankModel]
@@ -27,6 +31,10 @@ interface CustomersApi {
      * Retrieves a customer.  Required scope: **customers:read**
      * Responses:
      *  - 200: customer found
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, invalid subject
+     *  - 403: Invalid scope
+     *  - 404: customer not found
      *
      * @param customerGuid Identifier for the customer. 
      * @return [CustomerBankModel]
@@ -39,6 +47,9 @@ interface CustomersApi {
      * Retrieves a listing of customers.  Required scope: **customers:read**
      * Responses:
      *  - 200: get list of customers
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, invalid subject,
+     *  - 403: Invalid scope
      *
      * @param page  (optional, default to 0)
      * @param perPage  (optional, default to 10)
