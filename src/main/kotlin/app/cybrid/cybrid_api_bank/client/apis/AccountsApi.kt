@@ -7,6 +7,7 @@ import okhttp3.RequestBody
 
 import app.cybrid.cybrid_api_bank.client.models.AccountBankModel
 import app.cybrid.cybrid_api_bank.client.models.AccountListBankModel
+import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel
 
 interface AccountsApi {
@@ -15,6 +16,9 @@ interface AccountsApi {
      * Creates an account.  ## Account Type  An Account is tied to a specific cryptocurrency and is comprised of transactions and a current balance.  An account is required to allow a Customer to hold cryptocurrency on the Cybrid Platform.  At present, account&#39;s can be created as &#x60;trading&#x60; accounts and are required before a Customer can generate a quote and execute a trade.  ## Asset  The asset is the specific cryptocurrency that the account holds, e.g., &#39;BTC&#39; for Bitcoin. See the Symbols API for a complete list of cryptocurrencies supported.     Required scope: **accounts:execute**
      * Responses:
      *  - 201: account created
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
      *
      * @param postAccountBankModel  
      * @return [AccountBankModel]
@@ -27,6 +31,10 @@ interface AccountsApi {
      * Retrieves an account.  Required scope: **accounts:read**
      * Responses:
      *  - 200: account found
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: account not found
      *
      * @param accountGuid Identifier for the account. 
      * @return [AccountBankModel]
@@ -39,6 +47,9 @@ interface AccountsApi {
      * Retrieves a list of accounts.  Required scope: **accounts:read**
      * Responses:
      *  - 200: get list of accounts
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
      *
      * @param page The page index to retrieve. (optional, default to 0)
      * @param perPage The number of entities per page to return. (optional, default to 10)
