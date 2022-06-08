@@ -32,9 +32,10 @@ interface BanksApi {
      * Retrieves a bank.  Required scope: **banks:read**
      * Responses:
      *  - 200: bank found
-     *  - 400: Invalid requests - invalid value in request
+     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, invalid subject
      *  - 403: Invalid scope
+     *  - 404: bank not found
      *
      * @param bankGuid Identifier for the bank. 
      * @return [BankBankModel]
@@ -53,9 +54,10 @@ interface BanksApi {
      *
      * @param page The page index to retrieve. (optional, default to 0)
      * @param perPage The number of entities per page to return. (optional, default to 10)
+     * @param guid Comma separated bank_guids to list banks for. (optional)
      * @return [BankListBankModel]
      */
     @GET("api/banks")
-    suspend fun listBanks(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<BankListBankModel>
+    suspend fun listBanks(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
 
 }

@@ -42,9 +42,12 @@ interface QuotesApi {
      *
      * @param page  (optional, default to 0)
      * @param perPage  (optional, default to 10)
+     * @param guid Comma separated quote_guids to list quotes for. (optional)
+     * @param bankGuid Comma separated bank_guids to list quotes for. (optional)
+     * @param customerGuid Comma separated customer_guids to list quotes for. (optional)
      * @return [QuoteListBankModel]
      */
     @GET("api/quotes")
-    suspend fun listQuotes(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<QuoteListBankModel>
+    suspend fun listQuotes(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<QuoteListBankModel>
 
 }

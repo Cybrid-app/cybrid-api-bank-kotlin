@@ -112,9 +112,12 @@ apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(QuotesApi::class.java)
 val page : kotlin.Int = 56 // kotlin.Int | 
 val perPage : kotlin.Int = 56 // kotlin.Int | 
+val guid : kotlin.String = guid_example // kotlin.String | Comma separated quote_guids to list quotes for.
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list quotes for.
+val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list quotes for.
 
 launch(Dispatchers.IO) {
-    val result : QuoteListBankModel = webService.listQuotes(page, perPage)
+    val result : QuoteListBankModel = webService.listQuotes(page, perPage, guid, bankGuid, customerGuid)
 }
 ```
 
@@ -124,6 +127,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **kotlin.Int**|  | [optional] [default to 0]
  **perPage** | **kotlin.Int**|  | [optional] [default to 10]
+ **guid** | **kotlin.String**| Comma separated quote_guids to list quotes for. | [optional]
+ **bankGuid** | **kotlin.String**| Comma separated bank_guids to list quotes for. | [optional]
+ **customerGuid** | **kotlin.String**| Comma separated customer_guids to list quotes for. | [optional]
 
 ### Return type
 
