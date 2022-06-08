@@ -110,14 +110,15 @@ Retrieves a listing of trades.  Required scope: **trades:read**
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(TradesApi::class.java)
-val customerGuid : kotlin.String = customerGuid_example // kotlin.String | The customer's identifier.
-val accountGuid : kotlin.String = accountGuid_example // kotlin.String | The account's identifier.
 val page : kotlin.Int = 56 // kotlin.Int | The page index to retrieve.
 val perPage : kotlin.Int = 56 // kotlin.Int | The number of entities per page to return.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated trade_guids to list trades for.
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list trades for.
+val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list trades for.
+val accountGuid : kotlin.String = accountGuid_example // kotlin.String | Comma separated account_guids to list trades for.
 
 launch(Dispatchers.IO) {
-    val result : TradeListBankModel = webService.listTrades(customerGuid, accountGuid, page, perPage, guid)
+    val result : TradeListBankModel = webService.listTrades(page, perPage, guid, bankGuid, customerGuid, accountGuid)
 }
 ```
 
@@ -125,11 +126,12 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerGuid** | **kotlin.String**| The customer&#39;s identifier. |
- **accountGuid** | **kotlin.String**| The account&#39;s identifier. |
  **page** | **kotlin.Int**| The page index to retrieve. | [optional] [default to 0]
  **perPage** | **kotlin.Int**| The number of entities per page to return. | [optional] [default to 10]
  **guid** | **kotlin.String**| Comma separated trade_guids to list trades for. | [optional]
+ **bankGuid** | **kotlin.String**| Comma separated bank_guids to list trades for. | [optional]
+ **customerGuid** | **kotlin.String**| Comma separated customer_guids to list trades for. | [optional]
+ **accountGuid** | **kotlin.String**| Comma separated account_guids to list trades for. | [optional]
 
 ### Return type
 

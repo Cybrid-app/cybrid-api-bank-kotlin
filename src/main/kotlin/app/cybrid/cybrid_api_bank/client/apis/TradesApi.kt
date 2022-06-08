@@ -40,14 +40,15 @@ interface TradesApi {
      * Responses:
      *  - 200: get list of trades
      *
-     * @param customerGuid The customer&#39;s identifier. 
-     * @param accountGuid The account&#39;s identifier. 
      * @param page The page index to retrieve. (optional, default to 0)
      * @param perPage The number of entities per page to return. (optional, default to 10)
      * @param guid Comma separated trade_guids to list trades for. (optional)
+     * @param bankGuid Comma separated bank_guids to list trades for. (optional)
+     * @param customerGuid Comma separated customer_guids to list trades for. (optional)
+     * @param accountGuid Comma separated account_guids to list trades for. (optional)
      * @return [TradeListBankModel]
      */
     @GET("api/trades")
-    suspend fun listTrades(@Query("customer_guid") customerGuid: kotlin.String, @Query("account_guid") accountGuid: kotlin.String, @Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null): Response<TradeListBankModel>
+    suspend fun listTrades(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null): Response<TradeListBankModel>
 
 }
