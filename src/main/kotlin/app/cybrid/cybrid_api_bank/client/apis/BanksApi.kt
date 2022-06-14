@@ -21,7 +21,7 @@ interface BanksApi {
      *  - 403: Invalid scope
      *  - 415: Unsupported values
      *
-     * @param postBankBankModel  
+     * @param postBankBankModel 
      * @return [BankBankModel]
      */
     @POST("api/banks")
@@ -37,7 +37,7 @@ interface BanksApi {
      *  - 403: Invalid scope
      *  - 404: bank not found
      *
-     * @param bankGuid Identifier for the bank. 
+     * @param bankGuid Identifier for the bank.
      * @return [BankBankModel]
      */
     @GET("api/banks/{bank_guid}")
@@ -58,6 +58,6 @@ interface BanksApi {
      * @return [BankListBankModel]
      */
     @GET("api/banks")
-    suspend fun listBanks(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
+    suspend fun listBanks(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
 
 }

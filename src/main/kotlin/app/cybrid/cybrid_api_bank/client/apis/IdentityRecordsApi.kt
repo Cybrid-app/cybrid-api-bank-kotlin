@@ -20,7 +20,7 @@ interface IdentityRecordsApi {
      *  - 401: Unauthorized - Authentication failed,
      *  - 403: Invalid scope
      *
-     * @param postIdentityRecordBankModel  
+     * @param postIdentityRecordBankModel 
      * @return [IdentityRecordBankModel]
      */
     @POST("api/identity_records")
@@ -36,7 +36,7 @@ interface IdentityRecordsApi {
      *  - 403: Invalid scope
      *  - 404: identity record not found
      *
-     * @param identityRecordGuid Identifier for the identity record. 
+     * @param identityRecordGuid Identifier for the identity record.
      * @return [IdentityRecordBankModel]
      */
     @GET("api/identity_records/{identity_record_guid}")
@@ -57,6 +57,6 @@ interface IdentityRecordsApi {
      * @return [IdentityRecordListBankModel]
      */
     @GET("api/identity_records")
-    suspend fun listIdentityRecords(@Query("customer_guid") customerGuid: kotlin.String? = null, @Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<IdentityRecordListBankModel>
+    suspend fun listIdentityRecords(@Query("customer_guid") customerGuid: kotlin.String? = null, @Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<IdentityRecordListBankModel>
 
 }

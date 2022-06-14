@@ -16,7 +16,7 @@ interface TradingConfigurationsApi {
      * Responses:
      *  - 201: trading configuration created
      *
-     * @param postTradingConfigurationBankModel  
+     * @param postTradingConfigurationBankModel 
      * @return [TradingConfigurationBankModel]
      */
     @POST("api/trading_configurations")
@@ -28,7 +28,7 @@ interface TradingConfigurationsApi {
      * Responses:
      *  - 200: trading configuration found
      *
-     * @param tradingConfigurationGuid Identifier for the trading configuration. 
+     * @param tradingConfigurationGuid Identifier for the trading configuration.
      * @return [TradingConfigurationBankModel]
      */
     @GET("api/trading_configurations/{trading_configuration_guid}")
@@ -45,6 +45,6 @@ interface TradingConfigurationsApi {
      * @return [TradingConfigurationListBankModel]
      */
     @GET("api/trading_configurations")
-    suspend fun listTradingConfigurations(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<TradingConfigurationListBankModel>
+    suspend fun listTradingConfigurations(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<TradingConfigurationListBankModel>
 
 }

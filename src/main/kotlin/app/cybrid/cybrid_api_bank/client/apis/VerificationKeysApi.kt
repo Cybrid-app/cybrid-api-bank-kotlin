@@ -20,7 +20,7 @@ interface VerificationKeysApi {
      *  - 401: Unauthorized - Authentication failed, invalid subject
      *  - 403: Invalid scope
      *
-     * @param postVerificationKeyBankModel  
+     * @param postVerificationKeyBankModel 
      * @return [VerificationKeyBankModel]
      */
     @POST("api/bank_verification_keys")
@@ -36,7 +36,7 @@ interface VerificationKeysApi {
      *  - 403: Invalid scope
      *  - 404: verification key not found
      *
-     * @param verificationKeyGuid Identifier for the verification key. 
+     * @param verificationKeyGuid Identifier for the verification key.
      * @return [VerificationKeyBankModel]
      */
     @GET("api/bank_verification_keys/{verification_key_guid}")
@@ -56,6 +56,6 @@ interface VerificationKeysApi {
      * @return [VerificationKeyListBankModel]
      */
     @GET("api/bank_verification_keys")
-    suspend fun listVerificationKeys(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<VerificationKeyListBankModel>
+    suspend fun listVerificationKeys(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<VerificationKeyListBankModel>
 
 }

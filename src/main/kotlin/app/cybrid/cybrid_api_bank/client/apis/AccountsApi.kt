@@ -20,7 +20,7 @@ interface AccountsApi {
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
-     * @param postAccountBankModel  
+     * @param postAccountBankModel 
      * @return [AccountBankModel]
      */
     @POST("api/accounts")
@@ -36,7 +36,7 @@ interface AccountsApi {
      *  - 403: Invalid scope
      *  - 404: account not found
      *
-     * @param accountGuid Identifier for the account. 
+     * @param accountGuid Identifier for the account.
      * @return [AccountBankModel]
      */
     @GET("api/accounts/{account_guid}")
@@ -59,6 +59,6 @@ interface AccountsApi {
      * @return [AccountListBankModel]
      */
     @GET("api/accounts")
-    suspend fun listAccounts(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<AccountListBankModel>
+    suspend fun listAccounts(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<AccountListBankModel>
 
 }

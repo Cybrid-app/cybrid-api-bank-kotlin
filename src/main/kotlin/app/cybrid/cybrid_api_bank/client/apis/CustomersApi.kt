@@ -20,7 +20,7 @@ interface CustomersApi {
      *  - 401: Unauthorized - Authentication failed, invalid subject
      *  - 403: Invalid scope
      *
-     * @param postCustomerBankModel  
+     * @param postCustomerBankModel 
      * @return [CustomerBankModel]
      */
     @POST("api/customers")
@@ -36,7 +36,7 @@ interface CustomersApi {
      *  - 403: Invalid scope
      *  - 404: customer not found
      *
-     * @param customerGuid Identifier for the customer. 
+     * @param customerGuid Identifier for the customer.
      * @return [CustomerBankModel]
      */
     @GET("api/customers/{customer_guid}")
@@ -58,6 +58,6 @@ interface CustomersApi {
      * @return [CustomerListBankModel]
      */
     @GET("api/customers")
-    suspend fun listCustomers(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null): Response<CustomerListBankModel>
+    suspend fun listCustomers(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null): Response<CustomerListBankModel>
 
 }
