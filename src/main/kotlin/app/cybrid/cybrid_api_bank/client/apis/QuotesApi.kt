@@ -5,6 +5,7 @@ import retrofit2.http.*
 import retrofit2.Response
 import okhttp3.RequestBody
 
+import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostQuoteBankModel
 import app.cybrid.cybrid_api_bank.client.models.QuoteBankModel
 import app.cybrid.cybrid_api_bank.client.models.QuoteListBankModel
@@ -15,6 +16,11 @@ interface QuotesApi {
      * Creates a quote.  Required scope: **quotes:execute**
      * Responses:
      *  - 201: quote created
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 422: Unable to process request
+     *  - 500: Internal server error
      *
      * @param postQuoteBankModel  
      * @return [QuoteBankModel]
@@ -27,6 +33,10 @@ interface QuotesApi {
      * Retrieves a quote.  Required scope: **quotes:read**
      * Responses:
      *  - 200: quote found
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: quote not found
      *
      * @param quoteGuid Identifier for the quote. 
      * @return [QuoteBankModel]
@@ -39,6 +49,9 @@ interface QuotesApi {
      * Retrieves a listing of quotes for all customers of a bank.  Required scope: **quotes:read**
      * Responses:
      *  - 200: get list of quotes
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
      *
      * @param page  (optional, default to 0)
      * @param perPage  (optional, default to 10)
