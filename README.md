@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel](docs/ErrorResponseBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExchangeAccountBankModel](docs/ExchangeAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExchangeBankModel](docs/ExchangeBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.ExchangeListBankModel](docs/ExchangeListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.FeeBankModel](docs/FeeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordBankModel](docs/IdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordListBankModel](docs/IdentityRecordListBankModel.md)
