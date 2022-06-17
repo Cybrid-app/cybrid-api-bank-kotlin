@@ -5,6 +5,7 @@ import retrofit2.http.*
 import retrofit2.Response
 import okhttp3.RequestBody
 
+import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostTradeBankModel
 import app.cybrid.cybrid_api_bank.client.models.TradeBankModel
 import app.cybrid.cybrid_api_bank.client.models.TradeListBankModel
@@ -15,6 +16,11 @@ interface TradesApi {
      * Creates a trade.  ## State  | State | Description | |-------|-------------| | storing | The Platform is storing the trade details in our private store | | initiating | The Platform has begun to perform the trade | | pending | The Platform is executing the trade | | settling | The Platform is settling the trade | | completed | The Platform has successfully completed the trade | | failed | The Platform was not able to successfully complete the trade |    Required scope: **trades:execute**
      * Responses:
      *  - 201: Trade created
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 409: Data already exists
+     *  - 422: Unable to process request
      *
      * @param postTradeBankModel 
      * @return [TradeBankModel]
@@ -27,6 +33,9 @@ interface TradesApi {
      * Retrieves a trade.  Required scope: **trades:read**
      * Responses:
      *  - 200: trade found
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: trade not found
      *
      * @param tradeGuid Identifier for the trade.
      * @return [TradeBankModel]
@@ -39,6 +48,9 @@ interface TradesApi {
      * Retrieves a listing of trades.  Required scope: **trades:read**
      * Responses:
      *  - 200: get list of trades
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
      *
      * @param page The page index to retrieve. (optional, default to 0)
      * @param perPage The number of entities per page to return. (optional, default to 10)
