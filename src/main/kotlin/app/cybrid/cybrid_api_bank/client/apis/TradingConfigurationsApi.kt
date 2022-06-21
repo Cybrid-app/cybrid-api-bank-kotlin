@@ -5,6 +5,7 @@ import retrofit2.http.*
 import retrofit2.Response
 import okhttp3.RequestBody
 
+import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostTradingConfigurationBankModel
 import app.cybrid.cybrid_api_bank.client.models.TradingConfigurationBankModel
 import app.cybrid.cybrid_api_bank.client.models.TradingConfigurationListBankModel
@@ -15,6 +16,9 @@ interface TradingConfigurationsApi {
      * Creates a trading configuration.  Required scope: **banks:write**
      * Responses:
      *  - 201: trading configuration created
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
      *
      * @param postTradingConfigurationBankModel 
      * @return [TradingConfigurationBankModel]
@@ -27,6 +31,9 @@ interface TradingConfigurationsApi {
      * Retrieves a trading configuration.  Required scope: **banks:read**
      * Responses:
      *  - 200: trading configuration found
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: trading_configuration not found
      *
      * @param tradingConfigurationGuid Identifier for the trading configuration.
      * @return [TradingConfigurationBankModel]
@@ -39,6 +46,9 @@ interface TradingConfigurationsApi {
      * Retrieves a listing of trading configurations for a bank.  Required scope: **banks:read**
      * Responses:
      *  - 200: get list of trading configurations
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
      *
      * @param page  (optional, default to 0)
      * @param perPage  (optional, default to 10)
