@@ -26,24 +26,53 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param status Status code for Http Request
- * @param errorMessage Error message
- * @param messageCode Message code for Error
+ * @param guid Auto-generated unique identifier for the exchange settlement obligation.
+ * @param exchangeSettlementGuid The identifier of the exchange settlement that corresponds to this obligation.
+ * @param asset The asset code.
+ * @param state The exchange settlement's state
+ * @param payableAmountEstimate The account's payable estimate for this obligation.
+ * @param receivableAmountEstimate The account's receivable estimate for this obligation.
  */
 
-data class ErrorResponseBankModel (
+data class ExchangeSettlementObligationBankModel (
 
-    /* Status code for Http Request */
-    @SerializedName("status")
-    val status: kotlin.Int,
+    /* Auto-generated unique identifier for the exchange settlement obligation. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* Error message */
-    @SerializedName("error_message")
-    val errorMessage: kotlin.String,
+    /* The identifier of the exchange settlement that corresponds to this obligation. */
+    @SerializedName("exchange_settlement_guid")
+    val exchangeSettlementGuid: kotlin.String? = null,
 
-    /* Message code for Error */
-    @SerializedName("message_code")
-    val messageCode: kotlin.String
+    /* The asset code. */
+    @SerializedName("asset")
+    val asset: kotlin.String? = null,
 
-)
+    /* The exchange settlement's state */
+    @SerializedName("state")
+    val state: ExchangeSettlementObligationBankModel.State? = null,
+
+    /* The account's payable estimate for this obligation. */
+    @SerializedName("payable_amount_estimate")
+    val payableAmountEstimate: kotlin.Int? = null,
+
+    /* The account's receivable estimate for this obligation. */
+    @SerializedName("receivable_amount_estimate")
+    val receivableAmountEstimate: kotlin.Int? = null
+
+) {
+
+    /**
+     * The exchange settlement's state
+     *
+     * Values: storing,pendingCreated,pendingApproved,failedCreation,tradesCompleted
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "pending__created") pendingCreated("pending__created"),
+        @SerializedName(value = "pending__approved") pendingApproved("pending__approved"),
+        @SerializedName(value = "failed_creation") failedCreation("failed_creation"),
+        @SerializedName(value = "trades_completed") tradesCompleted("trades_completed");
+    }
+}
 

@@ -26,24 +26,76 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param status Status code for Http Request
- * @param errorMessage Error message
- * @param messageCode Message code for Error
+ * @param guid Auto-generated unique identifier for the exchange settlement expected payment.
+ * @param exchangeSettlementObligationGuid The identifier of the exchange settlement obligation that this payment is associated with.
+ * @param sequenceNumber The sequence number of the expected payment
+ * @param paymentAmount The amount expected to be received as part of this payment.
+ * @param internalAccountGuid The identifier of the internal account that is expected to originate the payment.
+ * @param internalAccountType The type of the internal account that is expected to originate the payment.
+ * @param state The exchange settlement expected payment's state
+ * @param createdAt ISO8601 datetime the exchange settlement expected payment was created at.
  */
 
-data class ErrorResponseBankModel (
+data class ExchangeSettlementExpectedPaymentBankModel (
 
-    /* Status code for Http Request */
-    @SerializedName("status")
-    val status: kotlin.Int,
+    /* Auto-generated unique identifier for the exchange settlement expected payment. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* Error message */
-    @SerializedName("error_message")
-    val errorMessage: kotlin.String,
+    /* The identifier of the exchange settlement obligation that this payment is associated with. */
+    @SerializedName("exchange_settlement_obligation_guid")
+    val exchangeSettlementObligationGuid: kotlin.String? = null,
 
-    /* Message code for Error */
-    @SerializedName("message_code")
-    val messageCode: kotlin.String
+    /* The sequence number of the expected payment */
+    @SerializedName("sequence_number")
+    val sequenceNumber: kotlin.Int? = null,
 
-)
+    /* The amount expected to be received as part of this payment. */
+    @SerializedName("payment_amount")
+    val paymentAmount: kotlin.Int? = null,
+
+    /* The identifier of the internal account that is expected to originate the payment. */
+    @SerializedName("internal_account_guid")
+    val internalAccountGuid: kotlin.String? = null,
+
+    /* The type of the internal account that is expected to originate the payment. */
+    @SerializedName("internal_account_type")
+    val internalAccountType: ExchangeSettlementExpectedPaymentBankModel.InternalAccountType? = null,
+
+    /* The exchange settlement expected payment's state */
+    @SerializedName("state")
+    val state: ExchangeSettlementExpectedPaymentBankModel.State? = null,
+
+    /* ISO8601 datetime the exchange settlement expected payment was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null
+
+) {
+
+    /**
+     * The type of the internal account that is expected to originate the payment.
+     *
+     * Values: wallet,bankAccount
+     */
+    enum class InternalAccountType(val value: kotlin.String) {
+        @SerializedName(value = "internal_wallet") wallet("internal_wallet"),
+        @SerializedName(value = "internal_bank_account") bankAccount("internal_bank_account");
+    }
+    /**
+     * The exchange settlement expected payment's state
+     *
+     * Values: storing,pendingCreated,pendingTransactionsClaimed,notApproved,inProgress,notOwed,amountIncorrect,cancelled,received
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "pending__created") pendingCreated("pending__created"),
+        @SerializedName(value = "pending__transactions_claimed") pendingTransactionsClaimed("pending__transactions_claimed"),
+        @SerializedName(value = "not_approved") notApproved("not_approved"),
+        @SerializedName(value = "in_progress") inProgress("in_progress"),
+        @SerializedName(value = "not_owed") notOwed("not_owed"),
+        @SerializedName(value = "amount_incorrect") amountIncorrect("amount_incorrect"),
+        @SerializedName(value = "cancelled") cancelled("cancelled"),
+        @SerializedName(value = "received") received("received");
+    }
+}
 

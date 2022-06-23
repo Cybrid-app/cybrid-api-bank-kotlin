@@ -26,24 +26,58 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param status Status code for Http Request
- * @param errorMessage Error message
- * @param messageCode Message code for Error
+ * @param guid Auto-generated unique identifier for the exchange settlement.
+ * @param exchangeGuid The identifier of the exchange that corresponds to this settlement.
+ * @param name The name of the exchange settlement.
+ * @param tradeGuids The exchange settlement's set of included trade guids.
+ * @param exchangeSettlementObligationGuids The exchange settlement's set of obligation guids.
+ * @param state The exchange settlement's state
+ * @param createdAt ISO8601 datetime the exchange settlement was created at.
  */
 
-data class ErrorResponseBankModel (
+data class ExchangeSettlementBankModel (
 
-    /* Status code for Http Request */
-    @SerializedName("status")
-    val status: kotlin.Int,
+    /* Auto-generated unique identifier for the exchange settlement. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* Error message */
-    @SerializedName("error_message")
-    val errorMessage: kotlin.String,
+    /* The identifier of the exchange that corresponds to this settlement. */
+    @SerializedName("exchange_guid")
+    val exchangeGuid: kotlin.String? = null,
 
-    /* Message code for Error */
-    @SerializedName("message_code")
-    val messageCode: kotlin.String
+    /* The name of the exchange settlement. */
+    @SerializedName("name")
+    val name: kotlin.String? = null,
 
-)
+    /* The exchange settlement's set of included trade guids. */
+    @SerializedName("trade_guids")
+    val tradeGuids: kotlin.collections.List<kotlin.String>? = null,
+
+    /* The exchange settlement's set of obligation guids. */
+    @SerializedName("exchange_settlement_obligation_guids")
+    val exchangeSettlementObligationGuids: kotlin.collections.List<kotlin.String>? = null,
+
+    /* The exchange settlement's state */
+    @SerializedName("state")
+    val state: ExchangeSettlementBankModel.State? = null,
+
+    /* ISO8601 datetime the exchange settlement was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null
+
+) {
+
+    /**
+     * The exchange settlement's state
+     *
+     * Values: storing,pendingCreated,pendingApproved,failedCreation,tradesCompleted
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "pending__created") pendingCreated("pending__created"),
+        @SerializedName(value = "pending__approved") pendingApproved("pending__approved"),
+        @SerializedName(value = "failed_creation") failedCreation("failed_creation"),
+        @SerializedName(value = "trades_completed") tradesCompleted("trades_completed");
+    }
+}
 

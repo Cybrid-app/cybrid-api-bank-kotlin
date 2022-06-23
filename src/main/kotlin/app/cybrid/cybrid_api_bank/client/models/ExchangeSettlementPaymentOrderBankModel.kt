@@ -26,24 +26,98 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param status Status code for Http Request
- * @param errorMessage Error message
- * @param messageCode Message code for Error
+ * @param guid Auto-generated unique identifier for the exchange settlement payment order.
+ * @param exchangeSettlementObligationGuid The identifier of the exchange settlement obligation that this payment is associated with.
+ * @param sequenceNumber The sequence number of the payment order
+ * @param paymentAmount The amount expected to be received as part of this payment.
+ * @param internalAccountGuid The identifier of the internal account that is expected to originate the payment.
+ * @param internalAccountType The type of the internal account that is expected to originate the payment.
+ * @param externalAccountGuid The identifier of the external account that is expected to receive the payment.
+ * @param externalAccountType The type of the external account that is expected to receive the payment.
+ * @param state The exchange settlement payment order's state
+ * @param createdAt ISO8601 datetime the exchange settlement payment order was created at.
  */
 
-data class ErrorResponseBankModel (
+data class ExchangeSettlementPaymentOrderBankModel (
 
-    /* Status code for Http Request */
-    @SerializedName("status")
-    val status: kotlin.Int,
+    /* Auto-generated unique identifier for the exchange settlement payment order. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* Error message */
-    @SerializedName("error_message")
-    val errorMessage: kotlin.String,
+    /* The identifier of the exchange settlement obligation that this payment is associated with. */
+    @SerializedName("exchange_settlement_obligation_guid")
+    val exchangeSettlementObligationGuid: kotlin.String? = null,
 
-    /* Message code for Error */
-    @SerializedName("message_code")
-    val messageCode: kotlin.String
+    /* The sequence number of the payment order */
+    @SerializedName("sequence_number")
+    val sequenceNumber: kotlin.Int? = null,
 
-)
+    /* The amount expected to be received as part of this payment. */
+    @SerializedName("payment_amount")
+    val paymentAmount: kotlin.Int? = null,
+
+    /* The identifier of the internal account that is expected to originate the payment. */
+    @SerializedName("internal_account_guid")
+    val internalAccountGuid: kotlin.String? = null,
+
+    /* The type of the internal account that is expected to originate the payment. */
+    @SerializedName("internal_account_type")
+    val internalAccountType: ExchangeSettlementPaymentOrderBankModel.InternalAccountType? = null,
+
+    /* The identifier of the external account that is expected to receive the payment. */
+    @SerializedName("external_account_guid")
+    val externalAccountGuid: kotlin.String? = null,
+
+    /* The type of the external account that is expected to receive the payment. */
+    @SerializedName("external_account_type")
+    val externalAccountType: ExchangeSettlementPaymentOrderBankModel.ExternalAccountType? = null,
+
+    /* The exchange settlement payment order's state */
+    @SerializedName("state")
+    val state: ExchangeSettlementPaymentOrderBankModel.State? = null,
+
+    /* ISO8601 datetime the exchange settlement payment order was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null
+
+) {
+
+    /**
+     * The type of the internal account that is expected to originate the payment.
+     *
+     * Values: wallet,bankAccount
+     */
+    enum class InternalAccountType(val value: kotlin.String) {
+        @SerializedName(value = "internal_wallet") wallet("internal_wallet"),
+        @SerializedName(value = "internal_bank_account") bankAccount("internal_bank_account");
+    }
+    /**
+     * The type of the external account that is expected to receive the payment.
+     *
+     * Values: wallet,bankAccount
+     */
+    enum class ExternalAccountType(val value: kotlin.String) {
+        @SerializedName(value = "external_wallet") wallet("external_wallet"),
+        @SerializedName(value = "external_bank_account") bankAccount("external_bank_account");
+    }
+    /**
+     * The exchange settlement payment order's state
+     *
+     * Values: storing,pendingCreated,pendingPrincipalReserved,pendingTransactionsClaimed,notApproved,inProgress,notOwing,amountIncorrect,invalidPrincipal,nsf,sent,rejected
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "pending__created") pendingCreated("pending__created"),
+        @SerializedName(value = "pending__principal_reserved") pendingPrincipalReserved("pending__principal_reserved"),
+        @SerializedName(value = "pending__transactions_claimed") pendingTransactionsClaimed("pending__transactions_claimed"),
+        @SerializedName(value = "not_approved") notApproved("not_approved"),
+        @SerializedName(value = "in_progress") inProgress("in_progress"),
+        @SerializedName(value = "not_owing") notOwing("not_owing"),
+        @SerializedName(value = "amount_incorrect") amountIncorrect("amount_incorrect"),
+        @SerializedName(value = "invalid_principal") invalidPrincipal("invalid_principal"),
+        @SerializedName(value = "nsf") nsf("nsf"),
+        @SerializedName(value = "sent") sent("sent"),
+        @SerializedName(value = "rejected") rejected("rejected");
+    }
+}
 
