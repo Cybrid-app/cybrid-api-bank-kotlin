@@ -18,11 +18,11 @@ interface AssetsApi {
      *  - 401: Unauthorized - Authentication failed, invalid subject
      *  - 403: Invalid scope
      *
-     * @param page The page index to retrieve. (optional, default to 0)
-     * @param perPage The number of entities per page to return. (optional, default to 10)
+     * @param page The page index to retrieve. (optional)
+     * @param perPage The number of entities per page to return. (optional)
      * @return [AssetListBankModel]
      */
     @GET("api/assets")
-    suspend fun listAssets(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<AssetListBankModel>
+    suspend fun listAssets(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null): Response<AssetListBankModel>
 
 }

@@ -51,13 +51,13 @@ interface CustomersApi {
      *  - 401: Unauthorized - Authentication failed, invalid subject,
      *  - 403: Invalid scope
      *
-     * @param page  (optional, default to 0)
-     * @param perPage  (optional, default to 10)
+     * @param page  (optional)
+     * @param perPage  (optional)
      * @param bankGuid Comma separated bank_guids to list customers for. (optional)
      * @param guid Comma separated customer_guids to list customers for. (optional)
      * @return [CustomerListBankModel]
      */
     @GET("api/customers")
-    suspend fun listCustomers(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null): Response<CustomerListBankModel>
+    suspend fun listCustomers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null): Response<CustomerListBankModel>
 
 }

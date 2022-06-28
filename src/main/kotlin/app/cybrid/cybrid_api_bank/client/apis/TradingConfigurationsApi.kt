@@ -50,11 +50,11 @@ interface TradingConfigurationsApi {
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
-     * @param page  (optional, default to 0)
-     * @param perPage  (optional, default to 10)
+     * @param page  (optional)
+     * @param perPage  (optional)
      * @return [TradingConfigurationListBankModel]
      */
     @GET("api/trading_configurations")
-    suspend fun listTradingConfigurations(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<TradingConfigurationListBankModel>
+    suspend fun listTradingConfigurations(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null): Response<TradingConfigurationListBankModel>
 
 }

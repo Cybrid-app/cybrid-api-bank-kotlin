@@ -52,11 +52,11 @@ interface IdentityRecordsApi {
      *  - 403: Invalid scope
      *
      * @param customerGuid Comma separated customer identifier to list identity records for. (optional)
-     * @param page  (optional, default to 0)
-     * @param perPage  (optional, default to 10)
+     * @param page  (optional)
+     * @param perPage  (optional)
      * @return [IdentityRecordListBankModel]
      */
     @GET("api/identity_records")
-    suspend fun listIdentityRecords(@Query("customer_guid") customerGuid: kotlin.String? = null, @Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<IdentityRecordListBankModel>
+    suspend fun listIdentityRecords(@Query("customer_guid") customerGuid: kotlin.String? = null, @Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null): Response<IdentityRecordListBankModel>
 
 }

@@ -51,14 +51,14 @@ interface AccountsApi {
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
-     * @param page The page index to retrieve. (optional, default to 0)
-     * @param perPage The number of entities per page to return. (optional, default to 10)
+     * @param page The page index to retrieve. (optional)
+     * @param perPage The number of entities per page to return. (optional)
      * @param guid Comma separated account_guids to list accounts for. (optional)
      * @param bankGuid Comma separated bank_guids to list accounts for. (optional)
      * @param customerGuid Comma separated customer_guids to list accounts for. (optional)
      * @return [AccountListBankModel]
      */
     @GET("api/accounts")
-    suspend fun listAccounts(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<AccountListBankModel>
+    suspend fun listAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<AccountListBankModel>
 
 }

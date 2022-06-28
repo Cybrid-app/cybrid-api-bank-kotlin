@@ -124,8 +124,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **java.math.BigDecimal**|  | [optional] [default to 0]
- **perPage** | **java.math.BigDecimal**|  | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**|  | [optional]
+ **perPage** | **java.math.BigDecimal**|  | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list customers for. | [optional]
  **guid** | **kotlin.String**| Comma separated customer_guids to list customers for. | [optional]
 

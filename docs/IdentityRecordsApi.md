@@ -124,8 +124,8 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerGuid** | **kotlin.String**| Comma separated customer identifier to list identity records for. | [optional]
- **page** | **java.math.BigDecimal**|  | [optional] [default to 0]
- **perPage** | **java.math.BigDecimal**|  | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**|  | [optional]
+ **perPage** | **java.math.BigDecimal**|  | [optional]
 
 ### Return type
 

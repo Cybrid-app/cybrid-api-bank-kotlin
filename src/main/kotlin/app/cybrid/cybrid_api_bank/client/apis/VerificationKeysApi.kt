@@ -51,11 +51,11 @@ interface VerificationKeysApi {
      *  - 401: Unauthorized - Authentication failed, invalid subject
      *  - 403: Invalid scope
      *
-     * @param page  (optional, default to 0)
-     * @param perPage  (optional, default to 10)
+     * @param page  (optional)
+     * @param perPage  (optional)
      * @return [VerificationKeyListBankModel]
      */
     @GET("api/bank_verification_keys")
-    suspend fun listVerificationKeys(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<VerificationKeyListBankModel>
+    suspend fun listVerificationKeys(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null): Response<VerificationKeyListBankModel>
 
 }

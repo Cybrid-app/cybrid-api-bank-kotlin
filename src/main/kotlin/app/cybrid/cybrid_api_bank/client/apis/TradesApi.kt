@@ -52,8 +52,8 @@ interface TradesApi {
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
-     * @param page The page index to retrieve. (optional, default to 0)
-     * @param perPage The number of entities per page to return. (optional, default to 10)
+     * @param page The page index to retrieve. (optional)
+     * @param perPage The number of entities per page to return. (optional)
      * @param guid Comma separated trade_guids to list trades for. (optional)
      * @param bankGuid Comma separated bank_guids to list trades for. (optional)
      * @param customerGuid Comma separated customer_guids to list trades for. (optional)
@@ -61,6 +61,6 @@ interface TradesApi {
      * @return [TradeListBankModel]
      */
     @GET("api/trades")
-    suspend fun listTrades(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null): Response<TradeListBankModel>
+    suspend fun listTrades(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null): Response<TradeListBankModel>
 
 }

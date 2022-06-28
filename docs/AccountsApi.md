@@ -125,8 +125,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional] [default to 0]
- **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional]
+ **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional]
  **guid** | **kotlin.String**| Comma separated account_guids to list accounts for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list accounts for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list accounts for. | [optional]
