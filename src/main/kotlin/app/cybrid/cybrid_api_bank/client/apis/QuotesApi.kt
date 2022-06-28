@@ -61,6 +61,6 @@ interface QuotesApi {
      * @return [QuoteListBankModel]
      */
     @GET("api/quotes")
-    suspend fun listQuotes(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<QuoteListBankModel>
+    suspend fun listQuotes(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<QuoteListBankModel>
 
 }

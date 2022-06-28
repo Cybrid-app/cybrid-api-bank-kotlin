@@ -55,6 +55,6 @@ interface TradingConfigurationsApi {
      * @return [TradingConfigurationListBankModel]
      */
     @GET("api/trading_configurations")
-    suspend fun listTradingConfigurations(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<TradingConfigurationListBankModel>
+    suspend fun listTradingConfigurations(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<TradingConfigurationListBankModel>
 
 }

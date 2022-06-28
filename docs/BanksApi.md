@@ -110,8 +110,8 @@ Retrieves a listing of bank.  Required scope: **banks:read**
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(BanksApi::class.java)
-val page : kotlin.Int = 56 // kotlin.Int | The page index to retrieve.
-val perPage : kotlin.Int = 56 // kotlin.Int | The number of entities per page to return.
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated bank_guids to list banks for.
 
 launch(Dispatchers.IO) {
@@ -123,8 +123,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **kotlin.Int**| The page index to retrieve. | [optional] [default to 0]
- **perPage** | **kotlin.Int**| The number of entities per page to return. | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional] [default to 10]
  **guid** | **kotlin.String**| Comma separated bank_guids to list banks for. | [optional]
 
 ### Return type

@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **kotlin.Int** | The total number of records available. | 
-**page** | **kotlin.Int** | The page index to retrieve. | 
-**perPage** | **kotlin.Int** | The number of entities per page to return. | 
+**total** | **java.math.BigDecimal** | The total number of records available. | 
+**page** | **java.math.BigDecimal** | The page index to retrieve. | 
+**perPage** | **java.math.BigDecimal** | The number of entities per page to return. | 
 **objects** | [**kotlin.collections.List&lt;IdentityRecordBankModel&gt;**](IdentityRecordBankModel.md) |  | 
 
 

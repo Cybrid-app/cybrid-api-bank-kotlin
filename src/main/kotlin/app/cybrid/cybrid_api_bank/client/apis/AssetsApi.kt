@@ -23,6 +23,6 @@ interface AssetsApi {
      * @return [AssetListBankModel]
      */
     @GET("api/assets")
-    suspend fun listAssets(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<AssetListBankModel>
+    suspend fun listAssets(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<AssetListBankModel>
 
 }

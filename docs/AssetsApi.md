@@ -22,8 +22,8 @@ Retrieves a listing of assets.  Required scope: **prices:read**
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(AssetsApi::class.java)
-val page : kotlin.Int = 56 // kotlin.Int | The page index to retrieve.
-val perPage : kotlin.Int = 56 // kotlin.Int | The number of entities per page to return.
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
 
 launch(Dispatchers.IO) {
     val result : AssetListBankModel = webService.listAssets(page, perPage)
@@ -34,8 +34,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **kotlin.Int**| The page index to retrieve. | [optional] [default to 0]
- **perPage** | **kotlin.Int**| The number of entities per page to return. | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional] [default to 10]
 
 ### Return type
 

@@ -111,8 +111,8 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(IdentityRecordsApi::class.java)
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer identifier to list identity records for.
-val page : kotlin.Int = 56 // kotlin.Int | 
-val perPage : kotlin.Int = 56 // kotlin.Int | 
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 
 launch(Dispatchers.IO) {
     val result : IdentityRecordListBankModel = webService.listIdentityRecords(customerGuid, page, perPage)
@@ -124,8 +124,8 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerGuid** | **kotlin.String**| Comma separated customer identifier to list identity records for. | [optional]
- **page** | **kotlin.Int**|  | [optional] [default to 0]
- **perPage** | **kotlin.Int**|  | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**|  | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**|  | [optional] [default to 10]
 
 ### Return type
 

@@ -58,6 +58,6 @@ interface BanksApi {
      * @return [BankListBankModel]
      */
     @GET("api/banks")
-    suspend fun listBanks(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
+    suspend fun listBanks(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
 
 }

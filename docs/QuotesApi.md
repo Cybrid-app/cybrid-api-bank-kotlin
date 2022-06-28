@@ -110,8 +110,8 @@ Retrieves a listing of quotes for all customers of a bank.  Required scope: **qu
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(QuotesApi::class.java)
-val page : kotlin.Int = 56 // kotlin.Int | 
-val perPage : kotlin.Int = 56 // kotlin.Int | 
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated quote_guids to list quotes for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list quotes for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list quotes for.
@@ -125,8 +125,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **kotlin.Int**|  | [optional] [default to 0]
- **perPage** | **kotlin.Int**|  | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**|  | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**|  | [optional] [default to 10]
  **guid** | **kotlin.String**| Comma separated quote_guids to list quotes for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list quotes for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list quotes for. | [optional]

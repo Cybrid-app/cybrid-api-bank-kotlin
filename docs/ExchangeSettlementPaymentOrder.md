@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the exchange settlement payment order. |  [optional]
 **exchangeSettlementObligationGuid** | **kotlin.String** | The identifier of the exchange settlement obligation that this payment is associated with. |  [optional]
-**sequenceNumber** | **kotlin.Int** | The sequence number of the payment order |  [optional]
-**paymentAmount** | **kotlin.Int** | The amount expected to be received as part of this payment. |  [optional]
+**sequenceNumber** | **java.math.BigDecimal** | The sequence number of the payment order |  [optional]
+**paymentAmount** | **java.math.BigDecimal** | The amount expected to be received as part of this payment. |  [optional]
 **internalAccountGuid** | **kotlin.String** | The identifier of the internal account that is expected to originate the payment. |  [optional]
 **internalAccountType** | [**inline**](#InternalAccountType) | The type of the internal account that is expected to originate the payment. |  [optional]
 **externalAccountGuid** | **kotlin.String** | The identifier of the external account that is expected to receive the payment. |  [optional]

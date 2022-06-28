@@ -57,6 +57,6 @@ interface IdentityRecordsApi {
      * @return [IdentityRecordListBankModel]
      */
     @GET("api/identity_records")
-    suspend fun listIdentityRecords(@Query("customer_guid") customerGuid: kotlin.String? = null, @Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<IdentityRecordListBankModel>
+    suspend fun listIdentityRecords(@Query("customer_guid") customerGuid: kotlin.String? = null, @Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<IdentityRecordListBankModel>
 
 }

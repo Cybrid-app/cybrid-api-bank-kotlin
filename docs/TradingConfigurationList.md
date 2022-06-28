@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **kotlin.Int** | The total number of records available. |  [optional]
-**page** | **kotlin.Int** | The page index to retrieve. |  [optional]
-**perPage** | **kotlin.Int** | The number of entities per page to return. |  [optional]
+**total** | **java.math.BigDecimal** | The total number of records available. |  [optional]
+**page** | **java.math.BigDecimal** | The page index to retrieve. |  [optional]
+**perPage** | **java.math.BigDecimal** | The number of entities per page to return. |  [optional]
 **objects** | [**kotlin.collections.List&lt;TradingConfigurationBankModel&gt;**](TradingConfigurationBankModel.md) |  |  [optional]
 
 

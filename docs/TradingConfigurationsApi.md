@@ -110,8 +110,8 @@ Retrieves a listing of trading configurations for a bank.  Required scope: **ban
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(TradingConfigurationsApi::class.java)
-val page : kotlin.Int = 56 // kotlin.Int | 
-val perPage : kotlin.Int = 56 // kotlin.Int | 
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 
 launch(Dispatchers.IO) {
     val result : TradingConfigurationListBankModel = webService.listTradingConfigurations(page, perPage)
@@ -122,8 +122,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **kotlin.Int**|  | [optional] [default to 0]
- **perPage** | **kotlin.Int**|  | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**|  | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**|  | [optional] [default to 10]
 
 ### Return type
 

@@ -110,8 +110,8 @@ Retrieves a listing of customers.  Required scope: **customers:read**
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(CustomersApi::class.java)
-val page : kotlin.Int = 56 // kotlin.Int | 
-val perPage : kotlin.Int = 56 // kotlin.Int | 
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list customers for.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated customer_guids to list customers for.
 
@@ -124,8 +124,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **kotlin.Int**|  | [optional] [default to 0]
- **perPage** | **kotlin.Int**|  | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**|  | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**|  | [optional] [default to 10]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list customers for. | [optional]
  **guid** | **kotlin.String**| Comma separated customer_guids to list customers for. | [optional]
 

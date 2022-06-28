@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **exchangeSettlementGuid** | **kotlin.String** | The identifier of the exchange settlement that corresponds to this obligation. |  [optional]
 **asset** | **kotlin.String** | The asset code. |  [optional]
 **state** | [**inline**](#State) | The exchange settlement&#39;s state |  [optional]
-**payableAmountEstimate** | **kotlin.Int** | The account&#39;s payable estimate for this obligation. |  [optional]
-**receivableAmountEstimate** | **kotlin.Int** | The account&#39;s receivable estimate for this obligation. |  [optional]
+**payableAmountEstimate** | **java.math.BigDecimal** | The account&#39;s payable estimate for this obligation. |  [optional]
+**receivableAmountEstimate** | **java.math.BigDecimal** | The account&#39;s receivable estimate for this obligation. |  [optional]
 
 
 <a name="State"></a>
