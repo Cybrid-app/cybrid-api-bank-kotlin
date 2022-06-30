@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | sandbox
+type | sandbox, production
 
 
 <a name="kotlin.collections.List<Features>"></a>
