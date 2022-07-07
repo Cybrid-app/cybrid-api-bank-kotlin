@@ -26,45 +26,19 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param type The exchange account type.
- * @param guid Auto-generated unique identifier for exchange account.
- * @param createdAt ISO8601 datetime the exchange account was created at.
- * @param exchangeGuid The identifier of the exchange that owns this exchange account.
- * @param assetCode The asset code of the exchange account.
+ * @param name The bank's name.
+ * @param supportedTradingSymbols The bank's list of supported trading symbols.
  */
 
-data class ExchangeAccountBankModel (
+data class PatchBankBankModel (
 
-    /* The exchange account type. */
-    @SerializedName("type")
-    val type: ExchangeAccountBankModel.Type? = null,
+    /* The bank's name. */
+    @SerializedName("name")
+    val name: kotlin.String? = null,
 
-    /* Auto-generated unique identifier for exchange account. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The bank's list of supported trading symbols. */
+    @SerializedName("supported_trading_symbols")
+    val supportedTradingSymbols: kotlin.collections.List<kotlin.String>? = null
 
-    /* ISO8601 datetime the exchange account was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null,
-
-    /* The identifier of the exchange that owns this exchange account. */
-    @SerializedName("exchange_guid")
-    val exchangeGuid: kotlin.String? = null,
-
-    /* The asset code of the exchange account. */
-    @SerializedName("asset_code")
-    val assetCode: kotlin.String? = null
-
-) {
-
-    /**
-     * The exchange account type.
-     *
-     * Values: fiat,crypto
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "fiat") fiat("fiat"),
-        @SerializedName(value = "crypto") crypto("crypto");
-    }
-}
+)
 

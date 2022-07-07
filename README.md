@@ -42,6 +42,7 @@ Class | Method | HTTP request | Description
 *BanksApi* | [**createBank**](docs/BanksApi.md#createbank) | **POST** api/banks | Create Bank
 *BanksApi* | [**getBank**](docs/BanksApi.md#getbank) | **GET** api/banks/{bank_guid} | Get Bank
 *BanksApi* | [**listBanks**](docs/BanksApi.md#listbanks) | **GET** api/banks | Get banks list
+*BanksApi* | [**updateBank**](docs/BanksApi.md#updatebank) | **PATCH** api/banks/{bank_guid} | Patch Bank
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createcustomer) | **POST** api/customers | Create Customer
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
@@ -88,6 +89,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.FeeBankModel](docs/FeeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordBankModel](docs/IdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordListBankModel](docs/IdentityRecordListBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PatchBankBankModel](docs/PatchBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel](docs/PostAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostBankBankModel](docs/PostBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel](docs/PostCustomerBankModel.md)

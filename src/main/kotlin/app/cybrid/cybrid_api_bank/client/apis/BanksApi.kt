@@ -8,6 +8,7 @@ import okhttp3.RequestBody
 import app.cybrid.cybrid_api_bank.client.models.BankBankModel
 import app.cybrid.cybrid_api_bank.client.models.BankListBankModel
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
+import app.cybrid.cybrid_api_bank.client.models.PatchBankBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostBankBankModel
 
 interface BanksApi {
@@ -59,5 +60,22 @@ interface BanksApi {
      */
     @GET("api/banks")
     suspend fun listBanks(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
+
+    /**
+     * Patch Bank
+     * Update a bank.  Required scope: **banks:write**
+     * Responses:
+     *  - 200: bank found
+     *  - 400: Invalid requests - malformed authentication header
+     *  - 401: Unauthorized - Authentication failed, invalid subject
+     *  - 403: Invalid scope
+     *  - 404: bank not found
+     *
+     * @param bankGuid Identifier for the bank.
+     * @param patchBankBankModel 
+     * @return [BankBankModel]
+     */
+    @PATCH("api/banks/{bank_guid}")
+    suspend fun updateBank(@Path("bank_guid") bankGuid: kotlin.String, @Body patchBankBankModel: PatchBankBankModel): Response<BankBankModel>
 
 }
