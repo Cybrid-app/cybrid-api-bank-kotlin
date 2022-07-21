@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **customerGuid** | **kotlin.String** | The customer identifier associated with the account. |  [optional]
 **platformBalance** | **java.math.BigDecimal** | The amount of funds that are in the account, in base units of the asset. |  [optional]
 **platformAvailable** | **java.math.BigDecimal** | The amount of funds that are in the account, in base units of the asset, that are available for use on the platform. |  [optional]
+**state** | [**inline**](#State) | The account&#39;s state. |  [optional]
 
 
 <a name="Type"></a>
@@ -20,6 +21,13 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 type | backstopped, trading, fee
+
+
+<a name="State"></a>
+## Enum: state
+Name | Value
+---- | -----
+state | storing, created
 
 
 
