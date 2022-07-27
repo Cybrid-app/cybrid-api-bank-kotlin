@@ -130,4 +130,6 @@ Class | Method | HTTP request | Description
   - quotes:read: quotes read
   - trades:execute: trades execute
   - trades:read: trades read
+  - rewards:execute: rewards execute
+  - rewards:read: rewards read
 
