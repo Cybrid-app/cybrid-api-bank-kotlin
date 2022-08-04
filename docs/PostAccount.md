@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | trading
+type | trading, savings
 
 
 
