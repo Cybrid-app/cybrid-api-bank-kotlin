@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**inline**](#Type) | The account type. |  [optional]
+**provider** | [**inline**](#Provider) | The account provider, if applicable. |  [optional]
 **guid** | **kotlin.String** | Auto-generated unique identifier for the account. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the account was created at. |  [optional]
 **asset** | **kotlin.String** | The asset code. |  [optional]
@@ -21,6 +22,13 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 type | backstopped, trading, fee, savings
+
+
+<a name="Provider"></a>
+## Enum: provider
+Name | Value
+---- | -----
+provider | compound
 
 
 <a name="State"></a>
