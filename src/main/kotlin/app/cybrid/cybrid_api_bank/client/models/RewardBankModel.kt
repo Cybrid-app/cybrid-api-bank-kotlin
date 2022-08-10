@@ -20,36 +20,80 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of VerificationKey entities
+ * @param guid Auto-generated unique identifier for the reward.
+ * @param customerGuid The associated customer's identifier.
+ * @param quoteGuid The associated quote's identifier.
+ * @param tradeGuid The associated trade's identifier.
+ * @param symbol The trade symbol the pricing is related to. Format is asset-counter_asset, e.g., BTC-USD.
+ * @param state The trade's state
+ * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell.
+ * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell.
+ * @param fee The fee associated with the trade. Denominated in \"counter_asset\" base units
+ * @param createdAt ISO8601 datetime the bank was created at.
  */
 
-data class VerificationKeyListBankModel (
+data class RewardBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* Auto-generated unique identifier for the reward. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The associated customer's identifier. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String? = null,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The associated quote's identifier. */
+    @SerializedName("quote_guid")
+    val quoteGuid: kotlin.String? = null,
 
-    /* Array of VerificationKey entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<VerificationKeyBankModel>
+    /* The associated trade's identifier. */
+    @SerializedName("trade_guid")
+    val tradeGuid: kotlin.String? = null,
 
-)
+    /* The trade symbol the pricing is related to. Format is asset-counter_asset, e.g., BTC-USD. */
+    @SerializedName("symbol")
+    val symbol: kotlin.String? = null,
+
+    /* The trade's state */
+    @SerializedName("state")
+    val state: RewardBankModel.State? = null,
+
+    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell. */
+    @SerializedName("receive_amount")
+    val receiveAmount: java.math.BigDecimal? = null,
+
+    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell. */
+    @SerializedName("deliver_amount")
+    val deliverAmount: java.math.BigDecimal? = null,
+
+    /* The fee associated with the trade. Denominated in \"counter_asset\" base units */
+    @SerializedName("fee")
+    val fee: java.math.BigDecimal? = null,
+
+    /* ISO8601 datetime the bank was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null
+
+) {
+
+    /**
+     * The trade's state
+     *
+     * Values: storing,initiating,pending,settling,completed,failed
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "initiating") initiating("initiating"),
+        @SerializedName(value = "pending") pending("pending"),
+        @SerializedName(value = "settling") settling("settling"),
+        @SerializedName(value = "completed") completed("completed"),
+        @SerializedName(value = "failed") failed("failed");
+    }
+}
 

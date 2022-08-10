@@ -20,36 +20,35 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of VerificationKey entities
+ * @param customerGuid The unique identifier for the customer.
+ * @param symbol Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported.
+ * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell.
+ * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell.
  */
 
-data class VerificationKeyListBankModel (
+data class PostRewardBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The unique identifier for the customer. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported. */
+    @SerializedName("symbol")
+    val symbol: kotlin.String,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell. */
+    @SerializedName("receive_amount")
+    val receiveAmount: java.math.BigDecimal? = null,
 
-    /* Array of VerificationKey entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<VerificationKeyBankModel>
+    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell. */
+    @SerializedName("deliver_amount")
+    val deliverAmount: java.math.BigDecimal? = null
 
 )
 

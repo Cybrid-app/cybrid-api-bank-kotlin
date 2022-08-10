@@ -53,6 +53,7 @@ Class | Method | HTTP request | Description
 *QuotesApi* | [**createQuote**](docs/QuotesApi.md#createquote) | **POST** api/quotes | Create Quote
 *QuotesApi* | [**getQuote**](docs/QuotesApi.md#getquote) | **GET** api/quotes/{quote_guid} | Get Quote
 *QuotesApi* | [**listQuotes**](docs/QuotesApi.md#listquotes) | **GET** api/quotes | Get quotes list
+*RewardsApi* | [**createRewards**](docs/RewardsApi.md#createrewards) | **POST** api/rewards | Create Reward
 *SymbolsApi* | [**listSymbols**](docs/SymbolsApi.md#listsymbols) | **GET** api/symbols | Get Symbols list
 *TradesApi* | [**createTrade**](docs/TradesApi.md#createtrade) | **POST** api/trades | Create Trade
 *TradesApi* | [**getTrade**](docs/TradesApi.md#gettrade) | **GET** api/trades/{trade_guid} | Get Trade
@@ -89,11 +90,13 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordAttestationDetailsBankModel](docs/PostIdentityRecordAttestationDetailsBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordBankModel](docs/PostIdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostQuoteBankModel](docs/PostQuoteBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostRewardBankModel](docs/PostRewardBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostTradeBankModel](docs/PostTradeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostTradingConfigurationBankModel](docs/PostTradingConfigurationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostVerificationKeyBankModel](docs/PostVerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteBankModel](docs/QuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteListBankModel](docs/QuoteListBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.RewardBankModel](docs/RewardBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.SymbolPriceBankModel](docs/SymbolPriceBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeBankModel](docs/TradeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeListBankModel](docs/TradeListBankModel.md)
