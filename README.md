@@ -46,6 +46,9 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createcustomer) | **POST** api/customers | Create Customer
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
+*FeeConfigurationsApi* | [**createFeeConfiguration**](docs/FeeConfigurationsApi.md#createfeeconfiguration) | **POST** api/fee_configurations | Create FeeConfiguration
+*FeeConfigurationsApi* | [**getFeeConfiguration**](docs/FeeConfigurationsApi.md#getfeeconfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get FeeConfiguration
+*FeeConfigurationsApi* | [**listFeeConfigurations**](docs/FeeConfigurationsApi.md#listfeeconfigurations) | **GET** api/fee_configurations | List fee configurations
 *IdentityRecordsApi* | [**createIdentityRecord**](docs/IdentityRecordsApi.md#createidentityrecord) | **POST** api/identity_records | Create Identity Record
 *IdentityRecordsApi* | [**getIdentityRecord**](docs/IdentityRecordsApi.md#getidentityrecord) | **GET** api/identity_records/{identity_record_guid} | Get Identity Record
 *IdentityRecordsApi* | [**listIdentityRecords**](docs/IdentityRecordsApi.md#listidentityrecords) | **GET** api/identity_records | List Identity Records
@@ -58,9 +61,6 @@ Class | Method | HTTP request | Description
 *TradesApi* | [**createTrade**](docs/TradesApi.md#createtrade) | **POST** api/trades | Create Trade
 *TradesApi* | [**getTrade**](docs/TradesApi.md#gettrade) | **GET** api/trades/{trade_guid} | Get Trade
 *TradesApi* | [**listTrades**](docs/TradesApi.md#listtrades) | **GET** api/trades | Get trades list
-*TradingConfigurationsApi* | [**createTradingConfiguration**](docs/TradingConfigurationsApi.md#createtradingconfiguration) | **POST** api/trading_configurations | Create TradingConfiguration
-*TradingConfigurationsApi* | [**getTradingConfiguration**](docs/TradingConfigurationsApi.md#gettradingconfiguration) | **GET** api/trading_configurations/{trading_configuration_guid} | Get TradingConfiguration
-*TradingConfigurationsApi* | [**listTradingConfigurations**](docs/TradingConfigurationsApi.md#listtradingconfigurations) | **GET** api/trading_configurations | List trading configurations
 *VerificationKeysApi* | [**createVerificationKey**](docs/VerificationKeysApi.md#createverificationkey) | **POST** api/bank_verification_keys | Create VerificationKey
 *VerificationKeysApi* | [**getVerificationKey**](docs/VerificationKeysApi.md#getverificationkey) | **GET** api/bank_verification_keys/{verification_key_guid} | Get VerificationKey
 *VerificationKeysApi* | [**listVerificationKeys**](docs/VerificationKeysApi.md#listverificationkeys) | **GET** api/bank_verification_keys | Get Verification Keys list
@@ -80,6 +80,8 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.CustomerListBankModel](docs/CustomerListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel](docs/ErrorResponseBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.FeeBankModel](docs/FeeBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.FeeConfigurationBankModel](docs/FeeConfigurationBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.FeeConfigurationListBankModel](docs/FeeConfigurationListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordBankModel](docs/IdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordListBankModel](docs/IdentityRecordListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PatchBankBankModel](docs/PatchBankBankModel.md)
@@ -87,12 +89,12 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostBankBankModel](docs/PostBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel](docs/PostCustomerBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostFeeBankModel](docs/PostFeeBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostFeeConfigurationBankModel](docs/PostFeeConfigurationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordAttestationDetailsBankModel](docs/PostIdentityRecordAttestationDetailsBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordBankModel](docs/PostIdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostQuoteBankModel](docs/PostQuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostRewardBankModel](docs/PostRewardBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostTradeBankModel](docs/PostTradeBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.PostTradingConfigurationBankModel](docs/PostTradingConfigurationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostVerificationKeyBankModel](docs/PostVerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteBankModel](docs/QuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteListBankModel](docs/QuoteListBankModel.md)
@@ -100,8 +102,6 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.SymbolPriceBankModel](docs/SymbolPriceBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeBankModel](docs/TradeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeListBankModel](docs/TradeListBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.TradingConfigurationBankModel](docs/TradingConfigurationBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.TradingConfigurationListBankModel](docs/TradingConfigurationListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel](docs/VerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyListBankModel](docs/VerificationKeyListBankModel.md)
 

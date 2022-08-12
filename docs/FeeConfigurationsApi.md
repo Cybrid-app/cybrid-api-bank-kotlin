@@ -1,18 +1,18 @@
-# TradingConfigurationsApi
+# FeeConfigurationsApi
 
 All URIs are relative to *https://bank.demo.cybrid.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTradingConfiguration**](TradingConfigurationsApi.md#createTradingConfiguration) | **POST** api/trading_configurations | Create TradingConfiguration
-[**getTradingConfiguration**](TradingConfigurationsApi.md#getTradingConfiguration) | **GET** api/trading_configurations/{trading_configuration_guid} | Get TradingConfiguration
-[**listTradingConfigurations**](TradingConfigurationsApi.md#listTradingConfigurations) | **GET** api/trading_configurations | List trading configurations
+[**createFeeConfiguration**](FeeConfigurationsApi.md#createFeeConfiguration) | **POST** api/fee_configurations | Create FeeConfiguration
+[**getFeeConfiguration**](FeeConfigurationsApi.md#getFeeConfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get FeeConfiguration
+[**listFeeConfigurations**](FeeConfigurationsApi.md#listFeeConfigurations) | **GET** api/fee_configurations | List fee configurations
 
 
 
-Create TradingConfiguration
+Create FeeConfiguration
 
-Creates a trading configuration.  Required scope: **banks:write**
+Creates a fee configuration.  Required scope: **banks:write**
 
 ### Example
 ```kotlin
@@ -23,11 +23,11 @@ Creates a trading configuration.  Required scope: **banks:write**
 
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(TradingConfigurationsApi::class.java)
-val postTradingConfigurationBankModel : PostTradingConfigurationBankModel =  // PostTradingConfigurationBankModel | 
+val webService = apiClient.createWebservice(FeeConfigurationsApi::class.java)
+val postFeeConfigurationBankModel : PostFeeConfigurationBankModel =  // PostFeeConfigurationBankModel | 
 
 launch(Dispatchers.IO) {
-    val result : TradingConfigurationBankModel = webService.createTradingConfiguration(postTradingConfigurationBankModel)
+    val result : FeeConfigurationBankModel = webService.createFeeConfiguration(postFeeConfigurationBankModel)
 }
 ```
 
@@ -35,11 +35,11 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **postTradingConfigurationBankModel** | [**PostTradingConfigurationBankModel**](PostTradingConfigurationBankModel.md)|  |
+ **postFeeConfigurationBankModel** | [**PostFeeConfigurationBankModel**](PostFeeConfigurationBankModel.md)|  |
 
 ### Return type
 
-[**TradingConfigurationBankModel**](TradingConfigurationBankModel.md)
+[**FeeConfigurationBankModel**](FeeConfigurationBankModel.md)
 
 ### Authorization
 
@@ -53,9 +53,9 @@ Configure BearerAuth:
  - **Accept**: application/json
 
 
-Get TradingConfiguration
+Get FeeConfiguration
 
-Retrieves a trading configuration.  Required scope: **banks:read**
+Retrieves a fee configuration.  Required scope: **banks:read**
 
 ### Example
 ```kotlin
@@ -66,11 +66,11 @@ Retrieves a trading configuration.  Required scope: **banks:read**
 
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(TradingConfigurationsApi::class.java)
-val tradingConfigurationGuid : kotlin.String = tradingConfigurationGuid_example // kotlin.String | Identifier for the trading configuration.
+val webService = apiClient.createWebservice(FeeConfigurationsApi::class.java)
+val feeConfigurationGuid : kotlin.String = feeConfigurationGuid_example // kotlin.String | Identifier for the fee configuration.
 
 launch(Dispatchers.IO) {
-    val result : TradingConfigurationBankModel = webService.getTradingConfiguration(tradingConfigurationGuid)
+    val result : FeeConfigurationBankModel = webService.getFeeConfiguration(feeConfigurationGuid)
 }
 ```
 
@@ -78,11 +78,11 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tradingConfigurationGuid** | **kotlin.String**| Identifier for the trading configuration. |
+ **feeConfigurationGuid** | **kotlin.String**| Identifier for the fee configuration. |
 
 ### Return type
 
-[**TradingConfigurationBankModel**](TradingConfigurationBankModel.md)
+[**FeeConfigurationBankModel**](FeeConfigurationBankModel.md)
 
 ### Authorization
 
@@ -96,9 +96,9 @@ Configure BearerAuth:
  - **Accept**: application/json
 
 
-List trading configurations
+List fee configurations
 
-Retrieves a listing of trading configurations for a bank.  Required scope: **banks:read**
+Retrieves a listing of fee configurations for a bank.  Required scope: **banks:read**
 
 ### Example
 ```kotlin
@@ -109,12 +109,12 @@ Retrieves a listing of trading configurations for a bank.  Required scope: **ban
 
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(TradingConfigurationsApi::class.java)
+val webService = apiClient.createWebservice(FeeConfigurationsApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 
 launch(Dispatchers.IO) {
-    val result : TradingConfigurationListBankModel = webService.listTradingConfigurations(page, perPage)
+    val result : FeeConfigurationListBankModel = webService.listFeeConfigurations(page, perPage)
 }
 ```
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TradingConfigurationListBankModel**](TradingConfigurationListBankModel.md)
+[**FeeConfigurationListBankModel**](FeeConfigurationListBankModel.md)
 
 ### Authorization
 
