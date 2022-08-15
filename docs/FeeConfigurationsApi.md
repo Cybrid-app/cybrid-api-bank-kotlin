@@ -4,13 +4,13 @@ All URIs are relative to *https://bank.demo.cybrid.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createFeeConfiguration**](FeeConfigurationsApi.md#createFeeConfiguration) | **POST** api/fee_configurations | Create FeeConfiguration
-[**getFeeConfiguration**](FeeConfigurationsApi.md#getFeeConfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get FeeConfiguration
-[**listFeeConfigurations**](FeeConfigurationsApi.md#listFeeConfigurations) | **GET** api/fee_configurations | List fee configurations
+[**createFeeConfiguration**](FeeConfigurationsApi.md#createFeeConfiguration) | **POST** api/fee_configurations | Create Fee Configuration
+[**getFeeConfiguration**](FeeConfigurationsApi.md#getFeeConfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get Fee Configuration
+[**listFeeConfigurations**](FeeConfigurationsApi.md#listFeeConfigurations) | **GET** api/fee_configurations | List Fee Configurations
 
 
 
-Create FeeConfiguration
+Create Fee Configuration
 
 Creates a fee configuration.  Required scope: **banks:write**
 
@@ -53,7 +53,7 @@ Configure BearerAuth:
  - **Accept**: application/json
 
 
-Get FeeConfiguration
+Get Fee Configuration
 
 Retrieves a fee configuration.  Required scope: **banks:read**
 
@@ -96,7 +96,7 @@ Configure BearerAuth:
  - **Accept**: application/json
 
 
-List fee configurations
+List Fee Configurations
 
 Retrieves a listing of fee configurations for a bank.  Required scope: **banks:read**
 

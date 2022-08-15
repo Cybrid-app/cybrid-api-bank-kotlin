@@ -46,9 +46,9 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createcustomer) | **POST** api/customers | Create Customer
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
-*FeeConfigurationsApi* | [**createFeeConfiguration**](docs/FeeConfigurationsApi.md#createfeeconfiguration) | **POST** api/fee_configurations | Create FeeConfiguration
-*FeeConfigurationsApi* | [**getFeeConfiguration**](docs/FeeConfigurationsApi.md#getfeeconfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get FeeConfiguration
-*FeeConfigurationsApi* | [**listFeeConfigurations**](docs/FeeConfigurationsApi.md#listfeeconfigurations) | **GET** api/fee_configurations | List fee configurations
+*FeeConfigurationsApi* | [**createFeeConfiguration**](docs/FeeConfigurationsApi.md#createfeeconfiguration) | **POST** api/fee_configurations | Create Fee Configuration
+*FeeConfigurationsApi* | [**getFeeConfiguration**](docs/FeeConfigurationsApi.md#getfeeconfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get Fee Configuration
+*FeeConfigurationsApi* | [**listFeeConfigurations**](docs/FeeConfigurationsApi.md#listfeeconfigurations) | **GET** api/fee_configurations | List Fee Configurations
 *IdentityRecordsApi* | [**createIdentityRecord**](docs/IdentityRecordsApi.md#createidentityrecord) | **POST** api/identity_records | Create Identity Record
 *IdentityRecordsApi* | [**getIdentityRecord**](docs/IdentityRecordsApi.md#getidentityrecord) | **GET** api/identity_records/{identity_record_guid} | Get Identity Record
 *IdentityRecordsApi* | [**listIdentityRecords**](docs/IdentityRecordsApi.md#listidentityrecords) | **GET** api/identity_records | List Identity Records

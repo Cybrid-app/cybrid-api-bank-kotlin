@@ -12,7 +12,7 @@ import app.cybrid.cybrid_api_bank.client.models.PostFeeConfigurationBankModel
 
 interface FeeConfigurationsApi {
     /**
-     * Create FeeConfiguration
+     * Create Fee Configuration
      * Creates a fee configuration.  Required scope: **banks:write**
      * Responses:
      *  - 201: fee configuration created
@@ -27,7 +27,7 @@ interface FeeConfigurationsApi {
     suspend fun createFeeConfiguration(@Body postFeeConfigurationBankModel: PostFeeConfigurationBankModel): Response<FeeConfigurationBankModel>
 
     /**
-     * Get FeeConfiguration
+     * Get Fee Configuration
      * Retrieves a fee configuration.  Required scope: **banks:read**
      * Responses:
      *  - 200: fee configuration found
@@ -42,7 +42,7 @@ interface FeeConfigurationsApi {
     suspend fun getFeeConfiguration(@Path("fee_configuration_guid") feeConfigurationGuid: kotlin.String): Response<FeeConfigurationBankModel>
 
     /**
-     * List fee configurations
+     * List Fee Configurations
      * Retrieves a listing of fee configurations for a bank.  Required scope: **banks:read**
      * Responses:
      *  - 200: get list of fee configurations
