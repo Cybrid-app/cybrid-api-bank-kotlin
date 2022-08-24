@@ -20,105 +20,36 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.RewardBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the quote.
- * @param productType The type of product the quote is for.
- * @param customerGuid The unique identifier for the customer.
- * @param symbol Symbol the quote was requested for. Format is \"asset-counter_asset\" in uppercase. Populated for trade quotes.
- * @param asset The asset code the quote was requested for. Populated for savings quotes.
- * @param side The direction of the quote: either 'buy' or 'sell' for trade quotes; 'deposit' or 'withdrawal' for savings quotes.
- * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes and currency is always \"asset\" for savings quotes.
- * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes and currency is always \"asset\" for savings quotes.
- * @param fee The fee associated with the trade. Denominated in \"counter_asset\" base units for trade quotes and \"asset\" for savings quotes.
- * @param issuedAt ISO8601 datetime the quote was created at.
- * @param expiresAt ISO8601 datetime the quote is expiring at. Populated for trading quotes.
- * @param productProvider The provider for the product being quoted. Populated for savings quotes.
+ * @param total The total number of records available.
+ * @param page The page index to retrieve.
+ * @param perPage The number of entities per page to return.
+ * @param objects Array of reward entities
  */
 
-data class QuoteBankModel (
+data class RewardListBankModel (
 
-    /* Auto-generated unique identifier for the quote. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The total number of records available. */
+    @SerializedName("total")
+    val total: java.math.BigDecimal,
 
-    /* The type of product the quote is for. */
-    @SerializedName("product_type")
-    val productType: QuoteBankModel.ProductType? = null,
+    /* The page index to retrieve. */
+    @SerializedName("page")
+    val page: java.math.BigDecimal,
 
-    /* The unique identifier for the customer. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The number of entities per page to return. */
+    @SerializedName("per_page")
+    val perPage: java.math.BigDecimal,
 
-    /* Symbol the quote was requested for. Format is \"asset-counter_asset\" in uppercase. Populated for trade quotes. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String? = null,
+    /* Array of reward entities */
+    @SerializedName("objects")
+    val objects: kotlin.collections.List<RewardBankModel>
 
-    /* The asset code the quote was requested for. Populated for savings quotes. */
-    @SerializedName("asset")
-    val asset: kotlin.String? = null,
-
-    /* The direction of the quote: either 'buy' or 'sell' for trade quotes; 'deposit' or 'withdrawal' for savings quotes. */
-    @SerializedName("side")
-    val side: QuoteBankModel.Side? = null,
-
-    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes and currency is always \"asset\" for savings quotes. */
-    @SerializedName("receive_amount")
-    val receiveAmount: java.math.BigDecimal? = null,
-
-    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes and currency is always \"asset\" for savings quotes. */
-    @SerializedName("deliver_amount")
-    val deliverAmount: java.math.BigDecimal? = null,
-
-    /* The fee associated with the trade. Denominated in \"counter_asset\" base units for trade quotes and \"asset\" for savings quotes. */
-    @SerializedName("fee")
-    val fee: java.math.BigDecimal? = null,
-
-    /* ISO8601 datetime the quote was created at. */
-    @SerializedName("issued_at")
-    val issuedAt: java.time.OffsetDateTime? = null,
-
-    /* ISO8601 datetime the quote is expiring at. Populated for trading quotes. */
-    @SerializedName("expires_at")
-    val expiresAt: java.time.OffsetDateTime? = null,
-
-    /* The provider for the product being quoted. Populated for savings quotes. */
-    @SerializedName("product_provider")
-    val productProvider: QuoteBankModel.ProductProvider? = null
-
-) {
-
-    /**
-     * The type of product the quote is for.
-     *
-     * Values: trading,savings
-     */
-    enum class ProductType(val value: kotlin.String) {
-        @SerializedName(value = "trading") trading("trading"),
-        @SerializedName(value = "savings") savings("savings");
-    }
-    /**
-     * The direction of the quote: either 'buy' or 'sell' for trade quotes; 'deposit' or 'withdrawal' for savings quotes.
-     *
-     * Values: buy,sell,deposit,withdrawal
-     */
-    enum class Side(val value: kotlin.String) {
-        @SerializedName(value = "buy") buy("buy"),
-        @SerializedName(value = "sell") sell("sell"),
-        @SerializedName(value = "deposit") deposit("deposit"),
-        @SerializedName(value = "withdrawal") withdrawal("withdrawal");
-    }
-    /**
-     * The provider for the product being quoted. Populated for savings quotes.
-     *
-     * Values: compound
-     */
-    enum class ProductProvider(val value: kotlin.String) {
-        @SerializedName(value = "compound") compound("compound");
-    }
-}
+)
 

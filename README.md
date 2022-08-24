@@ -57,6 +57,8 @@ Class | Method | HTTP request | Description
 *QuotesApi* | [**getQuote**](docs/QuotesApi.md#getquote) | **GET** api/quotes/{quote_guid} | Get Quote
 *QuotesApi* | [**listQuotes**](docs/QuotesApi.md#listquotes) | **GET** api/quotes | Get quotes list
 *RewardsApi* | [**createRewards**](docs/RewardsApi.md#createrewards) | **POST** api/rewards | Create Reward
+*RewardsApi* | [**getReward**](docs/RewardsApi.md#getreward) | **GET** api/rewards/{reward_guid} | Get Reward
+*RewardsApi* | [**listRewards**](docs/RewardsApi.md#listrewards) | **GET** api/rewards | Get rewards list
 *SymbolsApi* | [**listSymbols**](docs/SymbolsApi.md#listsymbols) | **GET** api/symbols | Get Symbols list
 *TradesApi* | [**createTrade**](docs/TradesApi.md#createtrade) | **POST** api/trades | Create Trade
 *TradesApi* | [**getTrade**](docs/TradesApi.md#gettrade) | **GET** api/trades/{trade_guid} | Get Trade
@@ -99,6 +101,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.QuoteBankModel](docs/QuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteListBankModel](docs/QuoteListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.RewardBankModel](docs/RewardBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.RewardListBankModel](docs/RewardListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.SymbolPriceBankModel](docs/SymbolPriceBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeBankModel](docs/TradeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeListBankModel](docs/TradeListBankModel.md)
