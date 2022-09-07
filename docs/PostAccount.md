@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | staking, trading, savings
+type | trading, savings
 
 
 <a name="Provider"></a>

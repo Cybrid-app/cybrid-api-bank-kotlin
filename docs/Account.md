@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | backstopped, trading, fee, savings, staking
+type | backstopped, trading, fee, savings
 
 
 <a name="Provider"></a>
