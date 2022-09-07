@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **productType** | [**inline**](#ProductType) | The type of product being configured. |  [optional]
 **asset** | **kotlin.String** | The asset code. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the bank was created at. |  [optional]
-**productProvider** | [**inline**](#ProductProvider) | The provider for the product being configured. |  [optional]
 **fees** | [**kotlin.collections.List&lt;FeeBankModel&gt;**](FeeBankModel.md) | The fees associated with the configuration |  [optional]
 
 
@@ -17,14 +16,7 @@ Name | Type | Description | Notes
 ## Enum: product_type
 Name | Value
 ---- | -----
-productType | trading, savings
-
-
-<a name="ProductProvider"></a>
-## Enum: product_provider
-Name | Value
----- | -----
-productProvider | compound
+productType | trading
 
 
 
