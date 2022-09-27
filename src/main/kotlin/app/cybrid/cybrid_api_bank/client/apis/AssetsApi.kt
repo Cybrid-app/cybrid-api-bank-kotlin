@@ -6,17 +6,13 @@ import retrofit2.Response
 import okhttp3.RequestBody
 
 import app.cybrid.cybrid_api_bank.client.models.AssetListBankModel
-import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 
 interface AssetsApi {
     /**
      * Get assets list
-     * Retrieves a listing of assets.  Required scope: **prices:read**
+     * Retrieves a listing of assets.
      * Responses:
      *  - 200: get list of assets
-     *  - 400: Invalid requests - Malformed Authentication Header
-     *  - 401: Unauthorized - Authentication failed, invalid subject
-     *  - 403: Invalid scope
      *
      * @param page The page index to retrieve. (optional)
      * @param perPage The number of entities per page to return. (optional)

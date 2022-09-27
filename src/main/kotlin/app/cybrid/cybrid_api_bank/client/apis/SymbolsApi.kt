@@ -10,12 +10,11 @@ import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 interface SymbolsApi {
     /**
      * Get Symbols list
-     * Retrieves a listing of symbols.  Required scope: **prices:read**
+     * Retrieves a listing of symbols.
      * Responses:
      *  - 200: get list of symbols
      *  - 400: Invalid requests - Malformed Authentication Header
      *  - 401: Unauthorized - Authentication failed, 
-     *  - 403: Invalid scope
      *
      * @return [kotlin.collections.List<kotlin.String>]
      */

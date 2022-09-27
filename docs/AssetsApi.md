@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 Get assets list
 
-Retrieves a listing of assets.  Required scope: **prices:read**
+Retrieves a listing of assets.
 
 ### Example
 ```kotlin
@@ -20,7 +20,6 @@ Retrieves a listing of assets.  Required scope: **prices:read**
 //import app.cybrid.cybrid_api_bank.client.models.*
 
 val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(AssetsApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
@@ -43,9 +42,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure BearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+No authorization required
 
 ### HTTP request headers
 
