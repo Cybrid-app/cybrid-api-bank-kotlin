@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **bankGuid** | **kotlin.String** | The banks&#39;s identifier. |  [optional]
 **type** | [**inline**](#Type) | The verification key&#39;s type. |  [optional]
 **state** | [**inline**](#State) | The verification key&#39;s state. |  [optional]
+**failureCode** | [**inline**](#FailureCode) | The verification key&#39;s failure code (if any). |  [optional]
 **algorithm** | [**inline**](#Algorithm) | The verification key&#39;s algorithm. |  [optional]
 **fingerprint** | **kotlin.String** | The verification key&#39;s cryptographic fingerprint. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the verification key was created at. |  [optional]
@@ -25,6 +26,13 @@ type | attestation
 Name | Value
 ---- | -----
 state | storing, pending, verified, failed
+
+
+<a name="FailureCode"></a>
+## Enum: failure_code
+Name | Value
+---- | -----
+failureCode | invalid_algorithm, invalid_nonce, invalid_public_key, invalid_signature
 
 
 <a name="Algorithm"></a>
