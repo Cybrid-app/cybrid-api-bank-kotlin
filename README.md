@@ -46,6 +46,9 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createcustomer) | **POST** api/customers | Create Customer
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
+*ExternalBankAccountsApi* | [**createExternalBankAccount**](docs/ExternalBankAccountsApi.md#createexternalbankaccount) | **POST** api/external_bank_accounts | Create ExternalBankAccount
+*ExternalBankAccountsApi* | [**getExternalBankAccount**](docs/ExternalBankAccountsApi.md#getexternalbankaccount) | **GET** api/external_bank_accounts/{external_bank_account_guid} | Get External Bank Account
+*ExternalBankAccountsApi* | [**listExternalBankAccounts**](docs/ExternalBankAccountsApi.md#listexternalbankaccounts) | **GET** api/external_bank_accounts | Get external bank accounts list
 *FeeConfigurationsApi* | [**createFeeConfiguration**](docs/FeeConfigurationsApi.md#createfeeconfiguration) | **POST** api/fee_configurations | Create Fee Configuration
 *FeeConfigurationsApi* | [**getFeeConfiguration**](docs/FeeConfigurationsApi.md#getfeeconfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get Fee Configuration
 *FeeConfigurationsApi* | [**listFeeConfigurations**](docs/FeeConfigurationsApi.md#listfeeconfigurations) | **GET** api/fee_configurations | List Fee Configurations
@@ -81,6 +84,8 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.CustomerBankModel](docs/CustomerBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.CustomerListBankModel](docs/CustomerListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel](docs/ErrorResponseBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountBankModel](docs/ExternalBankAccountBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountListBankModel](docs/ExternalBankAccountListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.FeeBankModel](docs/FeeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.FeeConfigurationBankModel](docs/FeeConfigurationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.FeeConfigurationListBankModel](docs/FeeConfigurationListBankModel.md)
@@ -90,6 +95,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel](docs/PostAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostBankBankModel](docs/PostBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel](docs/PostCustomerBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostExternalBankAccountBankModel](docs/PostExternalBankAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostFeeBankModel](docs/PostFeeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostFeeConfigurationBankModel](docs/PostFeeConfigurationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordAttestationDetailsBankModel](docs/PostIdentityRecordAttestationDetailsBankModel.md)
@@ -138,4 +144,6 @@ Class | Method | HTTP request | Description
   - trades:read: trades read
   - rewards:execute: rewards execute
   - rewards:read: rewards read
+  - external_bank_accounts:read: external_bank_accounts read
+  - external_bank_accounts:execute: external_bank_accounts execute
 

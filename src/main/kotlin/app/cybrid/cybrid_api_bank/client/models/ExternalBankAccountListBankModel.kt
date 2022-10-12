@@ -20,30 +20,36 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param status Status code for Http Request
- * @param errorMessage Error message
- * @param messageCode Message code for Error
+ * @param total The total number of records available.
+ * @param page The page index to retrieve.
+ * @param perPage The number of entities per page to return.
+ * @param objects Array of external bank account entities
  */
 
-data class ErrorResponseBankModel (
+data class ExternalBankAccountListBankModel (
 
-    /* Status code for Http Request */
-    @SerializedName("status")
-    val status: java.math.BigDecimal,
+    /* The total number of records available. */
+    @SerializedName("total")
+    val total: java.math.BigDecimal,
 
-    /* Error message */
-    @SerializedName("error_message")
-    val errorMessage: kotlin.String,
+    /* The page index to retrieve. */
+    @SerializedName("page")
+    val page: java.math.BigDecimal,
 
-    /* Message code for Error */
-    @SerializedName("message_code")
-    val messageCode: kotlin.String
+    /* The number of entities per page to return. */
+    @SerializedName("per_page")
+    val perPage: java.math.BigDecimal,
+
+    /* Array of external bank account entities */
+    @SerializedName("objects")
+    val objects: kotlin.collections.List<ExternalBankAccountBankModel>
 
 )
 

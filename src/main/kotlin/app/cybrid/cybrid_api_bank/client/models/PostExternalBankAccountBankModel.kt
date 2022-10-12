@@ -26,24 +26,49 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param status Status code for Http Request
- * @param errorMessage Error message
- * @param messageCode Message code for Error
+ * @param name The name of the account.
+ * @param accountKind The account type
+ * @param asset The asset code.
+ * @param customerGuid The customer identifier.
+ * @param plaidPublicToken The public token for the account.
+ * @param plaidAccountId The account identifier in plaid.
  */
 
-data class ErrorResponseBankModel (
+data class PostExternalBankAccountBankModel (
 
-    /* Status code for Http Request */
-    @SerializedName("status")
-    val status: java.math.BigDecimal,
+    /* The name of the account. */
+    @SerializedName("name")
+    val name: kotlin.String,
 
-    /* Error message */
-    @SerializedName("error_message")
-    val errorMessage: kotlin.String,
+    /* The account type */
+    @SerializedName("account_kind")
+    val accountKind: PostExternalBankAccountBankModel.AccountKind,
 
-    /* Message code for Error */
-    @SerializedName("message_code")
-    val messageCode: kotlin.String
+    /* The asset code. */
+    @SerializedName("asset")
+    val asset: kotlin.String,
 
-)
+    /* The customer identifier. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String? = null,
+
+    /* The public token for the account. */
+    @SerializedName("plaid_public_token")
+    val plaidPublicToken: kotlin.String? = null,
+
+    /* The account identifier in plaid. */
+    @SerializedName("plaid_account_id")
+    val plaidAccountId: kotlin.String? = null
+
+) {
+
+    /**
+     * The account type
+     *
+     * Values: plaid
+     */
+    enum class AccountKind(val value: kotlin.String) {
+        @SerializedName(value = "plaid") plaid("plaid");
+    }
+}
 

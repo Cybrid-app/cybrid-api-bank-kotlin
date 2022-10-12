@@ -26,24 +26,73 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param status Status code for Http Request
- * @param errorMessage Error message
- * @param messageCode Message code for Error
+ * @param guid Auto-generated unique identifier for the account.
+ * @param name The name of the account.
+ * @param assetCode The asset code.
+ * @param accountKind The type of account.
+ * @param environment The environment that the external bank account is operating in.
+ * @param bankGuid The bank identifier.
+ * @param customerGuid The customer identifier.
+ * @param createdAt ISO8601 datetime the exchange was created at.
+ * @param plaidAccessToken The Plaid access token for the account.
  */
 
-data class ErrorResponseBankModel (
+data class ExternalBankAccountBankModel (
 
-    /* Status code for Http Request */
-    @SerializedName("status")
-    val status: java.math.BigDecimal,
+    /* Auto-generated unique identifier for the account. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* Error message */
-    @SerializedName("error_message")
-    val errorMessage: kotlin.String,
+    /* The name of the account. */
+    @SerializedName("name")
+    val name: kotlin.String? = null,
 
-    /* Message code for Error */
-    @SerializedName("message_code")
-    val messageCode: kotlin.String
+    /* The asset code. */
+    @SerializedName("asset_code")
+    val assetCode: kotlin.String? = null,
 
-)
+    /* The type of account. */
+    @SerializedName("account_kind")
+    val accountKind: ExternalBankAccountBankModel.AccountKind? = null,
+
+    /* The environment that the external bank account is operating in. */
+    @SerializedName("environment")
+    val environment: ExternalBankAccountBankModel.Environment? = null,
+
+    /* The bank identifier. */
+    @SerializedName("bank_guid")
+    val bankGuid: kotlin.String? = null,
+
+    /* The customer identifier. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String? = null,
+
+    /* ISO8601 datetime the exchange was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null,
+
+    /* The Plaid access token for the account. */
+    @SerializedName("plaid_access_token")
+    val plaidAccessToken: kotlin.String? = null
+
+) {
+
+    /**
+     * The type of account.
+     *
+     * Values: plaid
+     */
+    enum class AccountKind(val value: kotlin.String) {
+        @SerializedName(value = "plaid") plaid("plaid");
+    }
+    /**
+     * The environment that the external bank account is operating in.
+     *
+     * Values: sandbox,production
+     */
+    enum class Environment(val value: kotlin.String) {
+        @SerializedName(value = "sandbox") sandbox("sandbox"),
+        @SerializedName(value = "production") production("production");
+    }
+}
 
