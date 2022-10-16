@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **kotlin.String** | The bank&#39;s name. |  [optional]
 **supportedTradingSymbols** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported trading symbols. |  [optional]
 **supportedFiatAccountAssets** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported fiat assets. |  [optional]
+**supportedCountryCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported country codes. |  [optional]
 
 
 
