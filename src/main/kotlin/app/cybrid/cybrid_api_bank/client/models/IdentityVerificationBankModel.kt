@@ -26,74 +26,118 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the bank.
- * @param organizationGuid The organization's identifier.
- * @param name The bank's name.
- * @param type The bank's type.
- * @param features The bank's enabled features.
- * @param createdAt ISO8601 datetime the bank was created at.
- * @param supportedTradingSymbols The bank's list of supported trading symbols.
- * @param supportedFiatAccountAssets The bank's list of supported fiat symbols.
- * @param supportedCountryCodes The bank's list of supported country codes.
+ * @param guid Auto-generated unique identifier for the identity verification.
+ * @param customerGuid The customer's identifier.
+ * @param type The type of identity verification.
+ * @param method The identity verification method.
+ * @param createdAt ISO8601 datetime the customer was created at.
+ * @param state The state of the verification process.
+ * @param outcome The outcome of the verification process.
+ * @param failureCodes The reason codes explaining the outcome.
+ * @param personaInquiryId The Persona identifier of the backing inquiry.
+ * @param personaState The Persona state of the backing inquiry.
  */
 
-data class BankBankModel (
+data class IdentityVerificationBankModel (
 
-    /* Auto-generated unique identifier for the bank. */
+    /* Auto-generated unique identifier for the identity verification. */
     @SerializedName("guid")
-    val guid: kotlin.String,
+    val guid: kotlin.String? = null,
 
-    /* The organization's identifier. */
-    @SerializedName("organization_guid")
-    val organizationGuid: kotlin.String,
+    /* The customer's identifier. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String? = null,
 
-    /* The bank's name. */
-    @SerializedName("name")
-    val name: kotlin.String,
-
-    /* The bank's type. */
+    /* The type of identity verification. */
     @SerializedName("type")
-    val type: BankBankModel.Type,
+    val type: IdentityVerificationBankModel.Type? = null,
 
-    /* The bank's enabled features. */
-    @SerializedName("features")
-    val features: kotlin.collections.List<BankBankModel.Features>,
+    /* The identity verification method. */
+    @SerializedName("method")
+    val method: IdentityVerificationBankModel.Method? = null,
 
-    /* ISO8601 datetime the bank was created at. */
+    /* ISO8601 datetime the customer was created at. */
     @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime,
+    val createdAt: java.time.OffsetDateTime? = null,
 
-    /* The bank's list of supported trading symbols. */
-    @SerializedName("supported_trading_symbols")
-    val supportedTradingSymbols: kotlin.collections.List<kotlin.String>? = null,
+    /* The state of the verification process. */
+    @SerializedName("state")
+    val state: IdentityVerificationBankModel.State? = null,
 
-    /* The bank's list of supported fiat symbols. */
-    @SerializedName("supported_fiat_account_assets")
-    val supportedFiatAccountAssets: kotlin.collections.List<kotlin.String>? = null,
+    /* The outcome of the verification process. */
+    @SerializedName("outcome")
+    val outcome: IdentityVerificationBankModel.Outcome? = null,
 
-    /* The bank's list of supported country codes. */
-    @SerializedName("supported_country_codes")
-    val supportedCountryCodes: kotlin.collections.List<kotlin.String>? = null
+    /* The reason codes explaining the outcome. */
+    @SerializedName("failure_codes")
+    val failureCodes: kotlin.collections.List<IdentityVerificationBankModel.FailureCodes>? = null,
+
+    /* The Persona identifier of the backing inquiry. */
+    @SerializedName("persona_inquiry_id")
+    val personaInquiryId: kotlin.String? = null,
+
+    /* The Persona state of the backing inquiry. */
+    @SerializedName("persona_state")
+    val personaState: IdentityVerificationBankModel.PersonaState? = null
 
 ) {
 
     /**
-     * The bank's type.
+     * The type of identity verification.
      *
-     * Values: sandbox,production
+     * Values: kyc
      */
     enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "sandbox") sandbox("sandbox"),
-        @SerializedName(value = "production") production("production");
+        @SerializedName(value = "kyc") kyc("kyc");
     }
     /**
-     * The bank's enabled features.
+     * The identity verification method.
      *
-     * Values: attestationIdentityRecords,backstoppedFundingSource
+     * Values: idAndSelfie
      */
-    enum class Features(val value: kotlin.String) {
-        @SerializedName(value = "attestation_identity_records") attestationIdentityRecords("attestation_identity_records"),
-        @SerializedName(value = "backstopped_funding_source") backstoppedFundingSource("backstopped_funding_source");
+    enum class Method(val value: kotlin.String) {
+        @SerializedName(value = "id_and_selfie") idAndSelfie("id_and_selfie");
+    }
+    /**
+     * The state of the verification process.
+     *
+     * Values: storing,waiting,expired,completed
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "waiting") waiting("waiting"),
+        @SerializedName(value = "expired") expired("expired"),
+        @SerializedName(value = "completed") completed("completed");
+    }
+    /**
+     * The outcome of the verification process.
+     *
+     * Values: passed,failed
+     */
+    enum class Outcome(val value: kotlin.String) {
+        @SerializedName(value = "passed") passed("passed"),
+        @SerializedName(value = "failed") failed("failed");
+    }
+    /**
+     * The reason codes explaining the outcome.
+     *
+     * Values: requestedFailure
+     */
+    enum class FailureCodes(val value: kotlin.String) {
+        @SerializedName(value = "requested_failure") requestedFailure("requested_failure");
+    }
+    /**
+     * The Persona state of the backing inquiry.
+     *
+     * Values: waiting,pending,reviewing,expired,completed,unknown
+     */
+    enum class PersonaState(val value: kotlin.String) {
+        @SerializedName(value = "waiting") waiting("waiting"),
+        @SerializedName(value = "pending") pending("pending"),
+        @SerializedName(value = "reviewing") reviewing("reviewing"),
+        @SerializedName(value = "expired") expired("expired"),
+        @SerializedName(value = "completed") completed("completed"),
+        @SerializedName(value = "unknown") unknown("unknown");
     }
 }
 
