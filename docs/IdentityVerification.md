@@ -48,14 +48,14 @@ outcome | passed, failed
 ## Enum: failure_codes
 Name | Value
 ---- | -----
-failureCodes | requested_failure
+failureCodes | requested_failure, id_check_failure, database_check_failure, selfie_failure, pep_check_failure, watchlist_check_failure
 
 
 <a name="PersonaState"></a>
 ## Enum: persona_state
 Name | Value
 ---- | -----
-personaState | waiting, pending, reviewing, expired, completed, unknown
+personaState | waiting, pending, reviewing, processing, expired, completed, unknown
 
 
 
