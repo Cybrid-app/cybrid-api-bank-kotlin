@@ -72,6 +72,9 @@ Class | Method | HTTP request | Description
 *VerificationKeysApi* | [**createVerificationKey**](docs/VerificationKeysApi.md#createverificationkey) | **POST** api/bank_verification_keys | Create VerificationKey
 *VerificationKeysApi* | [**getVerificationKey**](docs/VerificationKeysApi.md#getverificationkey) | **GET** api/bank_verification_keys/{verification_key_guid} | Get VerificationKey
 *VerificationKeysApi* | [**listVerificationKeys**](docs/VerificationKeysApi.md#listverificationkeys) | **GET** api/bank_verification_keys | Get Verification Keys list
+*WorkflowsApi* | [**createWorkflow**](docs/WorkflowsApi.md#createworkflow) | **POST** api/workflows | Create Workflow
+*WorkflowsApi* | [**getWorkflow**](docs/WorkflowsApi.md#getworkflow) | **GET** api/workflows/{workflow_guid} | Get Workflow
+*WorkflowsApi* | [**listWorkflows**](docs/WorkflowsApi.md#listworkflows) | **GET** api/workflows | Get workflows list
 
 
 <a name="documentation-for-models"></a>
@@ -110,6 +113,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostRewardBankModel](docs/PostRewardBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostTradeBankModel](docs/PostTradeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostVerificationKeyBankModel](docs/PostVerificationKeyBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostWorkflowBankModel](docs/PostWorkflowBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteBankModel](docs/QuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteListBankModel](docs/QuoteListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.RewardBankModel](docs/RewardBankModel.md)
@@ -119,6 +123,10 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.TradeListBankModel](docs/TradeListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel](docs/VerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyListBankModel](docs/VerificationKeyListBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.WorkflowBankModel](docs/WorkflowBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.WorkflowWithDetailsAllOfBankModel](docs/WorkflowWithDetailsAllOfBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.WorkflowWithDetailsBankModel](docs/WorkflowWithDetailsBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.WorkflowsListBankModel](docs/WorkflowsListBankModel.md)
 
 
 <a name="documentation-for-authorization"></a>
@@ -152,4 +160,6 @@ Class | Method | HTTP request | Description
   - rewards:read: rewards read
   - external_bank_accounts:read: external_bank_accounts read
   - external_bank_accounts:execute: external_bank_accounts execute
+  - workflows:read: workflows read
+  - workflows:execute: workflows execute
 

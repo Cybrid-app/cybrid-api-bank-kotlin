@@ -20,62 +20,36 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.WorkflowBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param type The type of identity verification.
- * @param method The identity verification method.
- * @param customerGuid The customer's identifier.
- * @param expectedBehaviours The optional expected behaviour to simulate.
+ * @param total The total number of records available.
+ * @param page The page index to retrieve.
+ * @param perPage The number of entities per page to return.
+ * @param objects Array of workflow entities
  */
 
-data class PostIdentityVerificationBankModel (
+data class WorkflowsListBankModel (
 
-    /* The type of identity verification. */
-    @SerializedName("type")
-    val type: PostIdentityVerificationBankModel.Type,
+    /* The total number of records available. */
+    @SerializedName("total")
+    val total: java.math.BigDecimal,
 
-    /* The identity verification method. */
-    @SerializedName("method")
-    val method: PostIdentityVerificationBankModel.Method,
+    /* The page index to retrieve. */
+    @SerializedName("page")
+    val page: java.math.BigDecimal,
 
-    /* The customer's identifier. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The number of entities per page to return. */
+    @SerializedName("per_page")
+    val perPage: java.math.BigDecimal,
 
-    /* The optional expected behaviour to simulate. */
-    @SerializedName("expected_behaviours")
-    val expectedBehaviours: kotlin.collections.List<PostIdentityVerificationBankModel.ExpectedBehaviours>? = null
+    /* Array of workflow entities */
+    @SerializedName("objects")
+    val objects: kotlin.collections.List<WorkflowBankModel>
 
-) {
-
-    /**
-     * The type of identity verification.
-     *
-     * Values: kyc
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "kyc") kyc("kyc");
-    }
-    /**
-     * The identity verification method.
-     *
-     * Values: idAndSelfie
-     */
-    enum class Method(val value: kotlin.String) {
-        @SerializedName(value = "id_and_selfie") idAndSelfie("id_and_selfie");
-    }
-    /**
-     * The optional expected behaviour to simulate.
-     *
-     * Values: passedImmediately,failedImmediately
-     */
-    enum class ExpectedBehaviours(val value: kotlin.String) {
-        @SerializedName(value = "passed_immediately") passedImmediately("passed_immediately"),
-        @SerializedName(value = "failed_immediately") failedImmediately("failed_immediately");
-    }
-}
+)
 

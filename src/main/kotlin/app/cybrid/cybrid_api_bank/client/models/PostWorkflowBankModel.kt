@@ -26,56 +26,80 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param type The type of identity verification.
- * @param method The identity verification method.
- * @param customerGuid The customer's identifier.
- * @param expectedBehaviours The optional expected behaviour to simulate.
+ * @param type The workflow type.
+ * @param kind The Plaid workflow kind.
+ * @param customerGuid The customer identifier associated with the workflow.
+ * @param externalBankAccountGuid The external bank account identifier associated with the workflow.
+ * @param language The language to initialize Plaid link.
+ * @param linkCustomizationName The customization name for Plaid link.
+ * @param redirectUri The redirect URI for Plaid link.
+ * @param androidPackageName The Android package name for Plaid link.
  */
 
-data class PostIdentityVerificationBankModel (
+data class PostWorkflowBankModel (
 
-    /* The type of identity verification. */
+    /* The workflow type. */
     @SerializedName("type")
-    val type: PostIdentityVerificationBankModel.Type,
+    val type: PostWorkflowBankModel.Type,
 
-    /* The identity verification method. */
-    @SerializedName("method")
-    val method: PostIdentityVerificationBankModel.Method,
+    /* The Plaid workflow kind. */
+    @SerializedName("kind")
+    val kind: PostWorkflowBankModel.Kind? = null,
 
-    /* The customer's identifier. */
+    /* The customer identifier associated with the workflow. */
     @SerializedName("customer_guid")
     val customerGuid: kotlin.String? = null,
 
-    /* The optional expected behaviour to simulate. */
-    @SerializedName("expected_behaviours")
-    val expectedBehaviours: kotlin.collections.List<PostIdentityVerificationBankModel.ExpectedBehaviours>? = null
+    /* The external bank account identifier associated with the workflow. */
+    @SerializedName("external_bank_account_guid")
+    val externalBankAccountGuid: kotlin.String? = null,
+
+    /* The language to initialize Plaid link. */
+    @SerializedName("language")
+    val language: PostWorkflowBankModel.Language? = null,
+
+    /* The customization name for Plaid link. */
+    @SerializedName("link_customization_name")
+    val linkCustomizationName: kotlin.String? = null,
+
+    /* The redirect URI for Plaid link. */
+    @SerializedName("redirect_uri")
+    val redirectUri: kotlin.String? = null,
+
+    /* The Android package name for Plaid link. */
+    @SerializedName("android_package_name")
+    val androidPackageName: kotlin.String? = null
 
 ) {
 
     /**
-     * The type of identity verification.
+     * The workflow type.
      *
-     * Values: kyc
+     * Values: plaid
      */
     enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "kyc") kyc("kyc");
+        @SerializedName(value = "plaid") plaid("plaid");
     }
     /**
-     * The identity verification method.
+     * The Plaid workflow kind.
      *
-     * Values: idAndSelfie
+     * Values: create,update
      */
-    enum class Method(val value: kotlin.String) {
-        @SerializedName(value = "id_and_selfie") idAndSelfie("id_and_selfie");
+    enum class Kind(val value: kotlin.String) {
+        @SerializedName(value = "link_token_create") create("link_token_create"),
+        @SerializedName(value = "link_token_update") update("link_token_update");
     }
     /**
-     * The optional expected behaviour to simulate.
+     * The language to initialize Plaid link.
      *
-     * Values: passedImmediately,failedImmediately
+     * Values: en,fr,es,nl,de
      */
-    enum class ExpectedBehaviours(val value: kotlin.String) {
-        @SerializedName(value = "passed_immediately") passedImmediately("passed_immediately"),
-        @SerializedName(value = "failed_immediately") failedImmediately("failed_immediately");
+    enum class Language(val value: kotlin.String) {
+        @SerializedName(value = "en") en("en"),
+        @SerializedName(value = "fr") fr("fr"),
+        @SerializedName(value = "es") es("es"),
+        @SerializedName(value = "nl") nl("nl"),
+        @SerializedName(value = "de") de("de");
     }
 }
 
