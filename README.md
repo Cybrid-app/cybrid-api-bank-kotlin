@@ -69,6 +69,9 @@ Class | Method | HTTP request | Description
 *TradesApi* | [**createTrade**](docs/TradesApi.md#createtrade) | **POST** api/trades | Create Trade
 *TradesApi* | [**getTrade**](docs/TradesApi.md#gettrade) | **GET** api/trades/{trade_guid} | Get Trade
 *TradesApi* | [**listTrades**](docs/TradesApi.md#listtrades) | **GET** api/trades | Get trades list
+*TransfersApi* | [**createTransfer**](docs/TransfersApi.md#createtransfer) | **POST** api/transfers | Create Transfer
+*TransfersApi* | [**getTransfer**](docs/TransfersApi.md#gettransfer) | **GET** api/transfers/{transfer_guid} | Get Transfer
+*TransfersApi* | [**listTransfers**](docs/TransfersApi.md#listtransfers) | **GET** api/transfers | Get transfers list
 *VerificationKeysApi* | [**createVerificationKey**](docs/VerificationKeysApi.md#createverificationkey) | **POST** api/bank_verification_keys | Create VerificationKey
 *VerificationKeysApi* | [**getVerificationKey**](docs/VerificationKeysApi.md#getverificationkey) | **GET** api/bank_verification_keys/{verification_key_guid} | Get VerificationKey
 *VerificationKeysApi* | [**listVerificationKeys**](docs/VerificationKeysApi.md#listverificationkeys) | **GET** api/bank_verification_keys | Get Verification Keys list
@@ -112,6 +115,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostQuoteBankModel](docs/PostQuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostRewardBankModel](docs/PostRewardBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostTradeBankModel](docs/PostTradeBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostTransferBankModel](docs/PostTransferBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostVerificationKeyBankModel](docs/PostVerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostWorkflowBankModel](docs/PostWorkflowBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.QuoteBankModel](docs/QuoteBankModel.md)
@@ -121,6 +125,8 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.SymbolPriceBankModel](docs/SymbolPriceBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeBankModel](docs/TradeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.TradeListBankModel](docs/TradeListBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.TransferBankModel](docs/TransferBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.TransferListBankModel](docs/TransferListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel](docs/VerificationKeyBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.VerificationKeyListBankModel](docs/VerificationKeyListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.WorkflowBankModel](docs/WorkflowBankModel.md)

@@ -1,0 +1,40 @@
+
+# TransferBankModel
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**guid** | **kotlin.String** | Auto-generated unique identifier for the trade. |  [optional]
+**transferType** | [**inline**](#TransferType) | The type of transfer. |  [optional]
+**customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
+**quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. |  [optional]
+**asset** | **kotlin.String** | The asset the transfer is related to, e.g., USD. |  [optional]
+**side** | [**inline**](#Side) | The direction of the quote: either &#39;buy&#39; or &#39;sell&#39;. |  [optional]
+**state** | [**inline**](#State) | The trade&#39;s state |  [optional]
+**amount** | **java.math.BigDecimal** | The amount being transferred. |  [optional]
+**fee** | **java.math.BigDecimal** | The fee associated with the trade. |  [optional]
+**createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the bank was created at. |  [optional]
+
+
+<a name="TransferType"></a>
+## Enum: transfer_type
+Name | Value
+---- | -----
+transferType | savings, funding
+
+
+<a name="Side"></a>
+## Enum: side
+Name | Value
+---- | -----
+side | deposit, withdrawal
+
+
+<a name="State"></a>
+## Enum: state
+Name | Value
+---- | -----
+state | storing, initiating, pending, completed, failed
+
+
+

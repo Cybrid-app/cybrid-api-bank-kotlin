@@ -20,36 +20,97 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of VerificationKey entities
+ * @param guid Auto-generated unique identifier for the trade.
+ * @param transferType The type of transfer.
+ * @param customerGuid The associated customer's identifier.
+ * @param quoteGuid The associated quote's identifier.
+ * @param asset The asset the transfer is related to, e.g., USD.
+ * @param side The direction of the quote: either 'buy' or 'sell'.
+ * @param state The trade's state
+ * @param amount The amount being transferred.
+ * @param fee The fee associated with the trade.
+ * @param createdAt ISO8601 datetime the bank was created at.
  */
 
-data class VerificationKeyListBankModel (
+data class TransferBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* Auto-generated unique identifier for the trade. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The type of transfer. */
+    @SerializedName("transfer_type")
+    val transferType: TransferBankModel.TransferType? = null,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The associated customer's identifier. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String? = null,
 
-    /* Array of VerificationKey entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<VerificationKeyBankModel>
+    /* The associated quote's identifier. */
+    @SerializedName("quote_guid")
+    val quoteGuid: kotlin.String? = null,
 
-)
+    /* The asset the transfer is related to, e.g., USD. */
+    @SerializedName("asset")
+    val asset: kotlin.String? = null,
+
+    /* The direction of the quote: either 'buy' or 'sell'. */
+    @SerializedName("side")
+    val side: TransferBankModel.Side? = null,
+
+    /* The trade's state */
+    @SerializedName("state")
+    val state: TransferBankModel.State? = null,
+
+    /* The amount being transferred. */
+    @SerializedName("amount")
+    val amount: java.math.BigDecimal? = null,
+
+    /* The fee associated with the trade. */
+    @SerializedName("fee")
+    val fee: java.math.BigDecimal? = null,
+
+    /* ISO8601 datetime the bank was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null
+
+) {
+
+    /**
+     * The type of transfer.
+     *
+     * Values: savings,funding
+     */
+    enum class TransferType(val value: kotlin.String) {
+        @SerializedName(value = "savings") savings("savings"),
+        @SerializedName(value = "funding") funding("funding");
+    }
+    /**
+     * The direction of the quote: either 'buy' or 'sell'.
+     *
+     * Values: deposit,withdrawal
+     */
+    enum class Side(val value: kotlin.String) {
+        @SerializedName(value = "deposit") deposit("deposit"),
+        @SerializedName(value = "withdrawal") withdrawal("withdrawal");
+    }
+    /**
+     * The trade's state
+     *
+     * Values: storing,initiating,pending,completed,failed
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "initiating") initiating("initiating"),
+        @SerializedName(value = "pending") pending("pending"),
+        @SerializedName(value = "completed") completed("completed"),
+        @SerializedName(value = "failed") failed("failed");
+    }
+}
 

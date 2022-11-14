@@ -20,7 +20,7 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel
+import app.cybrid.cybrid_api_bank.client.models.TransferBankModel
 
 import com.google.gson.annotations.SerializedName
 
@@ -30,10 +30,10 @@ import com.google.gson.annotations.SerializedName
  * @param total The total number of records available.
  * @param page The page index to retrieve.
  * @param perPage The number of entities per page to return.
- * @param objects Array of VerificationKey entities
+ * @param objects Array of trade entities
  */
 
-data class VerificationKeyListBankModel (
+data class TransferListBankModel (
 
     /* The total number of records available. */
     @SerializedName("total")
@@ -47,9 +47,9 @@ data class VerificationKeyListBankModel (
     @SerializedName("per_page")
     val perPage: java.math.BigDecimal,
 
-    /* Array of VerificationKey entities */
+    /* Array of trade entities */
     @SerializedName("objects")
-    val objects: kotlin.collections.List<VerificationKeyBankModel>
+    val objects: kotlin.collections.List<TransferBankModel>
 
 )
 

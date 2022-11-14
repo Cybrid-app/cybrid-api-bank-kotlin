@@ -23,7 +23,7 @@ side | buy, sell, deposit, withdrawal
 ## Enum: product_type
 Name | Value
 ---- | -----
-productType | trading
+productType | trading, funding
 
 
 

@@ -20,36 +20,59 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.VerificationKeyBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of VerificationKey entities
+ * @param quoteGuid The associated quote's identifier.
+ * @param transferType The type of transfer.
+ * @param externalBankAccountGuid The customer's fiat asset external bank account's identifier.
+ * @param expectedError The optional expected error to simulate transfer failure.
  */
 
-data class VerificationKeyListBankModel (
+data class PostTransferBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The associated quote's identifier. */
+    @SerializedName("quote_guid")
+    val quoteGuid: kotlin.String,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The type of transfer. */
+    @SerializedName("transfer_type")
+    val transferType: PostTransferBankModel.TransferType,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The customer's fiat asset external bank account's identifier. */
+    @SerializedName("external_bank_account_guid")
+    val externalBankAccountGuid: kotlin.String? = null,
 
-    /* Array of VerificationKey entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<VerificationKeyBankModel>
+    /* The optional expected error to simulate transfer failure. */
+    @SerializedName("expected_error")
+    val expectedError: PostTransferBankModel.ExpectedError? = null
 
-)
+) {
+
+    /**
+     * The type of transfer.
+     *
+     * Values: funding
+     */
+    enum class TransferType(val value: kotlin.String) {
+        @SerializedName(value = "funding") funding("funding");
+    }
+    /**
+     * The optional expected error to simulate transfer failure.
+     *
+     * Values: pending,inProgress,completed,failed,cancelled,manualIntervention,reversed
+     */
+    enum class ExpectedError(val value: kotlin.String) {
+        @SerializedName(value = "pending") pending("pending"),
+        @SerializedName(value = "in_progress") inProgress("in_progress"),
+        @SerializedName(value = "completed") completed("completed"),
+        @SerializedName(value = "failed") failed("failed"),
+        @SerializedName(value = "cancelled") cancelled("cancelled"),
+        @SerializedName(value = "manual_intervention") manualIntervention("manual_intervention"),
+        @SerializedName(value = "reversed") reversed("reversed");
+    }
+}
 
