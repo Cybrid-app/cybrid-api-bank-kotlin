@@ -1,5 +1,5 @@
 
-# IdentityVerificationBankModel
+# IdentityVerificationWithDetailsBankModel
 
 ## Properties
 Name | Type | Description | Notes
@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **state** | [**inline**](#State) | The state of the verification process. |  [optional]
 **outcome** | [**inline**](#Outcome) | The outcome of the verification process. |  [optional]
 **failureCodes** | [**inline**](#kotlin.collections.List&lt;FailureCodes&gt;) | The reason codes explaining the outcome. |  [optional]
+**personaInquiryId** | **kotlin.String** | The Persona identifier of the backing inquiry. |  [optional]
+**personaState** | [**inline**](#PersonaState) | The Persona state of the backing inquiry. |  [optional]
 
 
 <a name="Type"></a>
@@ -47,6 +49,13 @@ outcome | passed, failed
 Name | Value
 ---- | -----
 failureCodes | requested_failure, id_check_failure, database_check_failure, selfie_failure, pep_check_failure, watchlist_check_failure
+
+
+<a name="PersonaState"></a>
+## Enum: persona_state
+Name | Value
+---- | -----
+personaState | waiting, pending, reviewing, processing, expired, completed, unknown
 
 
 

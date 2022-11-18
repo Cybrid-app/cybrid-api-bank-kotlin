@@ -20,67 +20,132 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.IdentityVerificationBankModel
+import app.cybrid.cybrid_api_bank.client.models.IdentityVerificationWithDetailsAllOfBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param side The direction of the quote: either 'buy' or 'sell' for trade quotes.
- * @param productType The type of product the quote is for.
- * @param customerGuid The unique identifier for the customer.
- * @param symbol Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported.
- * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes.
- * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes.
+ * @param guid Auto-generated unique identifier for the identity verification.
+ * @param customerGuid The customer's identifier.
+ * @param type The type of identity verification.
+ * @param method The identity verification method.
+ * @param createdAt ISO8601 datetime the customer was created at.
+ * @param state The state of the verification process.
+ * @param outcome The outcome of the verification process.
+ * @param failureCodes The reason codes explaining the outcome.
+ * @param personaInquiryId The Persona identifier of the backing inquiry.
+ * @param personaState The Persona state of the backing inquiry.
  */
 
-data class PostQuoteBankModel (
+data class IdentityVerificationWithDetailsBankModel (
 
-    /* The direction of the quote: either 'buy' or 'sell' for trade quotes. */
-    @SerializedName("side")
-    val side: PostQuoteBankModel.Side,
+    /* Auto-generated unique identifier for the identity verification. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* The type of product the quote is for. */
-    @SerializedName("product_type")
-    val productType: PostQuoteBankModel.ProductType? = ProductType.trading,
-
-    /* The unique identifier for the customer. */
+    /* The customer's identifier. */
     @SerializedName("customer_guid")
     val customerGuid: kotlin.String? = null,
 
-    /* Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String? = null,
+    /* The type of identity verification. */
+    @SerializedName("type")
+    val type: IdentityVerificationWithDetailsBankModel.Type? = null,
 
-    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes. */
-    @SerializedName("receive_amount")
-    val receiveAmount: java.math.BigDecimal? = null,
+    /* The identity verification method. */
+    @SerializedName("method")
+    val method: IdentityVerificationWithDetailsBankModel.Method? = null,
 
-    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes. */
-    @SerializedName("deliver_amount")
-    val deliverAmount: java.math.BigDecimal? = null
+    /* ISO8601 datetime the customer was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null,
+
+    /* The state of the verification process. */
+    @SerializedName("state")
+    val state: IdentityVerificationWithDetailsBankModel.State? = null,
+
+    /* The outcome of the verification process. */
+    @SerializedName("outcome")
+    val outcome: IdentityVerificationWithDetailsBankModel.Outcome? = null,
+
+    /* The reason codes explaining the outcome. */
+    @SerializedName("failure_codes")
+    val failureCodes: kotlin.collections.List<IdentityVerificationWithDetailsBankModel.FailureCodes>? = null,
+
+    /* The Persona identifier of the backing inquiry. */
+    @SerializedName("persona_inquiry_id")
+    val personaInquiryId: kotlin.String? = null,
+
+    /* The Persona state of the backing inquiry. */
+    @SerializedName("persona_state")
+    val personaState: IdentityVerificationWithDetailsBankModel.PersonaState? = null
 
 ) {
 
     /**
-     * The direction of the quote: either 'buy' or 'sell' for trade quotes.
+     * The type of identity verification.
      *
-     * Values: buy,sell,deposit,withdrawal
+     * Values: kyc
      */
-    enum class Side(val value: kotlin.String) {
-        @SerializedName(value = "buy") buy("buy"),
-        @SerializedName(value = "sell") sell("sell"),
-        @SerializedName(value = "deposit") deposit("deposit"),
-        @SerializedName(value = "withdrawal") withdrawal("withdrawal");
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "kyc") kyc("kyc");
     }
     /**
-     * The type of product the quote is for.
+     * The identity verification method.
      *
-     * Values: trading,funding
+     * Values: idAndSelfie
      */
-    enum class ProductType(val value: kotlin.String) {
-        @SerializedName(value = "trading") trading("trading"),
-        @SerializedName(value = "funding") funding("funding");
+    enum class Method(val value: kotlin.String) {
+        @SerializedName(value = "id_and_selfie") idAndSelfie("id_and_selfie");
+    }
+    /**
+     * The state of the verification process.
+     *
+     * Values: storing,waiting,expired,completed
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "waiting") waiting("waiting"),
+        @SerializedName(value = "expired") expired("expired"),
+        @SerializedName(value = "completed") completed("completed");
+    }
+    /**
+     * The outcome of the verification process.
+     *
+     * Values: passed,failed
+     */
+    enum class Outcome(val value: kotlin.String) {
+        @SerializedName(value = "passed") passed("passed"),
+        @SerializedName(value = "failed") failed("failed");
+    }
+    /**
+     * The reason codes explaining the outcome.
+     *
+     * Values: requestedFailure,idCheckFailure,databaseCheckFailure,selfieFailure,pepCheckFailure,watchlistCheckFailure
+     */
+    enum class FailureCodes(val value: kotlin.String) {
+        @SerializedName(value = "requested_failure") requestedFailure("requested_failure"),
+        @SerializedName(value = "id_check_failure") idCheckFailure("id_check_failure"),
+        @SerializedName(value = "database_check_failure") databaseCheckFailure("database_check_failure"),
+        @SerializedName(value = "selfie_failure") selfieFailure("selfie_failure"),
+        @SerializedName(value = "pep_check_failure") pepCheckFailure("pep_check_failure"),
+        @SerializedName(value = "watchlist_check_failure") watchlistCheckFailure("watchlist_check_failure");
+    }
+    /**
+     * The Persona state of the backing inquiry.
+     *
+     * Values: waiting,pending,reviewing,processing,expired,completed,unknown
+     */
+    enum class PersonaState(val value: kotlin.String) {
+        @SerializedName(value = "waiting") waiting("waiting"),
+        @SerializedName(value = "pending") pending("pending"),
+        @SerializedName(value = "reviewing") reviewing("reviewing"),
+        @SerializedName(value = "processing") processing("processing"),
+        @SerializedName(value = "expired") expired("expired"),
+        @SerializedName(value = "completed") completed("completed"),
+        @SerializedName(value = "unknown") unknown("unknown");
     }
 }
 

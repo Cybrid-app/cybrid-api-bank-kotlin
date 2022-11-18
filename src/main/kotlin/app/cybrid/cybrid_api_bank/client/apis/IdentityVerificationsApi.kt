@@ -8,6 +8,7 @@ import okhttp3.RequestBody
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.IdentityVerificationBankModel
 import app.cybrid.cybrid_api_bank.client.models.IdentityVerificationListBankModel
+import app.cybrid.cybrid_api_bank.client.models.IdentityVerificationWithDetailsBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostIdentityVerificationBankModel
 
 interface IdentityVerificationsApi {
@@ -37,10 +38,10 @@ interface IdentityVerificationsApi {
      *  - 404: identity_verification not found
      *
      * @param identityVerificationGuid Identifier for the identity verification.
-     * @return [IdentityVerificationBankModel]
+     * @return [IdentityVerificationWithDetailsBankModel]
      */
     @GET("api/identity_verifications/{identity_verification_guid}")
-    suspend fun getIdentityVerification(@Path("identity_verification_guid") identityVerificationGuid: kotlin.String): Response<IdentityVerificationBankModel>
+    suspend fun getIdentityVerification(@Path("identity_verification_guid") identityVerificationGuid: kotlin.String): Response<IdentityVerificationWithDetailsBankModel>
 
     /**
      * List Identity Verifications

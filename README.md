@@ -102,6 +102,8 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordListBankModel](docs/IdentityRecordListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityVerificationBankModel](docs/IdentityVerificationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityVerificationListBankModel](docs/IdentityVerificationListBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.IdentityVerificationWithDetailsAllOfBankModel](docs/IdentityVerificationWithDetailsAllOfBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.IdentityVerificationWithDetailsBankModel](docs/IdentityVerificationWithDetailsBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PatchBankBankModel](docs/PatchBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel](docs/PostAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostBankBankModel](docs/PostBankBankModel.md)

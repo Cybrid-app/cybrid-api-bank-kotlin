@@ -70,7 +70,7 @@ val webService = apiClient.createWebservice(IdentityVerificationsApi::class.java
 val identityVerificationGuid : kotlin.String = identityVerificationGuid_example // kotlin.String | Identifier for the identity verification.
 
 launch(Dispatchers.IO) {
-    val result : IdentityVerificationBankModel = webService.getIdentityVerification(identityVerificationGuid)
+    val result : IdentityVerificationWithDetailsBankModel = webService.getIdentityVerification(identityVerificationGuid)
 }
 ```
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdentityVerificationBankModel**](IdentityVerificationBankModel.md)
+[**IdentityVerificationWithDetailsBankModel**](IdentityVerificationWithDetailsBankModel.md)
 
 ### Authorization
 
