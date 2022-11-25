@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the account. |  [optional]
 **name** | **kotlin.String** | The name of the account. |  [optional]
-**assetCode** | **kotlin.String** | The asset code. |  [optional]
+**asset** | **kotlin.String** | The asset code. |  [optional]
 **accountKind** | [**inline**](#AccountKind) | The type of account. |  [optional]
 **environment** | [**inline**](#Environment) | The environment that the external bank account is operating in. |  [optional]
 **bankGuid** | **kotlin.String** | The bank identifier. |  [optional]
