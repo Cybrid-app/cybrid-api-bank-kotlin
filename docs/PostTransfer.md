@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | funding
+transferType | funding, book
 
 
 <a name="ExpectedError"></a>

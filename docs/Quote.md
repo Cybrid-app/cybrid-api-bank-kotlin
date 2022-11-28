@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Enum: product_type
 Name | Value
 ---- | -----
-productType | trading, funding
+productType | trading, funding, book_transfer
 
 
 <a name="Side"></a>

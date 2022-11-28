@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. |  [optional]
 **asset** | **kotlin.String** | The asset the transfer is related to, e.g., USD. |  [optional]
-**side** | [**inline**](#Side) | The direction of the quote: either &#39;buy&#39; or &#39;sell&#39;. |  [optional]
+**side** | [**inline**](#Side) | The direction of the quote: &#39;deposit&#39; or &#39;withdrawal&#39;. |  [optional]
 **state** | [**inline**](#State) | The trade&#39;s state |  [optional]
 **amount** | **java.math.BigDecimal** | The amount being transferred. |  [optional]
 **fee** | **java.math.BigDecimal** | The fee associated with the trade. |  [optional]
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | savings, funding
+transferType | savings, funding, book
 
 
 <a name="Side"></a>
