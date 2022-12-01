@@ -12,7 +12,11 @@ Name | Type | Description | Notes
 **bankGuid** | **kotlin.String** | The bank identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The customer identifier. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the exchange was created at. |  [optional]
-**plaidAccessToken** | **kotlin.String** | The Plaid access token for the account. |  [optional]
+**plaidInstitutionId** | **kotlin.String** | The Plaid institution ID for the account. |  [optional]
+**plaidAccountMask** | **kotlin.String** | The account number mask for the account. |  [optional]
+**plaidAccountName** | **kotlin.String** | The name for the account. |  [optional]
+**state** | [**inline**](#State) | The state of the external bank account. |  [optional]
+**failureCode** | **kotlin.String** | The failure code for failed transfers. |  [optional]
 
 
 <a name="AccountKind"></a>
@@ -27,6 +31,13 @@ accountKind | plaid
 Name | Value
 ---- | -----
 environment | sandbox, production
+
+
+<a name="State"></a>
+## Enum: state
+Name | Value
+---- | -----
+state | storing, completed, failed
 
 
 
