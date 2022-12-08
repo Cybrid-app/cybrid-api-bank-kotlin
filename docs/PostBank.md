@@ -23,7 +23,7 @@ type | sandbox, production
 ## Enum: features
 Name | Value
 ---- | -----
-features | attestation_identity_records, backstopped_funding_source, plaid_funding_source
+features | attestation_identity_records, kyc_identity_verifications, backstopped_funding_source, plaid_funding_source
 
 
 
