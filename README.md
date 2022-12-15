@@ -47,6 +47,7 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
 *ExternalBankAccountsApi* | [**createExternalBankAccount**](docs/ExternalBankAccountsApi.md#createexternalbankaccount) | **POST** api/external_bank_accounts | Create ExternalBankAccount
+*ExternalBankAccountsApi* | [**deleteExternalBankAccount**](docs/ExternalBankAccountsApi.md#deleteexternalbankaccount) | **DELETE** api/external_bank_accounts/{external_bank_account_guid} | Delete External Bank Account
 *ExternalBankAccountsApi* | [**getExternalBankAccount**](docs/ExternalBankAccountsApi.md#getexternalbankaccount) | **GET** api/external_bank_accounts/{external_bank_account_guid} | Get External Bank Account
 *ExternalBankAccountsApi* | [**listExternalBankAccounts**](docs/ExternalBankAccountsApi.md#listexternalbankaccounts) | **GET** api/external_bank_accounts | Get external bank accounts list
 *FeeConfigurationsApi* | [**createFeeConfiguration**](docs/FeeConfigurationsApi.md#createfeeconfiguration) | **POST** api/fee_configurations | Create Fee Configuration
@@ -169,6 +170,7 @@ Class | Method | HTTP request | Description
   - rewards:execute: rewards execute
   - rewards:read: rewards read
   - external_bank_accounts:read: external_bank_accounts read
+  - external_bank_accounts:write: external_bank_accounts write
   - external_bank_accounts:execute: external_bank_accounts execute
   - workflows:read: workflows read
   - workflows:execute: workflows execute

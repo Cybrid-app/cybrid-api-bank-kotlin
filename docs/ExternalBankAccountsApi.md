@@ -5,6 +5,7 @@ All URIs are relative to *https://bank.demo.cybrid.app*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createExternalBankAccount**](ExternalBankAccountsApi.md#createExternalBankAccount) | **POST** api/external_bank_accounts | Create ExternalBankAccount
+[**deleteExternalBankAccount**](ExternalBankAccountsApi.md#deleteExternalBankAccount) | **DELETE** api/external_bank_accounts/{external_bank_account_guid} | Delete External Bank Account
 [**getExternalBankAccount**](ExternalBankAccountsApi.md#getExternalBankAccount) | **GET** api/external_bank_accounts/{external_bank_account_guid} | Get External Bank Account
 [**listExternalBankAccounts**](ExternalBankAccountsApi.md#listExternalBankAccounts) | **GET** api/external_bank_accounts | Get external bank accounts list
 
@@ -50,6 +51,49 @@ Configure BearerAuth:
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Delete External Bank Account
+
+Deletes an external bank account.  Required scope: **external_bank_accounts:execute**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_bank.client.*
+//import app.cybrid.cybrid_api_bank.client.infrastructure.*
+//import app.cybrid.cybrid_api_bank.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(ExternalBankAccountsApi::class.java)
+val externalBankAccountGuid : kotlin.String = externalBankAccountGuid_example // kotlin.String | Identifier for the external bank account.
+
+launch(Dispatchers.IO) {
+    val result : ExternalBankAccountBankModel = webService.deleteExternalBankAccount(externalBankAccountGuid)
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **externalBankAccountGuid** | **kotlin.String**| Identifier for the external bank account. |
+
+### Return type
+
+[**ExternalBankAccountBankModel**](ExternalBankAccountBankModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient().setBearerToken("TOKEN")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

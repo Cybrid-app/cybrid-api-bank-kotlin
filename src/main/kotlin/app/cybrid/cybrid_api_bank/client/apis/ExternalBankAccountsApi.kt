@@ -28,6 +28,21 @@ interface ExternalBankAccountsApi {
     suspend fun createExternalBankAccount(@Body postExternalBankAccountBankModel: PostExternalBankAccountBankModel): Response<ExternalBankAccountBankModel>
 
     /**
+     * Delete External Bank Account
+     * Deletes an external bank account.  Required scope: **external_bank_accounts:execute**
+     * Responses:
+     *  - 200: External bank account deleted
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: ExternalBankAccount not found
+     *
+     * @param externalBankAccountGuid Identifier for the external bank account.
+     * @return [ExternalBankAccountBankModel]
+     */
+    @DELETE("api/external_bank_accounts/{external_bank_account_guid}")
+    suspend fun deleteExternalBankAccount(@Path("external_bank_account_guid") externalBankAccountGuid: kotlin.String): Response<ExternalBankAccountBankModel>
+
+    /**
      * Get External Bank Account
      * Retrieves an external bank account.  Required scope: **external_bank_accounts:read**
      * Responses:
