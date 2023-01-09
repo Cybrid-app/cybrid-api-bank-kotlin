@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **fee** | **java.math.BigDecimal** | The fee associated with the trade. Denominated in \&quot;counter_asset\&quot; base units for trade quotes. |  [optional]
 **issuedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the quote was created at. |  [optional]
 **expiresAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the quote is expiring at. Populated for trading quotes. |  [optional]
+**asset** | **kotlin.String** | The asset code the quote was requested for. Populated for book transfer and funding quotes. |  [optional]
 
 
 <a name="ProductType"></a>
