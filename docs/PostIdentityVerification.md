@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**inline**](#Type) | The type of identity verification. | 
 **method** | [**inline**](#Method) | The identity verification method. | 
+**countryCode** | **kotlin.String** | The ISO 3166 country 2-Alpha country the customer is being verified in. If not present, will default to the Bank&#39;s configured country code. |  [optional]
 **customerGuid** | **kotlin.String** | The customer&#39;s identifier. |  [optional]
 **expectedBehaviours** | [**inline**](#kotlin.collections.List&lt;ExpectedBehaviours&gt;) | The optional expected behaviour to simulate. |  [optional]
 
