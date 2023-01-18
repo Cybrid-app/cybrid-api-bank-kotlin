@@ -26,67 +26,79 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param side The direction for trade quotes: either 'buy' or 'sell'. The direction for funding quotes: either 'deposit' or 'withdrawal'.
- * @param productType The type of product the quote is for.
- * @param customerGuid The unique identifier for the customer.
- * @param asset The asset code the quote was requested for. Populated for funding and book transfer quotes.
- * @param symbol Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported. Populated for trade quotes.
- * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes.
- * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes.
+ * @param guid Auto-generated unique identifier for the identity verification.
+ * @param bankGuid The address' bank identifier.
+ * @param customerGuid The address' customer identifier.
+ * @param accountGuid The address' account identifier.
+ * @param createdAt ISO8601 datetime the address was created at.
+ * @param asset The asset the transfer is related to, e.g., USD.
+ * @param state The state of the address.
+ * @param address The blockchain address.
+ * @param format The blockchain address format.
+ * @param tag The blockchain address tag.
  */
 
-data class PostQuoteBankModel (
+data class DepositAddressBankModel (
 
-    /* The direction for trade quotes: either 'buy' or 'sell'. The direction for funding quotes: either 'deposit' or 'withdrawal'. */
-    @SerializedName("side")
-    val side: PostQuoteBankModel.Side,
+    /* Auto-generated unique identifier for the identity verification. */
+    @SerializedName("guid")
+    val guid: kotlin.String,
 
-    /* The type of product the quote is for. */
-    @SerializedName("product_type")
-    val productType: PostQuoteBankModel.ProductType? = ProductType.trading,
+    /* The address' bank identifier. */
+    @SerializedName("bank_guid")
+    val bankGuid: kotlin.String,
 
-    /* The unique identifier for the customer. */
+    /* The address' customer identifier. */
     @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    val customerGuid: kotlin.String,
 
-    /* The asset code the quote was requested for. Populated for funding and book transfer quotes. */
+    /* The address' account identifier. */
+    @SerializedName("account_guid")
+    val accountGuid: kotlin.String,
+
+    /* ISO8601 datetime the address was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime,
+
+    /* The asset the transfer is related to, e.g., USD. */
     @SerializedName("asset")
-    val asset: kotlin.String? = null,
+    val asset: kotlin.String,
 
-    /* Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported. Populated for trade quotes. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String? = null,
+    /* The state of the address. */
+    @SerializedName("state")
+    val state: DepositAddressBankModel.State,
 
-    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes. */
-    @SerializedName("receive_amount")
-    val receiveAmount: java.math.BigDecimal? = null,
+    /* The blockchain address. */
+    @SerializedName("address")
+    val address: kotlin.String? = null,
 
-    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes. */
-    @SerializedName("deliver_amount")
-    val deliverAmount: java.math.BigDecimal? = null
+    /* The blockchain address format. */
+    @SerializedName("format")
+    val format: DepositAddressBankModel.Format? = null,
+
+    /* The blockchain address tag. */
+    @SerializedName("tag")
+    val tag: kotlin.String? = null
 
 ) {
 
     /**
-     * The direction for trade quotes: either 'buy' or 'sell'. The direction for funding quotes: either 'deposit' or 'withdrawal'.
+     * The state of the address.
      *
-     * Values: buy,sell,deposit,withdrawal
+     * Values: storing,created
      */
-    enum class Side(val value: kotlin.String) {
-        @SerializedName(value = "buy") buy("buy"),
-        @SerializedName(value = "sell") sell("sell"),
-        @SerializedName(value = "deposit") deposit("deposit"),
-        @SerializedName(value = "withdrawal") withdrawal("withdrawal");
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "created") created("created");
     }
     /**
-     * The type of product the quote is for.
+     * The blockchain address format.
      *
-     * Values: trading,funding,bookTransfer
+     * Values: standard,legacy
      */
-    enum class ProductType(val value: kotlin.String) {
-        @SerializedName(value = "trading") trading("trading"),
-        @SerializedName(value = "funding") funding("funding"),
-        @SerializedName(value = "book_transfer") bookTransfer("book_transfer");
+    enum class Format(val value: kotlin.String) {
+        @SerializedName(value = "standard") standard("standard"),
+        @SerializedName(value = "legacy") legacy("legacy");
     }
 }
 

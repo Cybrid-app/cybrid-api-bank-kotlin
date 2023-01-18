@@ -46,6 +46,9 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createcustomer) | **POST** api/customers | Create Customer
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
+*DepositAddressesApi* | [**createDepositAddress**](docs/DepositAddressesApi.md#createdepositaddress) | **POST** api/deposit_addresses | Create Deposit Address
+*DepositAddressesApi* | [**getDepositAddress**](docs/DepositAddressesApi.md#getdepositaddress) | **GET** api/deposit_addresses/{deposit_address_guid} | Get Deposit Address
+*DepositAddressesApi* | [**listDepositAddresses**](docs/DepositAddressesApi.md#listdepositaddresses) | **GET** api/deposit_addresses | List Deposit Addresses
 *ExternalBankAccountsApi* | [**createExternalBankAccount**](docs/ExternalBankAccountsApi.md#createexternalbankaccount) | **POST** api/external_bank_accounts | Create ExternalBankAccount
 *ExternalBankAccountsApi* | [**deleteExternalBankAccount**](docs/ExternalBankAccountsApi.md#deleteexternalbankaccount) | **DELETE** api/external_bank_accounts/{external_bank_account_guid} | Delete External Bank Account
 *ExternalBankAccountsApi* | [**getExternalBankAccount**](docs/ExternalBankAccountsApi.md#getexternalbankaccount) | **GET** api/external_bank_accounts/{external_bank_account_guid} | Get External Bank Account
@@ -93,6 +96,8 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.BankListBankModel](docs/BankListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.CustomerBankModel](docs/CustomerBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.CustomerListBankModel](docs/CustomerListBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.DepositAddressBankModel](docs/DepositAddressBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.DepositAddressListBankModel](docs/DepositAddressListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel](docs/ErrorResponseBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountBankModel](docs/ExternalBankAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountListBankModel](docs/ExternalBankAccountListBankModel.md)
@@ -109,6 +114,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel](docs/PostAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostBankBankModel](docs/PostBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel](docs/PostCustomerBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostDepositAddressBankModel](docs/PostDepositAddressBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostExternalBankAccountBankModel](docs/PostExternalBankAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostFeeBankModel](docs/PostFeeBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostFeeConfigurationBankModel](docs/PostFeeConfigurationBankModel.md)
@@ -174,4 +180,6 @@ Class | Method | HTTP request | Description
   - external_bank_accounts:execute: external_bank_accounts execute
   - workflows:read: workflows read
   - workflows:execute: workflows execute
+  - deposit_addresses:read: deposit_addresses read
+  - deposit_addresses:execute: deposit_addresses execute
 

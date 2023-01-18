@@ -20,73 +20,35 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.DepositAddressBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param side The direction for trade quotes: either 'buy' or 'sell'. The direction for funding quotes: either 'deposit' or 'withdrawal'.
- * @param productType The type of product the quote is for.
- * @param customerGuid The unique identifier for the customer.
- * @param asset The asset code the quote was requested for. Populated for funding and book transfer quotes.
- * @param symbol Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported. Populated for trade quotes.
- * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes.
- * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes.
+ * @param total The total number of records available.
+ * @param page The page index to retrieve.
+ * @param perPage The number of entities per page to return.
+ * @param objects 
  */
 
-data class PostQuoteBankModel (
+data class DepositAddressListBankModel (
 
-    /* The direction for trade quotes: either 'buy' or 'sell'. The direction for funding quotes: either 'deposit' or 'withdrawal'. */
-    @SerializedName("side")
-    val side: PostQuoteBankModel.Side,
+    /* The total number of records available. */
+    @SerializedName("total")
+    val total: java.math.BigDecimal,
 
-    /* The type of product the quote is for. */
-    @SerializedName("product_type")
-    val productType: PostQuoteBankModel.ProductType? = ProductType.trading,
+    /* The page index to retrieve. */
+    @SerializedName("page")
+    val page: java.math.BigDecimal,
 
-    /* The unique identifier for the customer. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The number of entities per page to return. */
+    @SerializedName("per_page")
+    val perPage: java.math.BigDecimal,
 
-    /* The asset code the quote was requested for. Populated for funding and book transfer quotes. */
-    @SerializedName("asset")
-    val asset: kotlin.String? = null,
+    @SerializedName("objects")
+    val objects: kotlin.collections.List<DepositAddressBankModel>
 
-    /* Symbol the quote is being requested for. Format is \"asset-counter_asset\" in uppercase. See the Symbols API for a complete list of cryptocurrencies supported. Populated for trade quotes. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String? = null,
-
-    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes. */
-    @SerializedName("receive_amount")
-    val receiveAmount: java.math.BigDecimal? = null,
-
-    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes. */
-    @SerializedName("deliver_amount")
-    val deliverAmount: java.math.BigDecimal? = null
-
-) {
-
-    /**
-     * The direction for trade quotes: either 'buy' or 'sell'. The direction for funding quotes: either 'deposit' or 'withdrawal'.
-     *
-     * Values: buy,sell,deposit,withdrawal
-     */
-    enum class Side(val value: kotlin.String) {
-        @SerializedName(value = "buy") buy("buy"),
-        @SerializedName(value = "sell") sell("sell"),
-        @SerializedName(value = "deposit") deposit("deposit"),
-        @SerializedName(value = "withdrawal") withdrawal("withdrawal");
-    }
-    /**
-     * The type of product the quote is for.
-     *
-     * Values: trading,funding,bookTransfer
-     */
-    enum class ProductType(val value: kotlin.String) {
-        @SerializedName(value = "trading") trading("trading"),
-        @SerializedName(value = "funding") funding("funding"),
-        @SerializedName(value = "book_transfer") bookTransfer("book_transfer");
-    }
-}
+)
 
