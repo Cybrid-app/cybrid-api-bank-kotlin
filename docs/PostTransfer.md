@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. | 
 **transferType** | [**inline**](#TransferType) | The type of transfer. | 
 **externalBankAccountGuid** | **kotlin.String** | The customer&#39;s fiat asset external bank account&#39;s identifier. |  [optional]
+**oneTimeAddress** | [**PostOneTimeAddressBankModel**](PostOneTimeAddressBankModel.md) |  |  [optional]
 **expectedError** | [**inline**](#ExpectedError) | The optional expected error to simulate transfer failure. |  [optional]
 
 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | funding, book
+transferType | funding, book, crypto
 
 
 <a name="ExpectedError"></a>

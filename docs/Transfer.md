@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | savings, funding, book
+transferType | savings, funding, book, crypto
 
 
 <a name="Side"></a>

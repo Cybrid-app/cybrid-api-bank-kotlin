@@ -26,59 +26,19 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the workflow.
- * @param customerGuid The associated customer's identifier.
- * @param type The type of workflow.
- * @param state The state of the workflow.
- * @param failureCode The failure code for failed workflows.
- * @param createdAt ISO8601 datetime the bank was created at.
+ * @param address The blockchain wallet address to transfer crypto to.
+ * @param tag The blockchain tag to use when transferring crypto.
  */
 
-data class WorkflowBankModel (
+data class PostOneTimeAddressBankModel (
 
-    /* Auto-generated unique identifier for the workflow. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The blockchain wallet address to transfer crypto to. */
+    @SerializedName("address")
+    val address: kotlin.String,
 
-    /* The associated customer's identifier. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The blockchain tag to use when transferring crypto. */
+    @SerializedName("tag")
+    val tag: kotlin.String? = null
 
-    /* The type of workflow. */
-    @SerializedName("type")
-    val type: WorkflowBankModel.Type? = null,
-
-    /* The state of the workflow. */
-    @SerializedName("state")
-    val state: WorkflowBankModel.State? = null,
-
-    /* The failure code for failed workflows. */
-    @SerializedName("failure_code")
-    val failureCode: kotlin.String? = null,
-
-    /* ISO8601 datetime the bank was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null
-
-) {
-
-    /**
-     * The type of workflow.
-     *
-     * Values: plaid
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "plaid") plaid("plaid");
-    }
-    /**
-     * The state of the workflow.
-     *
-     * Values: storing,completed,failed
-     */
-    enum class State(val value: kotlin.String) {
-        @SerializedName(value = "storing") storing("storing"),
-        @SerializedName(value = "completed") completed("completed"),
-        @SerializedName(value = "failed") failed("failed");
-    }
-}
+)
 

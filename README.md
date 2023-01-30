@@ -121,6 +121,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordAttestationDetailsBankModel](docs/PostIdentityRecordAttestationDetailsBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordBankModel](docs/PostIdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityVerificationBankModel](docs/PostIdentityVerificationBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PostOneTimeAddressBankModel](docs/PostOneTimeAddressBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostQuoteBankModel](docs/PostQuoteBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostRewardBankModel](docs/PostRewardBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostTradeBankModel](docs/PostTradeBankModel.md)
