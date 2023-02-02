@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Enum: account_kind
 Name | Value
 ---- | -----
-accountKind | plaid
+accountKind | plaid, plaid_processor_token
 
 
 <a name="Environment"></a>
