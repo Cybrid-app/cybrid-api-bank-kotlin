@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, pending, verified, failed
+state | storing, expired, verified, failed
 
 
 <a name="FailureCode"></a>
