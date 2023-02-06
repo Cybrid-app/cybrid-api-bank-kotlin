@@ -53,6 +53,7 @@ Class | Method | HTTP request | Description
 *ExternalBankAccountsApi* | [**deleteExternalBankAccount**](docs/ExternalBankAccountsApi.md#deleteexternalbankaccount) | **DELETE** api/external_bank_accounts/{external_bank_account_guid} | Delete External Bank Account
 *ExternalBankAccountsApi* | [**getExternalBankAccount**](docs/ExternalBankAccountsApi.md#getexternalbankaccount) | **GET** api/external_bank_accounts/{external_bank_account_guid} | Get External Bank Account
 *ExternalBankAccountsApi* | [**listExternalBankAccounts**](docs/ExternalBankAccountsApi.md#listexternalbankaccounts) | **GET** api/external_bank_accounts | Get external bank accounts list
+*ExternalBankAccountsApi* | [**patchExternalBankAccount**](docs/ExternalBankAccountsApi.md#patchexternalbankaccount) | **PATCH** api/external_bank_accounts/{external_bank_account_guid} | Patch ExternalBankAccount
 *FeeConfigurationsApi* | [**createFeeConfiguration**](docs/FeeConfigurationsApi.md#createfeeconfiguration) | **POST** api/fee_configurations | Create Fee Configuration
 *FeeConfigurationsApi* | [**getFeeConfiguration**](docs/FeeConfigurationsApi.md#getfeeconfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get Fee Configuration
 *FeeConfigurationsApi* | [**listFeeConfigurations**](docs/FeeConfigurationsApi.md#listfeeconfigurations) | **GET** api/fee_configurations | List Fee Configurations
@@ -111,6 +112,7 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.IdentityVerificationWithDetailsAllOfBankModel](docs/IdentityVerificationWithDetailsAllOfBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityVerificationWithDetailsBankModel](docs/IdentityVerificationWithDetailsBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PatchBankBankModel](docs/PatchBankBankModel.md)
+ - [app.cybrid.cybrid_api_bank.client.models.PatchExternalBankAccountBankModel](docs/PatchExternalBankAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel](docs/PostAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostBankBankModel](docs/PostBankBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel](docs/PostCustomerBankModel.md)

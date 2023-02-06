@@ -8,6 +8,7 @@ import okhttp3.RequestBody
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountBankModel
 import app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountListBankModel
+import app.cybrid.cybrid_api_bank.client.models.PatchExternalBankAccountBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostExternalBankAccountBankModel
 
 interface ExternalBankAccountsApi {
@@ -75,5 +76,21 @@ interface ExternalBankAccountsApi {
      */
     @GET("api/external_bank_accounts")
     suspend fun listExternalBankAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<ExternalBankAccountListBankModel>
+
+    /**
+     * Patch ExternalBankAccount
+     * Patch an external bank account.  Required scope: **external_bank_accounts:write**
+     * Responses:
+     *  - 200: external bank account found
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: ExternalBankAccount not found
+     *
+     * @param externalBankAccountGuid Identifier for the external bank account.
+     * @param patchExternalBankAccountBankModel 
+     * @return [ExternalBankAccountBankModel]
+     */
+    @PATCH("api/external_bank_accounts/{external_bank_account_guid}")
+    suspend fun patchExternalBankAccount(@Path("external_bank_account_guid") externalBankAccountGuid: kotlin.String, @Body patchExternalBankAccountBankModel: PatchExternalBankAccountBankModel): Response<ExternalBankAccountBankModel>
 
 }

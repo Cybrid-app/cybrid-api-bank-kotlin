@@ -20,35 +20,31 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.FeeConfigurationBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects 
+ * @param state The state of the external bank account.
  */
 
-data class FeeConfigurationListBankModel (
+data class PatchExternalBankAccountBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal? = null,
+    /* The state of the external bank account. */
+    @SerializedName("state")
+    val state: PatchExternalBankAccountBankModel.State
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal? = null,
+) {
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal? = null,
-
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<FeeConfigurationBankModel>? = null
-
-)
+    /**
+     * The state of the external bank account.
+     *
+     * Values: completed,refreshRequired
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "completed") completed("completed"),
+        @SerializedName(value = "refresh_required") refreshRequired("refresh_required");
+    }
+}
 
