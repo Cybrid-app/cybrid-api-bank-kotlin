@@ -16,7 +16,6 @@ interface DepositAddressesApi {
      * Create an Deposit Address.  Required scope: **deposit_addresses:execute**
      * Responses:
      *  - 201: Deposit Address created
-     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
@@ -31,7 +30,6 @@ interface DepositAddressesApi {
      * Retrieves a deposit address.  Required scope: **deposit_addresses:read**
      * Responses:
      *  - 200: deposit address found
-     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 404: deposit_address not found
@@ -47,7 +45,7 @@ interface DepositAddressesApi {
      * Retrieves a list of deposit addresses.  Required scope: **deposit_addresses:read**
      * Responses:
      *  - 200: get list of deposit addresses
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

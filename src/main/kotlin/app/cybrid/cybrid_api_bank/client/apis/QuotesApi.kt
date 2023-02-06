@@ -16,7 +16,7 @@ interface QuotesApi {
      * Creates a quote.  Required scope: **quotes:execute**
      * Responses:
      *  - 201: quote created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 422: Unable to process request
@@ -33,7 +33,6 @@ interface QuotesApi {
      * Retrieves a quote.  Required scope: **quotes:read**
      * Responses:
      *  - 200: quote found
-     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 404: quote not found
@@ -49,7 +48,7 @@ interface QuotesApi {
      * Retrieves a listing of quotes for all customers of a bank.  Required scope: **quotes:read**
      * Responses:
      *  - 200: get list of quotes
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

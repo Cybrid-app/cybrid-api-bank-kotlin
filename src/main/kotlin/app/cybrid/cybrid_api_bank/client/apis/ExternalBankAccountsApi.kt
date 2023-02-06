@@ -17,7 +17,7 @@ interface ExternalBankAccountsApi {
      * Create an ExternalBankAccount.  Required scope: **external_bank_accounts:execute**
      * Responses:
      *  - 201: ExternalBankAccount created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 422: Unable to process request
@@ -63,7 +63,7 @@ interface ExternalBankAccountsApi {
      * Retrieves a listing of external bank accounts.  Required scope: **external_bank_accounts:read**
      * Responses:
      *  - 200: Get list of external_bank_accounts
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

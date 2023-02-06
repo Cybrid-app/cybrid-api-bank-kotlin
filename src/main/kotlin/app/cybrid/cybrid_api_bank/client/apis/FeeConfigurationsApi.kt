@@ -16,7 +16,7 @@ interface FeeConfigurationsApi {
      * Creates a fee configuration.  Required scope: **banks:write**
      * Responses:
      *  - 201: fee configuration created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
@@ -46,7 +46,6 @@ interface FeeConfigurationsApi {
      * Retrieves a listing of fee configurations for a bank.  Required scope: **banks:read**
      * Responses:
      *  - 200: get list of fee configurations
-     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

@@ -16,7 +16,7 @@ interface TradesApi {
      * Creates a trade.  ## State  | State | Description | |-------|-------------| | storing | The Platform is storing the trade details in our private store | | initiating | The Platform has begun to perform the trade | | pending | The Platform is executing the trade | | settling | The Platform is settling the trade | | completed | The Platform has successfully completed the trade | | failed | The Platform was not able to successfully complete the trade |    Required scope: **trades:execute**
      * Responses:
      *  - 201: Trade created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 409: Data already exists
@@ -48,7 +48,7 @@ interface TradesApi {
      * Retrieves a listing of trades.  Required scope: **trades:read**
      * Responses:
      *  - 200: get list of trades
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

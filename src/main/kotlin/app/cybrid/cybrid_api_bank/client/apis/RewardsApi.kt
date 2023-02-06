@@ -16,7 +16,7 @@ interface RewardsApi {
      * Creates a reward.  Required scope: **rewards:execute**
      * Responses:
      *  - 201: reward created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
@@ -46,7 +46,7 @@ interface RewardsApi {
      * Retrieves a listing of rewards.  Required scope: **rewards:read**
      * Responses:
      *  - 200: get list of rewards
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

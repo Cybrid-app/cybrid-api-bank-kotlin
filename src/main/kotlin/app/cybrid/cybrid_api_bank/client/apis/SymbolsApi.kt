@@ -13,7 +13,6 @@ interface SymbolsApi {
      * Retrieves a listing of symbols.
      * Responses:
      *  - 200: get list of symbols
-     *  - 400: Invalid requests - Malformed Authentication Header
      *  - 401: Unauthorized - Authentication failed, 
      *
      * @return [kotlin.collections.List<kotlin.String>]

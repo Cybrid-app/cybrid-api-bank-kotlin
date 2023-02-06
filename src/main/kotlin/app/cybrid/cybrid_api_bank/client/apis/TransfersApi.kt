@@ -16,7 +16,7 @@ interface TransfersApi {
      * Creates a transfer.  Required scope: **transfers:execute**
      * Responses:
      *  - 201: Transfer created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 409: Data already exists
@@ -48,7 +48,7 @@ interface TransfersApi {
      * Retrieves a listing of transfers.  Required scope: **transfers:read**
      * Responses:
      *  - 200: get list of transfers
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

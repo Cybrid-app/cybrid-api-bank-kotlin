@@ -17,7 +17,7 @@ interface WorkflowsApi {
      * Creates a workflow.  Required scope: **workflows:execute**
      * Responses:
      *  - 201: Workflow created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 422: Unable to process request
@@ -48,7 +48,7 @@ interface WorkflowsApi {
      * Retrieves a listing of workflows.  Required scope: **workflows:read**
      * Responses:
      *  - 200: get list of workflows
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

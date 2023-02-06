@@ -16,7 +16,7 @@ interface AccountsApi {
      * Creates an account.  ## Account Type  An Account is tied to a specific cryptocurrency or fiat and is comprised of transactions and a current balance.  An account is required to allow a Customer to hold cryptocurrency or fiat on the Cybrid Platform.  At present, account&#39;s can be created as &#x60;trading&#x60; or &#x60;fiat &#x60; accounts and are required before a Customer can generate quotes or execute a &#x60;trade&#x60; or &#x60;transfer&#x60;.  ## Asset  The asset is the specific cryptocurrency or fiat that the account holds, e.g., &#39;BTC&#39; for Bitcoin or &#x60;USD&#x60; for US dollars. See the Symbols API for a complete list of cryptocurrencies and fiat supported.     Required scope: **accounts:execute**
      * Responses:
      *  - 201: account created
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
@@ -31,7 +31,6 @@ interface AccountsApi {
      * Retrieves an account.  Required scope: **accounts:read**
      * Responses:
      *  - 200: account found
-     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 404: account not found
@@ -47,7 +46,7 @@ interface AccountsApi {
      * Retrieves a list of accounts.  Required scope: **accounts:read**
      * Responses:
      *  - 200: get list of accounts
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *

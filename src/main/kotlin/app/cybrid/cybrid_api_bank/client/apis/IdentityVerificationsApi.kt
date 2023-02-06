@@ -17,7 +17,6 @@ interface IdentityVerificationsApi {
      * Create an Identity Verification.  Required scope: **customers:write**
      * Responses:
      *  - 201: Identity Verification created
-     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
@@ -32,7 +31,6 @@ interface IdentityVerificationsApi {
      * Retrieves an identity verification.  Required scope: **customers:read**
      * Responses:
      *  - 200: identity verification found
-     *  - 400: Invalid requests - malformed authentication header
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 404: identity_verification not found
@@ -48,7 +46,7 @@ interface IdentityVerificationsApi {
      * Retrieves a list of identity verifications.  Required scope: **customers:read**
      * Responses:
      *  - 200: get list of identity verifications
-     *  - 400: Invalid requests - malformed authentication header
+     *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *
