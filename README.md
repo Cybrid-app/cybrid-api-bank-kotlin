@@ -54,9 +54,6 @@ Class | Method | HTTP request | Description
 *ExternalBankAccountsApi* | [**getExternalBankAccount**](docs/ExternalBankAccountsApi.md#getexternalbankaccount) | **GET** api/external_bank_accounts/{external_bank_account_guid} | Get External Bank Account
 *ExternalBankAccountsApi* | [**listExternalBankAccounts**](docs/ExternalBankAccountsApi.md#listexternalbankaccounts) | **GET** api/external_bank_accounts | Get external bank accounts list
 *ExternalBankAccountsApi* | [**patchExternalBankAccount**](docs/ExternalBankAccountsApi.md#patchexternalbankaccount) | **PATCH** api/external_bank_accounts/{external_bank_account_guid} | Patch ExternalBankAccount
-*FeeConfigurationsApi* | [**createFeeConfiguration**](docs/FeeConfigurationsApi.md#createfeeconfiguration) | **POST** api/fee_configurations | Create Fee Configuration
-*FeeConfigurationsApi* | [**getFeeConfiguration**](docs/FeeConfigurationsApi.md#getfeeconfiguration) | **GET** api/fee_configurations/{fee_configuration_guid} | Get Fee Configuration
-*FeeConfigurationsApi* | [**listFeeConfigurations**](docs/FeeConfigurationsApi.md#listfeeconfigurations) | **GET** api/fee_configurations | List Fee Configurations
 *IdentityRecordsApi* | [**createIdentityRecord**](docs/IdentityRecordsApi.md#createidentityrecord) | **POST** api/identity_records | Create Identity Record
 *IdentityRecordsApi* | [**getIdentityRecord**](docs/IdentityRecordsApi.md#getidentityrecord) | **GET** api/identity_records/{identity_record_guid} | Get Identity Record
 *IdentityRecordsApi* | [**listIdentityRecords**](docs/IdentityRecordsApi.md#listidentityrecords) | **GET** api/identity_records | List Identity Records
@@ -102,9 +99,6 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel](docs/ErrorResponseBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountBankModel](docs/ExternalBankAccountBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountListBankModel](docs/ExternalBankAccountListBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.FeeBankModel](docs/FeeBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.FeeConfigurationBankModel](docs/FeeConfigurationBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.FeeConfigurationListBankModel](docs/FeeConfigurationListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordBankModel](docs/IdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityRecordListBankModel](docs/IdentityRecordListBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.IdentityVerificationBankModel](docs/IdentityVerificationBankModel.md)
@@ -118,8 +112,6 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel](docs/PostCustomerBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostDepositAddressBankModel](docs/PostDepositAddressBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostExternalBankAccountBankModel](docs/PostExternalBankAccountBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.PostFeeBankModel](docs/PostFeeBankModel.md)
- - [app.cybrid.cybrid_api_bank.client.models.PostFeeConfigurationBankModel](docs/PostFeeConfigurationBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordAttestationDetailsBankModel](docs/PostIdentityRecordAttestationDetailsBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityRecordBankModel](docs/PostIdentityRecordBankModel.md)
  - [app.cybrid.cybrid_api_bank.client.models.PostIdentityVerificationBankModel](docs/PostIdentityVerificationBankModel.md)
