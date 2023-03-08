@@ -1,6 +1,6 @@
 # CustomersApi
 
-All URIs are relative to *https://bank.demo.cybrid.app*
+All URIs are relative to *https://bank.sandbox.cybrid.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
