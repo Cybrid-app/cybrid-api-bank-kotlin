@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | backstopped, trading, fee, fiat
+type | backstopped, trading, fee, fiat, gas
 
 
 <a name="State"></a>
