@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **issuedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the quote was created at. |  [optional]
 **expiresAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the quote is expiring at. Populated for trading quotes. |  [optional]
 **asset** | **kotlin.String** | The asset code the quote was requested for. Populated for book transfer and funding quotes. |  [optional]
+**networkFee** | **java.math.BigDecimal** | The network fee in base units of network_fee_asset. Only present on &#x60;crypto_transfer&#x60; quotes. |  [optional]
+**networkFeeAsset** | **kotlin.String** | The asset code of the network fee. |  [optional]
 
 
 <a name="ProductType"></a>
