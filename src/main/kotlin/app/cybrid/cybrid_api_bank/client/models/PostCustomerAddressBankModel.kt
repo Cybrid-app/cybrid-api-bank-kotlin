@@ -20,35 +20,45 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.QuoteBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects 
+ * @param street The first line of the address.
+ * @param city The city of the address.
+ * @param countryCode The ISO 3166 country 2-Alpha country code of the address.
+ * @param street2 The optional second line of the address.
+ * @param subdivision The provide/state/region of the address; not used by all countries.
+ * @param postalCode The postal/post/zip code of the address; not used by all countries.
  */
 
-data class QuoteListBankModel (
+data class PostCustomerAddressBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The first line of the address. */
+    @SerializedName("street")
+    val street: kotlin.String,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The city of the address. */
+    @SerializedName("city")
+    val city: kotlin.String,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The ISO 3166 country 2-Alpha country code of the address. */
+    @SerializedName("country_code")
+    val countryCode: kotlin.String,
 
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<QuoteBankModel>
+    /* The optional second line of the address. */
+    @SerializedName("street2")
+    val street2: kotlin.String? = null,
+
+    /* The provide/state/region of the address; not used by all countries. */
+    @SerializedName("subdivision")
+    val subdivision: kotlin.String? = null,
+
+    /* The postal/post/zip code of the address; not used by all countries. */
+    @SerializedName("postal_code")
+    val postalCode: kotlin.String? = null
 
 )
 

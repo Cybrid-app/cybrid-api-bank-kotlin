@@ -20,35 +20,30 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.QuoteBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
- * 
+ * The customer's name; required when method is set to 'attested'.
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects 
+ * @param first The customer's first name.
+ * @param last The customer's last name.
+ * @param middle The customer's middle name.
  */
 
-data class QuoteListBankModel (
+data class PostIdentityVerificationNameBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The customer's first name. */
+    @SerializedName("first")
+    val first: kotlin.String,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The customer's last name. */
+    @SerializedName("last")
+    val last: kotlin.String,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
-
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<QuoteBankModel>
+    /* The customer's middle name. */
+    @SerializedName("middle")
+    val middle: kotlin.String? = null
 
 )
 

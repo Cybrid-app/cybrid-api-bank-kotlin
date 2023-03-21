@@ -27,7 +27,7 @@ type | kyc
 ## Enum: method
 Name | Value
 ---- | -----
-method | id_and_selfie
+method | id_and_selfie, attested
 
 
 <a name="State"></a>
@@ -48,7 +48,7 @@ outcome | passed, failed
 ## Enum: failure_codes
 Name | Value
 ---- | -----
-failureCodes | requested_failure, id_check_failure, database_check_failure, selfie_failure, pep_check_failure, watchlist_check_failure
+failureCodes | requested_failure, id_check_failure, database_check_failure, selfie_failure, pep_check_failure, watchlist_check_failure, name_check_failure, address_check_failure, dob_check_failure, id_number_check_failure
 
 
 <a name="PersonaState"></a>

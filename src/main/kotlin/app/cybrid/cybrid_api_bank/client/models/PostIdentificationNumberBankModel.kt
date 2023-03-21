@@ -20,35 +20,43 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.QuoteBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects 
+ * @param type The source of the identification number.
+ * @param issuingCountryCode The ISO 3166 country 2-Alpha country code of the identification number issuer.
+ * @param identificationNumber The identification number.
  */
 
-data class QuoteListBankModel (
+data class PostIdentificationNumberBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The source of the identification number. */
+    @SerializedName("type")
+    val type: PostIdentificationNumberBankModel.Type,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The ISO 3166 country 2-Alpha country code of the identification number issuer. */
+    @SerializedName("issuing_country_code")
+    val issuingCountryCode: kotlin.String,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The identification number. */
+    @SerializedName("identification_number")
+    val identificationNumber: kotlin.String
 
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<QuoteBankModel>
+) {
 
-)
+    /**
+     * The source of the identification number.
+     *
+     * Values: driversLicense,passport,passportCard,residenceCard
+     */
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "drivers_license") driversLicense("drivers_license"),
+        @SerializedName(value = "passport") passport("passport"),
+        @SerializedName(value = "passport_card") passportCard("passport_card"),
+        @SerializedName(value = "residence_card") residenceCard("residence_card");
+    }
+}
 
