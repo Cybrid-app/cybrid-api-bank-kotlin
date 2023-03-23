@@ -20,7 +20,7 @@ interface BanksApi {
      *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, invalid subject
      *  - 403: Invalid scope
-     *  - 415: Unsupported values
+     *  - 422: Unable to process request
      *
      * @param postBankBankModel 
      * @return [BankBankModel]
