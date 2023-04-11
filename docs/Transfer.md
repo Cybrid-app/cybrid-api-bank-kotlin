@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **state** | [**inline**](#State) | The trade&#39;s state |  [optional]
 **amount** | **java.math.BigDecimal** | The amount being transferred. |  [optional]
 **fee** | **java.math.BigDecimal** | The fee associated with the trade. |  [optional]
-**networkFee** | **java.math.BigDecimal** | The network fee in base units of network_fee_asset. Only present on &#x60;crypto&#x60; transfers. |  [optional]
+**estimatedNetworkFee** | **java.math.BigDecimal** | The estimated network fee in base units of network_fee_asset. Only present on &#x60;crypto&#x60; transfers. |  [optional]
+**networkFee** | **java.math.BigDecimal** | The actual network fee in base units of network_fee_asset. Only present on &#x60;crypto&#x60; transfers that have successfully completed. |  [optional]
 **networkFeeAsset** | **kotlin.String** | The asset code of the network fee. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the bank was created at. |  [optional]
 
