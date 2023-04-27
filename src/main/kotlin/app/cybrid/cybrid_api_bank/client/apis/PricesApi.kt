@@ -19,9 +19,10 @@ interface PricesApi {
      *  - 403: Invalid scope
      *
      * @param symbol Comma separated symbols to list prices for. (optional)
+     * @param bankGuid The bank identifier to retrieve prices for. (optional)
      * @return [kotlin.collections.List<SymbolPriceBankModel>]
      */
     @GET("api/prices")
-    suspend fun listPrices(@Query("symbol") symbol: kotlin.String? = null): Response<kotlin.collections.List<SymbolPriceBankModel>>
+    suspend fun listPrices(@Query("symbol") symbol: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<kotlin.collections.List<SymbolPriceBankModel>>
 
 }

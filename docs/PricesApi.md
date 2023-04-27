@@ -23,9 +23,10 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(PricesApi::class.java)
 val symbol : kotlin.String = symbol_example // kotlin.String | Comma separated symbols to list prices for.
+val bankGuid : kotlin.String = bankGuid_example // kotlin.String | The bank identifier to retrieve prices for.
 
 launch(Dispatchers.IO) {
-    val result : kotlin.collections.List<SymbolPriceBankModel> = webService.listPrices(symbol)
+    val result : kotlin.collections.List<SymbolPriceBankModel> = webService.listPrices(symbol, bankGuid)
 }
 ```
 
@@ -34,6 +35,7 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **kotlin.String**| Comma separated symbols to list prices for. | [optional]
+ **bankGuid** | **kotlin.String**| The bank identifier to retrieve prices for. | [optional]
 
 ### Return type
 
