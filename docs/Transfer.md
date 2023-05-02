@@ -15,7 +15,9 @@ Name | Type | Description | Notes
 **fee** | **java.math.BigDecimal** | The fee associated with the trade. |  [optional]
 **estimatedNetworkFee** | **java.math.BigDecimal** | The estimated network fee in base units of network_fee_asset. Only present on &#x60;crypto&#x60; transfers. |  [optional]
 **networkFee** | **java.math.BigDecimal** | The actual network fee in base units of network_fee_asset. Only present on &#x60;crypto&#x60; transfers that have successfully completed. |  [optional]
-**networkFeeAsset** | **kotlin.String** | The asset code of the network fee. |  [optional]
+**networkFeeAsset** | **kotlin.String** | The asset code of the network fee. Only present on &#x60;crypto&#x60; transfers that have successfully completed. |  [optional]
+**networkFeeLiabilityAmount** | **java.math.BigDecimal** | The equivalent fiat network fee in base units of network_fee_liability_amount_asset. Only present on &#x60;crypto&#x60; transfers that have successfully completed. |  [optional]
+**networkFeeLiabilityAmountAsset** | **kotlin.String** | The fiat asset the network_fee_liability_amount is denominated in. Only present on &#x60;crypto&#x60; transfers that have successfully completed. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the bank was created at. |  [optional]
 
 
