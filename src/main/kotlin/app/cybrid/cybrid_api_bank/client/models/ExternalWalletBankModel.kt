@@ -26,14 +26,85 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param token Customer attestation token.
+ * @param guid Auto-generated unique identifier for the account.
+ * @param name The name of the account.
+ * @param assetCode The asset code.
+ * @param accountKind The type of account.
+ * @param environment The environment that the exchange is operating in.
+ * @param exchangeGuid The exchange identifier.
+ * @param createdAt ISO8601 datetime the exchange was created at.
+ * @param state The state of an external wallet
+ * @param failureCode The failure code of an external wallet (if any)
  */
 
-data class PostIdentityRecordAttestationDetailsBankModel (
+data class ExternalWalletBankModel (
 
-    /* Customer attestation token. */
-    @SerializedName("token")
-    val token: kotlin.String? = null
+    /* Auto-generated unique identifier for the account. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-)
+    /* The name of the account. */
+    @SerializedName("name")
+    val name: kotlin.String? = null,
+
+    /* The asset code. */
+    @SerializedName("asset_code")
+    val assetCode: kotlin.String? = null,
+
+    /* The type of account. */
+    @SerializedName("account_kind")
+    val accountKind: ExternalWalletBankModel.AccountKind? = null,
+
+    /* The environment that the exchange is operating in. */
+    @SerializedName("environment")
+    val environment: ExternalWalletBankModel.Environment? = null,
+
+    /* The exchange identifier. */
+    @SerializedName("exchange_guid")
+    val exchangeGuid: kotlin.String? = null,
+
+    /* ISO8601 datetime the exchange was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null,
+
+    /* The state of an external wallet */
+    @SerializedName("state")
+    val state: ExternalWalletBankModel.State? = null,
+
+    /* The failure code of an external wallet (if any) */
+    @SerializedName("failure_code")
+    val failureCode: kotlin.String? = null
+
+) {
+
+    /**
+     * The type of account.
+     *
+     * Values: fireblocksExternalWallet,circleWireExternalWallet
+     */
+    enum class AccountKind(val value: kotlin.String) {
+        @SerializedName(value = "fireblocks_external_wallet") fireblocksExternalWallet("fireblocks_external_wallet"),
+        @SerializedName(value = "circle_wire_external_wallet") circleWireExternalWallet("circle_wire_external_wallet");
+    }
+    /**
+     * The environment that the exchange is operating in.
+     *
+     * Values: sandbox,production
+     */
+    enum class Environment(val value: kotlin.String) {
+        @SerializedName(value = "sandbox") sandbox("sandbox"),
+        @SerializedName(value = "production") production("production");
+    }
+    /**
+     * The state of an external wallet
+     *
+     * Values: storing,pending,failed,completed
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "pending") pending("pending"),
+        @SerializedName(value = "failed") failed("failed"),
+        @SerializedName(value = "completed") completed("completed");
+    }
+}
 
