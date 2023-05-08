@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Enum: expected_error
 Name | Value
 ---- | -----
-expectedError | unexpected_error, invalid_quote_guid, expired_quote, non_sufficient_funds
+expectedError | invalid_quote_guid, expired_quote, non_sufficient_funds
 
 
 
