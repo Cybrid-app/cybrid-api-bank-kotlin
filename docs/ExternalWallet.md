@@ -4,22 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**guid** | **kotlin.String** | Auto-generated unique identifier for the account. |  [optional]
-**name** | **kotlin.String** | The name of the account. |  [optional]
+**guid** | **kotlin.String** | Auto-generated unique identifier for the wallet. |  [optional]
+**name** | **kotlin.String** | The name of the wallet. |  [optional]
 **assetCode** | **kotlin.String** | The asset code. |  [optional]
-**accountKind** | [**inline**](#AccountKind) | The type of account. |  [optional]
-**environment** | [**inline**](#Environment) | The environment that the exchange is operating in. |  [optional]
-**exchangeGuid** | **kotlin.String** | The exchange identifier. |  [optional]
-**createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the exchange was created at. |  [optional]
+**environment** | [**inline**](#Environment) | The environment that the wallet is configured for. |  [optional]
+**customerGuid** | **kotlin.String** | The customer identifier. |  [optional]
+**address** | **kotlin.String** | The blockchain wallet address for the wallet. |  [optional]
+**tag** | **kotlin.String** | The blockchain tag to use when transferring crypto to the wallet. |  [optional]
+**createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the wallet was created at. |  [optional]
 **state** | [**inline**](#State) | The state of an external wallet |  [optional]
 **failureCode** | **kotlin.String** | The failure code of an external wallet (if any) |  [optional]
-
-
-<a name="AccountKind"></a>
-## Enum: account_kind
-Name | Value
----- | -----
-accountKind | fireblocks_external_wallet, circle_wire_external_wallet
 
 
 <a name="Environment"></a>
@@ -33,7 +27,7 @@ environment | sandbox, production
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, pending, failed, completed
+state | storing, pending, failed, completed, deleting, deleted
 
 
 

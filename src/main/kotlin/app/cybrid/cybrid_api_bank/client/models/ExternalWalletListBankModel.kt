@@ -20,111 +20,36 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.ExternalWalletBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the identity verification.
- * @param customerGuid The customer's identifier.
- * @param type The type of identity verification.
- * @param method The identity verification method.
- * @param createdAt ISO8601 datetime the customer was created at.
- * @param state The state of the verification process.
- * @param outcome The outcome of the verification process.
- * @param failureCodes The reason codes explaining the outcome.
+ * @param total The total number of records available.
+ * @param page The page index to retrieve.
+ * @param perPage The number of entities per page to return.
+ * @param objects Array of external wallet entities
  */
 
-data class IdentityVerificationBankModel (
+data class ExternalWalletListBankModel (
 
-    /* Auto-generated unique identifier for the identity verification. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The total number of records available. */
+    @SerializedName("total")
+    val total: java.math.BigDecimal,
 
-    /* The customer's identifier. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The page index to retrieve. */
+    @SerializedName("page")
+    val page: java.math.BigDecimal,
 
-    /* The type of identity verification. */
-    @SerializedName("type")
-    val type: IdentityVerificationBankModel.Type? = null,
+    /* The number of entities per page to return. */
+    @SerializedName("per_page")
+    val perPage: java.math.BigDecimal,
 
-    /* The identity verification method. */
-    @SerializedName("method")
-    val method: IdentityVerificationBankModel.Method? = null,
+    /* Array of external wallet entities */
+    @SerializedName("objects")
+    val objects: kotlin.collections.List<ExternalWalletBankModel>
 
-    /* ISO8601 datetime the customer was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null,
-
-    /* The state of the verification process. */
-    @SerializedName("state")
-    val state: IdentityVerificationBankModel.State? = null,
-
-    /* The outcome of the verification process. */
-    @SerializedName("outcome")
-    val outcome: IdentityVerificationBankModel.Outcome? = null,
-
-    /* The reason codes explaining the outcome. */
-    @SerializedName("failure_codes")
-    val failureCodes: kotlin.collections.List<IdentityVerificationBankModel.FailureCodes>? = null
-
-) {
-
-    /**
-     * The type of identity verification.
-     *
-     * Values: kyc
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "kyc") kyc("kyc");
-    }
-    /**
-     * The identity verification method.
-     *
-     * Values: idAndSelfie,attested
-     */
-    enum class Method(val value: kotlin.String) {
-        @SerializedName(value = "id_and_selfie") idAndSelfie("id_and_selfie"),
-        @SerializedName(value = "attested") attested("attested");
-    }
-    /**
-     * The state of the verification process.
-     *
-     * Values: storing,waiting,expired,completed
-     */
-    enum class State(val value: kotlin.String) {
-        @SerializedName(value = "storing") storing("storing"),
-        @SerializedName(value = "waiting") waiting("waiting"),
-        @SerializedName(value = "expired") expired("expired"),
-        @SerializedName(value = "completed") completed("completed");
-    }
-    /**
-     * The outcome of the verification process.
-     *
-     * Values: passed,failed
-     */
-    enum class Outcome(val value: kotlin.String) {
-        @SerializedName(value = "passed") passed("passed"),
-        @SerializedName(value = "failed") failed("failed");
-    }
-    /**
-     * The reason codes explaining the outcome.
-     *
-     * Values: requestedFailure,idCheckFailure,databaseCheckFailure,selfieFailure,pepCheckFailure,watchlistCheckFailure,nameCheckFailure,addressCheckFailure,dobCheckFailure,idNumberCheckFailure
-     */
-    enum class FailureCodes(val value: kotlin.String) {
-        @SerializedName(value = "requested_failure") requestedFailure("requested_failure"),
-        @SerializedName(value = "id_check_failure") idCheckFailure("id_check_failure"),
-        @SerializedName(value = "database_check_failure") databaseCheckFailure("database_check_failure"),
-        @SerializedName(value = "selfie_failure") selfieFailure("selfie_failure"),
-        @SerializedName(value = "pep_check_failure") pepCheckFailure("pep_check_failure"),
-        @SerializedName(value = "watchlist_check_failure") watchlistCheckFailure("watchlist_check_failure"),
-        @SerializedName(value = "name_check_failure") nameCheckFailure("name_check_failure"),
-        @SerializedName(value = "address_check_failure") addressCheckFailure("address_check_failure"),
-        @SerializedName(value = "dob_check_failure") dobCheckFailure("dob_check_failure"),
-        @SerializedName(value = "id_number_check_failure") idNumberCheckFailure("id_number_check_failure");
-    }
-}
+)
 
