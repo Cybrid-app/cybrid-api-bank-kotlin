@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the wallet. |  [optional]
 **name** | **kotlin.String** | The name of the wallet. |  [optional]
-**assetCode** | **kotlin.String** | The asset code. |  [optional]
+**asset** | **kotlin.String** | The asset code. |  [optional]
 **environment** | [**inline**](#Environment) | The environment that the wallet is configured for. |  [optional]
 **customerGuid** | **kotlin.String** | The customer identifier. |  [optional]
 **address** | **kotlin.String** | The blockchain wallet address for the wallet. |  [optional]
