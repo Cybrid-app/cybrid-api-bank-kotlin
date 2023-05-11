@@ -19,6 +19,7 @@ interface ExternalWalletsApi {
      *  - 400: Invalid requests
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
+     *  - 409: Data already exists
      *  - 422: Unable to process request
      *
      * @param postExternalWalletBankModel 
