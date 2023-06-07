@@ -109,7 +109,6 @@ The available APIs for the [Identity](https://id.sandbox.cybrid.app/api/schema/s
 | Bank         | Account              | /api/accounts                  | Create and list accounts, which hold a specific asset for a customers                             |
 | Bank         | Asset                | /api/assets                    | Get a list of assets supported by the platform (ex: BTC, ETH)                                     |
 | Bank         | Bank                 | /api/banks                     | Create, update and list banks, the parent to customers, accounts, etc                             |
-| Bank         | BankVerificationKey  | /api/bank_verification_keys    | Create, list and retrive verification keys, used for signing identities                           |
 | Bank         | Customer             | /api/customers                 | Create and list customers                                                                         |
 | Bank         | DepositAddress       | /api/deposit_addresses         | Create, get and list deposit addresses                                                            |
 | Bank         | ExternalBankAccount  | /api/external_bank_accounts    | Create, get and list external bank accounts, which connect customer bank accounts to the platform |
@@ -221,9 +220,6 @@ Class | Method | HTTP request | Description
 *TransfersApi* | [**createTransfer**](docs/TransfersApi.md#createtransfer) | **POST** api/transfers | Create Transfer
 *TransfersApi* | [**getTransfer**](docs/TransfersApi.md#gettransfer) | **GET** api/transfers/{transfer_guid} | Get Transfer
 *TransfersApi* | [**listTransfers**](docs/TransfersApi.md#listtransfers) | **GET** api/transfers | Get transfers list
-*VerificationKeysApi* | [**createVerificationKey**](docs/VerificationKeysApi.md#createverificationkey) | **POST** api/bank_verification_keys | Create VerificationKey
-*VerificationKeysApi* | [**getVerificationKey**](docs/VerificationKeysApi.md#getverificationkey) | **GET** api/bank_verification_keys/{verification_key_guid} | Get VerificationKey
-*VerificationKeysApi* | [**listVerificationKeys**](docs/VerificationKeysApi.md#listverificationkeys) | **GET** api/bank_verification_keys | Get Verification Keys list
 *WorkflowsApi* | [**createWorkflow**](docs/WorkflowsApi.md#createworkflow) | **POST** api/workflows | Create Workflow
 *WorkflowsApi* | [**getWorkflow**](docs/WorkflowsApi.md#getworkflow) | **GET** api/workflows/{workflow_guid} | Get Workflow
 *WorkflowsApi* | [**listWorkflows**](docs/WorkflowsApi.md#listworkflows) | **GET** api/workflows | Get workflows list
