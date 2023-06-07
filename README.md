@@ -204,9 +204,6 @@ Class | Method | HTTP request | Description
 *ExternalWalletsApi* | [**deleteExternalWallet**](docs/ExternalWalletsApi.md#deleteexternalwallet) | **DELETE** api/external_wallets/{external_wallet_guid} | Delete External Wallet
 *ExternalWalletsApi* | [**getExternalWallet**](docs/ExternalWalletsApi.md#getexternalwallet) | **GET** api/external_wallets/{external_wallet_guid} | Get External Wallet
 *ExternalWalletsApi* | [**listExternalWallets**](docs/ExternalWalletsApi.md#listexternalwallets) | **GET** api/external_wallets | Get external wallets list
-*IdentityRecordsApi* | [**createIdentityRecord**](docs/IdentityRecordsApi.md#createidentityrecord) | **POST** api/identity_records | Create Identity Record
-*IdentityRecordsApi* | [**getIdentityRecord**](docs/IdentityRecordsApi.md#getidentityrecord) | **GET** api/identity_records/{identity_record_guid} | Get Identity Record
-*IdentityRecordsApi* | [**listIdentityRecords**](docs/IdentityRecordsApi.md#listidentityrecords) | **GET** api/identity_records | List Identity Records
 *IdentityVerificationsApi* | [**createIdentityVerification**](docs/IdentityVerificationsApi.md#createidentityverification) | **POST** api/identity_verifications | Create Identity Verification
 *IdentityVerificationsApi* | [**getIdentityVerification**](docs/IdentityVerificationsApi.md#getidentityverification) | **GET** api/identity_verifications/{identity_verification_guid} | Get Identity Verification
 *IdentityVerificationsApi* | [**listIdentityVerifications**](docs/IdentityVerificationsApi.md#listidentityverifications) | **GET** api/identity_verifications | List Identity Verifications
