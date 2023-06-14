@@ -116,9 +116,10 @@ val guid : kotlin.String = guid_example // kotlin.String | Comma separated trade
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list transfers for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list transfers for.
 val accountGuid : kotlin.String = accountGuid_example // kotlin.String | Comma separated account_guids to list transfers for.
+val state : kotlin.String = state_example // kotlin.String | Comma separated states to list transfers for.
 
 launch(Dispatchers.IO) {
-    val result : TransferListBankModel = webService.listTransfers(page, perPage, guid, bankGuid, customerGuid, accountGuid)
+    val result : TransferListBankModel = webService.listTransfers(page, perPage, guid, bankGuid, customerGuid, accountGuid, state)
 }
 ```
 
@@ -132,6 +133,7 @@ Name | Type | Description  | Notes
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list transfers for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list transfers for. | [optional]
  **accountGuid** | **kotlin.String**| Comma separated account_guids to list transfers for. | [optional]
+ **state** | **kotlin.String**| Comma separated states to list transfers for. | [optional]
 
 ### Return type
 
