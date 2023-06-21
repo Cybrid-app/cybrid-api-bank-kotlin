@@ -159,9 +159,10 @@ val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of 
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated external_wallet_guids to list external_wallets for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list external_wallets for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list external_wallets for.
+val state : kotlin.String = state_example // kotlin.String | Comma separated states to list external_wallets for.
 
 launch(Dispatchers.IO) {
-    val result : ExternalWalletListBankModel = webService.listExternalWallets(page, perPage, guid, bankGuid, customerGuid)
+    val result : ExternalWalletListBankModel = webService.listExternalWallets(page, perPage, guid, bankGuid, customerGuid, state)
 }
 ```
 
@@ -174,6 +175,7 @@ Name | Type | Description  | Notes
  **guid** | **kotlin.String**| Comma separated external_wallet_guids to list external_wallets for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list external_wallets for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list external_wallets for. | [optional]
+ **state** | **kotlin.String**| Comma separated states to list external_wallets for. | [optional]
 
 ### Return type
 
