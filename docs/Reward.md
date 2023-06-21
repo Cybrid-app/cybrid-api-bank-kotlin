@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, initiating, pending, settling, completed, failed
+state | storing, pending, cancelled, completed, settling, failed
 
 
 

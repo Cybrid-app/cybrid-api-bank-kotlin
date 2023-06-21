@@ -27,7 +27,7 @@ side | buy, sell
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, pending, cancelled, executed, completed, settling, failed
+state | storing, pending, cancelled, completed, settling, failed
 
 
 
