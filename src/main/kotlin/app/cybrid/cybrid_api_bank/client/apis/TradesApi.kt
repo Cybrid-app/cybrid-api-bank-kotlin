@@ -58,9 +58,10 @@ interface TradesApi {
      * @param bankGuid Comma separated bank_guids to list trades for. (optional)
      * @param customerGuid Comma separated customer_guids to list trades for. (optional)
      * @param accountGuid Comma separated account_guids to list trades for. (optional)
+     * @param state Comma separated states to list trades for. (optional)
      * @return [TradeListBankModel]
      */
     @GET("api/trades")
-    suspend fun listTrades(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null): Response<TradeListBankModel>
+    suspend fun listTrades(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<TradeListBankModel>
 
 }
