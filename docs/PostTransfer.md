@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **transferType** | [**inline**](#TransferType) | The type of transfer. | 
 **externalWalletGuid** | **kotlin.String** | The customer&#39;s external wallet&#39;s identifier. |  [optional]
 **externalBankAccountGuid** | **kotlin.String** | The customer&#39;s &#39;plaid&#39; or &#39;plaid_processor_token&#39; external bank account&#39;s identifier. |  [optional]
-**oneTimeAddress** | [**PostOneTimeAddressBankModel**](PostOneTimeAddressBankModel.md) |  |  [optional]
 **expectedError** | [**inline**](#ExpectedError) | The optional expected error to simulate transfer failure. |  [optional]
 
 
