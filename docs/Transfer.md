@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **transferType** | [**inline**](#TransferType) | The type of transfer. |  [optional]
 **customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. |  [optional]
+**externalBankAccountGuid** | **kotlin.String** | The associated external bank account&#39;s identifier. |  [optional]
 **asset** | **kotlin.String** | The asset the transfer is related to, e.g., USD. |  [optional]
 **side** | [**inline**](#Side) | The direction of the quote: &#39;deposit&#39; or &#39;withdrawal&#39;. |  [optional]
 **state** | [**inline**](#State) | The trade&#39;s state |  [optional]
