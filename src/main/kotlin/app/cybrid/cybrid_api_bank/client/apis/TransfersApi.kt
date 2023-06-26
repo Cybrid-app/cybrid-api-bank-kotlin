@@ -13,7 +13,7 @@ import app.cybrid.cybrid_api_bank.client.models.TransferListBankModel
 interface TransfersApi {
     /**
      * Create Transfer
-     * Creates a transfer.  Required scope: **transfers:execute**
+     * Creates a transfer.  ## State  | State | Description | |-------|-------------| | storing | The Platform is storing the trade details in our private store | | initiating | The Platform has begun to perform the transfer | | pending | The Platform is executing the transfer | | completed | The Platform has successfully completed the transfer | | failed | The Platform was not able to successfully complete the transfer |    Required scope: **transfers:execute**
      * Responses:
      *  - 201: Transfer created
      *  - 400: Invalid requests
