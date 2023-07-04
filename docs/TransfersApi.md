@@ -112,14 +112,15 @@ apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(TransfersApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
-val guid : kotlin.String = guid_example // kotlin.String | Comma separated trade_guids to list transfers for.
+val guid : kotlin.String = guid_example // kotlin.String | Comma separated transfer_guids to list transfers for.
+val transferType : kotlin.String = transferType_example // kotlin.String | Comma separated transfer_types to list accounts for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list transfers for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list transfers for.
 val accountGuid : kotlin.String = accountGuid_example // kotlin.String | Comma separated account_guids to list transfers for.
 val state : kotlin.String = state_example // kotlin.String | Comma separated states to list transfers for.
 
 launch(Dispatchers.IO) {
-    val result : TransferListBankModel = webService.listTransfers(page, perPage, guid, bankGuid, customerGuid, accountGuid, state)
+    val result : TransferListBankModel = webService.listTransfers(page, perPage, guid, transferType, bankGuid, customerGuid, accountGuid, state)
 }
 ```
 
@@ -129,7 +130,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional]
  **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional]
- **guid** | **kotlin.String**| Comma separated trade_guids to list transfers for. | [optional]
+ **guid** | **kotlin.String**| Comma separated transfer_guids to list transfers for. | [optional]
+ **transferType** | **kotlin.String**| Comma separated transfer_types to list accounts for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list transfers for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list transfers for. | [optional]
  **accountGuid** | **kotlin.String**| Comma separated account_guids to list transfers for. | [optional]

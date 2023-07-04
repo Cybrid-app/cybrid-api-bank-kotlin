@@ -54,7 +54,8 @@ interface TransfersApi {
      *
      * @param page The page index to retrieve. (optional)
      * @param perPage The number of entities per page to return. (optional)
-     * @param guid Comma separated trade_guids to list transfers for. (optional)
+     * @param guid Comma separated transfer_guids to list transfers for. (optional)
+     * @param transferType Comma separated transfer_types to list accounts for. (optional)
      * @param bankGuid Comma separated bank_guids to list transfers for. (optional)
      * @param customerGuid Comma separated customer_guids to list transfers for. (optional)
      * @param accountGuid Comma separated account_guids to list transfers for. (optional)
@@ -62,6 +63,6 @@ interface TransfersApi {
      * @return [TransferListBankModel]
      */
     @GET("api/transfers")
-    suspend fun listTransfers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<TransferListBankModel>
+    suspend fun listTransfers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("transfer_type") transferType: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<TransferListBankModel>
 
 }

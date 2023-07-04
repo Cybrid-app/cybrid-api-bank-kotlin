@@ -113,11 +113,12 @@ val webService = apiClient.createWebservice(AccountsApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated account_guids to list accounts for.
+val type : kotlin.String = type_example // kotlin.String | Comma separated account_types to list accounts for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list accounts for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list accounts for.
 
 launch(Dispatchers.IO) {
-    val result : AccountListBankModel = webService.listAccounts(page, perPage, guid, bankGuid, customerGuid)
+    val result : AccountListBankModel = webService.listAccounts(page, perPage, guid, type, bankGuid, customerGuid)
 }
 ```
 
@@ -128,6 +129,7 @@ Name | Type | Description  | Notes
  **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional]
  **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional]
  **guid** | **kotlin.String**| Comma separated account_guids to list accounts for. | [optional]
+ **type** | **kotlin.String**| Comma separated account_types to list accounts for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list accounts for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list accounts for. | [optional]
 

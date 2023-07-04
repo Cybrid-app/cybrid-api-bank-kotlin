@@ -113,11 +113,12 @@ val webService = apiClient.createWebservice(QuotesApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated quote_guids to list quotes for.
+val productType : kotlin.String = productType_example // kotlin.String | Comma separated product_types to list accounts for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list quotes for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list quotes for.
 
 launch(Dispatchers.IO) {
-    val result : QuoteListBankModel = webService.listQuotes(page, perPage, guid, bankGuid, customerGuid)
+    val result : QuoteListBankModel = webService.listQuotes(page, perPage, guid, productType, bankGuid, customerGuid)
 }
 ```
 
@@ -128,6 +129,7 @@ Name | Type | Description  | Notes
  **page** | **java.math.BigDecimal**|  | [optional]
  **perPage** | **java.math.BigDecimal**|  | [optional]
  **guid** | **kotlin.String**| Comma separated quote_guids to list quotes for. | [optional]
+ **productType** | **kotlin.String**| Comma separated product_types to list accounts for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list quotes for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list quotes for. | [optional]
 
