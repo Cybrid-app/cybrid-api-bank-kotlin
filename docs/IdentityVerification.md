@@ -18,14 +18,14 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | kyc
+type | kyc, bank_account
 
 
 <a name="Method"></a>
 ## Enum: method
 Name | Value
 ---- | -----
-method | id_and_selfie, attested
+method | id_and_selfie, attested, plaid_identity_match
 
 
 <a name="State"></a>
@@ -46,7 +46,7 @@ outcome | passed, failed
 ## Enum: failure_codes
 Name | Value
 ---- | -----
-failureCodes | requested_failure, id_check_failure, database_check_failure, selfie_failure, pep_check_failure, watchlist_check_failure, name_check_failure, address_check_failure, dob_check_failure, id_number_check_failure
+failureCodes | requested_failure, id_check_failure, database_check_failure, selfie_failure, pep_check_failure, watchlist_check_failure, name_check_failure, address_check_failure, dob_check_failure, id_number_check_failure, phone_number_check_failure, email_address_check_failure
 
 
 

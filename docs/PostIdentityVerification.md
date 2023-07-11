@@ -11,7 +11,10 @@ Name | Type | Description | Notes
 **name** | [**PostIdentityVerificationNameBankModel**](PostIdentityVerificationNameBankModel.md) |  |  [optional]
 **address** | [**PostIdentityVerificationAddressBankModel**](PostIdentityVerificationAddressBankModel.md) |  |  [optional]
 **dateOfBirth** | [**java.time.LocalDate**](java.time.LocalDate.md) | The customer&#39;s date of birth; required when method is set to &#39;attested&#39;. |  [optional]
+**phoneNumber** | **kotlin.String** | The customer&#39;s phone number. |  [optional]
+**emailAddress** | **kotlin.String** | The customer&#39;s email address. |  [optional]
 **identificationNumbers** | [**kotlin.collections.List&lt;PostIdentificationNumberBankModel&gt;**](PostIdentificationNumberBankModel.md) | The customer&#39;s identification numbers; required when method is set to &#39;attested&#39;. |  [optional]
+**externalBankAccountGuid** | **kotlin.String** | The external bank account&#39;s identifier. Required for &#39;bank_account&#39; type. |  [optional]
 **expectedBehaviours** | [**inline**](#kotlin.collections.List&lt;ExpectedBehaviours&gt;) | The optional expected behaviour to simulate. |  [optional]
 
 
@@ -19,14 +22,14 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | kyc
+type | kyc, bank_account
 
 
 <a name="Method"></a>
 ## Enum: method
 Name | Value
 ---- | -----
-method | id_and_selfie, attested
+method | id_and_selfie, attested, plaid_identity_match
 
 
 <a name="kotlin.collections.List<ExpectedBehaviours>"></a>
