@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | drivers_license, passport, passport_card, residence_card, social_security_number, tax_identification_number
+type | drivers_license, passport, passport_card, residence_card, social_security_number, tax_identification_number, identification_card
 
 
 
