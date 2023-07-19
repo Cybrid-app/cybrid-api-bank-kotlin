@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the quote. |  [optional]
 **productType** | [**inline**](#ProductType) | The type of product the quote is for. |  [optional]
+**bankGuid** | **kotlin.String** | The unique identifier for the bank. |  [optional]
 **customerGuid** | **kotlin.String** | The unique identifier for the customer. |  [optional]
 **symbol** | **kotlin.String** | Symbol the quote was requested for. Format is \&quot;asset-counter_asset\&quot; in uppercase. Populated for trade quotes. |  [optional]
 **side** | [**inline**](#Side) | The direction of the quote: either &#39;buy&#39; or &#39;sell&#39; for trade quotes. |  [optional]

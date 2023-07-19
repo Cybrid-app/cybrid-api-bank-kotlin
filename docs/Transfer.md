@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the trade. |  [optional]
 **transferType** | [**inline**](#TransferType) | The type of transfer. |  [optional]
+**bankGuid** | **kotlin.String** | The associated bank&#39;s identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. |  [optional]
 **externalBankAccountGuid** | **kotlin.String** | The associated external bank account&#39;s identifier. |  [optional]
