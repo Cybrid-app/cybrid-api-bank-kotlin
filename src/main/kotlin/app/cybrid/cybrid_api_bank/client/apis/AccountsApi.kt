@@ -8,6 +8,7 @@ import okhttp3.RequestBody
 import app.cybrid.cybrid_api_bank.client.models.AccountBankModel
 import app.cybrid.cybrid_api_bank.client.models.AccountListBankModel
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
+import app.cybrid.cybrid_api_bank.client.models.ListRequestOwnerBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel
 
 interface AccountsApi {
@@ -52,6 +53,7 @@ interface AccountsApi {
      *
      * @param page The page index to retrieve. (optional)
      * @param perPage The number of entities per page to return. (optional)
+     * @param owner The owner of the entity. (optional)
      * @param guid Comma separated account_guids to list accounts for. (optional)
      * @param type Comma separated account_types to list accounts for. (optional)
      * @param bankGuid Comma separated bank_guids to list accounts for. (optional)
@@ -59,6 +61,6 @@ interface AccountsApi {
      * @return [AccountListBankModel]
      */
     @GET("api/accounts")
-    suspend fun listAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("type") type: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<AccountListBankModel>
+    suspend fun listAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("owner") owner: ListRequestOwnerBankModel? = null, @Query("guid") guid: kotlin.String? = null, @Query("type") type: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<AccountListBankModel>
 
 }

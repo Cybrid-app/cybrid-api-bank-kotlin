@@ -20,35 +20,47 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.DepositAddressBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
- * 
+ * The owner of the entity.
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects 
+ * Values: bank,customer
  */
 
-data class DepositAddressListBankModel (
+enum class ListRequestOwnerBankModel(val value: kotlin.String) {
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    @SerializedName(value = "bank")
+    bank("bank"),
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    @SerializedName(value = "customer")
+    customer("customer");
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /**
+     * Override toString() to avoid using the enum variable name as the value, and instead use
+     * the actual value defined in the API spec file.
+     *
+     * This solves a problem when the variable name and its value are different, and ensures that
+     * the client sends the correct enum values to the server always.
+     */
+    override fun toString(): String = value
 
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<DepositAddressBankModel>
+    companion object {
+        /**
+         * Converts the provided [data] to a [String] on success, null otherwise.
+         */
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ListRequestOwnerBankModel) "$data" else null
 
-)
+        /**
+         * Returns a valid [ListRequestOwnerBankModel] for [data], null otherwise.
+         */
+        fun decode(data: kotlin.Any?): ListRequestOwnerBankModel? = data?.let {
+          val normalizedData = "$it".lowercase()
+          values().firstOrNull { value ->
+            it == value || normalizedData == "$value".lowercase()
+          }
+        }
+    }
+}
 
