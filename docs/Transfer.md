@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **externalBankAccountGuid** | **kotlin.String** | The associated external bank account&#39;s identifier. |  [optional]
 **asset** | **kotlin.String** | The asset the transfer is related to, e.g., USD. |  [optional]
 **side** | [**inline**](#Side) | The direction of the quote: &#39;deposit&#39; or &#39;withdrawal&#39;. |  [optional]
-**state** | [**inline**](#State) | The trade&#39;s state |  [optional]
+**state** | [**inline**](#State) | The transfer&#39;s state |  [optional]
 **amount** | **java.math.BigDecimal** | The actual amount in base units of the asset. |  [optional]
 **estimatedAmount** | **java.math.BigDecimal** | The estimated amount in base units of the asset. |  [optional]
 **fee** | **java.math.BigDecimal** | The fee associated with the trade. |  [optional]
@@ -42,7 +42,7 @@ side | deposit, withdrawal
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, initiating, pending, completed, failed
+state | storing, pending, completed, failed
 
 
 
