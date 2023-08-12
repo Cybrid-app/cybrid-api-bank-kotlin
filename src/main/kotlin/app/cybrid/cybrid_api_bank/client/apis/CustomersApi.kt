@@ -36,10 +36,11 @@ interface CustomersApi {
      *  - 404: customer not found
      *
      * @param customerGuid Identifier for the customer.
+     * @param includePii Include PII in the response. (optional)
      * @return [CustomerBankModel]
      */
     @GET("api/customers/{customer_guid}")
-    suspend fun getCustomer(@Path("customer_guid") customerGuid: kotlin.String): Response<CustomerBankModel>
+    suspend fun getCustomer(@Path("customer_guid") customerGuid: kotlin.String, @Query("include_pii") includePii: kotlin.Boolean? = null): Response<CustomerBankModel>
 
     /**
      * Get customers list

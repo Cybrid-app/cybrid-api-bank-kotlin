@@ -68,9 +68,10 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(CustomersApi::class.java)
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Identifier for the customer.
+val includePii : kotlin.Boolean = true // kotlin.Boolean | Include PII in the response.
 
 launch(Dispatchers.IO) {
-    val result : CustomerBankModel = webService.getCustomer(customerGuid)
+    val result : CustomerBankModel = webService.getCustomer(customerGuid, includePii)
 }
 ```
 
@@ -79,6 +80,7 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerGuid** | **kotlin.String**| Identifier for the customer. |
+ **includePii** | **kotlin.Boolean**| Include PII in the response. | [optional]
 
 ### Return type
 

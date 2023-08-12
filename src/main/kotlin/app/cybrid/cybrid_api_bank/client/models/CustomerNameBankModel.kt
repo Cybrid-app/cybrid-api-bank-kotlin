@@ -26,79 +26,24 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the identity verification.
- * @param bankGuid The address' bank identifier.
- * @param customerGuid The address' customer identifier.
- * @param accountGuid The address' account identifier.
- * @param createdAt ISO8601 datetime the address was created at.
- * @param asset The asset the transfer is related to, e.g., USD.
- * @param state The state of the address.
- * @param address The blockchain address.
- * @param format The blockchain address format.
- * @param tag The blockchain address tag.
+ * @param first The customer's first name.
+ * @param middle The customer's middle name.
+ * @param last The customer's last name.
  */
 
-data class DepositAddressBankModel (
+data class CustomerNameBankModel (
 
-    /* Auto-generated unique identifier for the identity verification. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The customer's first name. */
+    @SerializedName("first")
+    val first: kotlin.String? = null,
 
-    /* The address' bank identifier. */
-    @SerializedName("bank_guid")
-    val bankGuid: kotlin.String? = null,
+    /* The customer's middle name. */
+    @SerializedName("middle")
+    val middle: kotlin.String? = null,
 
-    /* The address' customer identifier. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The customer's last name. */
+    @SerializedName("last")
+    val last: kotlin.String? = null
 
-    /* The address' account identifier. */
-    @SerializedName("account_guid")
-    val accountGuid: kotlin.String? = null,
-
-    /* ISO8601 datetime the address was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null,
-
-    /* The asset the transfer is related to, e.g., USD. */
-    @SerializedName("asset")
-    val asset: kotlin.String? = null,
-
-    /* The state of the address. */
-    @SerializedName("state")
-    val state: DepositAddressBankModel.State? = null,
-
-    /* The blockchain address. */
-    @SerializedName("address")
-    val address: kotlin.String? = null,
-
-    /* The blockchain address format. */
-    @SerializedName("format")
-    val format: DepositAddressBankModel.Format? = null,
-
-    /* The blockchain address tag. */
-    @SerializedName("tag")
-    val tag: kotlin.String? = null
-
-) {
-
-    /**
-     * The state of the address.
-     *
-     * Values: storing,created
-     */
-    enum class State(val value: kotlin.String) {
-        @SerializedName(value = "storing") storing("storing"),
-        @SerializedName(value = "created") created("created");
-    }
-    /**
-     * The blockchain address format.
-     *
-     * Values: standard,legacy
-     */
-    enum class Format(val value: kotlin.String) {
-        @SerializedName(value = "standard") standard("standard"),
-        @SerializedName(value = "legacy") legacy("legacy");
-    }
-}
+)
 
