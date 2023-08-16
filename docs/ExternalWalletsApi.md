@@ -156,13 +156,14 @@ apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(ExternalWalletsApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
+val owner : ListRequestOwnerBankModel =  // ListRequestOwnerBankModel | The owner of the entity.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated external_wallet_guids to list external_wallets for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list external_wallets for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list external_wallets for.
 val state : kotlin.String = state_example // kotlin.String | Comma separated states to list external_wallets for.
 
 launch(Dispatchers.IO) {
-    val result : ExternalWalletListBankModel = webService.listExternalWallets(page, perPage, guid, bankGuid, customerGuid, state)
+    val result : ExternalWalletListBankModel = webService.listExternalWallets(page, perPage, owner, guid, bankGuid, customerGuid, state)
 }
 ```
 
@@ -172,6 +173,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional]
  **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional]
+ **owner** | [**ListRequestOwnerBankModel**](.md)| The owner of the entity. | [optional] [enum: bank, customer]
  **guid** | **kotlin.String**| Comma separated external_wallet_guids to list external_wallets for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list external_wallets for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list external_wallets for. | [optional]
