@@ -36,7 +36,7 @@ method | id_and_selfie, attested, plaid_identity_match
 ## Enum: expected_behaviours
 Name | Value
 ---- | -----
-expectedBehaviours | passed_immediately, failed_immediately
+expectedBehaviours | passed_immediately, failed_immediately, tax_id_not_checked
 
 
 
