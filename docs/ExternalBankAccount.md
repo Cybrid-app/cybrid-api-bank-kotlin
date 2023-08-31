@@ -37,7 +37,7 @@ environment | sandbox, production
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, completed, failed, refresh_required, deleting, deleted
+state | storing, completed, failed, refresh_required, unverified, deleting, deleted
 
 
 
