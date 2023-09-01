@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **networkFeeLiabilityAmount** | **java.math.BigDecimal** | The equivalent fiat network fee in base units of network_fee_liability_amount_asset. Only present on &#x60;crypto&#x60; transfers that have successfully completed. |  [optional]
 **networkFeeLiabilityAmountAsset** | **kotlin.String** | The fiat asset the network_fee_liability_amount is denominated in. Only present on &#x60;crypto&#x60; transfers that have successfully completed. |  [optional]
 **txnHash** | **kotlin.String** | The hash of the blockchain transaction |  [optional]
+**sourceAccount** | [**TransferSourceAccountBankModel**](TransferSourceAccountBankModel.md) |  |  [optional]
+**destinationAccount** | [**TransferDestinationAccountBankModel**](TransferDestinationAccountBankModel.md) |  |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the bank was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the trade was last updated at. |  [optional]
 

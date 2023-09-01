@@ -24,43 +24,35 @@ package app.cybrid.cybrid_api_bank.client.models
 import com.google.gson.annotations.SerializedName
 
 /**
- * The owner of the entity.
+ * The destination account in the transfer.
  *
- * Values: bank,customer
+ * @param guid Auto-generated unique identifier for the transfer account.
+ * @param type The type of transfer account.
  */
 
-enum class ListRequestOwnerBankModel(val value: kotlin.String) {
+data class TransferDestinationAccountBankModel (
 
-    @SerializedName(value = "bank")
-    bank("bank"),
+    /* Auto-generated unique identifier for the transfer account. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    @SerializedName(value = "customer")
-    customer("customer");
+    /* The type of transfer account. */
+    @SerializedName("type")
+    val type: TransferDestinationAccountBankModel.Type? = null
+
+) {
 
     /**
-     * Override toString() to avoid using the enum variable name as the value, and instead use
-     * the actual value defined in the API spec file.
+     * The type of transfer account.
      *
-     * This solves a problem when the variable name and its value are different, and ensures that
-     * the client sends the correct enum values to the server always.
+     * Values: trading,fiat,externalBankAccount,externalWallet,oneTimeAddress
      */
-    override fun toString(): String = value
-
-    companion object {
-        /**
-         * Converts the provided [data] to a [String] on success, null otherwise.
-         */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ListRequestOwnerBankModel) "$data" else null
-
-        /**
-         * Returns a valid [ListRequestOwnerBankModel] for [data], null otherwise.
-         */
-        fun decode(data: kotlin.Any?): ListRequestOwnerBankModel? = data?.let {
-          val normalizedData = "$it".lowercase()
-          values().firstOrNull { value ->
-            it == value || normalizedData == "$value".lowercase()
-          }
-        }
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "trading") trading("trading"),
+        @SerializedName(value = "fiat") fiat("fiat"),
+        @SerializedName(value = "external_bank_account") externalBankAccount("external_bank_account"),
+        @SerializedName(value = "external_wallet") externalWallet("external_wallet"),
+        @SerializedName(value = "one_time_address") oneTimeAddress("one_time_address");
     }
 }
 
