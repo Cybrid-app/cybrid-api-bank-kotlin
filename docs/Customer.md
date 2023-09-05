@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **address** | [**CustomerAddressBankModel**](CustomerAddressBankModel.md) |  |  [optional]
 **dateOfBirth** | [**java.time.LocalDate**](java.time.LocalDate.md) | The customer&#39;s DOB. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **phoneNumber** | **kotlin.String** | The customer&#39;s phone number. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
-**emailAddress** | **kotlin.String** | The customer&#39;s phone number. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
+**emailAddress** | **kotlin.String** | The customer&#39;s email address. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 
 
 <a name="Type"></a>

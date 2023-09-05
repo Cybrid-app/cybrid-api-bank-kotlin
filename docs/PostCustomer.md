@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **address** | [**PostCustomerAddressBankModel**](PostCustomerAddressBankModel.md) |  |  [optional]
 **dateOfBirth** | [**java.time.LocalDate**](java.time.LocalDate.md) | The customer&#39;s date of birth. |  [optional]
 **phoneNumber** | **kotlin.String** | The customer&#39;s phone number. |  [optional]
-**emailAddress** | **kotlin.String** | The customer&#39;s phone number. |  [optional]
+**emailAddress** | **kotlin.String** | The customer&#39;s email address. |  [optional]
 **identificationNumbers** | [**kotlin.collections.List&lt;PostIdentificationNumberBankModel&gt;**](PostIdentificationNumberBankModel.md) | The customer&#39;s identification numbers. |  [optional]
 
 
