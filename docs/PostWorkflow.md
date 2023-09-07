@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **customerGuid** | **kotlin.String** | The customer identifier associated with the workflow. |  [optional]
 **externalBankAccountGuid** | **kotlin.String** | The external bank account identifier associated with the workflow. |  [optional]
 **language** | [**inline**](#Language) | The language to initialize Plaid link. |  [optional]
-**linkCustomizationName** | **kotlin.String** | The customization name for Plaid link. |  [optional]
+**linkCustomizationName** | **kotlin.String** | The customization name for Plaid link. Currently only supports the value \&quot;default\&quot;. |  [optional]
 **redirectUri** | **kotlin.String** | The redirect URI for Plaid link. |  [optional]
 **androidPackageName** | **kotlin.String** | The Android package name for Plaid link. |  [optional]
 
