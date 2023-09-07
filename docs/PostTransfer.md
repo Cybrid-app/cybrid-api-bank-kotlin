@@ -17,14 +17,14 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | funding, book, crypto
+transferType | funding, book, crypto, instant_funding
 
 
 <a name="ExpectedError"></a>
 ## Enum: expected_error
 Name | Value
 ---- | -----
-expectedError | pending, in_progress, completed, failed, cancelled, manual_intervention, reversed
+expectedError | pending, in_progress, completed, failed, cancelled, manual_intervention
 
 
 

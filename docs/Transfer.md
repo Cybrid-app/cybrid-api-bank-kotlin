@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | savings, funding, book, crypto, internal_bank_rebalance, internal_wallet_rebalance
+transferType | savings, funding, book, crypto, internal_bank_rebalance, internal_wallet_rebalance, instant_funding
 
 
 <a name="Side"></a>
