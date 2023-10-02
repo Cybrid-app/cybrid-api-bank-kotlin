@@ -65,7 +65,7 @@ class ApiClient(
     ) : this(baseUrl, okHttpClientBuilder, serializerBuilder) {
         authNames.forEach { authName ->
             val auth = when (authName) {
-                "BearerAuth" -> HttpBearerAuth("bearer")"oauth2" -> OAuth(OAuthFlow.application, "", "https://id.sandbox.cybrid.app/oauth/token", "banks:read, banks:write, bank_applications:execute, accounts:read, accounts:execute, customers:read, customers:write, customers:execute, prices:read, quotes:execute, quotes:read, trades:execute, trades:read, transfers:execute, transfers:read, rewards:execute, rewards:read, external_bank_accounts:read, external_bank_accounts:write, external_bank_accounts:execute, external_wallets:read, external_wallets:execute, workflows:read, workflows:execute, deposit_addresses:read, deposit_addresses:execute")
+                "BearerAuth" -> HttpBearerAuth("bearer")"oauth2" -> OAuth(OAuthFlow.application, "", "https://id.sandbox.cybrid.app/oauth/token", "banks:read, banks:write, bank_applications:execute, accounts:read, accounts:execute, customers:read, customers:write, customers:execute, prices:read, quotes:execute, quotes:read, trades:execute, trades:read, transfers:execute, transfers:read, external_bank_accounts:read, external_bank_accounts:write, external_bank_accounts:execute, external_wallets:read, external_wallets:execute, workflows:read, workflows:execute, deposit_addresses:read, deposit_addresses:execute")
                 else -> throw RuntimeException("auth name $authName not found in available auth names")
             }
             addAuthorization(authName, auth)
