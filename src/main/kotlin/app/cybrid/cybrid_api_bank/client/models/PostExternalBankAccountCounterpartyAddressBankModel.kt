@@ -24,77 +24,41 @@ package app.cybrid.cybrid_api_bank.client.models
 import com.google.gson.annotations.SerializedName
 
 /**
- * 
+ * The counterparty's address on the account.
  *
- * @param guid Auto-generated unique identifier for the bank.
- * @param organizationGuid The organization's identifier.
- * @param name The bank's name.
- * @param type The bank's type.
- * @param features The bank's enabled features.
- * @param createdAt ISO8601 datetime the bank was created at.
- * @param supportedTradingSymbols The bank's list of supported trading symbols.
- * @param supportedFiatAccountAssets The bank's list of supported fiat symbols.
- * @param supportedCountryCodes The bank's list of supported country codes.
+ * @param street The first line of the address.
+ * @param city The city of the address.
+ * @param countryCode The ISO 3166 country 2-Alpha country code of the address.
+ * @param street2 The optional second line of the address.
+ * @param subdivision The provide/state/region of the address; not used by all countries.
+ * @param postalCode The postal/post/zip code of the address; not used by all countries.
  */
 
-data class BankBankModel (
+data class PostExternalBankAccountCounterpartyAddressBankModel (
 
-    /* Auto-generated unique identifier for the bank. */
-    @SerializedName("guid")
-    val guid: kotlin.String,
+    /* The first line of the address. */
+    @SerializedName("street")
+    val street: kotlin.String,
 
-    /* The organization's identifier. */
-    @SerializedName("organization_guid")
-    val organizationGuid: kotlin.String,
+    /* The city of the address. */
+    @SerializedName("city")
+    val city: kotlin.String,
 
-    /* The bank's name. */
-    @SerializedName("name")
-    val name: kotlin.String,
+    /* The ISO 3166 country 2-Alpha country code of the address. */
+    @SerializedName("country_code")
+    val countryCode: kotlin.String,
 
-    /* The bank's type. */
-    @SerializedName("type")
-    val type: BankBankModel.Type,
+    /* The optional second line of the address. */
+    @SerializedName("street2")
+    val street2: kotlin.String? = null,
 
-    /* The bank's enabled features. */
-    @SerializedName("features")
-    val features: kotlin.collections.List<BankBankModel.Features>,
+    /* The provide/state/region of the address; not used by all countries. */
+    @SerializedName("subdivision")
+    val subdivision: kotlin.String? = null,
 
-    /* ISO8601 datetime the bank was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime,
+    /* The postal/post/zip code of the address; not used by all countries. */
+    @SerializedName("postal_code")
+    val postalCode: kotlin.String? = null
 
-    /* The bank's list of supported trading symbols. */
-    @SerializedName("supported_trading_symbols")
-    val supportedTradingSymbols: kotlin.collections.List<kotlin.String>? = null,
-
-    /* The bank's list of supported fiat symbols. */
-    @SerializedName("supported_fiat_account_assets")
-    val supportedFiatAccountAssets: kotlin.collections.List<kotlin.String>? = null,
-
-    /* The bank's list of supported country codes. */
-    @SerializedName("supported_country_codes")
-    val supportedCountryCodes: kotlin.collections.List<kotlin.String>? = null
-
-) {
-
-    /**
-     * The bank's type.
-     *
-     * Values: sandbox,production
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "sandbox") sandbox("sandbox"),
-        @SerializedName(value = "production") production("production");
-    }
-    /**
-     * The bank's enabled features.
-     *
-     * Values: attestationIdentityRecords,kycIdentityVerifications,rawRoutingDetails
-     */
-    enum class Features(val value: kotlin.String) {
-        @SerializedName(value = "attestation_identity_records") attestationIdentityRecords("attestation_identity_records"),
-        @SerializedName(value = "kyc_identity_verifications") kycIdentityVerifications("kyc_identity_verifications"),
-        @SerializedName(value = "raw_routing_details") rawRoutingDetails("raw_routing_details");
-    }
-}
+)
 

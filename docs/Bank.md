@@ -26,7 +26,7 @@ type | sandbox, production
 ## Enum: features
 Name | Value
 ---- | -----
-features | attestation_identity_records, kyc_identity_verifications
+features | attestation_identity_records, kyc_identity_verifications, raw_routing_details
 
 
 
