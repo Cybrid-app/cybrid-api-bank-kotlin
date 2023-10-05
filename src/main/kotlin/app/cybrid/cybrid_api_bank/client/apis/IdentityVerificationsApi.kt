@@ -55,9 +55,10 @@ interface IdentityVerificationsApi {
      * @param guid Comma separated guids to list identity verifications for. (optional)
      * @param bankGuid Comma separated bank_guids to list identity verifications for. (optional)
      * @param customerGuid Comma separated customer_guids to list identity verifications for. (optional)
+     * @param state Comma separated states to list identity verifications for. (optional)
      * @return [IdentityVerificationListBankModel]
      */
     @GET("api/identity_verifications")
-    suspend fun listIdentityVerifications(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<IdentityVerificationListBankModel>
+    suspend fun listIdentityVerifications(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<IdentityVerificationListBankModel>
 
 }

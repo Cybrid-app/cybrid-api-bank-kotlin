@@ -115,9 +115,10 @@ val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of 
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated guids to list identity verifications for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list identity verifications for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list identity verifications for.
+val state : kotlin.String = state_example // kotlin.String | Comma separated states to list identity verifications for.
 
 launch(Dispatchers.IO) {
-    val result : IdentityVerificationListBankModel = webService.listIdentityVerifications(page, perPage, guid, bankGuid, customerGuid)
+    val result : IdentityVerificationListBankModel = webService.listIdentityVerifications(page, perPage, guid, bankGuid, customerGuid, state)
 }
 ```
 
@@ -130,6 +131,7 @@ Name | Type | Description  | Notes
  **guid** | **kotlin.String**| Comma separated guids to list identity verifications for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list identity verifications for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list identity verifications for. | [optional]
+ **state** | **kotlin.String**| Comma separated states to list identity verifications for. | [optional]
 
 ### Return type
 
