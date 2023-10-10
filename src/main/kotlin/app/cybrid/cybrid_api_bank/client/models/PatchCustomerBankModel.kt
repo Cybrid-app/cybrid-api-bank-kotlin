@@ -26,34 +26,24 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param name The name of the account.
- * @param asset The asset code.
- * @param address The blockchain wallet address for the wallet.
- * @param customerGuid The customer identifier.
- * @param tag The blockchain tag to use when transferring crypto to the wallet.
+ * @param state The customer's state.
  */
 
-data class PostExternalWalletBankModel (
+data class PatchCustomerBankModel (
 
-    /* The name of the account. */
-    @SerializedName("name")
-    val name: kotlin.String,
+    /* The customer's state. */
+    @SerializedName("state")
+    val state: PatchCustomerBankModel.State? = null
 
-    /* The asset code. */
-    @SerializedName("asset")
-    val asset: kotlin.String,
+) {
 
-    /* The blockchain wallet address for the wallet. */
-    @SerializedName("address")
-    val address: kotlin.String,
-
-    /* The customer identifier. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
-
-    /* The blockchain tag to use when transferring crypto to the wallet. */
-    @SerializedName("tag")
-    val tag: kotlin.String? = null
-
-)
+    /**
+     * The customer's state.
+     *
+     * Values: unverified
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "unverified") unverified("unverified");
+    }
+}
 

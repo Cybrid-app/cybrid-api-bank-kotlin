@@ -8,6 +8,7 @@ import okhttp3.RequestBody
 import app.cybrid.cybrid_api_bank.client.models.CustomerBankModel
 import app.cybrid.cybrid_api_bank.client.models.CustomerListBankModel
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
+import app.cybrid.cybrid_api_bank.client.models.PatchCustomerBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostCustomerBankModel
 
 interface CustomersApi {
@@ -59,5 +60,21 @@ interface CustomersApi {
      */
     @GET("api/customers")
     suspend fun listCustomers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null): Response<CustomerListBankModel>
+
+    /**
+     * Patch Customer
+     * Update a customer.  Required scope: **customers:write**
+     * Responses:
+     *  - 200: customer found
+     *  - 401: Unauthorized - Authentication failed, invalid subject
+     *  - 403: Invalid scope
+     *  - 404: customer not found
+     *
+     * @param customerGuid Identifier for the customer.
+     * @param patchCustomerBankModel 
+     * @return [CustomerBankModel]
+     */
+    @PATCH("api/customers/{customer_guid}")
+    suspend fun updateCustomer(@Path("customer_guid") customerGuid: kotlin.String, @Body patchCustomerBankModel: PatchCustomerBankModel): Response<CustomerBankModel>
 
 }

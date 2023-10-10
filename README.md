@@ -191,6 +191,7 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createcustomer) | **POST** api/customers | Create Customer
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
+*CustomersApi* | [**updateCustomer**](docs/CustomersApi.md#updatecustomer) | **PATCH** api/customers/{customer_guid} | Patch Customer
 *DepositAddressesApi* | [**createDepositAddress**](docs/DepositAddressesApi.md#createdepositaddress) | **POST** api/deposit_addresses | Create Deposit Address
 *DepositAddressesApi* | [**getDepositAddress**](docs/DepositAddressesApi.md#getdepositaddress) | **GET** api/deposit_addresses/{deposit_address_guid} | Get Deposit Address
 *DepositAddressesApi* | [**listDepositAddresses**](docs/DepositAddressesApi.md#listdepositaddresses) | **GET** api/deposit_addresses | List Deposit Addresses

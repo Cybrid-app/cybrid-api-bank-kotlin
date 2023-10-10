@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createCustomer**](CustomersApi.md#createCustomer) | **POST** api/customers | Create Customer
 [**getCustomer**](CustomersApi.md#getCustomer) | **GET** api/customers/{customer_guid} | Get Customer
 [**listCustomers**](CustomersApi.md#listCustomers) | **GET** api/customers | Get customers list
+[**updateCustomer**](CustomersApi.md#updateCustomer) | **PATCH** api/customers/{customer_guid} | Patch Customer
 
 
 
@@ -144,5 +145,50 @@ Configure BearerAuth:
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Patch Customer
+
+Update a customer.  Required scope: **customers:write**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_bank.client.*
+//import app.cybrid.cybrid_api_bank.client.infrastructure.*
+//import app.cybrid.cybrid_api_bank.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(CustomersApi::class.java)
+val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Identifier for the customer.
+val patchCustomerBankModel : PatchCustomerBankModel =  // PatchCustomerBankModel | 
+
+launch(Dispatchers.IO) {
+    val result : CustomerBankModel = webService.updateCustomer(customerGuid, patchCustomerBankModel)
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerGuid** | **kotlin.String**| Identifier for the customer. |
+ **patchCustomerBankModel** | [**PatchCustomerBankModel**](PatchCustomerBankModel.md)|  |
+
+### Return type
+
+[**CustomerBankModel**](CustomerBankModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient().setBearerToken("TOKEN")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
