@@ -54,9 +54,10 @@ interface DepositAddressesApi {
      * @param guid Comma separated guids to list deposit addresses for. (optional)
      * @param bankGuid Comma separated bank_guids to list deposit addresses for. (optional)
      * @param customerGuid Comma separated customer_guids to list deposit addresses for. (optional)
+     * @param label Comma separated labels to list deposit addresses for. (optional)
      * @return [DepositAddressListBankModel]
      */
     @GET("api/deposit_addresses")
-    suspend fun listDepositAddresses(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<DepositAddressListBankModel>
+    suspend fun listDepositAddresses(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<DepositAddressListBankModel>
 
 }

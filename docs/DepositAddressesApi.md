@@ -115,9 +115,10 @@ val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of 
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated guids to list deposit addresses for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list deposit addresses for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list deposit addresses for.
+val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list deposit addresses for.
 
 launch(Dispatchers.IO) {
-    val result : DepositAddressListBankModel = webService.listDepositAddresses(page, perPage, guid, bankGuid, customerGuid)
+    val result : DepositAddressListBankModel = webService.listDepositAddresses(page, perPage, guid, bankGuid, customerGuid, label)
 }
 ```
 
@@ -130,6 +131,7 @@ Name | Type | Description  | Notes
  **guid** | **kotlin.String**| Comma separated guids to list deposit addresses for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list deposit addresses for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list deposit addresses for. | [optional]
+ **label** | **kotlin.String**| Comma separated labels to list deposit addresses for. | [optional]
 
 ### Return type
 

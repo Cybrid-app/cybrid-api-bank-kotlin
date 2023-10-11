@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **address** | **kotlin.String** | The blockchain address. |  [optional]
 **format** | [**inline**](#Format) | The blockchain address format. |  [optional]
 **tag** | **kotlin.String** | The blockchain address tag. |  [optional]
+**labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the address. |  [optional]
 
 
 <a name="State"></a>
