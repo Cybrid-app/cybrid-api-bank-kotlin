@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **platformBalance** | **java.math.BigDecimal** | The amount of funds that are in the account, in base units of the asset. |  [optional]
 **platformAvailable** | **java.math.BigDecimal** | The amount of funds that are in the account, in base units of the asset, that are available for use on the platform. |  [optional]
 **state** | [**inline**](#State) | The account&#39;s state. |  [optional]
+**labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the account. |  [optional]
 
 
 <a name="Type"></a>

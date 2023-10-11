@@ -117,9 +117,10 @@ val guid : kotlin.String = guid_example // kotlin.String | Comma separated accou
 val type : kotlin.String = type_example // kotlin.String | Comma separated account_types to list accounts for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list accounts for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list accounts for.
+val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list accounts for.
 
 launch(Dispatchers.IO) {
-    val result : AccountListBankModel = webService.listAccounts(page, perPage, owner, guid, type, bankGuid, customerGuid)
+    val result : AccountListBankModel = webService.listAccounts(page, perPage, owner, guid, type, bankGuid, customerGuid, label)
 }
 ```
 
@@ -134,6 +135,7 @@ Name | Type | Description  | Notes
  **type** | **kotlin.String**| Comma separated account_types to list accounts for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list accounts for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list accounts for. | [optional]
+ **label** | **kotlin.String**| Comma separated labels to list accounts for. | [optional]
 
 ### Return type
 
