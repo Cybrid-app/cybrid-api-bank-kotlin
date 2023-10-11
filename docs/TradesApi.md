@@ -117,9 +117,10 @@ val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separat
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list trades for.
 val accountGuid : kotlin.String = accountGuid_example // kotlin.String | Comma separated account_guids to list trades for.
 val state : kotlin.String = state_example // kotlin.String | Comma separated states to list trades for.
+val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list trades for.
 
 launch(Dispatchers.IO) {
-    val result : TradeListBankModel = webService.listTrades(page, perPage, guid, bankGuid, customerGuid, accountGuid, state)
+    val result : TradeListBankModel = webService.listTrades(page, perPage, guid, bankGuid, customerGuid, accountGuid, state, label)
 }
 ```
 
@@ -134,6 +135,7 @@ Name | Type | Description  | Notes
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list trades for. | [optional]
  **accountGuid** | **kotlin.String**| Comma separated account_guids to list trades for. | [optional]
  **state** | **kotlin.String**| Comma separated states to list trades for. | [optional]
+ **label** | **kotlin.String**| Comma separated labels to list trades for. | [optional]
 
 ### Return type
 

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **fee** | **java.math.BigDecimal** | The fee associated with the trade. Denominated in \&quot;counter_asset\&quot; base units |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the trade was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the trade was last updated at. |  [optional]
+**labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the trade. |  [optional]
 
 
 <a name="TradeType"></a>
