@@ -117,9 +117,10 @@ val page : java.math.BigDecimal = 56 // java.math.BigDecimal |
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list customers for.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated customer_guids to list customers for.
+val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list customers for.
 
 launch(Dispatchers.IO) {
-    val result : CustomerListBankModel = webService.listCustomers(page, perPage, bankGuid, guid)
+    val result : CustomerListBankModel = webService.listCustomers(page, perPage, bankGuid, guid, label)
 }
 ```
 
@@ -131,6 +132,7 @@ Name | Type | Description  | Notes
  **perPage** | **java.math.BigDecimal**|  | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list customers for. | [optional]
  **guid** | **kotlin.String**| Comma separated customer_guids to list customers for. | [optional]
+ **label** | **kotlin.String**| Comma separated labels to list customers for. | [optional]
 
 ### Return type
 

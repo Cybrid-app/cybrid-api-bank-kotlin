@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **phoneNumber** | **kotlin.String** | The customer&#39;s phone number. |  [optional]
 **emailAddress** | **kotlin.String** | The customer&#39;s email address. |  [optional]
 **identificationNumbers** | [**kotlin.collections.List&lt;PostIdentificationNumberBankModel&gt;**](PostIdentificationNumberBankModel.md) | The customer&#39;s identification numbers. |  [optional]
+**labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the customer. |  [optional]
 
 
 <a name="Type"></a>

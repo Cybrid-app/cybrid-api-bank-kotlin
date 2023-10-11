@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **dateOfBirth** | [**java.time.LocalDate**](java.time.LocalDate.md) | The customer&#39;s DOB. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **phoneNumber** | **kotlin.String** | The customer&#39;s phone number. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **emailAddress** | **kotlin.String** | The customer&#39;s email address. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
+**labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the customer. |  [optional]
 
 
 <a name="Type"></a>
