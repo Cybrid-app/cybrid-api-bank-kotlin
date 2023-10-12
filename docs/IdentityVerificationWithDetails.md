@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the customer was created at. |  [optional]
 **state** | [**inline**](#State) | The state of the verification process. |  [optional]
 **outcome** | [**inline**](#Outcome) | The outcome of the verification process. |  [optional]
-**failureCodes** | [**inline**](#kotlin.collections.List&lt;FailureCodes&gt;) | The reason codes explaining the outcome. |  [optional]
+**failureCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The reason codes explaining the outcome. |  [optional]
 **personaInquiryId** | **kotlin.String** | The Persona identifier of the backing inquiry. |  [optional]
 **personaState** | [**inline**](#PersonaState) | The Persona state of the backing inquiry. |  [optional]
 **externalBankAccountGuid** | **kotlin.String** | The external bank account&#39;s identifier. |  [optional]
@@ -43,13 +43,6 @@ state | storing, waiting, expired, completed
 Name | Value
 ---- | -----
 outcome | passed, failed
-
-
-<a name="kotlin.collections.List<FailureCodes>"></a>
-## Enum: failure_codes
-Name | Value
----- | -----
-failureCodes | requested_failure, id_check_failure, database_check_failure, selfie_failure, pep_check_failure, media_check_failure, watchlist_check_failure, name_check_failure, address_check_failure, dob_check_failure, id_number_check_failure, phone_number_check_failure, email_address_check_failure, decision_timeout, plaid_failure
 
 
 <a name="PersonaState"></a>
