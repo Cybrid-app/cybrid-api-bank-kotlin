@@ -49,7 +49,7 @@ side | deposit, withdrawal
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, pending, completed, failed
+state | storing, pending, reviewing, completed, failed
 
 
 
