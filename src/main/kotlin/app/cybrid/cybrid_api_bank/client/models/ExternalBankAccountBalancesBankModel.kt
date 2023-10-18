@@ -24,35 +24,21 @@ package app.cybrid.cybrid_api_bank.client.models
 import com.google.gson.annotations.SerializedName
 
 /**
- * The source account in the transfer. Can be omitted for crypto deposits.
+ * Balance information for the account.
  *
- * @param guid Auto-generated unique identifier for the transfer account.
- * @param type The type of transfer account.
+ * @param availableBalance The available balance in the account.
+ * @param currentBalance The current balance in the account including pending transactions.
  */
 
-data class TransferSourceAccountBankModel (
+data class ExternalBankAccountBalancesBankModel (
 
-    /* Auto-generated unique identifier for the transfer account. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The available balance in the account. */
+    @SerializedName("available_balance")
+    val availableBalance: java.math.BigDecimal? = null,
 
-    /* The type of transfer account. */
-    @SerializedName("type")
-    val type: TransferSourceAccountBankModel.Type? = null
+    /* The current balance in the account including pending transactions. */
+    @SerializedName("current_balance")
+    val currentBalance: java.math.BigDecimal? = null
 
-) {
-
-    /**
-     * The type of transfer account.
-     *
-     * Values: trading,fiat,externalBankAccount,externalWallet,oneTimeAddress
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "trading") trading("trading"),
-        @SerializedName(value = "fiat") fiat("fiat"),
-        @SerializedName(value = "external_bank_account") externalBankAccount("external_bank_account"),
-        @SerializedName(value = "external_wallet") externalWallet("external_wallet"),
-        @SerializedName(value = "one_time_address") oneTimeAddress("one_time_address");
-    }
-}
+)
 

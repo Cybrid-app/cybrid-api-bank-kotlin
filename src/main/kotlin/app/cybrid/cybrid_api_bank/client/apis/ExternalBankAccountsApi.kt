@@ -51,12 +51,16 @@ interface ExternalBankAccountsApi {
      *  - 401: Unauthorized - Authentication failed, 
      *  - 403: Invalid scope
      *  - 404: ExternalBankAccount not found
+     *  - 422: Unable to process request
      *
      * @param externalBankAccountGuid Identifier for the external bank account.
+     * @param forceBalanceRefresh Force the balance on the account to be updated. (optional)
+     * @param includeBalances Include account balances in the response. (optional)
+     * @param includePii Include account holder&#39;s PII in the response. (optional)
      * @return [ExternalBankAccountBankModel]
      */
     @GET("api/external_bank_accounts/{external_bank_account_guid}")
-    suspend fun getExternalBankAccount(@Path("external_bank_account_guid") externalBankAccountGuid: kotlin.String): Response<ExternalBankAccountBankModel>
+    suspend fun getExternalBankAccount(@Path("external_bank_account_guid") externalBankAccountGuid: kotlin.String, @Query("force_balance_refresh") forceBalanceRefresh: kotlin.Boolean? = null, @Query("include_balances") includeBalances: kotlin.Boolean? = null, @Query("include_pii") includePii: kotlin.Boolean? = null): Response<ExternalBankAccountBankModel>
 
     /**
      * Get external bank accounts list

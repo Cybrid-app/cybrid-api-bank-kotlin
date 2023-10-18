@@ -24,35 +24,41 @@ package app.cybrid.cybrid_api_bank.client.models
 import com.google.gson.annotations.SerializedName
 
 /**
- * The source account in the transfer. Can be omitted for crypto deposits.
+ * 
  *
- * @param guid Auto-generated unique identifier for the transfer account.
- * @param type The type of transfer account.
+ * @param street The first line of the address.
+ * @param street2 The optional second line of the address.
+ * @param city The city of the address.
+ * @param subdivision The provide/state/region of the address; not used by all countries.
+ * @param postalCode The postal/post/zip code of the address; not used by all countries.
+ * @param countryCode The ISO 3166 country 2-Alpha country code of the address.
  */
 
-data class TransferSourceAccountBankModel (
+data class ExternalBankAccountPiiInnerAddressesInnerBankModel (
 
-    /* Auto-generated unique identifier for the transfer account. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The first line of the address. */
+    @SerializedName("street")
+    val street: kotlin.String? = null,
 
-    /* The type of transfer account. */
-    @SerializedName("type")
-    val type: TransferSourceAccountBankModel.Type? = null
+    /* The optional second line of the address. */
+    @SerializedName("street2")
+    val street2: kotlin.String? = null,
 
-) {
+    /* The city of the address. */
+    @SerializedName("city")
+    val city: kotlin.String? = null,
 
-    /**
-     * The type of transfer account.
-     *
-     * Values: trading,fiat,externalBankAccount,externalWallet,oneTimeAddress
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "trading") trading("trading"),
-        @SerializedName(value = "fiat") fiat("fiat"),
-        @SerializedName(value = "external_bank_account") externalBankAccount("external_bank_account"),
-        @SerializedName(value = "external_wallet") externalWallet("external_wallet"),
-        @SerializedName(value = "one_time_address") oneTimeAddress("one_time_address");
-    }
-}
+    /* The provide/state/region of the address; not used by all countries. */
+    @SerializedName("subdivision")
+    val subdivision: kotlin.String? = null,
+
+    /* The postal/post/zip code of the address; not used by all countries. */
+    @SerializedName("postal_code")
+    val postalCode: kotlin.String? = null,
+
+    /* The ISO 3166 country 2-Alpha country code of the address. */
+    @SerializedName("country_code")
+    val countryCode: kotlin.String? = null
+
+)
 

@@ -20,39 +20,36 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
+import app.cybrid.cybrid_api_bank.client.models.ExternalBankAccountPiiInnerAddressesInnerBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
- * The source account in the transfer. Can be omitted for crypto deposits.
+ * 
  *
- * @param guid Auto-generated unique identifier for the transfer account.
- * @param type The type of transfer account.
+ * @param names Array of names on the account
+ * @param addresses Array of addresses associated to the account
+ * @param emailAddresses Array of email addresses associated to the account
+ * @param phoneNumbers Array of phone numbers associated to the account
  */
 
-data class TransferSourceAccountBankModel (
+data class ExternalBankAccountPiiInnerBankModel (
 
-    /* Auto-generated unique identifier for the transfer account. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* Array of names on the account */
+    @SerializedName("names")
+    val names: kotlin.collections.List<kotlin.String>? = null,
 
-    /* The type of transfer account. */
-    @SerializedName("type")
-    val type: TransferSourceAccountBankModel.Type? = null
+    /* Array of addresses associated to the account */
+    @SerializedName("addresses")
+    val addresses: kotlin.collections.List<ExternalBankAccountPiiInnerAddressesInnerBankModel>? = null,
 
-) {
+    /* Array of email addresses associated to the account */
+    @SerializedName("email_addresses")
+    val emailAddresses: kotlin.collections.List<kotlin.String>? = null,
 
-    /**
-     * The type of transfer account.
-     *
-     * Values: trading,fiat,externalBankAccount,externalWallet,oneTimeAddress
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "trading") trading("trading"),
-        @SerializedName(value = "fiat") fiat("fiat"),
-        @SerializedName(value = "external_bank_account") externalBankAccount("external_bank_account"),
-        @SerializedName(value = "external_wallet") externalWallet("external_wallet"),
-        @SerializedName(value = "one_time_address") oneTimeAddress("one_time_address");
-    }
-}
+    /* Array of phone numbers associated to the account */
+    @SerializedName("phone_numbers")
+    val phoneNumbers: kotlin.collections.List<kotlin.String>? = null
+
+)
 

@@ -113,9 +113,12 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(ExternalBankAccountsApi::class.java)
 val externalBankAccountGuid : kotlin.String = externalBankAccountGuid_example // kotlin.String | Identifier for the external bank account.
+val forceBalanceRefresh : kotlin.Boolean = true // kotlin.Boolean | Force the balance on the account to be updated.
+val includeBalances : kotlin.Boolean = true // kotlin.Boolean | Include account balances in the response.
+val includePii : kotlin.Boolean = true // kotlin.Boolean | Include account holder's PII in the response.
 
 launch(Dispatchers.IO) {
-    val result : ExternalBankAccountBankModel = webService.getExternalBankAccount(externalBankAccountGuid)
+    val result : ExternalBankAccountBankModel = webService.getExternalBankAccount(externalBankAccountGuid, forceBalanceRefresh, includeBalances, includePii)
 }
 ```
 
@@ -124,6 +127,9 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalBankAccountGuid** | **kotlin.String**| Identifier for the external bank account. |
+ **forceBalanceRefresh** | **kotlin.Boolean**| Force the balance on the account to be updated. | [optional]
+ **includeBalances** | **kotlin.Boolean**| Include account balances in the response. | [optional]
+ **includePii** | **kotlin.Boolean**| Include account holder&#39;s PII in the response. | [optional]
 
 ### Return type
 

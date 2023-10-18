@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **plaidAccountName** | **kotlin.String** | The name for the account. |  [optional]
 **state** | [**inline**](#State) | The state of the external bank account. |  [optional]
 **failureCode** | **kotlin.String** | The failure code for failed transfers. |  [optional]
+**balanceUpdatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | The timestamp that the balance information was last updated at. |  [optional]
+**balances** | [**ExternalBankAccountBalancesBankModel**](ExternalBankAccountBalancesBankModel.md) |  |  [optional]
+**pii** | [**kotlin.collections.List&lt;ExternalBankAccountPiiInnerBankModel&gt;**](ExternalBankAccountPiiInnerBankModel.md) | The account holder information. |  [optional]
 
 
 <a name="AccountKind"></a>
