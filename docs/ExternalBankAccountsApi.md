@@ -113,9 +113,9 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(ExternalBankAccountsApi::class.java)
 val externalBankAccountGuid : kotlin.String = externalBankAccountGuid_example // kotlin.String | Identifier for the external bank account.
-val forceBalanceRefresh : kotlin.Boolean = true // kotlin.Boolean | Force the balance on the account to be updated.
-val includeBalances : kotlin.Boolean = true // kotlin.Boolean | Include account balances in the response.
-val includePii : kotlin.Boolean = true // kotlin.Boolean | Include account holder's PII in the response.
+val forceBalanceRefresh : kotlin.Boolean = true // kotlin.Boolean | Force the balance on the account to be retrieved.
+val includeBalances : kotlin.Boolean = true // kotlin.Boolean | Include balance information in the response. If `force_balance_refresh` is `true`, the most up to date balance will be returned. If `force_balance_refresh` is `false`, the cached balance will be returned. `balance_updated_at` in the response will provide the timestamp the balance was last updated.
+val includePii : kotlin.Boolean = true // kotlin.Boolean | Include the account holder's PII in the response.
 
 launch(Dispatchers.IO) {
     val result : ExternalBankAccountBankModel = webService.getExternalBankAccount(externalBankAccountGuid, forceBalanceRefresh, includeBalances, includePii)
@@ -127,9 +127,9 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalBankAccountGuid** | **kotlin.String**| Identifier for the external bank account. |
- **forceBalanceRefresh** | **kotlin.Boolean**| Force the balance on the account to be updated. | [optional]
- **includeBalances** | **kotlin.Boolean**| Include account balances in the response. | [optional]
- **includePii** | **kotlin.Boolean**| Include account holder&#39;s PII in the response. | [optional]
+ **forceBalanceRefresh** | **kotlin.Boolean**| Force the balance on the account to be retrieved. | [optional]
+ **includeBalances** | **kotlin.Boolean**| Include balance information in the response. If &#x60;force_balance_refresh&#x60; is &#x60;true&#x60;, the most up to date balance will be returned. If &#x60;force_balance_refresh&#x60; is &#x60;false&#x60;, the cached balance will be returned. &#x60;balance_updated_at&#x60; in the response will provide the timestamp the balance was last updated. | [optional]
+ **includePii** | **kotlin.Boolean**| Include the account holder&#39;s PII in the response. | [optional]
 
 ### Return type
 

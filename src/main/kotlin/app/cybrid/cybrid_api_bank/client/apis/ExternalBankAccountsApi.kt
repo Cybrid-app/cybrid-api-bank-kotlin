@@ -54,9 +54,9 @@ interface ExternalBankAccountsApi {
      *  - 422: Unable to process request
      *
      * @param externalBankAccountGuid Identifier for the external bank account.
-     * @param forceBalanceRefresh Force the balance on the account to be updated. (optional)
-     * @param includeBalances Include account balances in the response. (optional)
-     * @param includePii Include account holder&#39;s PII in the response. (optional)
+     * @param forceBalanceRefresh Force the balance on the account to be retrieved. (optional)
+     * @param includeBalances Include balance information in the response. If &#x60;force_balance_refresh&#x60; is &#x60;true&#x60;, the most up to date balance will be returned. If &#x60;force_balance_refresh&#x60; is &#x60;false&#x60;, the cached balance will be returned. &#x60;balance_updated_at&#x60; in the response will provide the timestamp the balance was last updated. (optional)
+     * @param includePii Include the account holder&#39;s PII in the response. (optional)
      * @return [ExternalBankAccountBankModel]
      */
     @GET("api/external_bank_accounts/{external_bank_account_guid}")
