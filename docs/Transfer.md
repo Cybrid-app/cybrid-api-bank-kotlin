@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | funding, book, crypto, instant_funding, funding_return
+transferType | funding, book, crypto, instant_funding, funding_return, crypto_return
 
 
 <a name="Side"></a>
