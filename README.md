@@ -195,6 +195,9 @@ Class | Method | HTTP request | Description
 *DepositAddressesApi* | [**createDepositAddress**](docs/DepositAddressesApi.md#createdepositaddress) | **POST** api/deposit_addresses | Create Deposit Address
 *DepositAddressesApi* | [**getDepositAddress**](docs/DepositAddressesApi.md#getdepositaddress) | **GET** api/deposit_addresses/{deposit_address_guid} | Get Deposit Address
 *DepositAddressesApi* | [**listDepositAddresses**](docs/DepositAddressesApi.md#listdepositaddresses) | **GET** api/deposit_addresses | List Deposit Addresses
+*DepositBankAccountsApi* | [**createDepositBankAccount**](docs/DepositBankAccountsApi.md#createdepositbankaccount) | **POST** api/deposit_bank_accounts | Create Deposit Bank Account
+*DepositBankAccountsApi* | [**getDepositBankAccount**](docs/DepositBankAccountsApi.md#getdepositbankaccount) | **GET** api/deposit_bank_accounts/{deposit_bank_account_guid} | Get Deposit Bank Account
+*DepositBankAccountsApi* | [**listDepositBankAccounts**](docs/DepositBankAccountsApi.md#listdepositbankaccounts) | **GET** api/deposit_bank_accounts | List Deposit Bank Accounts
 *ExternalBankAccountsApi* | [**createExternalBankAccount**](docs/ExternalBankAccountsApi.md#createexternalbankaccount) | **POST** api/external_bank_accounts | Create ExternalBankAccount
 *ExternalBankAccountsApi* | [**deleteExternalBankAccount**](docs/ExternalBankAccountsApi.md#deleteexternalbankaccount) | **DELETE** api/external_bank_accounts/{external_bank_account_guid} | Delete External Bank Account
 *ExternalBankAccountsApi* | [**getExternalBankAccount**](docs/ExternalBankAccountsApi.md#getexternalbankaccount) | **GET** api/external_bank_accounts/{external_bank_account_guid} | Get External Bank Account

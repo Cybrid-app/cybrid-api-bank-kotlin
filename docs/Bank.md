@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **supportedTradingSymbols** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported trading symbols. |  [optional]
 **supportedFiatAccountAssets** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported fiat symbols. |  [optional]
 **supportedCountryCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported country codes. |  [optional]
+**routableAccounts** | [**inline**](#RoutableAccounts) | Configuration for supporting creating routable bank accounts. |  [optional]
 
 
 <a name="Type"></a>
@@ -27,6 +28,13 @@ type | sandbox, production
 Name | Value
 ---- | -----
 features | attestation_identity_records, kyc_identity_verifications, raw_routing_details
+
+
+<a name="RoutableAccounts"></a>
+## Enum: routable_accounts
+Name | Value
+---- | -----
+routableAccounts | unsupported, bank, customer
 
 
 

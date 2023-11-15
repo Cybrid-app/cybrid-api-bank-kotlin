@@ -20,36 +20,37 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.ExternalWalletBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of external wallet entities
+ * @param routingNumberType The type of routing number.
+ * @param routingNumber The routing number.
  */
 
-data class ExternalWalletListBankModel (
+data class DepositBankAccountRoutingDetailsInnerBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The type of routing number. */
+    @SerializedName("routing_number_type")
+    val routingNumberType: DepositBankAccountRoutingDetailsInnerBankModel.RoutingNumberType,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The routing number. */
+    @SerializedName("routing_number")
+    val routingNumber: kotlin.String
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+) {
 
-    /* Array of external wallet entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<ExternalWalletBankModel>
-
-)
+    /**
+     * The type of routing number.
+     *
+     * Values: cPA,aBA,sWIFT
+     */
+    enum class RoutingNumberType(val value: kotlin.String) {
+        @SerializedName(value = "CPA") cPA("CPA"),
+        @SerializedName(value = "ABA") aBA("ABA"),
+        @SerializedName(value = "SWIFT") sWIFT("SWIFT");
+    }
+}
 

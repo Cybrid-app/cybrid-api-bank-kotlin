@@ -20,36 +20,20 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.ExternalWalletBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of external wallet entities
+ * @param accountNumber The account number.
  */
 
-data class ExternalWalletListBankModel (
+data class DepositBankAccountAccountDetailsInnerBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
-
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
-
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
-
-    /* Array of external wallet entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<ExternalWalletBankModel>
+    /* The account number. */
+    @SerializedName("account_number")
+    val accountNumber: kotlin.String
 
 )
 

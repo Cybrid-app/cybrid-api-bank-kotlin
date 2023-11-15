@@ -20,36 +20,93 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.ExternalWalletBankModel
+import app.cybrid.cybrid_api_bank.client.models.DepositBankAccountAccountDetailsInnerBankModel
+import app.cybrid.cybrid_api_bank.client.models.DepositBankAccountCounterpartyAddressBankModel
+import app.cybrid.cybrid_api_bank.client.models.DepositBankAccountRoutingDetailsInnerBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of external wallet entities
+ * @param guid Auto-generated unique identifier for the identity verification.
+ * @param bankGuid The address' bank identifier.
+ * @param customerGuid The address' customer identifier.
+ * @param accountGuid The address' account identifier.
+ * @param createdAt ISO8601 datetime the address was created at.
+ * @param asset The asset the transfer is related to, e.g., USD.
+ * @param state The state of the address.
+ * @param uniqueMemoId The unique memo identifier for the address. This is used to identify the recipient when sending funds to the account. This value MUST be included in all wire transfers to this account.
+ * @param counterpartyName The name of the account holder.
+ * @param counterpartyAddress 
+ * @param accountDetails The account details for the bank account.
+ * @param routingDetails The account details for the bank account.
+ * @param labels The labels associated with the address.
  */
 
-data class ExternalWalletListBankModel (
+data class DepositBankAccountBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* Auto-generated unique identifier for the identity verification. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The address' bank identifier. */
+    @SerializedName("bank_guid")
+    val bankGuid: kotlin.String? = null,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The address' customer identifier. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String? = null,
 
-    /* Array of external wallet entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<ExternalWalletBankModel>
+    /* The address' account identifier. */
+    @SerializedName("account_guid")
+    val accountGuid: kotlin.String? = null,
 
-)
+    /* ISO8601 datetime the address was created at. */
+    @SerializedName("created_at")
+    val createdAt: java.time.OffsetDateTime? = null,
+
+    /* The asset the transfer is related to, e.g., USD. */
+    @SerializedName("asset")
+    val asset: kotlin.String? = null,
+
+    /* The state of the address. */
+    @SerializedName("state")
+    val state: DepositBankAccountBankModel.State? = null,
+
+    /* The unique memo identifier for the address. This is used to identify the recipient when sending funds to the account. This value MUST be included in all wire transfers to this account. */
+    @SerializedName("unique_memo_id")
+    val uniqueMemoId: kotlin.String? = null,
+
+    /* The name of the account holder. */
+    @SerializedName("counterparty_name")
+    val counterpartyName: kotlin.String? = null,
+
+    @SerializedName("counterparty_address")
+    val counterpartyAddress: DepositBankAccountCounterpartyAddressBankModel? = null,
+
+    /* The account details for the bank account. */
+    @SerializedName("account_details")
+    val accountDetails: kotlin.collections.List<DepositBankAccountAccountDetailsInnerBankModel>? = null,
+
+    /* The account details for the bank account. */
+    @SerializedName("routing_details")
+    val routingDetails: kotlin.collections.List<DepositBankAccountRoutingDetailsInnerBankModel>? = null,
+
+    /* The labels associated with the address. */
+    @SerializedName("labels")
+    val labels: kotlin.collections.List<kotlin.String>? = null
+
+) {
+
+    /**
+     * The state of the address.
+     *
+     * Values: storing,created
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "storing") storing("storing"),
+        @SerializedName(value = "created") created("created");
+    }
+}
 
