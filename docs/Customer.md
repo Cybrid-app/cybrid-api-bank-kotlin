@@ -28,7 +28,7 @@ type | individual
 ## Enum: state
 Name | Value
 ---- | -----
-state | storing, unverified, verified, rejected
+state | storing, unverified, verified, rejected, frozen
 
 
 
