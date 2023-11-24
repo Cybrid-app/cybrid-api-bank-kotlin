@@ -57,9 +57,10 @@ interface DepositBankAccountsApi {
      * @param bankGuid Comma separated bank_guids to list deposit bank accounts for. (optional)
      * @param customerGuid Comma separated customer_guids to list deposit bank accounts for. (optional)
      * @param label Comma separated labels to list deposit bank accounts for. (optional)
+     * @param uniqueMemoId Comma separated unique memo ids to list deposit bank accounts for. (optional)
      * @return [DepositBankAccountListBankModel]
      */
     @GET("api/deposit_bank_accounts")
-    suspend fun listDepositBankAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<DepositBankAccountListBankModel>
+    suspend fun listDepositBankAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("label") label: kotlin.String? = null, @Query("unique_memo_id") uniqueMemoId: kotlin.String? = null): Response<DepositBankAccountListBankModel>
 
 }

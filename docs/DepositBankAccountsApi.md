@@ -116,9 +116,10 @@ val guid : kotlin.String = guid_example // kotlin.String | Comma separated guids
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list deposit bank accounts for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list deposit bank accounts for.
 val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list deposit bank accounts for.
+val uniqueMemoId : kotlin.String = uniqueMemoId_example // kotlin.String | Comma separated unique memo ids to list deposit bank accounts for.
 
 launch(Dispatchers.IO) {
-    val result : DepositBankAccountListBankModel = webService.listDepositBankAccounts(page, perPage, guid, bankGuid, customerGuid, label)
+    val result : DepositBankAccountListBankModel = webService.listDepositBankAccounts(page, perPage, guid, bankGuid, customerGuid, label, uniqueMemoId)
 }
 ```
 
@@ -132,6 +133,7 @@ Name | Type | Description  | Notes
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list deposit bank accounts for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list deposit bank accounts for. | [optional]
  **label** | **kotlin.String**| Comma separated labels to list deposit bank accounts for. | [optional]
+ **uniqueMemoId** | **kotlin.String**| Comma separated unique memo ids to list deposit bank accounts for. | [optional]
 
 ### Return type
 
