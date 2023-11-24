@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**inline**](#Type) | The account type. |  [optional]
 **guid** | **kotlin.String** | Auto-generated unique identifier for the account. |  [optional]
-**createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the account was created at. |  [optional]
+**createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
+**updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 **asset** | **kotlin.String** | The asset code. |  [optional]
 **name** | **kotlin.String** | The name of the account. |  [optional]
 **bankGuid** | **kotlin.String** | The bank identifier associated with the account. |  [optional]

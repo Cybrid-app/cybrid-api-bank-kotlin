@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **customerGuid** | **kotlin.String** | The customer identifier. |  [optional]
 **address** | **kotlin.String** | The blockchain wallet address for the wallet. |  [optional]
 **tag** | **kotlin.String** | The blockchain tag to use when transferring crypto to the wallet. |  [optional]
-**createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the wallet was created at. |  [optional]
+**createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
+**updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 **state** | [**inline**](#State) | The state of an external wallet |  [optional]
 **failureCode** | **kotlin.String** | The failure code of an external wallet (if any) |  [optional]
 
