@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | individual
+type | business, individual
 
 
 <a name="State"></a>
