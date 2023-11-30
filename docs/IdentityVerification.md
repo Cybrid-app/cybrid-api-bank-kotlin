@@ -26,7 +26,7 @@ type | kyc, bank_account
 ## Enum: method
 Name | Value
 ---- | -----
-method | id_and_selfie, attested, plaid_identity_match
+method | business_registration, id_and_selfie, attested, plaid_identity_match
 
 
 <a name="State"></a>
