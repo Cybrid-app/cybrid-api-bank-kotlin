@@ -20,36 +20,60 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.ExternalWalletBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of external wallet entities
+ * @param type The type of verification check.
+ * @param state The state of the verification check.
+ * @param failureCodes The reason codes explaining the outcome.
  */
 
-data class ExternalWalletListBankModel (
+data class VerificationCheckBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The type of verification check. */
+    @SerializedName("type")
+    val type: VerificationCheckBankModel.Type,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The state of the verification check. */
+    @SerializedName("state")
+    val state: VerificationCheckBankModel.State,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
+    /* The reason codes explaining the outcome. */
+    @SerializedName("failure_codes")
+    val failureCodes: kotlin.collections.List<kotlin.String>? = null
 
-    /* Array of external wallet entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<ExternalWalletBankModel>
+) {
 
-)
+    /**
+     * The type of verification check.
+     *
+     * Values: businessWatchlists,businessVerification,businessTaxIdVerification,personAttested,personTaxIdAttested,personWatchlists,personVerification,personAuthentication,personGovIdVerification,personTaxIdVerification
+     */
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "business_watchlists") businessWatchlists("business_watchlists"),
+        @SerializedName(value = "business_verification") businessVerification("business_verification"),
+        @SerializedName(value = "business_tax_id_verification") businessTaxIdVerification("business_tax_id_verification"),
+        @SerializedName(value = "person_attested") personAttested("person_attested"),
+        @SerializedName(value = "person_tax_id_attested") personTaxIdAttested("person_tax_id_attested"),
+        @SerializedName(value = "person_watchlists") personWatchlists("person_watchlists"),
+        @SerializedName(value = "person_verification") personVerification("person_verification"),
+        @SerializedName(value = "person_authentication") personAuthentication("person_authentication"),
+        @SerializedName(value = "person_gov_id_verification") personGovIdVerification("person_gov_id_verification"),
+        @SerializedName(value = "person_tax_id_verification") personTaxIdVerification("person_tax_id_verification");
+    }
+    /**
+     * The state of the verification check.
+     *
+     * Values: passed,failed,expired,invalidated
+     */
+    enum class State(val value: kotlin.String) {
+        @SerializedName(value = "passed") passed("passed"),
+        @SerializedName(value = "failed") failed("failed"),
+        @SerializedName(value = "expired") expired("expired"),
+        @SerializedName(value = "invalidated") invalidated("invalidated");
+    }
+}
 
