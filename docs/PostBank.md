@@ -24,7 +24,7 @@ type | sandbox
 ## Enum: features
 Name | Value
 ---- | -----
-features | attestation_identity_records, kyc_identity_verifications
+features | attestation_identity_records, kyc_identity_verifications, business_customers, individual_customers
 
 
 <a name="RoutableAccounts"></a>
