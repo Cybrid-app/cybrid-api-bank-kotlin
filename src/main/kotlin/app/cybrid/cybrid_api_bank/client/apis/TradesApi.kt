@@ -62,9 +62,11 @@ interface TradesApi {
      * @param label Comma separated labels to list trades for. (optional)
      * @param createdAtGte Created at start date inclusive lower bound, ISO8601. (optional)
      * @param createdAtLt Created at end date exclusive upper bound, ISO8601. (optional)
+     * @param updatedAtGte Updated at start date inclusive lower bound, ISO8601. (optional)
+     * @param updatedAtLt Updated at end date exclusive upper bound, ISO8601. (optional)
      * @return [TradeListBankModel]
      */
     @GET("api/trades")
-    suspend fun listTrades(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null, @Query("label") label: kotlin.String? = null, @Query("created_at_gte") createdAtGte: kotlin.String? = null, @Query("created_at_lt") createdAtLt: kotlin.String? = null): Response<TradeListBankModel>
+    suspend fun listTrades(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null, @Query("label") label: kotlin.String? = null, @Query("created_at_gte") createdAtGte: kotlin.String? = null, @Query("created_at_lt") createdAtLt: kotlin.String? = null, @Query("updated_at_gte") updatedAtGte: kotlin.String? = null, @Query("updated_at_lt") updatedAtLt: kotlin.String? = null): Response<TradeListBankModel>
 
 }

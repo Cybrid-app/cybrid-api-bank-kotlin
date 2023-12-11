@@ -120,9 +120,11 @@ val state : kotlin.String = state_example // kotlin.String | Comma separated sta
 val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list trades for.
 val createdAtGte : kotlin.String = createdAtGte_example // kotlin.String | Created at start date inclusive lower bound, ISO8601.
 val createdAtLt : kotlin.String = createdAtLt_example // kotlin.String | Created at end date exclusive upper bound, ISO8601.
+val updatedAtGte : kotlin.String = updatedAtGte_example // kotlin.String | Updated at start date inclusive lower bound, ISO8601.
+val updatedAtLt : kotlin.String = updatedAtLt_example // kotlin.String | Updated at end date exclusive upper bound, ISO8601.
 
 launch(Dispatchers.IO) {
-    val result : TradeListBankModel = webService.listTrades(page, perPage, guid, bankGuid, customerGuid, accountGuid, state, label, createdAtGte, createdAtLt)
+    val result : TradeListBankModel = webService.listTrades(page, perPage, guid, bankGuid, customerGuid, accountGuid, state, label, createdAtGte, createdAtLt, updatedAtGte, updatedAtLt)
 }
 ```
 
@@ -140,6 +142,8 @@ Name | Type | Description  | Notes
  **label** | **kotlin.String**| Comma separated labels to list trades for. | [optional]
  **createdAtGte** | **kotlin.String**| Created at start date inclusive lower bound, ISO8601. | [optional]
  **createdAtLt** | **kotlin.String**| Created at end date exclusive upper bound, ISO8601. | [optional]
+ **updatedAtGte** | **kotlin.String**| Updated at start date inclusive lower bound, ISO8601. | [optional]
+ **updatedAtLt** | **kotlin.String**| Updated at end date exclusive upper bound, ISO8601. | [optional]
 
 ### Return type
 
