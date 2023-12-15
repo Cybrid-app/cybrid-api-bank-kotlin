@@ -8,7 +8,6 @@ import okhttp3.RequestBody
 import app.cybrid.cybrid_api_bank.client.models.AccountBankModel
 import app.cybrid.cybrid_api_bank.client.models.AccountListBankModel
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
-import app.cybrid.cybrid_api_bank.client.models.ListRequestOwnerBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostAccountBankModel
 
 interface AccountsApi {
@@ -62,6 +61,6 @@ interface AccountsApi {
      * @return [AccountListBankModel]
      */
     @GET("api/accounts")
-    suspend fun listAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("owner") owner: ListRequestOwnerBankModel? = null, @Query("guid") guid: kotlin.String? = null, @Query("type") type: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<AccountListBankModel>
+    suspend fun listAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("owner") owner: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("type") type: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<AccountListBankModel>
 
 }

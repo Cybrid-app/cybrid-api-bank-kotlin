@@ -11,25 +11,11 @@ Name | Type | Description | Notes
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 **asset** | **kotlin.String** | The asset the transfer is related to, e.g., USD. |  [optional]
-**state** | [**inline**](#State) | The state of the address. |  [optional]
+**state** | **kotlin.String** | The state of the address; one of storing or created. |  [optional]
 **address** | **kotlin.String** | The blockchain address. |  [optional]
-**format** | [**inline**](#Format) | The blockchain address format. |  [optional]
+**format** | **kotlin.String** | The blockchain address format; one of standard or legacy. |  [optional]
 **tag** | **kotlin.String** | The blockchain address tag. |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the address. |  [optional]
-
-
-<a name="State"></a>
-## Enum: state
-Name | Value
----- | -----
-state | storing, created
-
-
-<a name="Format"></a>
-## Enum: format
-Name | Value
----- | -----
-format | standard, legacy
 
 
 

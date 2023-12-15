@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the trade. |  [optional]
-**tradeType** | [**inline**](#TradeType) | The type of trade. |  [optional]
+**tradeType** | **kotlin.String** | The type of trade; one of platform or liquidation. |  [optional]
 **customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. |  [optional]
 **symbol** | **kotlin.String** | The trade symbol the pricing is related to. Format is asset-counter_asset, e.g., BTC-USD. |  [optional]
-**side** | [**inline**](#Side) | The direction of the quote: either &#39;buy&#39; or &#39;sell&#39;. |  [optional]
-**state** | [**inline**](#State) | The trade&#39;s state |  [optional]
+**side** | **kotlin.String** | The direction of the trade; one of buy or sell. |  [optional]
+**state** | **kotlin.String** | The state of the trade; one of storing, pending, cancelled, completed, settling, or failed. |  [optional]
 **failureCode** | **kotlin.String** | The failure code for failed trades. |  [optional]
 **receiveAmount** | **java.math.BigDecimal** | The amount to be received in base units of the currency: currency is \&quot;asset\&quot; for buy and \&quot;counter_asset\&quot; for sell. |  [optional]
 **deliverAmount** | **java.math.BigDecimal** | The amount to be delivered in base units of the currency: currency is \&quot;counter_asset\&quot; for buy and \&quot;asset\&quot; for sell. |  [optional]
@@ -18,27 +18,6 @@ Name | Type | Description | Notes
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the trade. |  [optional]
-
-
-<a name="TradeType"></a>
-## Enum: trade_type
-Name | Value
----- | -----
-tradeType | platform, liquidation
-
-
-<a name="Side"></a>
-## Enum: side
-Name | Value
----- | -----
-side | buy, sell
-
-
-<a name="State"></a>
-## Enum: state
-Name | Value
----- | -----
-state | storing, pending, cancelled, completed, settling, failed
 
 
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the transfer. |  [optional]
-**transferType** | [**inline**](#TransferType) | The type of transfer. |  [optional]
+**transferType** | **kotlin.String** | The type of transfer; one of funding, book, crypto, instant_funding, funding_return, or crypto_return. |  [optional]
 **bankGuid** | **kotlin.String** | The associated bank&#39;s identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. |  [optional]
 **externalBankAccountGuid** | **kotlin.String** | The associated external bank account&#39;s identifier. |  [optional]
 **asset** | **kotlin.String** | The asset the transfer is related to, e.g., USD. |  [optional]
-**side** | [**inline**](#Side) | The direction of the quote: &#39;deposit&#39; or &#39;withdrawal&#39;. |  [optional]
-**state** | [**inline**](#State) | The transfer&#39;s state |  [optional]
+**side** | **kotlin.String** | The direction of the quote; one of deposit or withdrawal. |  [optional]
+**state** | **kotlin.String** | The state of the transfer; one of storing, pending, reviewing, completed, or failed. |  [optional]
 **failureCode** | **kotlin.String** | The failure code for failed transfers. |  [optional]
 **amount** | **java.math.BigDecimal** | The actual amount in base units of the asset. |  [optional]
 **estimatedAmount** | **java.math.BigDecimal** | The estimated amount in base units of the asset. |  [optional]
@@ -31,27 +31,6 @@ Name | Type | Description | Notes
 **transferDetails** | [**kotlin.Any**](.md) | The raw details on the transfer from the bank. |  [optional]
 **paymentRail** | **kotlin.String** | The rail the payment was done on. One of: ach, eft, wire, rtp |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the transfer. |  [optional]
-
-
-<a name="TransferType"></a>
-## Enum: transfer_type
-Name | Value
----- | -----
-transferType | funding, book, crypto, instant_funding, funding_return, crypto_return
-
-
-<a name="Side"></a>
-## Enum: side
-Name | Value
----- | -----
-side | deposit, withdrawal
-
-
-<a name="State"></a>
-## Enum: state
-Name | Value
----- | -----
-state | storing, pending, reviewing, completed, failed
 
 
 

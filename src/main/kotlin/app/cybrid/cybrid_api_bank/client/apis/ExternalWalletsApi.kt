@@ -8,7 +8,6 @@ import okhttp3.RequestBody
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 import app.cybrid.cybrid_api_bank.client.models.ExternalWalletBankModel
 import app.cybrid.cybrid_api_bank.client.models.ExternalWalletListBankModel
-import app.cybrid.cybrid_api_bank.client.models.ListRequestOwnerBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostExternalWalletBankModel
 
 interface ExternalWalletsApi {
@@ -78,6 +77,6 @@ interface ExternalWalletsApi {
      * @return [ExternalWalletListBankModel]
      */
     @GET("api/external_wallets")
-    suspend fun listExternalWallets(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("owner") owner: ListRequestOwnerBankModel? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<ExternalWalletListBankModel>
+    suspend fun listExternalWallets(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("owner") owner: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<ExternalWalletListBankModel>
 
 }

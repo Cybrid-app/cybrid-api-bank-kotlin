@@ -4,15 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**routingNumberType** | [**inline**](#RoutingNumberType) | The type of routing number. | 
+**routingNumberType** | **kotlin.String** | The type of routing number; one of CPA, ABA, or SWIFT. | 
 **routingNumber** | **kotlin.String** | The routing number. | 
-
-
-<a name="RoutingNumberType"></a>
-## Enum: routing_number_type
-Name | Value
----- | -----
-routingNumberType | CPA, ABA, SWIFT
 
 
 

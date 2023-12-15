@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**inline**](#Type) | The account type. |  [optional]
+**type** | **kotlin.String** | The account type; one of trading, fee, fiat, or gas. |  [optional]
 **guid** | **kotlin.String** | Auto-generated unique identifier for the account. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
@@ -14,22 +14,8 @@ Name | Type | Description | Notes
 **customerGuid** | **kotlin.String** | The customer identifier associated with the account. |  [optional]
 **platformBalance** | **java.math.BigDecimal** | The amount of funds that are in the account, in base units of the asset. |  [optional]
 **platformAvailable** | **java.math.BigDecimal** | The amount of funds that are in the account, in base units of the asset, that are available for use on the platform. |  [optional]
-**state** | [**inline**](#State) | The account&#39;s state. |  [optional]
+**state** | **kotlin.String** | The state of the account; one of storing or created. |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the account. |  [optional]
-
-
-<a name="Type"></a>
-## Enum: type
-Name | Value
----- | -----
-type | trading, fee, fiat, gas
-
-
-<a name="State"></a>
-## Enum: state
-Name | Value
----- | -----
-state | storing, created
 
 
 
