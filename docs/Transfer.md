@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 **transferDetails** | [**kotlin.Any**](.md) | The raw details on the transfer from the bank. |  [optional]
-**paymentRail** | **kotlin.String** | The rail the payment was done on. One of: ach, eft, wire, rtp |  [optional]
+**paymentRail** | **kotlin.String** | The rail the payment was done on. One of: ach, eft, wire, rtp, book |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the transfer. |  [optional]
 
 
