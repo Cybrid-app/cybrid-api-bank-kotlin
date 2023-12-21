@@ -73,10 +73,11 @@ interface ExternalWalletsApi {
      * @param guid Comma separated external_wallet_guids to list external_wallets for. (optional)
      * @param bankGuid Comma separated bank_guids to list external_wallets for. (optional)
      * @param customerGuid Comma separated customer_guids to list external_wallets for. (optional)
+     * @param asset Comma separated assets to list external_wallets for. (optional)
      * @param state Comma separated states to list external_wallets for. (optional)
      * @return [ExternalWalletListBankModel]
      */
     @GET("api/external_wallets")
-    suspend fun listExternalWallets(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("owner") owner: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<ExternalWalletListBankModel>
+    suspend fun listExternalWallets(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("owner") owner: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("asset") asset: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<ExternalWalletListBankModel>
 
 }
