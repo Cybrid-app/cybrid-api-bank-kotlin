@@ -1,0 +1,20 @@
+
+# TransferTypeBankModel
+
+## Enum
+
+
+    * `funding` (value: `"funding"`)
+
+    * `book` (value: `"book"`)
+
+    * `crypto` (value: `"crypto"`)
+
+    * `instantFunding` (value: `"instant_funding"`)
+
+    * `fundingReturn` (value: `"funding_return"`)
+
+    * `cryptoReturn` (value: `"crypto_return"`)
+
+
+
