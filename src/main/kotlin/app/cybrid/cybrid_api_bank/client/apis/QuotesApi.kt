@@ -58,9 +58,10 @@ interface QuotesApi {
      * @param productType Comma separated product_types to list accounts for. (optional)
      * @param bankGuid Comma separated bank_guids to list quotes for. (optional)
      * @param customerGuid Comma separated customer_guids to list quotes for. (optional)
+     * @param side Comma separated sides to list quotes for. (optional)
      * @return [QuoteListBankModel]
      */
     @GET("api/quotes")
-    suspend fun listQuotes(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("product_type") productType: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null): Response<QuoteListBankModel>
+    suspend fun listQuotes(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("product_type") productType: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("side") side: kotlin.String? = null): Response<QuoteListBankModel>
 
 }

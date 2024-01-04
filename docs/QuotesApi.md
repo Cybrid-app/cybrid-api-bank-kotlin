@@ -116,9 +116,10 @@ val guid : kotlin.String = guid_example // kotlin.String | Comma separated quote
 val productType : kotlin.String = productType_example // kotlin.String | Comma separated product_types to list accounts for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list quotes for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list quotes for.
+val side : kotlin.String = side_example // kotlin.String | Comma separated sides to list quotes for.
 
 launch(Dispatchers.IO) {
-    val result : QuoteListBankModel = webService.listQuotes(page, perPage, guid, productType, bankGuid, customerGuid)
+    val result : QuoteListBankModel = webService.listQuotes(page, perPage, guid, productType, bankGuid, customerGuid, side)
 }
 ```
 
@@ -132,6 +133,7 @@ Name | Type | Description  | Notes
  **productType** | **kotlin.String**| Comma separated product_types to list accounts for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list quotes for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list quotes for. | [optional]
+ **side** | **kotlin.String**| Comma separated sides to list quotes for. | [optional]
 
 ### Return type
 

@@ -60,6 +60,7 @@ interface TransfersApi {
      * @param customerGuid Comma separated customer_guids to list transfers for. (optional)
      * @param accountGuid Comma separated account_guids to list transfers for. (optional)
      * @param state Comma separated states to list transfers for. (optional)
+     * @param side Comma separated sides to list transfers for. (optional)
      * @param label Comma separated labels to list transfers for. (optional)
      * @param createdAtGte Created at start date inclusive lower bound, ISO8601 (optional)
      * @param createdAtLt Created at end date exclusive upper bound, ISO8601. (optional)
@@ -68,6 +69,6 @@ interface TransfersApi {
      * @return [TransferListBankModel]
      */
     @GET("api/transfers")
-    suspend fun listTransfers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("transfer_type") transferType: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null, @Query("label") label: kotlin.String? = null, @Query("created_at_gte") createdAtGte: kotlin.String? = null, @Query("created_at_lt") createdAtLt: kotlin.String? = null, @Query("updated_at_gte") updatedAtGte: kotlin.String? = null, @Query("updated_at_lt") updatedAtLt: kotlin.String? = null): Response<TransferListBankModel>
+    suspend fun listTransfers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("transfer_type") transferType: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null, @Query("side") side: kotlin.String? = null, @Query("label") label: kotlin.String? = null, @Query("created_at_gte") createdAtGte: kotlin.String? = null, @Query("created_at_lt") createdAtLt: kotlin.String? = null, @Query("updated_at_gte") updatedAtGte: kotlin.String? = null, @Query("updated_at_lt") updatedAtLt: kotlin.String? = null): Response<TransferListBankModel>
 
 }
