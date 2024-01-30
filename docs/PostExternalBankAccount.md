@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **counterpartyBankAccount** | [**PostExternalBankAccountCounterpartyBankAccountBankModel**](PostExternalBankAccountCounterpartyBankAccountBankModel.md) |  |  [optional]
 **counterpartyName** | [**PostExternalBankAccountCounterpartyNameBankModel**](PostExternalBankAccountCounterpartyNameBankModel.md) |  |  [optional]
 **counterpartyAddress** | [**PostExternalBankAccountCounterpartyAddressBankModel**](PostExternalBankAccountCounterpartyAddressBankModel.md) |  |  [optional]
-**counterpartyEmailAddress** | **kotlin.String** | The counterparty&#39;s email address on the account. |  [optional]
+**counterpartyEmailAddress** | **kotlin.String** | The counterparty&#39;s email address on their checking account. |  [optional]
 
 
 <a name="AccountKind"></a>
