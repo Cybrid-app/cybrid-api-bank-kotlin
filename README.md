@@ -67,10 +67,10 @@ curl -X POST https://id.sandbox.cybrid.app/oauth/token -d '{
     \"grant_type\": \"client_credentials\",
     \"client_id\": \"<Your Client ID>\",
     \"client_secret\": \"<Your Secret>\",
-    \"scope\": \"banks:read banks:write bank_applications:execute accounts:read accounts:execute customers:read customers:write customers:execute prices:read quotes:execute quotes:read trades:execute trades:read transfers:execute transfers:read external_bank_accounts:read external_bank_accounts:write external_bank_accounts:execute external_wallets:read external_wallets:execute workflows:read workflows:execute deposit_addresses:read deposit_addresses:execute deposit_bank_accounts:read deposit_bank_accounts:execute\"
+    \"scope\": \"banks:read banks:write bank_applications:execute accounts:read accounts:execute customers:read customers:write customers:execute prices:read quotes:execute quotes:read trades:execute trades:read transfers:execute transfers:read external_bank_accounts:read external_bank_accounts:write external_bank_accounts:execute external_wallets:read external_wallets:execute workflows:read workflows:execute deposit_addresses:read deposit_addresses:execute deposit_bank_accounts:read deposit_bank_accounts:execute invoices:read invoices:write invoices:execute\"
   }' -H \"Content-Type: application/json\"
 
-# When using Organization credentials set `scope` to 'organizations:read organizations:write organization_applications:execute banks:read banks:write banks:execute bank_applications:execute users:read users:execute customers:read accounts:read prices:read quotes:execute quotes:read trades:execute trades:read transfers:read transfers:execute external_bank_accounts:read external_wallets:read workflows:read deposit_addresses:read deposit_bank_accounts:read'
+# When using Organization credentials set `scope` to 'organizations:read organizations:write organization_applications:execute banks:read banks:write banks:execute bank_applications:execute users:read users:execute customers:read accounts:read prices:read quotes:execute quotes:read trades:execute trades:read transfers:read transfers:execute external_bank_accounts:read external_wallets:read workflows:read deposit_addresses:read deposit_bank_accounts:read invoices:read'
 ```
 <font color=\"orange\">**⚠️ Note: The above curl will create a bearer token with full scope access. Delete scopes if you'd like to restrict access.**</font>
 
@@ -95,6 +95,7 @@ The following scopes are available on the platform and can be requested when gen
 | Trade                 | trades:read (Organization, Bank, Customer)                 |                                               | trades:execute (Organization, Bank, Customer)    |
 | Transfer              | transfers:read (Organization, Bank, Customer)              |                                               | transfers:execute (Organization, Bank, Customer) |
 | Workflow              | workflows:read (Organization, Bank, Customer)              |                                               | workflows:execute (Bank, Customer)               |
+| Invoice               | invoices:read (Organization, Bank, Customer)               | invoices:write (Bank, Customer)               | invoices:execute (Bank, Customer)                |
 
 ## Available Endpoints
 
@@ -115,6 +116,8 @@ The available APIs for the [Identity](https://id.sandbox.cybrid.app/api/schema/s
 | Bank         | ExternalBankAccount  | /api/external_bank_accounts    | Create, get and list external bank accounts, which connect customer bank accounts to the platform |
 | Bank         | ExternalWallet       | /api/external_wallets          | Create, get, list and delete external wallets, which connect customer wallets to the platform     |
 | Bank         | IdentityVerification | /api/identity_verifications    | Create and list identity verifications, which are performed on customers for KYC                  |
+| Bank         | Invoice              | /api/invoices                  | Create, get and list invoices                                                                     |
+| Bank         | PaymentInstruction   | /api/payment_instructions      | Create, get and list payment instructions for invoices                                            |
 | Bank         | Price                | /api/prices                    | Get the current prices for assets on the platform                                                 |
 | Bank         | Quote                | /api/quotes                    | Create and list quotes, which are required to execute trades                                      |
 | Bank         | Symbol               | /api/symbols                   | Get a list of symbols supported for trade (ex: BTC-USD)                                           |
@@ -210,6 +213,12 @@ Class | Method | HTTP request | Description
 *IdentityVerificationsApi* | [**createIdentityVerification**](docs/IdentityVerificationsApi.md#createidentityverification) | **POST** api/identity_verifications | Create Identity Verification
 *IdentityVerificationsApi* | [**getIdentityVerification**](docs/IdentityVerificationsApi.md#getidentityverification) | **GET** api/identity_verifications/{identity_verification_guid} | Get Identity Verification
 *IdentityVerificationsApi* | [**listIdentityVerifications**](docs/IdentityVerificationsApi.md#listidentityverifications) | **GET** api/identity_verifications | List Identity Verifications
+*InvoicesApi* | [**createInvoice**](docs/InvoicesApi.md#createinvoice) | **POST** api/invoices | Create Invoice
+*InvoicesApi* | [**getInvoice**](docs/InvoicesApi.md#getinvoice) | **GET** api/invoices/{invoice_guid} | Get Invoice
+*InvoicesApi* | [**listInvoices**](docs/InvoicesApi.md#listinvoices) | **GET** api/invoices | List Invoices
+*PaymentInstructionsApi* | [**createPaymentInstruction**](docs/PaymentInstructionsApi.md#createpaymentinstruction) | **POST** api/payment_instructions | Create Payment Instruction
+*PaymentInstructionsApi* | [**getPaymentInstruction**](docs/PaymentInstructionsApi.md#getpaymentinstruction) | **GET** api/payment_instructions/{payment_instruction_guid} | Get Payment Instruction
+*PaymentInstructionsApi* | [**listPaymentInstructions**](docs/PaymentInstructionsApi.md#listpaymentinstructions) | **GET** api/payment_instructions | List Payment Instructions
 *PricesApi* | [**listPrices**](docs/PricesApi.md#listprices) | **GET** api/prices | Get Price
 *QuotesApi* | [**createQuote**](docs/QuotesApi.md#createquote) | **POST** api/quotes | Create Quote
 *QuotesApi* | [**getQuote**](docs/QuotesApi.md#getquote) | **GET** api/quotes/{quote_guid} | Get Quote
@@ -267,4 +276,7 @@ Class | Method | HTTP request | Description
   - deposit_addresses:execute: deposit_addresses execute
   - deposit_bank_accounts:read: deposit_bank_accounts read
   - deposit_bank_accounts:execute: deposit_bank_accounts execute
+  - invoices:read: invoices read
+  - invoices:write: invoices write
+  - invoices:execute: invoices execute
 
