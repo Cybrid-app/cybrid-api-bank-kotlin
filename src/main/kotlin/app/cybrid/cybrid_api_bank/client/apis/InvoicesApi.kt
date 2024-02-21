@@ -12,6 +12,21 @@ import app.cybrid.cybrid_api_bank.client.models.PostInvoiceBankModel
 
 interface InvoicesApi {
     /**
+     * Cancel Invoice
+     * Cancels an invoice.  Required scope: **invoices:execute**
+     * Responses:
+     *  - 200: Invoice cancelled
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: Invoice not found
+     *
+     * @param invoiceGuid Identifier for the invoice.
+     * @return [InvoiceBankModel]
+     */
+    @DELETE("api/invoices/{invoice_guid}")
+    suspend fun cancelInvoice(@Path("invoice_guid") invoiceGuid: kotlin.String): Response<InvoiceBankModel>
+
+    /**
      * Create Invoice
      * Creates a invoice.  ## State  | State | Description | |-------|-------------| | storing    | The Platform is storing the invoice details in our private store | | unpaid     | The invoice is unpaid. Payment instructions can be generated for an invoice in this state | | cancelling | The invocie is in the process of being cancelled | | cancelled  | The invoice has been cancelled |  | settling   | The invoice has been paid and the funds associated with this invoice are in the process of being settled | | paid       | The invoice has been paid and the funds associated with this invoice have been settled |     Required scope: **invoices:execute**
      * Responses:

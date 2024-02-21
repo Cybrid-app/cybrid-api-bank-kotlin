@@ -116,7 +116,7 @@ The available APIs for the [Identity](https://id.sandbox.cybrid.app/api/schema/s
 | Bank         | ExternalBankAccount  | /api/external_bank_accounts    | Create, get and list external bank accounts, which connect customer bank accounts to the platform |
 | Bank         | ExternalWallet       | /api/external_wallets          | Create, get, list and delete external wallets, which connect customer wallets to the platform     |
 | Bank         | IdentityVerification | /api/identity_verifications    | Create and list identity verifications, which are performed on customers for KYC                  |
-| Bank         | Invoice              | /api/invoices                  | Create, get and list invoices                                                                     |
+| Bank         | Invoice              | /api/invoices                  | Create, get, cancel and list invoices                                                             |
 | Bank         | PaymentInstruction   | /api/payment_instructions      | Create, get and list payment instructions for invoices                                            |
 | Bank         | Price                | /api/prices                    | Get the current prices for assets on the platform                                                 |
 | Bank         | Quote                | /api/quotes                    | Create and list quotes, which are required to execute trades                                      |
@@ -213,6 +213,7 @@ Class | Method | HTTP request | Description
 *IdentityVerificationsApi* | [**createIdentityVerification**](docs/IdentityVerificationsApi.md#createidentityverification) | **POST** api/identity_verifications | Create Identity Verification
 *IdentityVerificationsApi* | [**getIdentityVerification**](docs/IdentityVerificationsApi.md#getidentityverification) | **GET** api/identity_verifications/{identity_verification_guid} | Get Identity Verification
 *IdentityVerificationsApi* | [**listIdentityVerifications**](docs/IdentityVerificationsApi.md#listidentityverifications) | **GET** api/identity_verifications | List Identity Verifications
+*InvoicesApi* | [**cancelInvoice**](docs/InvoicesApi.md#cancelinvoice) | **DELETE** api/invoices/{invoice_guid} | Cancel Invoice
 *InvoicesApi* | [**createInvoice**](docs/InvoicesApi.md#createinvoice) | **POST** api/invoices | Create Invoice
 *InvoicesApi* | [**getInvoice**](docs/InvoicesApi.md#getinvoice) | **GET** api/invoices/{invoice_guid} | Get Invoice
 *InvoicesApi* | [**listInvoices**](docs/InvoicesApi.md#listinvoices) | **GET** api/invoices | List Invoices

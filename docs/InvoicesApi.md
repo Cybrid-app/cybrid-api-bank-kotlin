@@ -4,10 +4,54 @@ All URIs are relative to *https://bank.sandbox.cybrid.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cancelInvoice**](InvoicesApi.md#cancelInvoice) | **DELETE** api/invoices/{invoice_guid} | Cancel Invoice
 [**createInvoice**](InvoicesApi.md#createInvoice) | **POST** api/invoices | Create Invoice
 [**getInvoice**](InvoicesApi.md#getInvoice) | **GET** api/invoices/{invoice_guid} | Get Invoice
 [**listInvoices**](InvoicesApi.md#listInvoices) | **GET** api/invoices | List Invoices
 
+
+
+Cancel Invoice
+
+Cancels an invoice.  Required scope: **invoices:execute**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_bank.client.*
+//import app.cybrid.cybrid_api_bank.client.infrastructure.*
+//import app.cybrid.cybrid_api_bank.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(InvoicesApi::class.java)
+val invoiceGuid : kotlin.String = invoiceGuid_example // kotlin.String | Identifier for the invoice.
+
+launch(Dispatchers.IO) {
+    val result : InvoiceBankModel = webService.cancelInvoice(invoiceGuid)
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoiceGuid** | **kotlin.String**| Identifier for the invoice. |
+
+### Return type
+
+[**InvoiceBankModel**](InvoiceBankModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient().setBearerToken("TOKEN")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 Create Invoice
