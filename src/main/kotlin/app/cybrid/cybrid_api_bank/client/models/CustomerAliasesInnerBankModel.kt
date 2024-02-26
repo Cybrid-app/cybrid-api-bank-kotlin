@@ -24,41 +24,31 @@ package app.cybrid.cybrid_api_bank.client.models
 import com.google.gson.annotations.SerializedName
 
 /**
- * The customer's address; required when method is set to 'attested'.
+ * 
  *
- * @param street The first line of the address.
- * @param city The city of the address.
- * @param countryCode The ISO 3166 country 2-Alpha country code of the address.
- * @param street2 The optional second line of the address.
- * @param subdivision The provide/state/region of the address; not used by all countries.
- * @param postalCode The postal/post/zip code of the address; not used by all countries.
+ * @param first The customer's first name.
+ * @param middle The customer's middle name.
+ * @param last The customer's last name.
+ * @param full The customer's full name.
  */
 
-data class PostIdentityVerificationAddressBankModel (
+data class CustomerAliasesInnerBankModel (
 
-    /* The first line of the address. */
-    @SerializedName("street")
-    val street: kotlin.String,
+    /* The customer's first name. */
+    @SerializedName("first")
+    val first: kotlin.String? = null,
 
-    /* The city of the address. */
-    @SerializedName("city")
-    val city: kotlin.String,
+    /* The customer's middle name. */
+    @SerializedName("middle")
+    val middle: kotlin.String? = null,
 
-    /* The ISO 3166 country 2-Alpha country code of the address. */
-    @SerializedName("country_code")
-    val countryCode: kotlin.String,
+    /* The customer's last name. */
+    @SerializedName("last")
+    val last: kotlin.String? = null,
 
-    /* The optional second line of the address. */
-    @SerializedName("street2")
-    val street2: kotlin.String? = null,
-
-    /* The provide/state/region of the address; not used by all countries. */
-    @SerializedName("subdivision")
-    val subdivision: kotlin.String? = null,
-
-    /* The postal/post/zip code of the address; not used by all countries. */
-    @SerializedName("postal_code")
-    val postalCode: kotlin.String? = null
+    /* The customer's full name. */
+    @SerializedName("full")
+    val full: kotlin.String? = null
 
 )
 

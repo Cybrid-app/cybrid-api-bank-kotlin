@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **state** | **kotlin.String** | The customer state; one of storing, unverified, verified, rejected, or frozen. |  [optional]
 **name** | [**CustomerNameBankModel**](CustomerNameBankModel.md) |  |  [optional]
 **address** | [**CustomerAddressBankModel**](CustomerAddressBankModel.md) |  |  [optional]
+**aliases** | [**kotlin.collections.List&lt;CustomerAliasesInnerBankModel&gt;**](CustomerAliasesInnerBankModel.md) | The customer&#39;s aliases. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
+**website** | **kotlin.String** | The customer&#39;s website. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **dateOfBirth** | [**java.time.LocalDate**](java.time.LocalDate.md) | The customer&#39;s DOB. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **phoneNumber** | **kotlin.String** | The customer&#39;s phone number. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **emailAddress** | **kotlin.String** | The customer&#39;s email address. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
