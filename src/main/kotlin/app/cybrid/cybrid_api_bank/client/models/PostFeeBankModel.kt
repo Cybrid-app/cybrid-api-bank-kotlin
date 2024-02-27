@@ -26,24 +26,35 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param first The customer's first name.
- * @param middle The customer's middle name.
- * @param last The customer's last name.
+ * @param type The fee's type
+ * @param spreadFee The percentage amount, in basis points, to apply when charging a fee.
+ * @param fixedFee The fixed amount to apply when charging a fee; for trades, the fiat asset is used.
  */
 
-data class PostCustomerNameBankModel (
+data class PostFeeBankModel (
 
-    /* The customer's first name. */
-    @SerializedName("first")
-    val first: kotlin.String? = null,
+    /* The fee's type */
+    @SerializedName("type")
+    val type: PostFeeBankModel.Type,
 
-    /* The customer's middle name. */
-    @SerializedName("middle")
-    val middle: kotlin.String? = null,
+    /* The percentage amount, in basis points, to apply when charging a fee. */
+    @SerializedName("spread_fee")
+    val spreadFee: java.math.BigDecimal? = null,
 
-    /* The customer's last name. */
-    @SerializedName("last")
-    val last: kotlin.String? = null
+    /* The fixed amount to apply when charging a fee; for trades, the fiat asset is used. */
+    @SerializedName("fixed_fee")
+    val fixedFee: java.math.BigDecimal? = null
 
-)
+) {
+
+    /**
+     * The fee's type
+     *
+     * Values: spread,fixed
+     */
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "spread") spread("spread"),
+        @SerializedName(value = "fixed") fixed("fixed");
+    }
+}
 
