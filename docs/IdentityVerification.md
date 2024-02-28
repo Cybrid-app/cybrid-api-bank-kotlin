@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **state** | **kotlin.String** | The identity verification state; one of storing, waiting, expired, or completed. |  [optional]
 **outcome** | **kotlin.String** | The identity verification outcome; one of passed or failed. |  [optional]
 **failureCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The reason codes explaining the outcome. |  [optional]
+**verificationChecks** | [**kotlin.collections.List&lt;VerificationCheckBankModel&gt;**](VerificationCheckBankModel.md) | The checks associated with the identity verification. |  [optional]
 
 
 
