@@ -16,5 +16,7 @@
 
     * `cryptoReturn` (value: `"crypto_return"`)
 
+    * `lossRecovery` (value: `"loss_recovery"`)
+
 
 

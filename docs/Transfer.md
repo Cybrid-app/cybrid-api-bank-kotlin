@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the transfer. |  [optional]
-**transferType** | **kotlin.String** | The type of transfer; one of funding, book, crypto, instant_funding, funding_return, or crypto_return. |  [optional]
+**transferType** | **kotlin.String** | The type of transfer; one of funding, book, crypto, instant_funding, funding_return, crypto_return, or loss_recovery. |  [optional]
 **bankGuid** | **kotlin.String** | The associated bank&#39;s identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. |  [optional]
