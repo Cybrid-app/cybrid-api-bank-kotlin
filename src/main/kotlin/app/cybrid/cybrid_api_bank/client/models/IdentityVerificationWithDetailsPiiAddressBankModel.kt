@@ -24,91 +24,41 @@ package app.cybrid.cybrid_api_bank.client.models
 import com.google.gson.annotations.SerializedName
 
 /**
- * 
+ * The attested address.
  *
- * @param guid Auto-generated unique identifier for the quote.
- * @param productType The type of product the quote is for; one of trading, funding, book_transfer, or crypto_transfer.
- * @param bankGuid The unique identifier for the bank.
- * @param customerGuid The unique identifier for the customer.
- * @param symbol Symbol the quote was requested for. Format is \"asset-counter_asset\" in uppercase. Populated for trade quotes.
- * @param side The direction of the quote; one of buy, sell, deposit, or withdrawal.
- * @param receiveAmount The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes.
- * @param deliverAmount The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes.
- * @param fee The fee associated with the trade. Denominated in \"counter_asset\" base units for trade quotes.
- * @param createdAt ISO8601 datetime the record was created at.
- * @param updatedAt ISO8601 datetime the record was last updated at.
- * @param issuedAt ISO8601 datetime the quote was created at.
- * @param expiresAt ISO8601 datetime the quote is expiring at. Populated for trading quotes.
- * @param asset The asset code the quote was requested for. Populated for book transfer and funding quotes.
- * @param networkFee The network fee in base units of network_fee_asset. Only present on `crypto_transfer` quotes.
- * @param networkFeeAsset The asset code of the network fee.
+ * @param street The first line of the address.
+ * @param city The city of the address.
+ * @param countryCode The ISO 3166 country 2-Alpha country code of the address.
+ * @param street2 The optional second line of the address.
+ * @param subdivision The provide/state/region of the address; not used by all countries.
+ * @param postalCode The postal/post/zip code of the address; not used by all countries.
  */
 
-data class QuoteBankModel (
+data class IdentityVerificationWithDetailsPiiAddressBankModel (
 
-    /* Auto-generated unique identifier for the quote. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The first line of the address. */
+    @SerializedName("street")
+    val street: kotlin.String,
 
-    /* The type of product the quote is for; one of trading, funding, book_transfer, or crypto_transfer. */
-    @SerializedName("product_type")
-    val productType: kotlin.String? = null,
+    /* The city of the address. */
+    @SerializedName("city")
+    val city: kotlin.String,
 
-    /* The unique identifier for the bank. */
-    @SerializedName("bank_guid")
-    val bankGuid: kotlin.String? = null,
+    /* The ISO 3166 country 2-Alpha country code of the address. */
+    @SerializedName("country_code")
+    val countryCode: kotlin.String,
 
-    /* The unique identifier for the customer. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The optional second line of the address. */
+    @SerializedName("street2")
+    val street2: kotlin.String? = null,
 
-    /* Symbol the quote was requested for. Format is \"asset-counter_asset\" in uppercase. Populated for trade quotes. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String? = null,
+    /* The provide/state/region of the address; not used by all countries. */
+    @SerializedName("subdivision")
+    val subdivision: kotlin.String? = null,
 
-    /* The direction of the quote; one of buy, sell, deposit, or withdrawal. */
-    @SerializedName("side")
-    val side: kotlin.String? = null,
-
-    /* The amount to be received in base units of the currency: currency is \"asset\" for buy and \"counter_asset\" for sell for trade quotes. */
-    @SerializedName("receive_amount")
-    val receiveAmount: java.math.BigDecimal? = null,
-
-    /* The amount to be delivered in base units of the currency: currency is \"counter_asset\" for buy and \"asset\" for sell for trade quotes. */
-    @SerializedName("deliver_amount")
-    val deliverAmount: java.math.BigDecimal? = null,
-
-    /* The fee associated with the trade. Denominated in \"counter_asset\" base units for trade quotes. */
-    @SerializedName("fee")
-    val fee: java.math.BigDecimal? = null,
-
-    /* ISO8601 datetime the record was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null,
-
-    /* ISO8601 datetime the record was last updated at. */
-    @SerializedName("updated_at")
-    val updatedAt: java.time.OffsetDateTime? = null,
-
-    /* ISO8601 datetime the quote was created at. */
-    @SerializedName("issued_at")
-    val issuedAt: java.time.OffsetDateTime? = null,
-
-    /* ISO8601 datetime the quote is expiring at. Populated for trading quotes. */
-    @SerializedName("expires_at")
-    val expiresAt: java.time.OffsetDateTime? = null,
-
-    /* The asset code the quote was requested for. Populated for book transfer and funding quotes. */
-    @SerializedName("asset")
-    val asset: kotlin.String? = null,
-
-    /* The network fee in base units of network_fee_asset. Only present on `crypto_transfer` quotes. */
-    @SerializedName("network_fee")
-    val networkFee: java.math.BigDecimal? = null,
-
-    /* The asset code of the network fee. */
-    @SerializedName("network_fee_asset")
-    val networkFeeAsset: kotlin.String? = null
+    /* The postal/post/zip code of the address; not used by all countries. */
+    @SerializedName("postal_code")
+    val postalCode: kotlin.String? = null
 
 )
 

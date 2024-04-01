@@ -36,10 +36,11 @@ interface IdentityVerificationsApi {
      *  - 404: identity_verification not found
      *
      * @param identityVerificationGuid Identifier for the identity verification.
+     * @param includePii Include PII in the response. (optional)
      * @return [IdentityVerificationWithDetailsBankModel]
      */
     @GET("api/identity_verifications/{identity_verification_guid}")
-    suspend fun getIdentityVerification(@Path("identity_verification_guid") identityVerificationGuid: kotlin.String): Response<IdentityVerificationWithDetailsBankModel>
+    suspend fun getIdentityVerification(@Path("identity_verification_guid") identityVerificationGuid: kotlin.String, @Query("include_pii") includePii: kotlin.Boolean? = null): Response<IdentityVerificationWithDetailsBankModel>
 
     /**
      * List Identity Verifications

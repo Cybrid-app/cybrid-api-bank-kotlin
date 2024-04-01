@@ -68,9 +68,10 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(IdentityVerificationsApi::class.java)
 val identityVerificationGuid : kotlin.String = identityVerificationGuid_example // kotlin.String | Identifier for the identity verification.
+val includePii : kotlin.Boolean = true // kotlin.Boolean | Include PII in the response.
 
 launch(Dispatchers.IO) {
-    val result : IdentityVerificationWithDetailsBankModel = webService.getIdentityVerification(identityVerificationGuid)
+    val result : IdentityVerificationWithDetailsBankModel = webService.getIdentityVerification(identityVerificationGuid, includePii)
 }
 ```
 
@@ -79,6 +80,7 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityVerificationGuid** | **kotlin.String**| Identifier for the identity verification. |
+ **includePii** | **kotlin.Boolean**| Include PII in the response. | [optional]
 
 ### Return type
 
