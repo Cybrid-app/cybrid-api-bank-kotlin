@@ -1,0 +1,28 @@
+
+# TransferFailureCodeBankModel
+
+## Enum
+
+
+    * `nonSufficientFunds` (value: `"non_sufficient_funds"`)
+
+    * `refreshRequired` (value: `"refresh_required"`)
+
+    * `partyNameInvalid` (value: `"party_name_invalid"`)
+
+    * `paymentRailInvalid` (value: `"payment_rail_invalid"`)
+
+    * `complianceRejection` (value: `"compliance_rejection"`)
+
+    * `cancelled` (value: `"cancelled"`)
+
+    * `reversed` (value: `"reversed"`)
+
+    * `limitExceeded` (value: `"limit_exceeded"`)
+
+    * `networkFeeTooLow` (value: `"network_fee_too_low"`)
+
+    * `amountTooLow` (value: `"amount_too_low"`)
+
+
+

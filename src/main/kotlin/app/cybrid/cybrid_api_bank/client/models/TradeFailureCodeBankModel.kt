@@ -26,24 +26,50 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param accountGuid The fiat account guid.
- * @param customerGuid The unique identifier for the customer.
- * @param labels The labels associated with the address.
+ * Values: nonSufficientFunds,unsupported,limitExceeded,expiredQuote,marketVolatility
  */
 
-data class PostDepositBankAccountBankModel (
+enum class TradeFailureCodeBankModel(val value: kotlin.String) {
 
-    /* The fiat account guid. */
-    @SerializedName("account_guid")
-    val accountGuid: kotlin.String,
+    @SerializedName(value = "non_sufficient_funds")
+    nonSufficientFunds("non_sufficient_funds"),
 
-    /* The unique identifier for the customer. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    @SerializedName(value = "unsupported")
+    unsupported("unsupported"),
 
-    /* The labels associated with the address. */
-    @SerializedName("labels")
-    val labels: kotlin.collections.List<kotlin.String>? = null
+    @SerializedName(value = "limit_exceeded")
+    limitExceeded("limit_exceeded"),
 
-)
+    @SerializedName(value = "expired_quote")
+    expiredQuote("expired_quote"),
+
+    @SerializedName(value = "market_volatility")
+    marketVolatility("market_volatility");
+
+    /**
+     * Override toString() to avoid using the enum variable name as the value, and instead use
+     * the actual value defined in the API spec file.
+     *
+     * This solves a problem when the variable name and its value are different, and ensures that
+     * the client sends the correct enum values to the server always.
+     */
+    override fun toString(): String = value
+
+    companion object {
+        /**
+         * Converts the provided [data] to a [String] on success, null otherwise.
+         */
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TradeFailureCodeBankModel) "$data" else null
+
+        /**
+         * Returns a valid [TradeFailureCodeBankModel] for [data], null otherwise.
+         */
+        fun decode(data: kotlin.Any?): TradeFailureCodeBankModel? = data?.let {
+          val normalizedData = "$it".lowercase()
+          values().firstOrNull { value ->
+            it == value || normalizedData == "$value".lowercase()
+          }
+        }
+    }
+}
 

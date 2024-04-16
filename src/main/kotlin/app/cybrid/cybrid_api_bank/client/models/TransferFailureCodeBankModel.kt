@@ -26,24 +26,65 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param accountGuid The fiat account guid.
- * @param customerGuid The unique identifier for the customer.
- * @param labels The labels associated with the address.
+ * Values: nonSufficientFunds,refreshRequired,partyNameInvalid,paymentRailInvalid,complianceRejection,cancelled,reversed,limitExceeded,networkFeeTooLow,amountTooLow
  */
 
-data class PostDepositBankAccountBankModel (
+enum class TransferFailureCodeBankModel(val value: kotlin.String) {
 
-    /* The fiat account guid. */
-    @SerializedName("account_guid")
-    val accountGuid: kotlin.String,
+    @SerializedName(value = "non_sufficient_funds")
+    nonSufficientFunds("non_sufficient_funds"),
 
-    /* The unique identifier for the customer. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    @SerializedName(value = "refresh_required")
+    refreshRequired("refresh_required"),
 
-    /* The labels associated with the address. */
-    @SerializedName("labels")
-    val labels: kotlin.collections.List<kotlin.String>? = null
+    @SerializedName(value = "party_name_invalid")
+    partyNameInvalid("party_name_invalid"),
 
-)
+    @SerializedName(value = "payment_rail_invalid")
+    paymentRailInvalid("payment_rail_invalid"),
+
+    @SerializedName(value = "compliance_rejection")
+    complianceRejection("compliance_rejection"),
+
+    @SerializedName(value = "cancelled")
+    cancelled("cancelled"),
+
+    @SerializedName(value = "reversed")
+    reversed("reversed"),
+
+    @SerializedName(value = "limit_exceeded")
+    limitExceeded("limit_exceeded"),
+
+    @SerializedName(value = "network_fee_too_low")
+    networkFeeTooLow("network_fee_too_low"),
+
+    @SerializedName(value = "amount_too_low")
+    amountTooLow("amount_too_low");
+
+    /**
+     * Override toString() to avoid using the enum variable name as the value, and instead use
+     * the actual value defined in the API spec file.
+     *
+     * This solves a problem when the variable name and its value are different, and ensures that
+     * the client sends the correct enum values to the server always.
+     */
+    override fun toString(): String = value
+
+    companion object {
+        /**
+         * Converts the provided [data] to a [String] on success, null otherwise.
+         */
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TransferFailureCodeBankModel) "$data" else null
+
+        /**
+         * Returns a valid [TransferFailureCodeBankModel] for [data], null otherwise.
+         */
+        fun decode(data: kotlin.Any?): TransferFailureCodeBankModel? = data?.let {
+          val normalizedData = "$it".lowercase()
+          values().firstOrNull { value ->
+            it == value || normalizedData == "$value".lowercase()
+          }
+        }
+    }
+}
 

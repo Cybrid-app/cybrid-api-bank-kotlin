@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **symbol** | **kotlin.String** | The trade symbol the pricing is related to. Format is asset-counter_asset, e.g., BTC-USD. |  [optional]
 **side** | **kotlin.String** | The direction of the trade; one of buy or sell. |  [optional]
 **state** | **kotlin.String** | The state of the trade; one of storing, pending, cancelled, completed, settling, or failed. |  [optional]
-**failureCode** | **kotlin.String** | The failure code for failed trades. |  [optional]
+**failureCode** | **kotlin.String** | The failure code for failed trades; one of non_sufficient_funds, unsupported, limit_exceeded, expired_quote, or market_volatility. |  [optional]
 **receiveAmount** | **java.math.BigDecimal** | The amount to be received in base units of the currency: currency is \&quot;asset\&quot; for buy and \&quot;counter_asset\&quot; for sell. |  [optional]
 **deliverAmount** | **java.math.BigDecimal** | The amount to be delivered in base units of the currency: currency is \&quot;counter_asset\&quot; for buy and \&quot;asset\&quot; for sell. |  [optional]
 **fee** | **java.math.BigDecimal** | The fee associated with the trade. Denominated in \&quot;counter_asset\&quot; base units |  [optional]
