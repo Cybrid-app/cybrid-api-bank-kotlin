@@ -191,6 +191,9 @@ Class | Method | HTTP request | Description
 *BanksApi* | [**getBank**](docs/BanksApi.md#getbank) | **GET** api/banks/{bank_guid} | Get Bank
 *BanksApi* | [**listBanks**](docs/BanksApi.md#listbanks) | **GET** api/banks | Get banks list
 *BanksApi* | [**updateBank**](docs/BanksApi.md#updatebank) | **PATCH** api/banks/{bank_guid} | Patch Bank
+*CounterpartiesApi* | [**createCounterparty**](docs/CounterpartiesApi.md#createcounterparty) | **POST** api/counterparties | Create Counterparty
+*CounterpartiesApi* | [**getCounterparty**](docs/CounterpartiesApi.md#getcounterparty) | **GET** api/counterparties/{counterparty_guid} | Get Counterparty
+*CounterpartiesApi* | [**listCounterparties**](docs/CounterpartiesApi.md#listcounterparties) | **GET** api/counterparties | Get counterparties list
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createcustomer) | **POST** api/customers | Create Customer
 *CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getcustomer) | **GET** api/customers/{customer_guid} | Get Customer
 *CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listcustomers) | **GET** api/customers | Get customers list
