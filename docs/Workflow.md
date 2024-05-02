@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the workflow. |  [optional]
+**bankGuid** | **kotlin.String** | The associated banks&#39;s identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The associated customer&#39;s identifier. |  [optional]
 **type** | **kotlin.String** | The type of workflow; one of plaid. |  [optional]
 **state** | **kotlin.String** | The state of the workflow; one of storing, completed, or failed. |  [optional]
