@@ -1,5 +1,5 @@
 
-# VerificationCheckBankModel
+# ComplianceDecisionBankModel
 
 ## Properties
 Name | Type | Description | Notes

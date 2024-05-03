@@ -26,34 +26,24 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param type The asset type; one of fiat or crypto.
- * @param code The unique code for the asset.
- * @param name The name of the asset.
- * @param symbol The currency symbol for the asset.
- * @param decimals The number of decimals for the default unit of the asset.
+ * @param type The type of verification check; one of business_watchlists, business_verification, business_tax_id_verification, person_attested, person_tax_id_attested, person_watchlists, person_verification, person_authentication, person_gov_id_verification, person_tax_id_verification, external_bank_account_verification, or external_bank_account_attested.
+ * @param state The state of the verification check; one of passed, failed, expired, or invalidated.
+ * @param failureCodes The reason codes explaining the outcome.
  */
 
-data class AssetBankModel (
+data class ComplianceDecisionBankModel (
 
-    /* The asset type; one of fiat or crypto. */
+    /* The type of verification check; one of business_watchlists, business_verification, business_tax_id_verification, person_attested, person_tax_id_attested, person_watchlists, person_verification, person_authentication, person_gov_id_verification, person_tax_id_verification, external_bank_account_verification, or external_bank_account_attested. */
     @SerializedName("type")
     val type: kotlin.String,
 
-    /* The unique code for the asset. */
-    @SerializedName("code")
-    val code: kotlin.String,
+    /* The state of the verification check; one of passed, failed, expired, or invalidated. */
+    @SerializedName("state")
+    val state: kotlin.String,
 
-    /* The name of the asset. */
-    @SerializedName("name")
-    val name: kotlin.String,
-
-    /* The currency symbol for the asset. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String,
-
-    /* The number of decimals for the default unit of the asset. */
-    @SerializedName("decimals")
-    val decimals: java.math.BigDecimal
+    /* The reason codes explaining the outcome. */
+    @SerializedName("failure_codes")
+    val failureCodes: kotlin.collections.List<kotlin.String>? = null
 
 )
 

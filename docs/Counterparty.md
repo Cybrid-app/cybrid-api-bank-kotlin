@@ -15,8 +15,9 @@ Name | Type | Description | Notes
 **address** | [**CounterpartyAddressBankModel**](CounterpartyAddressBankModel.md) |  |  [optional]
 **aliases** | [**kotlin.collections.List&lt;CounterpartyAliasesInnerBankModel&gt;**](CounterpartyAliasesInnerBankModel.md) | The counterparty&#39;s aliases. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **dateOfBirth** | [**java.time.LocalDate**](java.time.LocalDate.md) | The counterparty&#39;s DOB. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
-**labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the customer. |  [optional]
-**verificationChecks** | [**kotlin.collections.List&lt;VerificationCheckBankModel&gt;**](VerificationCheckBankModel.md) | The verification checks associated with the customer. |  [optional]
+**labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the counterparty. |  [optional]
+**complianceDecisions** | [**kotlin.collections.List&lt;ComplianceDecisionBankModel&gt;**](ComplianceDecisionBankModel.md) | The compliance decisions associated with the counterparty. |  [optional]
+**verificationChecks** | [**kotlin.collections.List&lt;ComplianceDecisionBankModel&gt;**](ComplianceDecisionBankModel.md) | Deprecated; use compliance_decisions instead. |  [optional]
 
 
 

@@ -26,34 +26,44 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param type The asset type; one of fiat or crypto.
- * @param code The unique code for the asset.
- * @param name The name of the asset.
- * @param symbol The currency symbol for the asset.
- * @param decimals The number of decimals for the default unit of the asset.
+ * Values: passed,failed,inconclusive
  */
 
-data class AssetBankModel (
+enum class ComplianceCheckOutcomeBankModel(val value: kotlin.String) {
 
-    /* The asset type; one of fiat or crypto. */
-    @SerializedName("type")
-    val type: kotlin.String,
+    @SerializedName(value = "passed")
+    passed("passed"),
 
-    /* The unique code for the asset. */
-    @SerializedName("code")
-    val code: kotlin.String,
+    @SerializedName(value = "failed")
+    failed("failed"),
 
-    /* The name of the asset. */
-    @SerializedName("name")
-    val name: kotlin.String,
+    @SerializedName(value = "inconclusive")
+    inconclusive("inconclusive");
 
-    /* The currency symbol for the asset. */
-    @SerializedName("symbol")
-    val symbol: kotlin.String,
+    /**
+     * Override toString() to avoid using the enum variable name as the value, and instead use
+     * the actual value defined in the API spec file.
+     *
+     * This solves a problem when the variable name and its value are different, and ensures that
+     * the client sends the correct enum values to the server always.
+     */
+    override fun toString(): String = value
 
-    /* The number of decimals for the default unit of the asset. */
-    @SerializedName("decimals")
-    val decimals: java.math.BigDecimal
+    companion object {
+        /**
+         * Converts the provided [data] to a [String] on success, null otherwise.
+         */
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ComplianceCheckOutcomeBankModel) "$data" else null
 
-)
+        /**
+         * Returns a valid [ComplianceCheckOutcomeBankModel] for [data], null otherwise.
+         */
+        fun decode(data: kotlin.Any?): ComplianceCheckOutcomeBankModel? = data?.let {
+          val normalizedData = "$it".lowercase()
+          values().firstOrNull { value ->
+            it == value || normalizedData == "$value".lowercase()
+          }
+        }
+    }
+}
 
