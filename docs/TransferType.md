@@ -18,5 +18,7 @@
 
     * `lossRecovery` (value: `"loss_recovery"`)
 
+    * `interAccount` (value: `"inter_account"`)
+
 
 

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **kotlin.String** | The account type; one of trading, fee, fiat, gas, or reserve. |  [optional]
+**type** | **kotlin.String** | The account type; one of trading, fee, fiat, gas, reserve, or invoice_operations. |  [optional]
 **guid** | **kotlin.String** | Auto-generated unique identifier for the account. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Enum: product_type
 Name | Value
 ---- | -----
-productType | trading, funding, book_transfer, crypto_transfer
+productType | trading, funding, book_transfer, crypto_transfer, inter_account
 
 
 
