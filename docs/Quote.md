@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the quote. |  [optional]
-**productType** | **kotlin.String** | The type of product the quote is for; one of trading, funding, book_transfer, crypto_transfer, or inter_account. |  [optional]
+**productType** | **kotlin.String** | The type of product the quote is for; one of trading, funding, book_transfer, crypto_transfer, inter_account, or lightning_transfer. |  [optional]
 **bankGuid** | **kotlin.String** | The unique identifier for the bank. |  [optional]
 **customerGuid** | **kotlin.String** | The unique identifier for the customer. |  [optional]
 **symbol** | **kotlin.String** | Symbol the quote was requested for. Format is \&quot;asset-counter_asset\&quot; in uppercase. Populated for trade quotes. |  [optional]
@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **asset** | **kotlin.String** | The asset code the quote was requested for. Populated for book transfer and funding quotes. |  [optional]
 **networkFee** | **java.math.BigDecimal** | The network fee in base units of network_fee_asset. Only present on &#x60;crypto_transfer&#x60; quotes. |  [optional]
 **networkFeeAsset** | **kotlin.String** | The asset code of the network fee. |  [optional]
+**networkAddress** | **kotlin.String** | The network address to pay the invoice to. Populated for lightning_transfer quotes. |  [optional]
 
 
 
