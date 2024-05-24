@@ -70,10 +70,12 @@ interface InvoicesApi {
      * @param bankGuid Comma separated bank_guids to list invoices for. (optional)
      * @param customerGuid Comma separated customer_guids to list invoices for. (optional)
      * @param accountGuid Comma separated account_guids to list invoices for. (optional)
+     * @param state Comma separated states to list invoices for. (optional)
+     * @param environment  (optional)
      * @param label Comma separated labels to list invoices for. (optional)
      * @return [InvoiceListBankModel]
      */
     @GET("api/invoices")
-    suspend fun listInvoices(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<InvoiceListBankModel>
+    suspend fun listInvoices(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null, @Query("environment") environment: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<InvoiceListBankModel>
 
 }

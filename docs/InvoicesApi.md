@@ -160,10 +160,12 @@ val guid : kotlin.String = guid_example // kotlin.String | Comma separated guids
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list invoices for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list invoices for.
 val accountGuid : kotlin.String = accountGuid_example // kotlin.String | Comma separated account_guids to list invoices for.
+val state : kotlin.String = state_example // kotlin.String | Comma separated states to list invoices for.
+val environment : kotlin.String = environment_example // kotlin.String | 
 val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list invoices for.
 
 launch(Dispatchers.IO) {
-    val result : InvoiceListBankModel = webService.listInvoices(page, perPage, guid, bankGuid, customerGuid, accountGuid, label)
+    val result : InvoiceListBankModel = webService.listInvoices(page, perPage, guid, bankGuid, customerGuid, accountGuid, state, environment, label)
 }
 ```
 
@@ -177,6 +179,8 @@ Name | Type | Description  | Notes
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list invoices for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list invoices for. | [optional]
  **accountGuid** | **kotlin.String**| Comma separated account_guids to list invoices for. | [optional]
+ **state** | **kotlin.String**| Comma separated states to list invoices for. | [optional]
+ **environment** | **kotlin.String**|  | [optional] [enum: sandbox, production]
  **label** | **kotlin.String**| Comma separated labels to list invoices for. | [optional]
 
 ### Return type
