@@ -12,6 +12,8 @@
 
     * `attested` (value: `"attested"`)
 
+    * `attestedOwnership` (value: `"attested_ownership"`)
+
     * `plaidIdentityMatch` (value: `"plaid_identity_match"`)
 
     * `documentSubmission` (value: `"document_submission"`)
