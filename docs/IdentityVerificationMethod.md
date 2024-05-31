@@ -14,6 +14,8 @@
 
     * `attestedOwnership` (value: `"attested_ownership"`)
 
+    * `accountOwnership` (value: `"account_ownership"`)
+
     * `plaidIdentityMatch` (value: `"plaid_identity_match"`)
 
     * `documentSubmission` (value: `"document_submission"`)
