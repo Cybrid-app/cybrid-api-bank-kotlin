@@ -118,9 +118,10 @@ val guid : kotlin.String = guid_example // kotlin.String | Comma separated guids
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list identity verifications for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list identity verifications for.
 val state : kotlin.String = state_example // kotlin.String | Comma separated states to list identity verifications for.
+val type : kotlin.String = type_example // kotlin.String | Comma separated types to list identity verifications for.
 
 launch(Dispatchers.IO) {
-    val result : IdentityVerificationListBankModel = webService.listIdentityVerifications(page, perPage, guid, bankGuid, customerGuid, state)
+    val result : IdentityVerificationListBankModel = webService.listIdentityVerifications(page, perPage, guid, bankGuid, customerGuid, state, type)
 }
 ```
 
@@ -134,6 +135,7 @@ Name | Type | Description  | Notes
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list identity verifications for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list identity verifications for. | [optional]
  **state** | **kotlin.String**| Comma separated states to list identity verifications for. | [optional]
+ **type** | **kotlin.String**| Comma separated types to list identity verifications for. | [optional]
 
 ### Return type
 
