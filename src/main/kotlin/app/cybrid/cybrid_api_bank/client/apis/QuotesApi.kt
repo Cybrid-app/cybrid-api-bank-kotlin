@@ -13,7 +13,7 @@ import app.cybrid.cybrid_api_bank.client.models.QuoteListBankModel
 interface QuotesApi {
     /**
      * Create Quote
-     * Creates a quote.  ## Quote creation  Quotes can be created for a Bank or a Customer.  To create quotes for your Bank, omit the &#x60;customer_guid&#x60; parameter in the request body. To create quotes for your Customers, include the &#x60;customer_guid&#x60; parameter in the request body.    Required scope: **quotes:execute**
+     * Creates a quote.  ## Quote creation  Quotes can be created for a Bank or a Customer.  To create quotes for your Bank, omit the &#x60;customer_guid&#x60; parameter in the request body. To create quotes for your Customers, include the &#x60;customer_guid&#x60; parameter in the request body.  ## Failure codes  | Code | Description | |------|-------------| | invalid_amount | The amount on the invoice is unprocessable | | insufficient_balance | There are insufficient funds to process the quote | | invalid_invoice | The invoice cannot be processed |    Required scope: **quotes:execute**
      * Responses:
      *  - 201: quote created
      *  - 400: Invalid requests
