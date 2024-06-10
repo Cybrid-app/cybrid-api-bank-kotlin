@@ -22,14 +22,14 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | kyc, bank_account
+type | kyc, bank_account, counterparty
 
 
 <a name="Method"></a>
 ## Enum: method
 Name | Value
 ---- | -----
-method | business_registration, id_and_selfie, tax_id_and_selfie, attested, attested_ownership, account_ownership, plaid_identity_match, document_submission
+method | business_registration, id_and_selfie, tax_id_and_selfie, attested, attested_ownership, account_ownership, plaid_identity_match, document_submission, watchlists
 
 
 <a name="kotlin.collections.List<ExpectedBehaviours>"></a>

@@ -8,5 +8,7 @@
 
     * `bankAccount` (value: `"bank_account"`)
 
+    * `counterparty` (value: `"counterparty"`)
+
 
 
