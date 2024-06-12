@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **outcome** | **kotlin.String** | The identity verification outcome; one of passed or failed. |  [optional]
 **failureCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The reason codes explaining the outcome. |  [optional]
 **complianceDecisions** | [**kotlin.collections.List&lt;ComplianceDecisionBankModel&gt;**](ComplianceDecisionBankModel.md) | The compliance decisions associated with the identity verification. |  [optional]
-**verificationChecks** | [**kotlin.collections.List&lt;ComplianceDecisionBankModel&gt;**](ComplianceDecisionBankModel.md) | Deprecated; use compliance_decisions instead. |  [optional]
 
 
 
