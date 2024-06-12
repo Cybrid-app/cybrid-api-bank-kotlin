@@ -16,7 +16,7 @@ interface CounterpartiesApi {
      * Creates a counterparty.  ## Counterparty Type  Counterparty resources are an abstraction for real world individuals and businesses that are not directly on the Cybrid Platform.  ## State  | State | Description | |-------|-------------| | storing | The Platform is storing the counterparty details in our private store | | unverified | The Platform has not yet verified the counterparty&#39;s identity | | verified | The Platform has verified the counterparty&#39;s identity | | rejected | The Platform was not able to successfully verify the counterparty&#39;s identity |    Required scope: **counterparties:execute**
      * Responses:
      *  - 201: counterparty created
-     *  - 422: Unprocessable Entity
+     *  - 422: Unprocessable Content
      *
      * @param postCounterpartyBankModel 
      * @return [CounterpartyBankModel]
