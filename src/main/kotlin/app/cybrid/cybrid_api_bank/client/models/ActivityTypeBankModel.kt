@@ -24,33 +24,24 @@ package app.cybrid.cybrid_api_bank.client.models
 import com.google.gson.annotations.SerializedName
 
 /**
- * 
+ * The activity type 
  *
- * Values: attestationIdentityRecords,kycIdentityVerifications,rawRoutingDetails,individualCustomers,businessCustomers,routableAccountsBank,routableAccountsCustomer
+ * Values: trading,funding,bookTransfer,cryptoTransfer
  */
 
-enum class BankFeatureBankModel(val value: kotlin.String) {
+enum class ActivityTypeBankModel(val value: kotlin.String) {
 
-    @SerializedName(value = "attestation_identity_records")
-    attestationIdentityRecords("attestation_identity_records"),
+    @SerializedName(value = "trading")
+    trading("trading"),
 
-    @SerializedName(value = "kyc_identity_verifications")
-    kycIdentityVerifications("kyc_identity_verifications"),
+    @SerializedName(value = "funding")
+    funding("funding"),
 
-    @SerializedName(value = "raw_routing_details")
-    rawRoutingDetails("raw_routing_details"),
+    @SerializedName(value = "book_transfer")
+    bookTransfer("book_transfer"),
 
-    @SerializedName(value = "individual_customers")
-    individualCustomers("individual_customers"),
-
-    @SerializedName(value = "business_customers")
-    businessCustomers("business_customers"),
-
-    @SerializedName(value = "routable_accounts_bank")
-    routableAccountsBank("routable_accounts_bank"),
-
-    @SerializedName(value = "routable_accounts_customer")
-    routableAccountsCustomer("routable_accounts_customer");
+    @SerializedName(value = "crypto_transfer")
+    cryptoTransfer("crypto_transfer");
 
     /**
      * Override toString() to avoid using the enum variable name as the value, and instead use
@@ -65,12 +56,12 @@ enum class BankFeatureBankModel(val value: kotlin.String) {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is BankFeatureBankModel) "$data" else null
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ActivityTypeBankModel) "$data" else null
 
         /**
-         * Returns a valid [BankFeatureBankModel] for [data], null otherwise.
+         * Returns a valid [ActivityTypeBankModel] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): BankFeatureBankModel? = data?.let {
+        fun decode(data: kotlin.Any?): ActivityTypeBankModel? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

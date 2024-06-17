@@ -26,56 +26,34 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * Values: attestationIdentityRecords,kycIdentityVerifications,rawRoutingDetails,individualCustomers,businessCustomers,routableAccountsBank,routableAccountsCustomer
+ * @param name The name of the limit.
+ * @param asset The asset code for the limit.
+ * @param amount The limit amount for the asset.
+ * @param interval The limit interval in seconds for the asset.
+ * @param activities The activities associated with the limit.
  */
 
-enum class BankFeatureBankModel(val value: kotlin.String) {
+data class ActivityLimitBankModel (
 
-    @SerializedName(value = "attestation_identity_records")
-    attestationIdentityRecords("attestation_identity_records"),
+    /* The name of the limit. */
+    @SerializedName("name")
+    val name: kotlin.String? = null,
 
-    @SerializedName(value = "kyc_identity_verifications")
-    kycIdentityVerifications("kyc_identity_verifications"),
+    /* The asset code for the limit. */
+    @SerializedName("asset")
+    val asset: kotlin.String? = null,
 
-    @SerializedName(value = "raw_routing_details")
-    rawRoutingDetails("raw_routing_details"),
+    /* The limit amount for the asset. */
+    @SerializedName("amount")
+    val amount: java.math.BigDecimal? = null,
 
-    @SerializedName(value = "individual_customers")
-    individualCustomers("individual_customers"),
+    /* The limit interval in seconds for the asset. */
+    @SerializedName("interval")
+    val interval: java.math.BigDecimal? = null,
 
-    @SerializedName(value = "business_customers")
-    businessCustomers("business_customers"),
+    /* The activities associated with the limit. */
+    @SerializedName("activities")
+    val activities: kotlin.collections.List<kotlin.String>? = null
 
-    @SerializedName(value = "routable_accounts_bank")
-    routableAccountsBank("routable_accounts_bank"),
-
-    @SerializedName(value = "routable_accounts_customer")
-    routableAccountsCustomer("routable_accounts_customer");
-
-    /**
-     * Override toString() to avoid using the enum variable name as the value, and instead use
-     * the actual value defined in the API spec file.
-     *
-     * This solves a problem when the variable name and its value are different, and ensures that
-     * the client sends the correct enum values to the server always.
-     */
-    override fun toString(): String = value
-
-    companion object {
-        /**
-         * Converts the provided [data] to a [String] on success, null otherwise.
-         */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is BankFeatureBankModel) "$data" else null
-
-        /**
-         * Returns a valid [BankFeatureBankModel] for [data], null otherwise.
-         */
-        fun decode(data: kotlin.Any?): BankFeatureBankModel? = data?.let {
-          val normalizedData = "$it".lowercase()
-          values().firstOrNull { value ->
-            it == value || normalizedData == "$value".lowercase()
-          }
-        }
-    }
-}
+)
 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **emailAddress** | **kotlin.String** | The customer&#39;s email address. Only available for GET operations when &#39;include_pii&#39; is set. |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the customer. |  [optional]
 **complianceDecisions** | [**kotlin.collections.List&lt;ComplianceDecisionBankModel&gt;**](ComplianceDecisionBankModel.md) | The compliance decisions associated with the customer. |  [optional]
+**activityLimits** | [**kotlin.collections.List&lt;ActivityLimitBankModel&gt;**](ActivityLimitBankModel.md) | The asset limits associated with the customer. |  [optional]
 
 
 
