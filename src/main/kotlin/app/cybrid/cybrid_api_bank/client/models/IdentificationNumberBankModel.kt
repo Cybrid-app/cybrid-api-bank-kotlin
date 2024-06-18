@@ -20,114 +20,30 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.PostIdentificationNumberBankModel
-import app.cybrid.cybrid_api_bank.client.models.PostIdentityVerificationAddressBankModel
-import app.cybrid.cybrid_api_bank.client.models.PostIdentityVerificationNameBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param type The type of identity verification.
- * @param method The identity verification method.
- * @param customerGuid The customer's identifier.
- * @param countryCode The ISO 3166 country 2-Alpha country the customer is being verified in; required when method is set to 'id_and_selfie'. If not present, will default to the Bank's configured country code.
- * @param name 
- * @param address 
- * @param dateOfBirth The customer's date of birth; required when type is set to 'kyc' and method is set to 'attested'.
- * @param phoneNumber The customer's phone number.
- * @param emailAddress The customer's email address.
- * @param identificationNumbers The customer's identification numbers; required when type is set to 'kyc' and method is set to 'attested'.
- * @param externalBankAccountGuid The external bank account's identifier. Required for 'bank_account' type.
- * @param expectedBehaviours The optional expected behaviour to simulate.
+ * @param type The source of the identification number; one of drivers_license, passport, passport_card, residence_card, social_security_number, tax_identification_number, or identification_card.
+ * @param issuingCountryCode The ISO 3166 country 2-Alpha country code of the identification number issuer.
+ * @param identificationNumber The identification number.
  */
 
-data class PostIdentityVerificationBankModel (
+data class IdentificationNumberBankModel (
 
-    /* The type of identity verification. */
+    /* The source of the identification number; one of drivers_license, passport, passport_card, residence_card, social_security_number, tax_identification_number, or identification_card. */
     @SerializedName("type")
-    val type: PostIdentityVerificationBankModel.Type,
+    val type: kotlin.String,
 
-    /* The identity verification method. */
-    @SerializedName("method")
-    val method: PostIdentityVerificationBankModel.Method,
+    /* The ISO 3166 country 2-Alpha country code of the identification number issuer. */
+    @SerializedName("issuing_country_code")
+    val issuingCountryCode: kotlin.String,
 
-    /* The customer's identifier. */
-    @SerializedName("customer_guid")
-    val customerGuid: kotlin.String? = null,
+    /* The identification number. */
+    @SerializedName("identification_number")
+    val identificationNumber: kotlin.String
 
-    /* The ISO 3166 country 2-Alpha country the customer is being verified in; required when method is set to 'id_and_selfie'. If not present, will default to the Bank's configured country code. */
-    @SerializedName("country_code")
-    val countryCode: kotlin.String? = null,
-
-    @SerializedName("name")
-    val name: PostIdentityVerificationNameBankModel? = null,
-
-    @SerializedName("address")
-    val address: PostIdentityVerificationAddressBankModel? = null,
-
-    /* The customer's date of birth; required when type is set to 'kyc' and method is set to 'attested'. */
-    @SerializedName("date_of_birth")
-    val dateOfBirth: java.time.LocalDate? = null,
-
-    /* The customer's phone number. */
-    @SerializedName("phone_number")
-    val phoneNumber: kotlin.String? = null,
-
-    /* The customer's email address. */
-    @SerializedName("email_address")
-    val emailAddress: kotlin.String? = null,
-
-    /* The customer's identification numbers; required when type is set to 'kyc' and method is set to 'attested'. */
-    @SerializedName("identification_numbers")
-    val identificationNumbers: kotlin.collections.List<PostIdentificationNumberBankModel>? = null,
-
-    /* The external bank account's identifier. Required for 'bank_account' type. */
-    @SerializedName("external_bank_account_guid")
-    val externalBankAccountGuid: kotlin.String? = null,
-
-    /* The optional expected behaviour to simulate. */
-    @SerializedName("expected_behaviours")
-    val expectedBehaviours: kotlin.collections.List<PostIdentityVerificationBankModel.ExpectedBehaviours>? = null
-
-) {
-
-    /**
-     * The type of identity verification.
-     *
-     * Values: kyc,bankAccount,counterparty
-     */
-    enum class Type(val value: kotlin.String) {
-        @SerializedName(value = "kyc") kyc("kyc"),
-        @SerializedName(value = "bank_account") bankAccount("bank_account"),
-        @SerializedName(value = "counterparty") counterparty("counterparty");
-    }
-    /**
-     * The identity verification method.
-     *
-     * Values: businessRegistration,idAndSelfie,taxIdAndSelfie,attested,attestedOwnership,accountOwnership,plaidIdentityMatch,documentSubmission,watchlists
-     */
-    enum class Method(val value: kotlin.String) {
-        @SerializedName(value = "business_registration") businessRegistration("business_registration"),
-        @SerializedName(value = "id_and_selfie") idAndSelfie("id_and_selfie"),
-        @SerializedName(value = "tax_id_and_selfie") taxIdAndSelfie("tax_id_and_selfie"),
-        @SerializedName(value = "attested") attested("attested"),
-        @SerializedName(value = "attested_ownership") attestedOwnership("attested_ownership"),
-        @SerializedName(value = "account_ownership") accountOwnership("account_ownership"),
-        @SerializedName(value = "plaid_identity_match") plaidIdentityMatch("plaid_identity_match"),
-        @SerializedName(value = "document_submission") documentSubmission("document_submission"),
-        @SerializedName(value = "watchlists") watchlists("watchlists");
-    }
-    /**
-     * The optional expected behaviour to simulate.
-     *
-     * Values: passedImmediately,failedImmediately,taxIdNotChecked
-     */
-    enum class ExpectedBehaviours(val value: kotlin.String) {
-        @SerializedName(value = "passed_immediately") passedImmediately("passed_immediately"),
-        @SerializedName(value = "failed_immediately") failedImmediately("failed_immediately"),
-        @SerializedName(value = "tax_id_not_checked") taxIdNotChecked("tax_id_not_checked");
-    }
-}
+)
 
