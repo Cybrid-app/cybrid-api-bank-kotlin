@@ -22,5 +22,7 @@
 
     * `lightning` (value: `"lightning"`)
 
+    * `instantFundingReturn` (value: `"instant_funding_return"`)
+
 
 
