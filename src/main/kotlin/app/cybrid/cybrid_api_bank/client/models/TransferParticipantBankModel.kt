@@ -20,36 +20,30 @@
 
 package app.cybrid.cybrid_api_bank.client.models
 
-import app.cybrid.cybrid_api_bank.client.models.TransferBankModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index to retrieve.
- * @param perPage The number of entities per page to return.
- * @param objects Array of trade entities
+ * @param type The type of participant; one of unknown, bank, customer, or counterparty.
+ * @param amount The amount in base units of the asset.
+ * @param guid The participant's identifier.
  */
 
-data class TransferListBankModel (
+data class TransferParticipantBankModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* The type of participant; one of unknown, bank, customer, or counterparty. */
+    @SerializedName("type")
+    val type: kotlin.String,
 
-    /* The page index to retrieve. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* The amount in base units of the asset. */
+    @SerializedName("amount")
+    val amount: java.math.BigDecimal,
 
-    /* The number of entities per page to return. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
-
-    /* Array of trade entities */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<TransferBankModel>
+    /* The participant's identifier. */
+    @SerializedName("guid")
+    val guid: kotlin.String? = null
 
 )
 

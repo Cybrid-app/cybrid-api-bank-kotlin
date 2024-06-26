@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **transferType** | [**inline**](#TransferType) | The type of transfer. | 
 **customerGuid** | **kotlin.String** | The customer&#39;s identifier. |  [optional]
 **sourceAccountGuid** | **kotlin.String** | The source account&#39;s identifier. Required for book transfers. |  [optional]
+**sourceParticipants** | [**kotlin.collections.List&lt;TransferParticipantBankModel&gt;**](TransferParticipantBankModel.md) | The source participants for the transfer. |  [optional]
 **destinationAccountGuid** | **kotlin.String** | The destination account&#39;s identifier. Required for book transfers. |  [optional]
+**destinationParticipants** | [**kotlin.collections.List&lt;TransferParticipantBankModel&gt;**](TransferParticipantBankModel.md) | The destination participants for the transfer. |  [optional]
 **externalWalletGuid** | **kotlin.String** | The customer&#39;s external wallet&#39;s identifier. |  [optional]
 **externalBankAccountGuid** | **kotlin.String** | The customer&#39;s &#39;plaid&#39; or &#39;plaid_processor_token&#39; external bank account&#39;s identifier. |  [optional]
 **networkFeeAccountGuid** | **kotlin.String** | The network fee account&#39;s identifier. Required for network fee transfers. Must be the identifier for the customer&#39;s or bank&#39;s fiat account. For customer&#39;s to pay the network fees, include the customer&#39;s fiat account guid. For bank&#39;s to pay the network fees, include the bank&#39;s fiat account guid. |  [optional]
