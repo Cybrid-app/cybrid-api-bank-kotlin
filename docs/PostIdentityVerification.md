@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **type** | [**inline**](#Type) | The type of identity verification. | 
 **method** | [**inline**](#Method) | The identity verification method. | 
 **customerGuid** | **kotlin.String** | The customer&#39;s identifier. |  [optional]
+**counterpartyGuid** | **kotlin.String** | The counterparty&#39;s identifier. |  [optional]
 **countryCode** | **kotlin.String** | The ISO 3166 country 2-Alpha country the customer is being verified in; required when method is set to &#39;id_and_selfie&#39;. If not present, will default to the Bank&#39;s configured country code. |  [optional]
 **name** | [**PostIdentityVerificationNameBankModel**](PostIdentityVerificationNameBankModel.md) |  |  [optional]
 **address** | [**PostIdentityVerificationAddressBankModel**](PostIdentityVerificationAddressBankModel.md) |  |  [optional]
