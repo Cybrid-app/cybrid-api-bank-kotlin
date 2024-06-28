@@ -26,24 +26,36 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param type The type of compliance check; one of business_watchlists, business_verification, business_tax_id_verification, person_attested, person_tax_id_attested, person_watchlists, person_verification, person_authentication, person_gov_id_verification, person_tax_id_verification, external_bank_account_verification, or external_bank_account_attested.
- * @param outcome The outcome of the compliance check; one of passed, failed, or inconclusive.
- * @param failureCodes The reason codes explaining the outcome.
+ * @param type The type of participant
+ * @param amount The amount in base units of the asset.
+ * @param guid The participant's identifier.
  */
 
-data class ComplianceCheckBankModel (
+data class PostTransferParticipantBankModel (
 
-    /* The type of compliance check; one of business_watchlists, business_verification, business_tax_id_verification, person_attested, person_tax_id_attested, person_watchlists, person_verification, person_authentication, person_gov_id_verification, person_tax_id_verification, external_bank_account_verification, or external_bank_account_attested. */
+    /* The type of participant */
     @SerializedName("type")
-    val type: kotlin.String,
+    val type: PostTransferParticipantBankModel.Type,
 
-    /* The outcome of the compliance check; one of passed, failed, or inconclusive. */
-    @SerializedName("outcome")
-    val outcome: kotlin.String,
+    /* The amount in base units of the asset. */
+    @SerializedName("amount")
+    val amount: java.math.BigDecimal,
 
-    /* The reason codes explaining the outcome. */
-    @SerializedName("failure_codes")
-    val failureCodes: kotlin.collections.List<kotlin.String>? = null
+    /* The participant's identifier. */
+    @SerializedName("guid")
+    val guid: kotlin.String
 
-)
+) {
+
+    /**
+     * The type of participant
+     *
+     * Values: bank,customer,counterparty
+     */
+    enum class Type(val value: kotlin.String) {
+        @SerializedName(value = "bank") bank("bank"),
+        @SerializedName(value = "customer") customer("customer"),
+        @SerializedName(value = "counterparty") counterparty("counterparty");
+    }
+}
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**inline**](#Type) | The counterparty&#39;s type. | 
+**customerGuid** | **kotlin.String** | The owning customer&#39;s identifier. |  [optional]
 **name** | [**PostCounterpartyNameBankModel**](PostCounterpartyNameBankModel.md) |  |  [optional]
 **address** | [**PostCustomerAddressBankModel**](PostCustomerAddressBankModel.md) |  |  [optional]
 **dateOfBirth** | [**java.time.LocalDate**](java.time.LocalDate.md) | The counterparty&#39;s date of birth. |  [optional]
