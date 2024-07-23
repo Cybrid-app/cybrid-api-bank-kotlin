@@ -30,7 +30,7 @@ type | kyc, bank_account, counterparty
 ## Enum: method
 Name | Value
 ---- | -----
-method | business_registration, id_and_selfie, tax_id_and_selfie, attested, attested_ownership, account_ownership, plaid_identity_match, document_submission, watchlists
+method | attested, document_submission, id_and_selfie, tax_id_and_selfie, business_registration, plaid_identity_match, attested_ownership, account_ownership, watchlists
 
 
 <a name="kotlin.collections.List<ExpectedBehaviours>"></a>
