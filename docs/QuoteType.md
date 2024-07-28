@@ -6,6 +6,8 @@
 
     * `trading` (value: `"trading"`)
 
+    * `tradingExit` (value: `"trading_exit"`)
+
     * `funding` (value: `"funding"`)
 
     * `bookTransfer` (value: `"book_transfer"`)

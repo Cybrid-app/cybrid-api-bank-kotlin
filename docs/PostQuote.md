@@ -14,13 +14,14 @@ Name | Type | Description | Notes
 **receiveAmount** | **java.math.BigDecimal** | The amount to be received in base units of the currency: currency is \&quot;asset\&quot; for buy and \&quot;counter_asset\&quot; for sell for trade quotes. |  [optional]
 **deliverAmount** | **java.math.BigDecimal** | The amount to be delivered in base units of the currency: currency is \&quot;counter_asset\&quot; for buy and \&quot;asset\&quot; for sell for trade quotes. |  [optional]
 **fees** | [**kotlin.collections.List&lt;PostFeeBankModel&gt;**](PostFeeBankModel.md) | The custom fees associated with the quote |  [optional]
+**referenceTradeGuid** | **kotlin.String** | The guid of the related trade. Only present on &#x60;exit&#x60; trades. |  [optional]
 
 
 <a name="ProductType"></a>
 ## Enum: product_type
 Name | Value
 ---- | -----
-productType | trading, funding, book_transfer, crypto_transfer, inter_account, lightning_transfer
+productType | trading, trading_exit, funding, book_transfer, crypto_transfer, inter_account, lightning_transfer
 
 
 

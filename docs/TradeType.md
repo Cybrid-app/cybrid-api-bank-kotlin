@@ -8,5 +8,7 @@
 
     * `liquidation` (value: `"liquidation"`)
 
+    * `exit` (value: `"exit"`)
+
 
 

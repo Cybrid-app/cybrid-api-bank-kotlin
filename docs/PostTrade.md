@@ -5,8 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quoteGuid** | **kotlin.String** | The associated quote&#39;s identifier. | 
+**tradeType** | [**inline**](#TradeType) | The type of trade. |  [optional]
 **expectedError** | [**inline**](#ExpectedError) | The optional expected error to simulate trade failure. |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the trade. |  [optional]
+
+
+<a name="TradeType"></a>
+## Enum: trade_type
+Name | Value
+---- | -----
+tradeType | platform, exit
 
 
 <a name="ExpectedError"></a>
