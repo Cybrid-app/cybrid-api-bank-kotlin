@@ -115,12 +115,13 @@ val webService = apiClient.createWebservice(CounterpartiesApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list counterparties for.
+val type : kotlin.String = type_example // kotlin.String | Comma separated counterparty_types to list counterparties for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list counterparties for.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated counterparty_guids to list counterparties for.
 val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list counterparties for.
 
 launch(Dispatchers.IO) {
-    val result : CounterpartyListBankModel = webService.listCounterparties(page, perPage, bankGuid, customerGuid, guid, label)
+    val result : CounterpartyListBankModel = webService.listCounterparties(page, perPage, bankGuid, type, customerGuid, guid, label)
 }
 ```
 
@@ -131,6 +132,7 @@ Name | Type | Description  | Notes
  **page** | **java.math.BigDecimal**|  | [optional]
  **perPage** | **java.math.BigDecimal**|  | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list counterparties for. | [optional]
+ **type** | **kotlin.String**| Comma separated counterparty_types to list counterparties for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list counterparties for. | [optional]
  **guid** | **kotlin.String**| Comma separated counterparty_guids to list counterparties for. | [optional]
  **label** | **kotlin.String**| Comma separated labels to list counterparties for. | [optional]

@@ -46,12 +46,13 @@ interface CounterpartiesApi {
      * @param page  (optional)
      * @param perPage  (optional)
      * @param bankGuid Comma separated bank_guids to list counterparties for. (optional)
+     * @param type Comma separated counterparty_types to list counterparties for. (optional)
      * @param customerGuid Comma separated customer_guids to list counterparties for. (optional)
      * @param guid Comma separated counterparty_guids to list counterparties for. (optional)
      * @param label Comma separated labels to list counterparties for. (optional)
      * @return [CounterpartyListBankModel]
      */
     @GET("api/counterparties")
-    suspend fun listCounterparties(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<CounterpartyListBankModel>
+    suspend fun listCounterparties(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("type") type: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<CounterpartyListBankModel>
 
 }
