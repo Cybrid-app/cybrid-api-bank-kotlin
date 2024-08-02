@@ -115,12 +115,13 @@ apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(CustomersApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | 
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | 
+val type : kotlin.String = type_example // kotlin.String | Comma separated types to list customers for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list customers for.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated customer_guids to list customers for.
 val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list customers for.
 
 launch(Dispatchers.IO) {
-    val result : CustomerListBankModel = webService.listCustomers(page, perPage, bankGuid, guid, label)
+    val result : CustomerListBankModel = webService.listCustomers(page, perPage, type, bankGuid, guid, label)
 }
 ```
 
@@ -130,6 +131,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **java.math.BigDecimal**|  | [optional]
  **perPage** | **java.math.BigDecimal**|  | [optional]
+ **type** | **kotlin.String**| Comma separated types to list customers for. | [optional]
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list customers for. | [optional]
  **guid** | **kotlin.String**| Comma separated customer_guids to list customers for. | [optional]
  **label** | **kotlin.String**| Comma separated labels to list customers for. | [optional]

@@ -54,13 +54,14 @@ interface CustomersApi {
      *
      * @param page  (optional)
      * @param perPage  (optional)
+     * @param type Comma separated types to list customers for. (optional)
      * @param bankGuid Comma separated bank_guids to list customers for. (optional)
      * @param guid Comma separated customer_guids to list customers for. (optional)
      * @param label Comma separated labels to list customers for. (optional)
      * @return [CustomerListBankModel]
      */
     @GET("api/customers")
-    suspend fun listCustomers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<CustomerListBankModel>
+    suspend fun listCustomers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("type") type: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null, @Query("label") label: kotlin.String? = null): Response<CustomerListBankModel>
 
     /**
      * Patch Customer

@@ -53,11 +53,12 @@ interface BanksApi {
      *
      * @param page The page index to retrieve. (optional)
      * @param perPage The number of entities per page to return. (optional)
+     * @param type Comma separated types to list banks for. (optional)
      * @param guid Comma separated bank_guids to list banks for. (optional)
      * @return [BankListBankModel]
      */
     @GET("api/banks")
-    suspend fun listBanks(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
+    suspend fun listBanks(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("type") type: kotlin.String? = null, @Query("guid") guid: kotlin.String? = null): Response<BankListBankModel>
 
     /**
      * Patch Bank

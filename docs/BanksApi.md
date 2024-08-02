@@ -113,10 +113,11 @@ apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(BanksApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
+val type : kotlin.String = type_example // kotlin.String | Comma separated types to list banks for.
 val guid : kotlin.String = guid_example // kotlin.String | Comma separated bank_guids to list banks for.
 
 launch(Dispatchers.IO) {
-    val result : BankListBankModel = webService.listBanks(page, perPage, guid)
+    val result : BankListBankModel = webService.listBanks(page, perPage, type, guid)
 }
 ```
 
@@ -126,6 +127,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional]
  **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional]
+ **type** | **kotlin.String**| Comma separated types to list banks for. | [optional]
  **guid** | **kotlin.String**| Comma separated bank_guids to list banks for. | [optional]
 
 ### Return type
