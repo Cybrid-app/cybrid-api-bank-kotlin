@@ -23,7 +23,7 @@ type | sandbox
 ## Enum: features
 Name | Value
 ---- | -----
-features | attestation_identity_records, kyc_identity_verifications, business_customers, individual_customers, routable_accounts_bank, routable_accounts_customer
+features | attestation_identity_records, kyc_identity_verifications, business_customers, individual_customers
 
 
 

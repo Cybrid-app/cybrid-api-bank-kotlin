@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **kotlin.String** | Auto-generated unique identifier for the identity verification. |  [optional]
+**type** | **kotlin.String** | The account type; one of main or sub_account. |  [optional]
 **bankGuid** | **kotlin.String** | The address&#39; bank identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The address&#39; customer identifier. |  [optional]
 **accountGuid** | **kotlin.String** | The address&#39; account identifier. |  [optional]
