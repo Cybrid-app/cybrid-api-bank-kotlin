@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **counterpartyAddress** | [**DepositBankAccountCounterpartyAddressBankModel**](DepositBankAccountCounterpartyAddressBankModel.md) |  |  [optional]
 **accountDetails** | [**kotlin.collections.List&lt;DepositBankAccountAccountDetailsInnerBankModel&gt;**](DepositBankAccountAccountDetailsInnerBankModel.md) | The account details for the bank account. |  [optional]
 **routingDetails** | [**kotlin.collections.List&lt;DepositBankAccountRoutingDetailsInnerBankModel&gt;**](DepositBankAccountRoutingDetailsInnerBankModel.md) | The account details for the bank account. |  [optional]
+**parentDepositBankAccountGuid** | **kotlin.String** | The unique identifier for the bank-level deposit bank account. This is only set for sub-accounts. |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the address. |  [optional]
 
 
