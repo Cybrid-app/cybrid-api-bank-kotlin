@@ -16,6 +16,8 @@ interface CounterpartiesApi {
      * Creates a counterparty.  ## Counterparty Type  Counterparty resources are an abstraction for real world individuals and businesses that are not directly on the Cybrid Platform.  ## State  | State | Description | |-------|-------------| | storing | The Platform is storing the counterparty details in our private store | | unverified | The Platform has not yet verified the counterparty&#39;s identity | | verified | The Platform has verified the counterparty&#39;s identity | | rejected | The Platform was not able to successfully verify the counterparty&#39;s identity |    Required scope: **counterparties:execute**
      * Responses:
      *  - 201: counterparty created
+     *  - 401: Unauthorized
+     *  - 403: Forbidden
      *  - 422: Unprocessable Content
      *
      * @param postCounterpartyBankModel 
@@ -29,6 +31,8 @@ interface CounterpartiesApi {
      * Retrieves a counterparty.  Required scope: **counterparties:read**
      * Responses:
      *  - 200: counterparty found
+     *  - 401: Unauthorized
+     *  - 403: Forbidden
      *
      * @param counterpartyGuid Identifier for the counterparty.
      * @param includePii Include PII in the response. (optional)
@@ -42,6 +46,8 @@ interface CounterpartiesApi {
      * Retrieves a listing of counterparties.  Required scope: **counterparties:read**
      * Responses:
      *  - 200: get list of counterparties
+     *  - 401: Unauthorized
+     *  - 403: Forbidden
      *
      * @param page  (optional)
      * @param perPage  (optional)
