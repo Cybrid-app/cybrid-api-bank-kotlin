@@ -26,59 +26,19 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the bank.
- * @param organizationGuid The organization's identifier.
- * @param name The bank's name.
- * @param type The bank type; one of sandbox or production.
- * @param features The bank's enabled features.
- * @param createdAt ISO8601 datetime the record was created at.
- * @param supportedTradingSymbols The bank's list of supported trading symbols.
- * @param supportedFiatAccountAssets The bank's list of supported fiat symbols.
- * @param supportedCountryCodes The bank's list of supported country codes.
- * @param updatedAt ISO8601 datetime the record was last updated at.
+ * @param routingNumberType The type of routing number; one of CPA or ABA.
+ * @param routingNumber The routing number.
  */
 
-data class BankBankModel (
+data class ExternalBankAccountPiiInnerRoutingDetailsInnerBankModel (
 
-    /* Auto-generated unique identifier for the bank. */
-    @SerializedName("guid")
-    val guid: kotlin.String,
+    /* The type of routing number; one of CPA or ABA. */
+    @SerializedName("routing_number_type")
+    val routingNumberType: kotlin.String,
 
-    /* The organization's identifier. */
-    @SerializedName("organization_guid")
-    val organizationGuid: kotlin.String,
-
-    /* The bank's name. */
-    @SerializedName("name")
-    val name: kotlin.String,
-
-    /* The bank type; one of sandbox or production. */
-    @SerializedName("type")
-    val type: kotlin.String,
-
-    /* The bank's enabled features. */
-    @SerializedName("features")
-    val features: kotlin.collections.List<kotlin.String>,
-
-    /* ISO8601 datetime the record was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime,
-
-    /* The bank's list of supported trading symbols. */
-    @SerializedName("supported_trading_symbols")
-    val supportedTradingSymbols: kotlin.collections.List<kotlin.String>? = null,
-
-    /* The bank's list of supported fiat symbols. */
-    @SerializedName("supported_fiat_account_assets")
-    val supportedFiatAccountAssets: kotlin.collections.List<kotlin.String>? = null,
-
-    /* The bank's list of supported country codes. */
-    @SerializedName("supported_country_codes")
-    val supportedCountryCodes: kotlin.collections.List<kotlin.String>? = null,
-
-    /* ISO8601 datetime the record was last updated at. */
-    @SerializedName("updated_at")
-    val updatedAt: java.time.OffsetDateTime? = null
+    /* The routing number. */
+    @SerializedName("routing_number")
+    val routingNumber: kotlin.String
 
 )
 
