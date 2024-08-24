@@ -77,11 +77,10 @@ interface ExternalBankAccountsApi {
      * @param bankGuid Comma separated bank_guids to list external_bank_accounts for. (optional)
      * @param customerGuid Comma separated customer_guids to list external_bank_accounts for. (optional)
      * @param asset Comma separated assets to list external_bank_accounts for. (optional)
-     * @param state Comma separated states to list external_bank_accounts for. (optional)
      * @return [ExternalBankAccountListBankModel]
      */
     @GET("api/external_bank_accounts")
-    suspend fun listExternalBankAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("asset") asset: kotlin.String? = null, @Query("state") state: kotlin.String? = null): Response<ExternalBankAccountListBankModel>
+    suspend fun listExternalBankAccounts(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("asset") asset: kotlin.String? = null): Response<ExternalBankAccountListBankModel>
 
     /**
      * Patch ExternalBankAccount
