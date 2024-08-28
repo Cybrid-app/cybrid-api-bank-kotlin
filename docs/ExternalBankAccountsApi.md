@@ -167,9 +167,10 @@ val guid : kotlin.String = guid_example // kotlin.String | Comma separated exter
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Comma separated bank_guids to list external_bank_accounts for.
 val customerGuid : kotlin.String = customerGuid_example // kotlin.String | Comma separated customer_guids to list external_bank_accounts for.
 val asset : kotlin.String = asset_example // kotlin.String | Comma separated assets to list external_bank_accounts for.
+val state : kotlin.String = state_example // kotlin.String | Comma separated states to list external_bank_accounts for. Filtering by \"completed\" and \"unverified\" states is only supported for individual customer accounts.
 
 launch(Dispatchers.IO) {
-    val result : ExternalBankAccountListBankModel = webService.listExternalBankAccounts(page, perPage, guid, bankGuid, customerGuid, asset)
+    val result : ExternalBankAccountListBankModel = webService.listExternalBankAccounts(page, perPage, guid, bankGuid, customerGuid, asset, state)
 }
 ```
 
@@ -183,6 +184,7 @@ Name | Type | Description  | Notes
  **bankGuid** | **kotlin.String**| Comma separated bank_guids to list external_bank_accounts for. | [optional]
  **customerGuid** | **kotlin.String**| Comma separated customer_guids to list external_bank_accounts for. | [optional]
  **asset** | **kotlin.String**| Comma separated assets to list external_bank_accounts for. | [optional]
+ **state** | **kotlin.String**| Comma separated states to list external_bank_accounts for. Filtering by \&quot;completed\&quot; and \&quot;unverified\&quot; states is only supported for individual customer accounts. | [optional]
 
 ### Return type
 
