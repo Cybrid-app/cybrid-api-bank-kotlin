@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **deliverAmount** | **java.math.BigDecimal** | The amount to be delivered in base units of the currency: currency is \&quot;counter_asset\&quot; for buy and \&quot;asset\&quot; for sell for trade quotes. |  [optional]
 **fees** | [**kotlin.collections.List&lt;PostFeeBankModel&gt;**](PostFeeBankModel.md) | The custom fees associated with the quote |  [optional]
 **referenceTradeGuid** | **kotlin.String** | The guid of the related trade. Only present on &#x60;exit&#x60; trades. |  [optional]
+**sourceAccountGuid** | **kotlin.String** | The source account&#39;s identifier. Required for inter-account transfers. |  [optional]
+**destinationAccountGuid** | **kotlin.String** | The destination account&#39;s identifier. Required for inter-account transfers. |  [optional]
 
 
 <a name="ProductType"></a>
