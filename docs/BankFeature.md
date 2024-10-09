@@ -4,9 +4,9 @@
 ## Enum
 
 
-    * `attestationIdentityRecords` (value: `"attestation_identity_records"`)
-
     * `kycIdentityVerifications` (value: `"kyc_identity_verifications"`)
+
+    * `attestationIdentityRecords` (value: `"attestation_identity_records"`)
 
     * `rawRoutingDetails` (value: `"raw_routing_details"`)
 
