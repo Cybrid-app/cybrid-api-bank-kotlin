@@ -35,7 +35,7 @@ transferType | funding, book, crypto, instant_funding, inter_account, lightning
 ## Enum: payment_rail
 Name | Value
 ---- | -----
-paymentRail | ach, eft, wire
+paymentRail | ach, eft, wire, rtp
 
 
 
