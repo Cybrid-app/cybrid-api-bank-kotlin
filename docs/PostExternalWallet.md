@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **kotlin.String** | The name of the account. | 
+**name** | **kotlin.String** | Name of the external wallet. | 
 **asset** | **kotlin.String** | The asset code. | 
 **address** | **kotlin.String** | The blockchain wallet address for the wallet. | 
 **customerGuid** | **kotlin.String** | The customer identifier. |  [optional]

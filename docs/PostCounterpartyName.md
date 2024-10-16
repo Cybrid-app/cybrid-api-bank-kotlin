@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first** | **kotlin.String** | The counterparty&#39;s first name; required for individual counterparties. |  [optional]
-**middle** | **kotlin.String** | The counterparty&#39;s middle name; optional for individual counterparties. |  [optional]
-**last** | **kotlin.String** | The counterparty&#39;s last name; required for individual counterparties. |  [optional]
-**full** | **kotlin.String** | The counterparty&#39;s full name; required for business counterparties. |  [optional]
+**full** | **kotlin.String** | The counterparty&#39;s full name. Required when type is business. |  [optional]
+**first** | **kotlin.String** | The counterparty&#39;s first name. Required when type is individual. |  [optional]
+**middle** | **kotlin.String** | The counterparty&#39;s middle name. Optional when type is individual. |  [optional]
+**last** | **kotlin.String** | The counterparty&#39;s last name. Required when type is individual. |  [optional]
 
 
 

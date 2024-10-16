@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **kotlin.String** | The bank&#39;s name. | 
-**type** | [**inline**](#Type) | The bank&#39;s type. At present, only **sandbox** is supported. | 
-**supportedTradingSymbols** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported trading symbols. | 
-**features** | [**inline**](#kotlin.collections.List&lt;Features&gt;) | The bank&#39;s enabled features. | 
-**supportedFiatAccountAssets** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported fiat assets. | 
-**supportedCountryCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported country codes. |  [optional]
+**type** | [**inline**](#Type) | The type of bank. | 
+**name** | **kotlin.String** | The name of the bank. | 
+**supportedTradingSymbols** | **kotlin.collections.List&lt;kotlin.String&gt;** | The trading symbols supported by the bank. | 
+**supportedFiatAccountAssets** | **kotlin.collections.List&lt;kotlin.String&gt;** | The fiat account assets supported by the bank. | 
+**supportedCountryCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The country codes supported by the bank. | 
+**features** | [**inline**](#kotlin.collections.List&lt;Features&gt;) | The features supported by the bank. | 
 
 
 <a name="Type"></a>
