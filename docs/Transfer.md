@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **transferDetails** | [**kotlin.Any**](.md) | The raw details on the transfer from the bank. |  [optional]
 **paymentRail** | **kotlin.String** | The rail the payment was done on. One of: ach, eft, wire, rtp |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the transfer. |  [optional]
+**propertyEntries** | [**kotlin.collections.List&lt;TransferEntryBankModel&gt;**](TransferEntryBankModel.md) | Transfer entries associated with the batch transfer |  [optional]
 
 
 
