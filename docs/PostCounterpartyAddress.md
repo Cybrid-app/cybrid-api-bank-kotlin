@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **city** | **kotlin.String** | The city of the address. | 
 **countryCode** | **kotlin.String** | The ISO 3166 country 2-Alpha country code of the address. | 
 **street2** | **kotlin.String** | The optional second line of the address. |  [optional]
-**subdivision** | **kotlin.String** | The ISO 3166-2 subdivision code of the address; not used by all countries. |  [optional]
-**postalCode** | **kotlin.String** | The postal/post/zip code of the address; not used by all countries. |  [optional]
+**subdivision** | **kotlin.String** | The ISO 3166-2 subdivision code of the address. Applicable only for countries that use subnational states, provinces, lands, oblasts or regions. |  [optional]
+**postalCode** | **kotlin.String** | The postal, zip or post code of the address. Applicable only for countries that use postal, zip or post codes. |  [optional]
 
 
 
