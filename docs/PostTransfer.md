@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **externalWalletGuid** | **kotlin.String** | The customer&#39;s external wallet&#39;s identifier. Optional when transfer_type is crypto. |  [optional]
 **customerGuid** | **kotlin.String** | The customer&#39;s identifier. Required when transfer_type is lightning. |  [optional]
 **networkFeeAccountGuid** | **kotlin.String** | The network fee account&#39;s identifier. Required for network fee transfers. Must be the identifier for the customer&#39;s or bank&#39;s fiat or trading account. For customer&#39;s to pay the network fees, include the customer&#39;s fiat or trading account guid. For bank&#39;s to pay the network fees, include the bank&#39;s fiat or trading account guid. Required when transfer_type is lightning. |  [optional]
+**expectedBehaviours** | [**inline**](#kotlin.collections.List&lt;ExpectedBehaviours&gt;) | The optional expected behaviour to simulate. Only applicable for transfers under sandbox banks. The force_review behaviour will force the transfer to be reviewed for funding and instant_funding transfers. |  [optional]
 **labels** | **kotlin.collections.List&lt;kotlin.String&gt;** | The labels associated with the transfer. |  [optional]
 
 
@@ -35,6 +36,13 @@ transferType | funding, book, crypto, instant_funding, inter_account, lightning
 Name | Value
 ---- | -----
 paymentRail | ach, eft, wire, rtp
+
+
+<a name="kotlin.collections.List<ExpectedBehaviours>"></a>
+## Enum: expected_behaviours
+Name | Value
+---- | -----
+expectedBehaviours | force_review
 
 
 
