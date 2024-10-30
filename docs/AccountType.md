@@ -16,5 +16,7 @@
 
     * `invoiceOperations` (value: `"invoice_operations"`)
 
+    * `storage` (value: `"storage"`)
+
 
 

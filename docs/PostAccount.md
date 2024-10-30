@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | trading, fiat, invoice_operations
+type | trading, fiat, invoice_operations, storage
 
 
 
