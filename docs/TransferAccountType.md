@@ -22,5 +22,7 @@
 
     * `gas` (value: `"gas"`)
 
+    * `storage` (value: `"storage"`)
+
 
 
