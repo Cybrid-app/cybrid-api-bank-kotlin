@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **networkFeeAsset** | **kotlin.String** | The asset code of the network fee. |  [optional]
 **networkAddress** | **kotlin.String** | The network address to pay the invoice to. Populated for lightning_transfer quotes. |  [optional]
 **propertyEntries** | [**kotlin.collections.List&lt;QuoteEntryBankModel&gt;**](QuoteEntryBankModel.md) | The quote entries for a batch transfer quote |  [optional]
+**tradeGuid** | **kotlin.String** | The unique identifier for the trade. |  [optional]
+**transferGuid** | **kotlin.String** | The unique identifier for the transfer. |  [optional]
 
 
 
