@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **supportedTradingSymbols** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported trading symbols. |  [optional]
 **supportedFiatAccountAssets** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported fiat symbols. |  [optional]
 **supportedCountryCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of supported country codes. |  [optional]
+**corsAllowedOrigins** | **kotlin.collections.List&lt;kotlin.String&gt;** | The bank&#39;s list of CORS allowed origins. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 
 
