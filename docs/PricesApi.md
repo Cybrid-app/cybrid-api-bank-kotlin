@@ -22,11 +22,16 @@ Retrieves a listing of symbol prices.  ## Symbols  Symbol are pairs and are in t
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(PricesApi::class.java)
-val symbol : kotlin.String = symbol_example // kotlin.String | Comma separated symbols to list prices for.
+val symbol : kotlin.String = symbol_example // kotlin.String | Comma separated trading symbols to list prices for.
+val tradingSymbol : kotlin.String = tradingSymbol_example // kotlin.String | Comma separated trading symbols to list prices for.
+val payoutSymbol : kotlin.String = payoutSymbol_example // kotlin.String | Comma separated payout symbols to list prices for.
+val payoutCountryCode : kotlin.String = payoutCountryCode_example // kotlin.String | Comma separated payout country codes to list prices for.
+val payoutParticipantsType : kotlin.String = payoutParticipantsType_example // kotlin.String | Comma separated payout participants types to list prices for.
+val payoutRoute : kotlin.String = payoutRoute_example // kotlin.String | Comma separated payout routes to list prices for.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | The bank identifier to retrieve prices for.
 
 launch(Dispatchers.IO) {
-    val result : kotlin.collections.List<SymbolPriceBankModel> = webService.listPrices(symbol, bankGuid)
+    val result : kotlin.collections.List<SymbolPriceBankModel> = webService.listPrices(symbol, tradingSymbol, payoutSymbol, payoutCountryCode, payoutParticipantsType, payoutRoute, bankGuid)
 }
 ```
 
@@ -34,7 +39,12 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **kotlin.String**| Comma separated symbols to list prices for. | [optional]
+ **symbol** | **kotlin.String**| Comma separated trading symbols to list prices for. | [optional]
+ **tradingSymbol** | **kotlin.String**| Comma separated trading symbols to list prices for. | [optional]
+ **payoutSymbol** | **kotlin.String**| Comma separated payout symbols to list prices for. | [optional]
+ **payoutCountryCode** | **kotlin.String**| Comma separated payout country codes to list prices for. | [optional]
+ **payoutParticipantsType** | **kotlin.String**| Comma separated payout participants types to list prices for. | [optional]
+ **payoutRoute** | **kotlin.String**| Comma separated payout routes to list prices for. | [optional]
  **bankGuid** | **kotlin.String**| The bank identifier to retrieve prices for. | [optional]
 
 ### Return type

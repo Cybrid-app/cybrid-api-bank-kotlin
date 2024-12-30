@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **supportedFiatAccountAssets** | **kotlin.collections.List&lt;kotlin.String&gt;** | The fiat account assets supported by the bank. | 
 **supportedCountryCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | The country codes supported by the bank. | 
 **features** | [**inline**](#kotlin.collections.List&lt;Features&gt;) | The features supported by the bank. | 
+**supportedPayoutSymbols** | [**kotlin.collections.List&lt;kotlin.Any&gt;**](kotlin.Any.md) | The payout symbols supported by the bank. This is not yet supported and should be nil or empty. |  [optional]
 **corsAllowedOrigins** | **kotlin.collections.List&lt;kotlin.String&gt;** | The list of allowed CORS origin URIs. |  [optional]
 
 
