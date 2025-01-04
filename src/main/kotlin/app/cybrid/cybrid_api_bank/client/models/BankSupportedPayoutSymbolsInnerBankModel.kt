@@ -26,50 +26,29 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * Values: storing,pending,reviewing,completed,failed
+ * @param symbol The payout symbol code.
+ * @param countryCode The ISO 3166 country 2-Alpha country code of the payout symbol.
+ * @param participantsType The participants type; one of C2C, C2B, B2C, or B2B.
+ * @param route The payout symbol route; one of bank_account or mobile_wallet.
  */
 
-enum class TransferStateBankModel(val value: kotlin.String) {
+data class BankSupportedPayoutSymbolsInnerBankModel (
 
-    @SerializedName(value = "storing")
-    storing("storing"),
+    /* The payout symbol code. */
+    @SerializedName("symbol")
+    val symbol: kotlin.String? = null,
 
-    @SerializedName(value = "pending")
-    pending("pending"),
+    /* The ISO 3166 country 2-Alpha country code of the payout symbol. */
+    @SerializedName("country_code")
+    val countryCode: kotlin.String? = null,
 
-    @SerializedName(value = "reviewing")
-    reviewing("reviewing"),
+    /* The participants type; one of C2C, C2B, B2C, or B2B. */
+    @SerializedName("participants_type")
+    val participantsType: kotlin.String? = null,
 
-    @SerializedName(value = "completed")
-    completed("completed"),
+    /* The payout symbol route; one of bank_account or mobile_wallet. */
+    @SerializedName("route")
+    val route: kotlin.String? = null
 
-    @SerializedName(value = "failed")
-    failed("failed");
-
-    /**
-     * Override toString() to avoid using the enum variable name as the value, and instead use
-     * the actual value defined in the API spec file.
-     *
-     * This solves a problem when the variable name and its value are different, and ensures that
-     * the client sends the correct enum values to the server always.
-     */
-    override fun toString(): String = value
-
-    companion object {
-        /**
-         * Converts the provided [data] to a [String] on success, null otherwise.
-         */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TransferStateBankModel) "$data" else null
-
-        /**
-         * Returns a valid [TransferStateBankModel] for [data], null otherwise.
-         */
-        fun decode(data: kotlin.Any?): TransferStateBankModel? = data?.let {
-          val normalizedData = "$it".lowercase()
-          values().firstOrNull { value ->
-            it == value || normalizedData == "$value".lowercase()
-          }
-        }
-    }
-}
+)
 
