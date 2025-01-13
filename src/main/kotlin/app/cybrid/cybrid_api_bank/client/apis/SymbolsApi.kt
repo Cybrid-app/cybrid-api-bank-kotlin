@@ -10,7 +10,7 @@ import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
 interface SymbolsApi {
     /**
      * Get Symbols list
-     * Retrieves a listing of symbols.
+     * Retrieves a listing of symbols.Required scope: **prices:read**
      * Responses:
      *  - 200: get list of symbols
      *  - 401: Unauthorized - Authentication failed, 
