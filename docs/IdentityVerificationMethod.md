@@ -14,8 +14,6 @@
 
     * `businessRegistration` (value: `"business_registration"`)
 
-    * `plaidIdentityMatch` (value: `"plaid_identity_match"`)
-
     * `attestedOwnership` (value: `"attested_ownership"`)
 
     * `accountOwnership` (value: `"account_ownership"`)
