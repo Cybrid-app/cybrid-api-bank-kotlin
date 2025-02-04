@@ -64,10 +64,10 @@ curl -X POST https://id.production.cybrid.app/oauth/token -d '{
     \"grant_type\": \"client_credentials\",
     \"client_id\": \"<Your Client ID>\",
     \"client_secret\": \"<Your Secret>\",
-    \"scope\": \"banks:read banks:write bank_applications:execute accounts:read accounts:execute counterparties:read counterparties:write counterparties:execute customers:read customers:write customers:execute prices:read quotes:execute quotes:read trades:execute trades:read transfers:execute transfers:read external_bank_accounts:read external_bank_accounts:write external_bank_accounts:execute external_wallets:read external_wallets:execute workflows:read workflows:execute deposit_addresses:read deposit_addresses:execute deposit_bank_accounts:read deposit_bank_accounts:execute invoices:read invoices:write invoices:execute identity_verifications:read identity_verifications:write identity_verifications:execute\"
+    \"scope\": \"banks:read banks:write bank_applications:execute accounts:read accounts:execute counterparties:read counterparties:write counterparties:execute customers:read customers:write customers:execute prices:read quotes:execute quotes:read trades:execute trades:read transfers:execute transfers:read external_bank_accounts:read external_bank_accounts:write external_bank_accounts:execute external_wallets:read external_wallets:execute workflows:read workflows:execute deposit_addresses:read deposit_addresses:execute deposit_bank_accounts:read deposit_bank_accounts:execute invoices:read invoices:write invoices:execute identity_verifications:read identity_verifications:write identity_verifications:execute files:read files:execute\"
   }' -H \"Content-Type: application/json\"
 
-# When using Organization credentials set `scope` to 'organizations:read organizations:write organization_applications:execute banks:read banks:write banks:execute bank_applications:execute users:read users:execute counterparties:read customers:read accounts:read prices:read quotes:execute quotes:read trades:execute trades:read transfers:read transfers:execute external_bank_accounts:read external_wallets:read workflows:read deposit_addresses:read deposit_bank_accounts:read invoices:read subscriptions:read subscriptions:write subscriptions:execute subscription_events:read subscription_events:execute identity_verifications:read'
+# When using Organization credentials set `scope` to 'organizations:read organizations:write organization_applications:execute banks:read banks:write banks:execute bank_applications:execute users:read users:execute counterparties:read customers:read accounts:read prices:read quotes:execute quotes:read trades:execute trades:read transfers:read transfers:execute external_bank_accounts:read external_wallets:read workflows:read deposit_addresses:read deposit_bank_accounts:read invoices:read subscriptions:read subscriptions:write subscriptions:execute subscription_events:read subscription_events:execute identity_verifications:read files:read files:execute'
 ```
 <font color=\"orange\">**⚠️ Note: The above curl will create a bearer token with full scope access. Delete scopes if you'd like to restrict access.**</font>
 
@@ -212,6 +212,9 @@ Class | Method | HTTP request | Description
 *ExternalWalletsApi* | [**deleteExternalWallet**](docs/ExternalWalletsApi.md#deleteexternalwallet) | **DELETE** api/external_wallets/{external_wallet_guid} | Delete External Wallet
 *ExternalWalletsApi* | [**getExternalWallet**](docs/ExternalWalletsApi.md#getexternalwallet) | **GET** api/external_wallets/{external_wallet_guid} | Get External Wallet
 *ExternalWalletsApi* | [**listExternalWallets**](docs/ExternalWalletsApi.md#listexternalwallets) | **GET** api/external_wallets | Get external wallets list
+*FilesApi* | [**createFile**](docs/FilesApi.md#createfile) | **POST** api/files | Create File
+*FilesApi* | [**getFile**](docs/FilesApi.md#getfile) | **GET** api/files/{file_guid} | Get File
+*FilesApi* | [**listFiles**](docs/FilesApi.md#listfiles) | **GET** api/files | List Files
 *IdentityVerificationsApi* | [**createIdentityVerification**](docs/IdentityVerificationsApi.md#createidentityverification) | **POST** api/identity_verifications | Create Identity Verification
 *IdentityVerificationsApi* | [**getIdentityVerification**](docs/IdentityVerificationsApi.md#getidentityverification) | **GET** api/identity_verifications/{identity_verification_guid} | Get Identity Verification
 *IdentityVerificationsApi* | [**listIdentityVerifications**](docs/IdentityVerificationsApi.md#listidentityverifications) | **GET** api/identity_verifications | List Identity Verifications
@@ -288,4 +291,6 @@ Class | Method | HTTP request | Description
   - identity_verifications:read: identity_verifications read
   - identity_verifications:write: identity_verifications write
   - identity_verifications:execute: identity_verifications execute
+  - files:read: files read
+  - files:execute: files execute
 

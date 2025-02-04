@@ -8,6 +8,8 @@
 
     * `attestationIdentityRecords` (value: `"attestation_identity_records"`)
 
+    * `attestationIdentityRecordsV2` (value: `"attestation_identity_records_v2"`)
+
     * `rawRoutingDetails` (value: `"raw_routing_details"`)
 
     * `individualCustomers` (value: `"individual_customers"`)

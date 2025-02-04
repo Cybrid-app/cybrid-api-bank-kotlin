@@ -10,6 +10,8 @@
 
     * `businessTaxIdVerification` (value: `"business_tax_id_verification"`)
 
+    * `businessAttested` (value: `"business_attested"`)
+
     * `personAttested` (value: `"person_attested"`)
 
     * `personTaxIdAttested` (value: `"person_tax_id_attested"`)

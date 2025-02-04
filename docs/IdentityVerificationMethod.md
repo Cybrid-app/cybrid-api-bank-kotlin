@@ -14,11 +14,15 @@
 
     * `businessRegistration` (value: `"business_registration"`)
 
+    * `attestedIdAndSelfie` (value: `"attested_id_and_selfie"`)
+
+    * `attestedBusinessRegistration` (value: `"attested_business_registration"`)
+
+    * `watchlists` (value: `"watchlists"`)
+
     * `attestedOwnership` (value: `"attested_ownership"`)
 
     * `accountOwnership` (value: `"account_ownership"`)
-
-    * `watchlists` (value: `"watchlists"`)
 
 
 
