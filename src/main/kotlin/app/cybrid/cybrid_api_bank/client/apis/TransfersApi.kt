@@ -62,10 +62,10 @@ interface TransfersApi {
      * @param side Comma separated sides to list transfers for. (optional)
      * @param label Comma separated labels to list transfers for. (optional)
      * @param txnHash Comma separated transaction hashes to list transfers for. (optional)
-     * @param createdAtGte Created at start date inclusive lower bound, ISO8601 (optional)
-     * @param createdAtLt Created at end date exclusive upper bound, ISO8601. (optional)
-     * @param updatedAtGte Created at start date inclusive lower bound, ISO8601 (optional)
-     * @param updatedAtLt Created at end date exclusive upper bound, ISO8601. (optional)
+     * @param createdAtGte Created at start date-time inclusive lower bound, ISO8601 (optional)
+     * @param createdAtLt Created at end date-time exclusive upper bound, ISO8601. (optional)
+     * @param updatedAtGte Created at start date-time inclusive lower bound, ISO8601 (optional)
+     * @param updatedAtLt Created at end date-time exclusive upper bound, ISO8601. (optional)
      * @return [TransferListBankModel]
      */
     @GET("api/transfers")

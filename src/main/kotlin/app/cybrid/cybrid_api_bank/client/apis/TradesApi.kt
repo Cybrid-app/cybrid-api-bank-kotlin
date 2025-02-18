@@ -61,10 +61,10 @@ interface TradesApi {
      * @param state Comma separated states to list trades for. (optional)
      * @param side Comma separated sides to list trades for. (optional)
      * @param label Comma separated labels to list trades for. (optional)
-     * @param createdAtGte Created at start date inclusive lower bound, ISO8601. (optional)
-     * @param createdAtLt Created at end date exclusive upper bound, ISO8601. (optional)
-     * @param updatedAtGte Updated at start date inclusive lower bound, ISO8601. (optional)
-     * @param updatedAtLt Updated at end date exclusive upper bound, ISO8601. (optional)
+     * @param createdAtGte Created at start date-time inclusive lower bound, ISO8601. (optional)
+     * @param createdAtLt Created at end date-time exclusive upper bound, ISO8601. (optional)
+     * @param updatedAtGte Updated at start date-time inclusive lower bound, ISO8601. (optional)
+     * @param updatedAtLt Updated at end date-time exclusive upper bound, ISO8601. (optional)
      * @return [TradeListBankModel]
      */
     @GET("api/trades")

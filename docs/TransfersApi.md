@@ -121,10 +121,10 @@ val state : kotlin.String = state_example // kotlin.String | Comma separated sta
 val side : kotlin.String = side_example // kotlin.String | Comma separated sides to list transfers for.
 val label : kotlin.String = label_example // kotlin.String | Comma separated labels to list transfers for.
 val txnHash : kotlin.String = txnHash_example // kotlin.String | Comma separated transaction hashes to list transfers for.
-val createdAtGte : kotlin.String = createdAtGte_example // kotlin.String | Created at start date inclusive lower bound, ISO8601
-val createdAtLt : kotlin.String = createdAtLt_example // kotlin.String | Created at end date exclusive upper bound, ISO8601.
-val updatedAtGte : kotlin.String = updatedAtGte_example // kotlin.String | Created at start date inclusive lower bound, ISO8601
-val updatedAtLt : kotlin.String = updatedAtLt_example // kotlin.String | Created at end date exclusive upper bound, ISO8601.
+val createdAtGte : kotlin.String = createdAtGte_example // kotlin.String | Created at start date-time inclusive lower bound, ISO8601
+val createdAtLt : kotlin.String = createdAtLt_example // kotlin.String | Created at end date-time exclusive upper bound, ISO8601.
+val updatedAtGte : kotlin.String = updatedAtGte_example // kotlin.String | Created at start date-time inclusive lower bound, ISO8601
+val updatedAtLt : kotlin.String = updatedAtLt_example // kotlin.String | Created at end date-time exclusive upper bound, ISO8601.
 
 launch(Dispatchers.IO) {
     val result : TransferListBankModel = webService.listTransfers(page, perPage, guid, transferType, bankGuid, customerGuid, accountGuid, state, side, label, txnHash, createdAtGte, createdAtLt, updatedAtGte, updatedAtLt)
@@ -146,10 +146,10 @@ Name | Type | Description  | Notes
  **side** | **kotlin.String**| Comma separated sides to list transfers for. | [optional]
  **label** | **kotlin.String**| Comma separated labels to list transfers for. | [optional]
  **txnHash** | **kotlin.String**| Comma separated transaction hashes to list transfers for. | [optional]
- **createdAtGte** | **kotlin.String**| Created at start date inclusive lower bound, ISO8601 | [optional]
- **createdAtLt** | **kotlin.String**| Created at end date exclusive upper bound, ISO8601. | [optional]
- **updatedAtGte** | **kotlin.String**| Created at start date inclusive lower bound, ISO8601 | [optional]
- **updatedAtLt** | **kotlin.String**| Created at end date exclusive upper bound, ISO8601. | [optional]
+ **createdAtGte** | **kotlin.String**| Created at start date-time inclusive lower bound, ISO8601 | [optional]
+ **createdAtLt** | **kotlin.String**| Created at end date-time exclusive upper bound, ISO8601. | [optional]
+ **updatedAtGte** | **kotlin.String**| Created at start date-time inclusive lower bound, ISO8601 | [optional]
+ **updatedAtLt** | **kotlin.String**| Created at end date-time exclusive upper bound, ISO8601. | [optional]
 
 ### Return type
 
