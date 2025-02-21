@@ -23,9 +23,10 @@ val apiClient = ApiClient()
 val webService = apiClient.createWebservice(AssetsApi::class.java)
 val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
 val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
+val code : kotlin.String = code_example // kotlin.String | Comma separated codes to list assets for.
 
 launch(Dispatchers.IO) {
-    val result : AssetListBankModel = webService.listAssets(page, perPage)
+    val result : AssetListBankModel = webService.listAssets(page, perPage, code)
 }
 ```
 
@@ -35,6 +36,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional]
  **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional]
+ **code** | **kotlin.String**| Comma separated codes to list assets for. | [optional]
 
 ### Return type
 
