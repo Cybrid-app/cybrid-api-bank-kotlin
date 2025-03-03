@@ -10,8 +10,6 @@
 
     * `funding` (value: `"funding"`)
 
-    * `bookTransfer` (value: `"book_transfer"`)
-
     * `cryptoTransfer` (value: `"crypto_transfer"`)
 
     * `interAccount` (value: `"inter_account"`)

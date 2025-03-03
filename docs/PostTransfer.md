@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 ## Enum: transfer_type
 Name | Value
 ---- | -----
-transferType | funding, book, crypto, instant_funding, inter_account, lightning
+transferType | funding, crypto, instant_funding, inter_account, lightning, book
 
 
 <a name="PaymentRail"></a>

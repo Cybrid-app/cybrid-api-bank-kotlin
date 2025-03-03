@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 ## Enum: product_type
 Name | Value
 ---- | -----
-productType | trading, trading_exit, funding, book_transfer, crypto_transfer, inter_account, lightning_transfer
+productType | trading, trading_exit, funding, crypto_transfer, inter_account, lightning_transfer, book_transfer
 
 
 <a name="Side"></a>
