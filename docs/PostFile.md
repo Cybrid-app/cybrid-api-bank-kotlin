@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 ## Enum: type
 Name | Value
 ---- | -----
-type | drivers_license_front, drivers_license_back, passport, visa, identification_card, residence_card, selfie, selfie_video, selfie_left, selfie_right, utility_bill, bank_statement, property_tax, tax_document, ein_letter, incorporation_certificate
+type | drivers_license_front, drivers_license_back, passport, visa, identification_card, residence_card, selfie, selfie_video, selfie_left, selfie_right, utility_bill, bank_statement, property_tax, tax_document, ein_letter, incorporation_certificate, persona_inquiry_report, persona_inquiry_export
 
 
 <a name="ContentType"></a>
 ## Enum: content_type
 Name | Value
 ---- | -----
-contentType | image/jpeg, image/png, application/pdf, video/mp4
+contentType | image/jpeg, image/png, application/pdf, application/json, video/mp4
 
 
 
