@@ -236,6 +236,7 @@ Class | Method | HTTP request | Description
 *TransfersApi* | [**createTransfer**](docs/TransfersApi.md#createtransfer) | **POST** api/transfers | Create Transfer
 *TransfersApi* | [**getTransfer**](docs/TransfersApi.md#gettransfer) | **GET** api/transfers/{transfer_guid} | Get Transfer
 *TransfersApi* | [**listTransfers**](docs/TransfersApi.md#listtransfers) | **GET** api/transfers | Get transfers list
+*TransfersApi* | [**updateTransfer**](docs/TransfersApi.md#updatetransfer) | **PATCH** api/transfers/{transfer_guid} | Patch Transfer
 *WorkflowsApi* | [**createWorkflow**](docs/WorkflowsApi.md#createworkflow) | **POST** api/workflows | Create Workflow
 *WorkflowsApi* | [**getWorkflow**](docs/WorkflowsApi.md#getworkflow) | **GET** api/workflows/{workflow_guid} | Get Workflow
 *WorkflowsApi* | [**listWorkflows**](docs/WorkflowsApi.md#listworkflows) | **GET** api/workflows | Get workflows list

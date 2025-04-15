@@ -6,6 +6,7 @@ import retrofit2.Response
 import okhttp3.RequestBody
 
 import app.cybrid.cybrid_api_bank.client.models.ErrorResponseBankModel
+import app.cybrid.cybrid_api_bank.client.models.PatchTransferBankModel
 import app.cybrid.cybrid_api_bank.client.models.PostTransferBankModel
 import app.cybrid.cybrid_api_bank.client.models.TransferBankModel
 import app.cybrid.cybrid_api_bank.client.models.TransferListBankModel
@@ -70,5 +71,22 @@ interface TransfersApi {
      */
     @GET("api/transfers")
     suspend fun listTransfers(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("guid") guid: kotlin.String? = null, @Query("transfer_type") transferType: kotlin.String? = null, @Query("bank_guid") bankGuid: kotlin.String? = null, @Query("customer_guid") customerGuid: kotlin.String? = null, @Query("account_guid") accountGuid: kotlin.String? = null, @Query("state") state: kotlin.String? = null, @Query("side") side: kotlin.String? = null, @Query("label") label: kotlin.String? = null, @Query("txn_hash") txnHash: kotlin.String? = null, @Query("created_at_gte") createdAtGte: kotlin.String? = null, @Query("created_at_lt") createdAtLt: kotlin.String? = null, @Query("updated_at_gte") updatedAtGte: kotlin.String? = null, @Query("updated_at_lt") updatedAtLt: kotlin.String? = null): Response<TransferListBankModel>
+
+    /**
+     * Patch Transfer
+     * Update a transfer.  Required scope: **transfers:write**
+     * Responses:
+     *  - 200: Transfer updated
+     *  - 401: Unauthorized
+     *  - 403: Forbidden
+     *  - 404: Not Found
+     *  - 422: Unprocessable Content
+     *
+     * @param transferGuid Identifier for the transfer.
+     * @param patchTransferBankModel 
+     * @return [TransferBankModel]
+     */
+    @PATCH("api/transfers/{transfer_guid}")
+    suspend fun updateTransfer(@Path("transfer_guid") transferGuid: kotlin.String, @Body patchTransferBankModel: PatchTransferBankModel): Response<TransferBankModel>
 
 }

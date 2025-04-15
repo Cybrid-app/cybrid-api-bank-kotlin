@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createTransfer**](TransfersApi.md#createTransfer) | **POST** api/transfers | Create Transfer
 [**getTransfer**](TransfersApi.md#getTransfer) | **GET** api/transfers/{transfer_guid} | Get Transfer
 [**listTransfers**](TransfersApi.md#listTransfers) | **GET** api/transfers | Get transfers list
+[**updateTransfer**](TransfersApi.md#updateTransfer) | **PATCH** api/transfers/{transfer_guid} | Patch Transfer
 
 
 
@@ -164,5 +165,50 @@ Configure BearerAuth:
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Patch Transfer
+
+Update a transfer.  Required scope: **transfers:write**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_bank.client.*
+//import app.cybrid.cybrid_api_bank.client.infrastructure.*
+//import app.cybrid.cybrid_api_bank.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(TransfersApi::class.java)
+val transferGuid : kotlin.String = transferGuid_example // kotlin.String | Identifier for the transfer.
+val patchTransferBankModel : PatchTransferBankModel =  // PatchTransferBankModel | 
+
+launch(Dispatchers.IO) {
+    val result : TransferBankModel = webService.updateTransfer(transferGuid, patchTransferBankModel)
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transferGuid** | **kotlin.String**| Identifier for the transfer. |
+ **patchTransferBankModel** | [**PatchTransferBankModel**](PatchTransferBankModel.md)|  |
+
+### Return type
+
+[**TransferBankModel**](TransferBankModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient().setBearerToken("TOKEN")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
