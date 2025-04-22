@@ -36,10 +36,11 @@ interface FilesApi {
      *  - 404: file not found
      *
      * @param fileGuid Identifier for the file.
+     * @param includeDownloadUrl Include download information in response. (optional)
      * @return [PlatformFileBankModel]
      */
     @GET("api/files/{file_guid}")
-    suspend fun getFile(@Path("file_guid") fileGuid: kotlin.String): Response<PlatformFileBankModel>
+    suspend fun getFile(@Path("file_guid") fileGuid: kotlin.String, @Query("include_download_url") includeDownloadUrl: kotlin.String? = null): Response<PlatformFileBankModel>
 
     /**
      * List Files
