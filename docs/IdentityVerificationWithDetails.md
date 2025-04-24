@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **personaInquiryId** | **kotlin.String** | The Persona identifier of the backing inquiry. |  [optional]
 **personaState** | **kotlin.String** | The Persona state of the backing inquiry; one of waiting, pending, reviewing, processing, expired, completed, or unknown. |  [optional]
 **pii** | [**IdentityVerificationWithDetailsPiiBankModel**](IdentityVerificationWithDetailsPiiBankModel.md) |  |  [optional]
+**documents** | [**kotlin.collections.List&lt;IdentityVerificationDocumentBankModel&gt;**](IdentityVerificationDocumentBankModel.md) | The documents associated with the identity verification. |  [optional]
 
 
 
