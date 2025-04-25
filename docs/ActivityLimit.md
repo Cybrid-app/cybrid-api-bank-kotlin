@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **amount** | **java.math.BigDecimal** | The limit amount for the asset. |  [optional]
 **interval** | **java.math.BigDecimal** | The limit interval in seconds for the asset. |  [optional]
 **activities** | **kotlin.collections.List&lt;kotlin.String&gt;** | The activities associated with the limit. |  [optional]
+**sides** | **kotlin.collections.List&lt;kotlin.String&gt;** | The sides associated with the limit. |  [optional]
 
 
 
