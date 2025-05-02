@@ -11,6 +11,10 @@ Name | Type | Description | Notes
 **failedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | The ISO8601 datetime the file failed at. |  [optional]
 **state** | [**inline**](#State) | The state of the file. One of storing, completed, or failed. |  [optional]
 **failureCode** | **kotlin.String** | The failure code for failed files. |  [optional]
+**uploadUrl** | [**java.net.URI**](java.net.URI.md) | The URL to upload the file to. |  [optional]
+**uploadExpiresAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | The ISO8601 datetime the upload URL expires at. |  [optional]
+**downloadUrl** | [**java.net.URI**](java.net.URI.md) | The URL to download the file from. |  [optional]
+**downloadExpiresAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | The ISO8601 datetime the download URL expires at. |  [optional]
 
 
 <a name="State"></a>
