@@ -44,7 +44,7 @@ expectedBehaviours | passed_immediately, failed_immediately, tax_id_not_checked
 ## Enum: method
 Name | Value
 ---- | -----
-method | watchlists, attested, document_submission, id_and_selfie, tax_id_and_selfie, business_registration, attested_id_and_selfie, attested_business_registration, attested_ownership, account_ownership
+method | watchlists, attested, document_submission, enhanced_due_diligence, id_and_selfie, tax_id_and_selfie, business_registration, attested_id_and_selfie, attested_business_registration, attested_ownership, account_ownership
 
 
 

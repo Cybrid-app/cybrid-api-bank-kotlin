@@ -8,6 +8,8 @@
 
     * `documentSubmission` (value: `"document_submission"`)
 
+    * `enhancedDueDiligence` (value: `"enhanced_due_diligence"`)
+
     * `idAndSelfie` (value: `"id_and_selfie"`)
 
     * `taxIdAndSelfie` (value: `"tax_id_and_selfie"`)
