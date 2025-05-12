@@ -36,7 +36,7 @@ interface FilesApi {
      *  - 404: file not found
      *
      * @param fileGuid Identifier for the file.
-     * @param includeDownloadUrl Include download information in response. (optional)
+     * @param includeDownloadUrl Include download information in response. Note, the files:pii:read scope is required if this parameter is set. (optional)
      * @return [PlatformFileBankModel]
      */
     @GET("api/files/{file_guid}")

@@ -68,7 +68,7 @@ val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(FilesApi::class.java)
 val fileGuid : kotlin.String = fileGuid_example // kotlin.String | Identifier for the file.
-val includeDownloadUrl : kotlin.String = includeDownloadUrl_example // kotlin.String | Include download information in response.
+val includeDownloadUrl : kotlin.String = includeDownloadUrl_example // kotlin.String | Include download information in response. Note, the files:pii:read scope is required if this parameter is set.
 
 launch(Dispatchers.IO) {
     val result : PlatformFileBankModel = webService.getFile(fileGuid, includeDownloadUrl)
@@ -80,7 +80,7 @@ launch(Dispatchers.IO) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileGuid** | **kotlin.String**| Identifier for the file. |
- **includeDownloadUrl** | **kotlin.String**| Include download information in response. | [optional]
+ **includeDownloadUrl** | **kotlin.String**| Include download information in response. Note, the files:pii:read scope is required if this parameter is set. | [optional]
 
 ### Return type
 
