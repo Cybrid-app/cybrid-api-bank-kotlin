@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **complianceDecisions** | [**kotlin.collections.List&lt;ComplianceDecisionBankModel&gt;**](ComplianceDecisionBankModel.md) | The compliance decisions associated with the identity verification. |  [optional]
 **personaInquiryId** | **kotlin.String** | The Persona identifier of the backing inquiry. |  [optional]
 **personaState** | **kotlin.String** | The Persona state of the backing inquiry; one of waiting, pending, reviewing, processing, expired, completed, or unknown. |  [optional]
+**businessAssociates** | [**kotlin.collections.List&lt;IdentityVerificationBusinessAssociateBankModel&gt;**](IdentityVerificationBusinessAssociateBankModel.md) | List of associates declared for the business customer. |  [optional]
 **pii** | [**IdentityVerificationWithDetailsPiiBankModel**](IdentityVerificationWithDetailsPiiBankModel.md) |  |  [optional]
 **documents** | [**kotlin.collections.List&lt;IdentityVerificationDocumentBankModel&gt;**](IdentityVerificationDocumentBankModel.md) | The documents associated with the identity verification. |  [optional]
 **supportingFiles** | [**kotlin.collections.List&lt;IdentityVerificationDocumentBankModel&gt;**](IdentityVerificationDocumentBankModel.md) | The supporting documents associated with the attested identity verification. |  [optional]
