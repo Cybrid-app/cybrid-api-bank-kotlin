@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **sourceParticipants** | [**kotlin.collections.List&lt;TransferParticipantBankModel&gt;**](TransferParticipantBankModel.md) | The participants in the source account. |  [optional]
 **destinationAccount** | [**TransferDestinationAccountBankModel**](TransferDestinationAccountBankModel.md) |  |  [optional]
 **destinationParticipants** | [**kotlin.collections.List&lt;TransferParticipantBankModel&gt;**](TransferParticipantBankModel.md) | The participants in the source account. |  [optional]
+**depositAddressGuid** | **kotlin.String** | The guid of the deposit address. Only present on crypto deposits. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 **transferDetails** | [**kotlin.Any**](.md) | The raw details on the transfer from the bank. |  [optional]
