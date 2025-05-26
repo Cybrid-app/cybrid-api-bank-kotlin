@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **environment** | **kotlin.String** | The environment that the wallet is configured for; one of sandbox or production. |  [optional]
 **bankGuid** | **kotlin.String** | The bank identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The customer identifier. |  [optional]
+**counterpartyGuid** | **kotlin.String** | The counterparty identifier. |  [optional]
 **address** | **kotlin.String** | The blockchain wallet address for the wallet. |  [optional]
 **tag** | **kotlin.String** | The blockchain tag to use when transferring crypto to the wallet. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]

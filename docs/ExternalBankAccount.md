@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **environment** | **kotlin.String** | The environment that the external bank account is operating in; one of sandbox or production. |  [optional]
 **bankGuid** | **kotlin.String** | The bank identifier. |  [optional]
 **customerGuid** | **kotlin.String** | The customer identifier. |  [optional]
+**counterpartyGuid** | **kotlin.String** | The counterparty identifier. |  [optional]
 **createdAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was created at. |  [optional]
 **updatedAt** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | ISO8601 datetime the record was last updated at. |  [optional]
 **plaidInstitutionId** | **kotlin.String** | The Plaid institution ID for the account. |  [optional]
