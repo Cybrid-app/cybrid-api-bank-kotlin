@@ -28,5 +28,11 @@
 
     * `invalidAddress` (value: `"invalid_address"`)
 
+    * `invalidDestination` (value: `"invalid_destination"`)
+
+    * `customerActionRequired` (value: `"customer_action_required"`)
+
+    * `externalVendorError` (value: `"external_vendor_error"`)
+
 
 
